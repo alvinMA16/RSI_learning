@@ -1,0 +1,51 @@
+[
+  {
+    "name": ".github",
+    "snapshot": "apexin-ai-.github-cdb0ab8",
+    "sha256": "0d4aa99ecbf1b74c5107fff94d2382966ff8a480424b7892e7b6b79ea4e4bd65",
+    "url": "https://github.com/apexin-ai/.github",
+    "branch": "main"
+  },
+  {
+    "name": "apex-research-report",
+    "snapshot": "apexin-ai-apex-research-report-8117ed8",
+    "sha256": "bb25def7332c28bbee8eb59af5ae587a6c8c3309a519de403deb659a9b339bfb",
+    "url": "https://github.com/apexin-ai/apex-research-report",
+    "branch": "main"
+  },
+  {
+    "name": "Evaluation-Self-Evolve-AI-System",
+    "snapshot": "apexin-ai-Evaluation-Self-Evolve-AI-System-cf775d9",
+    "sha256": "02f5c7be82048f664d173e19a2afb542c3dc197619e57ecc4cf2aade43d928f5",
+    "url": "https://github.com/apexin-ai/Evaluation-Self-Evolve-AI-System",
+    "branch": "main"
+  },
+  {
+    "name": "dashboard",
+    "snapshot": "apexin-ai-dashboard-2d6be18",
+    "sha256": "d9ca7da9ef1ab5147196bdc2ddb97896d795d714e16ff99f00db436a820b797e",
+    "url": "https://github.com/apexin-ai/dashboard",
+    "branch": "main"
+  },
+  {
+    "name": "ASI-Bench",
+    "snapshot": "apexin-ai-ASI-Bench-56829c9",
+    "sha256": "ab14342580e28c0868c4135152b8662b40b65b6407961d1945f95c5891bd52dd",
+    "url": "https://github.com/apexin-ai/ASI-Bench",
+    "branch": "main"
+  },
+  {
+    "name": "Math-Paper",
+    "snapshot": "apexin-ai-Math-Paper-5cc299a",
+    "sha256": "5e710598ae1d5ec9af1fa5b28768ee18fe1b9711221117de62011d858fbf7e4b",
+    "url": "https://github.com/apexin-ai/Math-Paper",
+    "branch": "main"
+  },
+  {
+    "name": "Apex-Tune-results",
+    "snapshot": "apexin-ai-Apex-Tune-results-9c457bc",
+    "sha256": "d48a84178b476372f19a2298650589c48e3ff8e1315ed811c3d16f708c7815cf",
+    "url": "https://github.com/apexin-ai/Apex-Tune-results",
+    "branch": "main"
+  }
+]

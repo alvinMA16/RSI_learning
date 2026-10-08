@@ -1,0 +1,410 @@
+'use client'
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import {
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle
+} from "@/components/ui/dialog"
+import { Skeleton } from "@/components/ui/skeleton"
+import { usePaginationClamp } from "@/hooks/use-pagination-clamp"
+import { trpc } from "@volcano/trpc/react"
+import { Plus, RefreshCw } from "lucide-react"
+import { useFormatter, useTranslations } from "next-intl"
+import { useCallback, useEffect, useState } from "react"
+import { ListPagination } from "../list-pagination"
+import { DataTable } from "../data-table"
+import { usePodColumns } from "./columns"
+import { CreatePodDialog } from "./pod-create-dialog"
+import { PodEditDialog } from "./pod-edit-dialog"
+
+
+
+export type PodStatus = {
+    name: string;
+    namespace: string;
+    createdAt: Date;
+    status: string;
+    age: string;
+    yaml?: string;
+}
+
+export default function PodManagement() {
+    const t = useTranslations("pods")
+    const tc = useTranslations("common")
+    const format = useFormatter()
+    const [pods, setPods] = useState<PodStatus[]>()
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState<string | null>(null)
+    const [selectedPod, setSelectedPod] = useState<PodStatus | null>(null)
+    const [showPodDetails, setShowPodDetails] = useState(false)
+    const [showCreatePodModal, setShowCreatePodModal] = useState(false)
+    const [showEditPodModal, setShowEditPodModal] = useState(false)
+    const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
+    const [podToEdit, setPodToEdit] = useState<PodStatus | null>(null)
+    const [podToDelete, setPodToDelete] = useState<PodStatus | null>(null)
+
+    const utils = trpc.useUtils()
+
+    const [pagination, setPagination] = useState({
+        page: 1,
+        pageSize: 10,
+    })
+
+    const podsQuery = trpc.podRouter.getPods.useQuery(
+        {
+            page: pagination.page,
+            pageSize: pagination.pageSize,
+        },
+        {
+            keepPreviousData: true,
+            onError: (err) => {
+                console.error("Error fetching pods:", err);
+                setError(t("errors.api", { message: err.message }));
+            },
+        }
+    )
+
+
+    const podYamlQuery = trpc.podRouter.getPodYaml.useQuery(
+        {
+            namespace: selectedPod?.namespace || "",
+            name: selectedPod?.name || ""
+        },
+        {
+            enabled: false,
+            onError: (err) => {
+                console.error("Error fetching pod YAML:", err);
+                setError(t("errors.yamlApi", { message: err.message }));
+            },
+        },
+    );
+
+    const availableNamespaces = pods ?
+        Array.from(new Set(pods.map(pod => pod.namespace).filter(Boolean))).sort()
+        : [];
+
+    const availableStatuses = pods ?
+        Array.from(new Set(pods.map(pod => pod.status).filter(Boolean))).sort()
+        : [];
+
+    const { mutateAsync: deletePod, isPending: isDeleting } = trpc.podRouter.deletePod.useMutation({
+        onSuccess: async () => {
+            setShowDeleteConfirm(false)
+            setPodToDelete(null)
+            setError(null)
+            await utils.podRouter.getPods.invalidate()
+        },
+        onError: (error) => {
+            setError(t("errors.delete", { message: error.message }))
+            setShowDeleteConfirm(false)
+        }
+    })
+
+    const handleEdit = useCallback(async (pod: PodStatus) => {
+        setError(null);
+
+        try {
+            const yaml = await utils.podRouter.getPodYaml.fetch({
+                namespace: pod.namespace,
+                name: pod.name
+            });
+
+            if (!yaml) {
+                setError(t("errors.noYaml"));
+            }
+
+            setPodToEdit({ ...pod, yaml: yaml || pod.yaml || "" });
+            setShowEditPodModal(true);
+        } catch (err) {
+            setError(t("errors.fetchYamlEdit"));
+            console.error(err)
+        }
+    }, [utils])
+
+    const handleDelete = useCallback((pod: PodStatus) => {
+        setPodToDelete(pod)
+        setShowDeleteConfirm(true)
+    }, [])
+
+    const confirmDelete = useCallback(async () => {
+        if (!podToDelete) return
+
+        try {
+            await deletePod({
+                namespace: podToDelete.namespace,
+                name: podToDelete.name
+            })
+        } catch (err) {
+            console.error("Failed to delete pod:", err)
+        }
+    }, [podToDelete, deletePod])
+
+    const columns = usePodColumns({
+        availableNamespaces,
+        availableStatuses,
+        onEdit: handleEdit,
+        onDelete: handleDelete
+    });
+
+    useEffect(() => {
+        if (podsQuery.data) {
+            const transformedPods: PodStatus[] = (podsQuery.data.items || []).map((pod: any) => {
+                    const createdAt = new Date(pod.metadata?.creationTimestamp || Date.now());
+                    const now = new Date();
+                    const ageInMs = now.getTime() - createdAt.getTime();
+                    const ageInDays = Math.floor(ageInMs / (1000 * 60 * 60 * 24));
+                    const age = ageInDays === 0 ? "1d" : `${ageInDays}d`;
+
+                    return {
+                        name: pod.metadata?.name || '',
+                        namespace: pod.metadata?.namespace || '',
+                        createdAt,
+                        status: pod.status?.phase?.toLowerCase() || 'unknown',
+                        age,
+                        yaml: pod.yaml || '',
+                    };
+                });
+
+            setPods(transformedPods);
+        }
+    }, [podsQuery.data]);
+
+    const listTotal = podsQuery.data?.total ?? 0;
+    const listTotalPages = podsQuery.data?.totalPages ?? 0;
+    const listPage = podsQuery.data?.page ?? pagination.page;
+
+    usePaginationClamp(listTotal, pagination.page, pagination.pageSize, (page) =>
+        setPagination((prev) => ({ ...prev, page }))
+    );
+
+    const handleRefresh = useCallback(async () => {
+        setLoading(true)
+        setError(null)
+
+        try {
+            await podsQuery.refetch();
+        } catch (err) {
+            setError(t("errors.refresh"))
+            console.error(err)
+        } finally {
+            setLoading(false)
+        }
+    }, [podsQuery])
+
+    const handlePodClick = useCallback(async (pod: PodStatus) => {
+        setError(null);
+
+        try {
+            const response = await podYamlQuery.refetch();
+            const yaml = response.data || pod.yaml || "";
+            setSelectedPod({ ...pod, yaml });
+            setShowPodDetails(true);
+        } catch (err) {
+            setError(t("errors.fetchYaml"));
+            console.error(err)
+        }
+    }, [podYamlQuery])
+
+    const handlePodCreate = () => {
+        setShowCreatePodModal(true)
+    }
+
+    const handlePageSizeChange = (newPageSize: string) => {
+        setPagination({
+            page: 1,
+            pageSize: parseInt(newPageSize),
+        });
+    }
+
+    const handlePageChange = (newPage: number) => {
+        setPagination(prev => ({
+            ...prev,
+            page: newPage,
+        }));
+    }
+
+    const getStatusColor = (status: string) => {
+        switch (status) {
+            case "running":
+                return "bg-green-100 text-green-800"
+            case "pending":
+                return "bg-yellow-100 text-yellow-800"
+            case "failed":
+                return "bg-red-100 text-red-800"
+            case "succeeded":
+                return "bg-blue-100 text-blue-800"
+            case "unknown":
+                return "bg-gray-100 text-gray-800"
+            default:
+                return "bg-gray-100 text-gray-800"
+        }
+    }
+
+    const isLoading = podsQuery.isLoading
+    const isRefreshing = podsQuery.isRefetching
+
+    return (
+        <div className="container mx-auto p-4 mt-4">
+            <div className="flex justify-between items-center mb-6">
+                <h1 className="text-2xl font-bold">{t("title")}</h1>
+                <div className="flex items-center">
+                    <Button
+                        onClick={handleRefresh}
+                        disabled={loading || isRefreshing}
+                        className="flex items-center gap-2 me-4"
+                    >
+                        <RefreshCw className={`h-4 w-4 ${(loading || isRefreshing) ? 'animate-spin' : ''}`} />
+                        {tc("actions.refresh")}
+                    </Button>
+                    <Button onClick={handlePodCreate} className="flex items-center gap-2">
+                        <Plus className="h-4 w-4" />
+                        {t("createPod")}
+                    </Button>
+                </div>
+            </div>
+
+            {error && (
+                <Alert className="mb-4 border-red-200 bg-red-50">
+                    <AlertDescription className="text-red-800">
+                        {error}
+                    </AlertDescription>
+                </Alert>
+            )}
+
+            {isLoading ? (
+                <div className="space-y-4">
+                    <Skeleton className="h-12 w-full" />
+                    <Skeleton className="h-12 w-full" />
+                    <Skeleton className="h-12 w-full" />
+                    <Skeleton className="h-12 w-full" />
+                    <Skeleton className="h-12 w-full" />
+                </div>
+            ) : (
+                <>
+                    <div className="rounded-lg">
+                        <DataTable
+                            columns={columns}
+                            data={pods || []}
+                            onRowClick={handlePodClick}
+                            disablePagination={true}
+                            filterPlaceholder={t("filterPlaceholder")}
+                        />
+                    </div>
+
+                    <ListPagination
+                        page={listPage}
+                        pageSize={pagination.pageSize}
+                        total={listTotal}
+                        totalPages={listTotalPages}
+                        onPageChange={handlePageChange}
+                        onPageSizeChange={handlePageSizeChange}
+                        disabled={isRefreshing}
+                    />
+                </>
+            )}
+
+            <Dialog open={showPodDetails} onOpenChange={setShowPodDetails}>
+                <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                    <DialogHeader>
+                        <DialogTitle className="flex items-center gap-2">
+                            {t("details.title", { name: selectedPod?.name ?? "" })}
+                            {selectedPod && (
+                                <Badge className={getStatusColor(selectedPod.status)}>
+                                    {selectedPod.status}
+                                </Badge>
+                            )}
+                        </DialogTitle>
+                    </DialogHeader>
+
+                    {selectedPod && (
+                        <div className="space-y-4">
+                            <div className="grid grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg">
+                                <div>
+                                    <span className="font-semibold">{tc("details.name")}</span> {selectedPod.name}
+                                </div>
+                                <div>
+                                    <span className="font-semibold">{tc("details.namespace")}</span> {selectedPod.namespace}
+                                </div>
+                                <div>
+                                    <span className="font-semibold">{tc("details.created")}</span>{" "}{format.dateTime(selectedPod.createdAt, { dateStyle: "medium", timeStyle: "short" })}
+                                </div>
+                                <div>
+                                    <span className="font-semibold">{t("table.age")}:</span> {selectedPod.age}
+                                </div>
+                                <div>
+                                    <span className="font-semibold">{tc("details.state")}</span>
+                                    <Badge className={`ms-2 ${getStatusColor(selectedPod.status)}`}>
+                                        {selectedPod.status}
+                                    </Badge>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 className="font-semibold mb-2">{tc("details.yamlConfiguration")}</h3>
+                                <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm">
+                                    <code>{selectedPod.yaml}</code>
+                                </pre>
+                            </div>
+                        </div>
+                    )}
+                </DialogContent>
+            </Dialog>
+
+            {podToEdit && (
+                <PodEditDialog
+                    open={showEditPodModal}
+                    setOpen={setShowEditPodModal}
+                    handleRefresh={handleRefresh}
+                    podName={podToEdit.name}
+                    podNamespace={podToEdit.namespace}
+                    initialYaml={podToEdit.yaml || ""}
+                />
+            )}
+
+            <Dialog open={showDeleteConfirm} onOpenChange={(open) => {
+                if (!isDeleting) setShowDeleteConfirm(open)
+            }}>
+                <DialogContent>
+                    <DialogHeader>
+                        <DialogTitle>{t("delete.title")}</DialogTitle>
+                    </DialogHeader>
+                    <div className="py-4">
+                        <p>{t("delete.message", { name: podToDelete?.name ?? "", namespace: podToDelete?.namespace ?? "" })}</p>
+                        <p className="mt-2 text-sm text-gray-500">{tc("deleteConfirm.cannotUndo")}</p>
+                    </div>
+                    <div className="flex justify-end gap-2">
+                        <Button
+                            variant="outline"
+                            onClick={() => setShowDeleteConfirm(false)}
+                            disabled={isDeleting}
+                        >
+                            {tc("actions.cancel")}
+                        </Button>
+                        <Button
+                            variant="destructive"
+                            onClick={confirmDelete}
+                            disabled={isDeleting}
+                        >
+                            {isDeleting ? (
+                                <>
+                                    <RefreshCw className="w-4 h-4 me-2 animate-spin" />
+                                    {tc("actions.deleting")}
+                                </>
+                            ) : (
+                                tc("actions.delete")
+                            )}
+                        </Button>
+                    </div>
+                </DialogContent>
+            </Dialog>
+
+            <CreatePodDialog open={showCreatePodModal} setOpen={setShowCreatePodModal} handleRefresh={handleRefresh} />
+        </div>
+    )
+}

@@ -1,0 +1,3025 @@
+
+--- PAGE 1 ---
+CONTRACTIBILITY OF THE COMPLEX
+OF INCOMPRESSIBLE SEIFERT SURFACES:
+THE KNOT CASE OF KAKIMIZU’S PROBLEM
+APEX INTELLIGENCE
+Abstract. Let K⊂S3 be a non-trivial knot and letIS(K) be the simplicial complex whose
+vertices are the ambient isotopy classes of incompressible Seifert surfaces in the exteriorE(K), a
+finite set of distinct vertices spanning a simplex exactly when its classes admit simultaneously
+pairwise disjoint representatives. Kakimizu proved that IS(K) is connected; whether it is
+contractible was asked by Przytycki and Schultens, who also identified the obstruction, namely
+that the projection used in the connectedness proof is not known to be well defined on isotopy
+classes. We prove thatIS(K) is contractible, and likewise every truncationISℓ(K) on the vertices
+of genus at most ℓ. The argument factors through a purely combinatorial theorem: every
+non-empty connected flagexchange complexis contractible, where an exchange complex carries
+a complexity function subject to two axioms which require only that an exchanging vertexexist,
+never that one be selected. That is what circumvents the obstruction. We locate the combinatorial
+theorem precisely against the existing literature — it is not implied by dismantlability, and,
+when all descending links are finite, it follows from Zaremsky’s descending-link criterion by a
+reindexing (§7.4) — and we record what remains genuinely open. Two extensions are proved: the
+truncations above, and the case of links satisfying a linking condition that forces every spanning
+surface to be connected.
+1.Introduction
+1.1.Theproblem.Let K⊂S3 beaknotwithexterior E(K) =S3\IntN (K). ASeifert surface
+for K is a compact connected orientable surface properly embedded inE(K)whose boundary
+is a longitude ofK; it isincompressibleif the inclusion induces an injection on fundamental
+groups. Kakimizu [12] introduced two simplicial complexes attached toK: the complexIS(K)
+whose vertices are the ambient isotopy classes of incompressible Seifert surfaces, and the full
+subcomplex MS(K)on the classes of minimal genus. In both, a finite set of distinct vertices
+spans a simplex exactly when its classes admit simultaneously pairwise disjoint representatives.
+Kakimizu proved that these complexes are connected. We shall use his statement in the form
+in which he printed it [12, Theorem A, p. 226]:
+LetLbe a non-split oriented link. Then bothIS(L)andMS(L)are connected.
+The two cases are not proved by a common argument: the proof of the underlying engine [12,
+Theorem 2.1, p. 228] splits on p. 229 into a minimal-genus case and an incompressible case, the
+latter run through McMillan’s simple moves. This matters here, because it is the incompressible
+half that we need and it is the half that is easy to lose sight of when the result is quoted for
+MS alone. We also use Kakimizu’s sharper statement [12, Proposition 3.1(1), p. 231] that the
+edge-path metric ofIS(L)coincides with the distanced defined through the infinite cyclic cover.
+Date: 4 September 2026.
+2020Mathematics Subject Classification.Primary 57K10; Secondary 57M50, 53A10, 35J15.
+Key words and phrases.Kakimizu complex; incompressible Seifert surface; contractibility; flag complex; exchange
+complex; least-area surface; descending link.
+1
+
+--- PAGE 2 ---
+2 APEX INTELLIGENCE
+Whether IS(K)is contractible was asked by Przytycki and Schultens [15]. We attribute
+the question to them rather than to [12], where it does not appear. Przytycki and Schultens
+proved that MS(K)is contractible, and in the same paper isolated the reason their method
+does not reachIS(K): their projection is defined by choosing, for a surfaceS and a vertexv, a
+distinguished representative ofvdisjoint fromS, and for incompressible surfaces of unbounded
+genus that choice is not known to descend to isotopy classes.
+1.2.Results.Our main result is the following.
+Theorem A.LetK⊂S3 be a non-trivial knot. ThenIS(K)is contractible.
+The hypothesis excludes only a case that is settled and trivial:IS(unknot)is a single point, by
+Proposition 3.2, hence contractible. We nevertheless keep the exclusion, because every statement
+of §5 is proved for a non-trivial knot and we prefer not to carry a hypothesis in one place and
+drop it in another.
+The proof factors through a combinatorial statement that involves no three-dimensional
+topology.
+Definition 1.1(Exchange complex).Let X be a connected flag simplicial complex, letW be a
+well-ordered set, and letc:X (0)→W. For verticesu,wat distance2in the1-skeleton write
+I(u,w)for the set of common neighbours ofu and w. Callx∈I(u,w)anapexif x is equal or
+adjacent to every member ofI(u,w); equivalently, the full subcomplex onI(u,w)is a cone with
+apexx. The pair(X,c)is anexchange complexif
+(N1) every two-interval has an apex; and
+(N2) wheneverdist(u,w) = 2,someapexxofI(u,w)satisfiesc(x)<max{c(u),c(w)}.
+This is Definition 6.1, repeated verbatim. Note thatI(u,w)̸=∅is automatic whendist(u,w) = 2
+and is therefore not an axiom; what (N1) asks is that the interval be a cone.
+Theorem B.Every non-empty connected flag exchange complex is contractible.
+The point of the two axioms is what they donotrequire. They ask that an exchanging vertex
+exist; they never ask that one beselected. This is precisely the obstruction identified in [15], and
+avoiding a choice is what lets the argument run onIS(K)rather than on MS(K). The price is
+paid in §8: the same feature that makes Theorem B applicable makes its equivariant analogue
+unavailable, and we explain there why that is not a defect of our proof but a theorem about the
+situation.
+Two further results are proved. The first is free: it costs no additional hypothesis and no
+additional citation.
+Theorem C.For every integerℓ≥g(K)the truncation ISℓ(K), the full subcomplex ofIS(K)
+on the vertices of genus at mostℓ, is isometrically embedded inIS(K)and is contractible. The
+same holds for the full subcomplex on the vertices of genus at mostℓand relative area at most
+a0, for everya0>0.
+Takingℓ=g(K)recovers the contractibility ofMS(K)[ 15, Theorem 1.1, p. 1490], a statement
+made there for spanning surfaces of minimal Thurston norm, which for a knot inS3 is the
+minimal-genus condition. The second family in Theorem C does not appear in the literature
+under any name. The connectedness of ISℓ(K)is part of Theorem C, obtained there from
+Corollary 6.7; it has an independent source in Chen and Shen [4, Proposition 5.15, p. 9 of v4],
+which we do not use.
+The second extension concerns links, and requires a condition. Call a linkL =L1∪···∪Ln
+linking-indecomposableif for every partition{1,...,n}=I⊔Ic into two non-empty parts there is
+
+--- PAGE 3 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 3
+an indexm with lk(Lm,LJ)̸= 0, whereLJ is the sublink indexed by the partnotcontainingm.
+The condition is vacuous forn = 1. Its role is to force every spanning surface to be connected, so
+that Kakimizu’s vertices — which are allowed to be disconnected, and are required only to be
+incompressible componentwise — coincide with ours.
+Theorem D.Let L be a non-split, linking-indecomposable link inS3 which is not the unknot.
+ThenIS(L)is contractible.
+1.3.Where the combinatorial theorem sits.Theorem B is a statement about arbitrary flag
+complexes. We locate it against the three results with which it might be confused; the details
+are in §7.4.
+Dismantlability.Deleting a dominated vertex, the mechanism behind [15, §7], requires the
+descending link of that vertex to be acone. Axioms (N1) and (N2) give only that it iscontractible,
+which is strictly weaker: §7.3 exhibits a seven-vertex exchange complex whose descending link is
+a hexagon with three chords, contractible but not a cone. So Theorem B is not a corollary of the
+dismantlability theory, and the route through [2] is closed.
+The descending-link criterion.Zaremsky’s form of the Bestvina–Brady criterion [20, Lemma
+2.3] assumes no local finiteness, so the failure of local finiteness forIS(K), recorded by Kakimizu
+on [12, p. 231], is irrelevant to the comparison. Write (F) for the condition that every descending
+link Lc(v) = {u∈lk(v) : c(u) < c(v)}is finite. We prove in §7.4 that a countably infinite
+exchange complex satisfying (F) admits a bijectionh:X (0)→Nwith lk↓
+h(v) =Lc(v), and that
+Theorem B then follows from [20, Lemma 2.3] att = 0with an induction on the number of
+vertices; without (F) that reindexing fails, at a step identified there. The residual content of
+Theorem B is therefore confined to exchange complexes with an infinite descending link, and we
+do not know whetherIS(K)is one.
+The ordering theorem.The complexity-convex geodesics and the isometric embedding of the
+truncations are both special cases of [3, Lemma 9.13], whose hypotheses are strictly weaker —
+no apex, no flagness, no local finiteness. We nevertheless give the argument, as Corollary 6.7,
+so that §6 is self-contained and [3] is a comparison rather than a link in the chain leading to
+Theorems A–D.
+1.4.The shape of the argument.The proof of Theorem A verifies thatIS(K)is an exchange
+complex for the complexity
+c(v) =
+(
+g(v), A(v)
+)
+∈N×R>0,
+ordered lexicographically, whereg(v)is the genus andA(v)the infimum of area over the class.
+Axiom (N1) is supplied by three things together: the connectedness ofIS(K), which is Kakimizu’s
+Theorem A and is what makes a two-interval non-empty; flagness; and Proposition 5.11(1), which
+manufactures an apex of the interval out of the exchange lemma. Axiom (N2) is the substance,
+and is supplied by an exchange lemma for incompressible surfaces (§5) proved by minimal-surface
+methods: given two vertices at distance2, one produces a common neighbour of strictly smaller
+complexity by cutting and recombining area minimisers in the two classes along their intersection.
+That construction needs four inputs about area minimisers inE(K). Three are cited (§2):
+the universal disjointness of minimisers [16, Theorem 4, p. 885; Theorem A.5, p. 899], and
+the attainment of the area infimum in each of the two competing classes [8, Theorem 6.12,
+pp. 112–113], [16, Theorem 2=Corollary A.4]. The fourth is the boundary regularity of a
+relative area minimiser, labelled (R1): that some minimiser in the given proper isotopy class
+is smooth up to∂E(K)and meets ∂E(K)exactly in its own boundary. It too is cited: read
+with the definition on [16, p. 897], the corollary just quoted for the sliding class delivers the
+minimiser as the image of asmooth proper embedding, which is (R1) verbatim. No step of this
+
+--- PAGE 4 ---
+4 APEX INTELLIGENCE
+paper therefore stands on anything unproved and uncited. We nevertheless prove it again in §2.2
+as Theorem 2.10, and the second proof is self-contained in a way the citation is not: it takes
+from [8] only the existence statement, that the area infimum over the piecewise smooth surfaces
+isotopic toF rel ∂Fis attained, and derives everything else from the first variation of area and
+Hopf’s boundary point lemma. The reason for doing so is that the citation’s own proof leaves a
+step out, and we say which (Remark 2.5).
+The point deserves a sentence, because it is easy to mistake (R1) for something already in
+print. Corollary A.4 of [16, p. 898] passes from a minimiser among stable minimal surfaces to a
+minimiser in the whole sliding class by treating the fixed-boundary minimiser of [8, Theorem 6.12]
+as a member ofM(S), that is, as a smooth proper embedding; but Theorem 6.12 as stated
+produces a minimiser only in the piecewise smooth category. Theorem 2.10 supplies the missing
+regularity, so that Corollary A.4 may be used as stated.
+Two analytic contributions are genuinely ours and are not repetitions of textbook facts. The
+first is the self-contained regularity argument just described. Its engine is one lemma, that a
+minimal graph over a plane sector of opening angle at leastπ, lying inM and touching∂M
+along one edge, cannot be tangent to∂Mat the vertex; that lemma also yields the transversality
+statement (R2) in three lines, in place of a divergence-form comparison and an explicit barrier,
+and it leaves §2 using nothing from [7, Ch. 8]. The second is the collar conditions(34) and (33)
+of §5, which control the behaviour of the intersection pattern at a boundary tangency. Freedman,
+Hass and Scott note on [6, p. 636] that non-transverse boundary behaviour occurs; they do not
+supply a structure theorem for it, and §5.3 does.
+Organisation.The paper falls into two halves that meet only at Definition 6.1.
+The geometric half is §§2–5. §2 fixes the metric, states the two citations (U) and (E), and
+proves the regularity statements (R1) and (R2). §3 pins down the definitions of vertex, edge and
+simplex against [12], and proves flagness and the two compression lemmas. §4 introduces the
+complexityc = (g,A), proves that the values it attains are well-ordered, and gives the cyclic-cover
+construction that manufactures the candidate apices. §5 is the exchange lemma itself, and is
+the longest section: rounding and pushing off in §5.1, the transverse case in §5.2, and the two
+non-transverse configurations in §§5.3–5.5.
+The combinatorial half is §§6–7, and uses no three-dimensional topology at all: §6 sets out
+the axioms and their heredity, §7 proves Theorem B and locates it against dismantlability and
+the descending-link criterion. §8 puts the halves together and proves Theorems A, C and D, and
+then says where the method stops.
+A reader who wants only the combinatorics may begin at §6; a reader who wants only the
+geometry may stop after §5, whose conclusion, axiom (N2) forIS(K), is Proposition 5.11.
+1.5.Open questions.The first is not on the same footing as the others, and we put it first
+for that reason: it is the one input of this paper that is asserted in the literature rather than
+demonstrated there or here.
+Problem.Let F be an incompressible surface properly embedded in a compact
+P 2-irreducible Riemannian3-manifold M with strictly convex boundary, with∂F
+a smooth closed1-manifold in ∂M. Is the infimum of area over the piecewise
+smooth surfaces properly isotopic toFrel∂Fattained within that class?
+By Proposition 2.9 this is equivalent to asking whether the infimum is attained by asmooth
+embedded minimal surface, so it is a question of a familiar kind and not one about corners. It is
+asserted by [8, Theorem 6.12]; the printed proof of that theorem, which is the sentence on [8,
+p. 112] extending the closed case, establishes the interior regularity of the limit and does not
+
+--- PAGE 5 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 5
+reach its behaviour at∂M. Everything geometric in this paper, and everything resting on the
+appendix to [16], rests on the answer being yes. Remark 2.2 gives the evidence that it is: the
+degeneration that makes the closed statement fail is excluded once∂F̸=∅, and we check that
+directly for a knot or link exterior.
+Two things narrow the problem, and we record them because they say where to push. The
+first is that the boundaryconvergenceis not what is missing: it is already available from [8,
+Lemma 6.9] read with the two faces of a half-ball exchanged from the way that paper reads them,
+since it is the intersection with∂M, and not the intersection with the spherical face, that a
+minimising sequence holds fixed. Remark 2.2 writes out the assignment. What is missing is that
+the replacement performed inside such a half-ball keep the surface in the class; and that comes
+down to a local question about the Plateau problem, namely whether the least area disc spanning
+a piecewise smooth Jordan curve with corners — one of whose arcs lies on the mean-convex∂M
+— is itself piecewise smooth up to that curve.
+The second is a list of routes around that local question which donotwork, recorded so that
+the next person need not walk them again.
+(a) Replacing by a piecewise smoothnear-minimiser instead of the exact least area disc.
+This needs the infimum of area over piecewise smooth embedded discs to agree with the
+infimum over all finite-energy maps, which is the local question restated.
+(b) Localising in a region containing a whole component of∂F, so that the frontier misses
+∂Fand no corner arises. The corner does disappear, but the piece cut out is then an
+annulus and not a disc, and the replacement lemmas of [8, §6] are lemmas about discs.
+(c) Localising in a region whose frontier meets∂Mtangentially, so that∂Ωand the cut
+curve areC1. The tangency can be arranged, but a frontier tangent to∂Mis not known
+to be sufficiently convex in the sense of [8, p. 110], and the cut curve is then onlyC1
+where the corner theory wantsC1,α.
+(d) Replacing only the disc components that miss∂M, whose boundaries are circles on the
+spherical face and carry no corner. Then nothing is replaced in the collar of∂F, and
+there is no convergence there.
+(e) Weakening Definition 2.1 to allow finitely many exceptional boundary points. The first
+variation and the gluing survive, a finite set being null; but an exceptional point in the
+interior then needs a removable singularity theorem, and an exceptional point on∂F
+returns to the local question.
+•We do not know whetherIS(K)satisfies (F). Equivalently, we do not know whether a
+vertex ofIS(K)can have infinitely many neighbours of smaller genus. If it cannot, the
+combinatorial half of this paper reduces to [20, Lemma 2.3].
+•Theorem D does not extend to general links: the step that fails is identified in §8.4, and
+we give no counterexample, only an obstruction.
+•The equivariant version, for a knot with symmetry groupG acting on IS(K), isblocked
+rather than merely unproved; the obstruction is cited in §8.4.
+•There is no analogue for a general Haken manifold, because the required connectedness
+of the corresponding complex has no source in the literature; see §8.4.
+Acknowledgements.The mathematical content of this paper was developed with substantial
+assistance from large language models, which were used for literature search, for drafting, and
+for adversarial checking of the arguments; the author is responsible for all statements. A small
+part of §6 has been formalised in Lean 4 and machine-checked; see Remark 6.11.
+
+--- PAGE 6 ---
+6 APEX INTELLIGENCE
+2.Geometric inputs
+This section fixes the Riemannian data onE(K)and assembles the facts about area minimisers
+that the exchange lemma of §5 consumes. §2.1 fixes the metric and states the two citations, the
+universal disjointness (U) and the attainment of the area infimum (E). §2.2 proves the regularity
+statements (R1) and (R2): that a minimiser is smooth up to∂E(K), meets it exactly in its
+own boundary, and meets it transversally. (R1) is also contained in the statement of the second
+citation, as Remark 2.5 explains; the proof given here takes less from the literature than that
+reading does, and that is its purpose.
+2.1.The metric, and the two citations.Fix onE(K)arelative Riemannian metric, that is,
+one making∂E(K)strictly convex. Such a metric exists: on a collar[0,ε)r×∂E(K), withr the
+inward coordinate and∂E(K) ={r= 0}, take
+dr2 +φ(r)2g∂E(K), φ(0) = 1, φ′(0)<0,(1)
+sayφ(r) = 1−r, and extend smoothly; strict convexity is the only source of a barrier anywhere
+in this paper. Two consequences of(1) are used repeatedly and are recorded now. Along the
+collar∇X∂r = (φ′/φ)XforXtangent to the level sets, so
+Hessr=φφ′g∂E(K)<0on the level sets, (2)
+and in particularr is strictly concave along any geodesic with initial velocity tangent to a
+level set: a geodesic joining two points of∂E(K)therefore has r > 0at its interior points.
+Dually, the second fundamental form of{r= 0}with respect to theinwardnormal ∂r is
+−φφ′g∂E(K)= g∂E(K)> 0, so∂E(K)has mean curvature2 > 0with respect to the inward
+normal, which is the sign convention of [8, p. 110]. We also write˜E for the manifold obtained by
+extending the collar tor∈(−ε,ε)with the same formula(1); thusE(K)⊂˜E isometrically and
+∂E(K)is a two-sided smooth surface inInt˜E.
+Fix also areal-analyticfoliation J of the boundary torus by preferred longitudes; smoothness
+of J is all the citations below require [16, Definition 3, pp. 884–885], and real-analyticity, free
+here, is used in §5. A properly embeddedF⊂E(K)with ∂F⊂Jisrelatively least-areaif
+Area(F )is least in its proper isotopy class subject to the boundary lying inJ: the boundary
+slides from leaf to leaf and is not pinned pointwise.
+Definition 2.1(Piecewise smooth surfaces).A compact surface F properly embedded in a
+Riemannian3-manifold X ispiecewise smoothif there is a finite graphΓF⊂F, embedded as a
+finite union of smooth arcs and circles,properly— so thatΓF∩∂Fis the finite set of endpoints
+of its arcs, and no arc runs along∂F— such thatF\ ΓF is a smooth submanifold ofX and the
+closure of each of its components — itspieces— is a compact surface with corners, smooth in its
+interior and embedded of classC1 up to its own boundary, the two edges at each corner having
+distinct tangent rays. A smooth surface is piecewise smooth, withΓF =∅. Such anF admits a
+smooth triangulation compatible withΓF, andisotopyof piecewise smooth surfaces is understood
+throughout in the piecewise smooth category, in which the classical theorems of Alexander —
+that a locally flat2-sphere in a3-ball bounds a ball on each side, and that a homeomorphism of
+a ball fixing the boundary pointwise is isotopic to the identity rel the boundary — are available.
+The clause about the pieces is stated withC1 and not withC∞deliberately. The reading of
+“piecewise smooth” on which §2.2 depends should be as weak as the argument allows, andC1
+is what the argument allows: the elliptic boundary regularity used in Proposition 2.9 upgrades
+C1 to C∞by itself, so demandingC∞of the pieces would be demanding something the proof
+does not need. The two normalisations — thatΓF is properly embedded and that a corner has
+two distinct tangent rays — pull the other way, and are stated because §2.2 does consume them:
+
+--- PAGE 7 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 7
+without the first, an arc ofΓF could run inside∂F, and without the second a piece could end in a
+cusp. Both are recorded in Remark 2.2, with the rest of what the class is being read as carrying.
+Remark2.2 (Whose definition this is).The term is Hass and Scott’s: the classF of (E)(i) below
+is, in their words, “the set of piecewise smooth surfaces inM which are isotopic toF rel ∂F”
+[8, Theorem 6.12, p. 112].They do not print a definition of the term, and since §2.2 feeds the
+minimiser F′they produce straight into an argument that consumes the stratified structure of
+Definition 2.1 — and consumes, in particular, the clause thatF\ ΓF is asmooth submanifoldof
+X, which is what carries that argument across the points ofλthatΓ F′misses — the reading
+matters and we state it rather than leave it implicit.
+Definition 2.1 is the reading their own construction supports. In the proof of [8, Theorem 5.1,
+pp. 106–107], from which Theorem 6.12 is obtained, the members of a minimising sequence are
+made transverse to the frontiers of finitely many balls and the outermost discs so cut off are
+replaced by least area discs with the same boundary; what is manipulated there is a surface
+smooth off a finite union of circles, which is Definition 2.1. That is evidence for the reading, not
+a proof of it: the infimumI is taken overF before any modification, so a strictly largerF would
+lowerI.
+We therefore use (E)(i) withF read as Definition 2.1, and we can say exactly how much of
+the reading is consumed.Notthe minimality: the proof of Lemma 2.6 uses only thatF is closed
+under diffeomorphisms ofM fixing∂Mpointwise and thatF′minimises over it, and both hold
+whatever the term means. What is consumed is the single clause
+the surfaceF′of (E)(i) satisfies Definition 2.1, (3)
+and that clause is the membership assertionof the cited theorem: Hass and Scott conclude
+“there is a surfaceF′inF with areaI”, andF is by their own description a class of piecewise
+smooth surfaces. We are taking a published theorem at its word about the class its output lies in,
+having said what we take the word to mean. If a strictly larger class were intended — one whose
+members are not required to be smooth up to their own boundary — then(3) would not follow
+from their statement and Proposition 2.9 would have nothing to act on. That is the precise
+exposure, it is confined to(3), and everything else in §2.2 is proved from the first variation of
+area and Hopf’s boundary point lemma.
+Two things put(3) in proportion. It asks as little as the method permits: what Proposition 2.9
+needs of the pieces isC1 up to their own boundary, and Definition 2.1 asks exactly that. Beyond
+regularity it asks two normalisations of the stratification — thatΓF′meet λin finitely many
+points rather than running along it, and that no piece end in a cusp. Neither is free, and we
+do not know how to delete either without the existence theorem discussed below: an arc ofΓF′
+lying insideλcannot simply be erased, since the definition would then demand smoothness along
+it. Both are, however, absent from every surface the constructions of [8] manipulate, those being
+smooth off a finite union of circles. And it is strictly weaker than what [16, Corollary A.4] needs,
+whose non-emptiness step, recalled in Remark 2.5, requires the same minimiser to besmoothup
+to ∂M; §2.2 is the passage from the one to the other, so this paper’s exposure is strictly smaller
+than that of the literature it stands on.
+What would remove(3) is not a regularity theorem — that is what §2.2 supplies — but an
+existencetheorem, the one input of this paper asserted in the literature rather than demonstrated
+there or here:
+the infimum of area over the surfaces of Definition 2.1 properly isotopic toF rel
+∂Fis attained within that class. (4)
+Theorem 6.12 of [8] asserts(4), withF so read. Its proof is the sentence on [8, p. 112] that the
+existence results of §§4–5 extend to a manifold with sufficiently convex boundary once Lemmas 6.9
+
+--- PAGE 8 ---
+8 APEX INTELLIGENCE
+and 6.11 replace Lemmas 3.3 and 3.6, together with the record, on the same page, that in those
+applications the1-manifoldΓis empty. WithΓempty the convergence of [ 8, Lemma 6.9] is
+smooth inX\Y with Y all of∂X, so it says nothing at∂M; and the surfaces of §§4–5 are
+closed, so nothing there meets∂Mat all. The membership clause of Theorem 6.12 is therefore,
+as far as we can tell, a statement whose printed proof does not reach it.
+Where a proof would have to push is not, however, the convergence.Thatis already in [8],
+in Lemma 6.9 read with the two faces of a half-ball exchanged from the way they read them.
+TakeX =B(p,ρ)∩Mfor p∈λand putY :=∂B(p,ρ)∩M, strictly convex for smallρ, and
+Y′:=B(p,ρ)∩∂M, so thatΓ := λ∩Xis a compact1-manifold properly embedded inY′. A
+minimising sequence for(4) has afixedintersection with ∂M, namelyΓ, and a varying one
+with the spherical face; so it isY′, notY, that carries the fixed data, which is the assignment
+Lemma 6.9 asks for. Its conclusion is then smooth convergence inX\Y — that is, up to the
+interior ofΓ⊂∂M— to an embedded minimal surface with boundaryIntΓ, the alternative that
+a piece of the limit lies inY′being excluded because a strictly convex∂Mcontains no minimal
+subsurface. Finitely many such half-balls put every point ofλin the interior of someY′.
+What is not available is the other half: that the replacement performed inside such a half-ball
+keeps the surface inF. The replacement substitutes a least area disc for a disc of the surface, and
+the boundary of that disc is a piecewise smooth Jordan curve with two corners, where the arc on
+the spherical face meets the arc on∂M. Whether the least area disc spanning such a curve is
+itself piecewise smooth up to it — a local question about the Plateau problem at a corner — we
+do not know. That, and not the boundary convergence, is what(4) appears to come down to.
+Five ways of getting round the local question, none of which works, are listed in §1.5.
+Two things can be said in its favour. By Proposition 2.9,(4) isequivalentto the assertion
+that the infimum is attained by a smooth embedded minimal surface, so it is a statement of
+a familiar kind and not a technicality about corners. And the degeneration that makes the
+corresponding closed statement fail is excluded here: [8, Theorem 5.1] carries the alternative that
+a one-sided surfaceF′′of areaI/2appears with ∂N(F′′)∈F, and for a knot or link exterior
+that cannot happen, since∂Fwould be the∂I-bundle over∂F′′inside ∂M, forcing on each
+boundary torusTi either λi disconnected, which it is not, or[λi] = 2[c]for an embedded c⊂Ti,
+which is impossible because an embedded essential curve on a torus is primitive.
+Finally, the exposure is confined to §2.2: nothing else in this paper uses (E)(i), and by
+Remark 2.5 what §2.2 proves is in any case contained in the statement of [16, Corollary A.4].
+Theorem 2.3((U): universal disjointness of relative area minimisers).LetE be compact and
+irreducible with the data above.
+(i) Relative least-area incompressible surfacesF1,F2⊂Ewhose proper isotopy classes contain
+disjoint representatives are themselves disjoint, or coincide.
+(ii) If fi :S i →E, i = 1,...,n, are incompressible, pairwise non-isotopic and pairwise
+disjoint, then relative area minimisersgi in the classes of thefi have pairwise disjoint
+images.
+Clause (i) is [16, Theorem 4, p. 885] and clause (ii) is [16, Theorem A.5, p. 899]; the latter
+carries the number12in the author’s preprint, and we cite the journal version throughout. The
+force of (U) is the universal quantifier, which lets minimisers be chosen one class at a time, before
+any pair is examined.
+Theorem 2.4((E): the area infimum is attained).Let F⊂E(K)be properly embedded,
+incompressible,∂F⊂J.
+
+--- PAGE 9 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 9
+(i) (Fixed boundary.)Let F be the set of piecewise smooth surfaces isotopic toF rel∂Fand
+I= inf{Area(G) :G∈F}. Then there isF′∈FwithArea(F′) =I.
+(ii) (Boundary sliding inJ.)The infimum of area over the surfaces properly isotopic toF
+with boundary inJ is attained, and the minimiser is a member ofM([f])in the sense of
+[16, p. 897]: a stable minimal surface lying in the proper isotopy class of a smooth proper
+embeddingf: (S,∂S)→(E(K),∂E(K))with f−1(∂E(K)) = ∂S, whose boundary is a
+parametrised curve ofJ.
+Clause (i) is [8, Theorem 6.12, pp. 112–113], whose hypotheses hold forM =E(K): compact,
+hence homogeneously regular; orientable and irreducible, henceP 2-irreducible; and ∂E(K)
+sufficiently convex in the sense of [8, p. 110], the three conditions there being met by(1), by the
+mean curvature computation above, and by the extension˜E⊃E(K). No passage from a closed
+manifold is involved: Theorem 6.12 is already the theorem for a manifold with boundary and a
+surface with∂F̸=∅, and it is the closed statement that is separate, namely [8, Theorem 5.1,
+p. 106]. Clause (ii) is [16, Theorem 2, p. 885=Corollary A.4, p. 898].
+Here (E) without qualification means clause (ii), because a vertex ofIS(K)is a class in
+which the boundary longitude may move (§3), so the competing class is the sliding one and the
+complexity’s area coordinateA(v)is its infimum.
+Remark2.5 ((E)(ii) already contains (R1)).Read with the definition on [16, p. 897], clause (ii)
+says that the minimiser is the image of asmooth proper embedding(S,∂S)→(E(K),∂E(K))
+whose preimage of ∂E(K)is exactly ∂S. That is smoothness up to ∂E(K)together with
+Σ∩∂E(K) =∂Σ, which is what §2.2 calls (R1). So (R1) is not an extra hypothesis and not a
+gap: it is part of the statement of a published corollary, and every step of this paper is on that
+footing.
+We nevertheless prove (R1) again, independently, in §2.2, and it is worth saying why rather
+than leaving a reader to wonder. Corollary A.4 is deduced from the compactness ofMa([f]), so
+it presupposesM([f])̸=∅, and the non-emptiness is supplied on [16, p. 897] by the sentence
+that there exists a least area surface in{g∈[f] :g|∂S=f|∂S}, “see [8, Theorem 6.12]”, which “is
+necessarily a stable minimal surface”. Theorem 6.12 produces a minimiser in the piecewise smooth
+category and asserts nothing at∂M; treating it as a member ofM(S)is therefore a step that the
+printed proof does not carry out. It is a gap in the literature, not in the corollary’s statement,
+and §2.2 closes it, proving what is missing from (E)(i) alone. A reader who takes Corollary A.4
+as printed may read §2.2 as a redundancy check; a reader who wants the non-emptiness step
+supplied will find it there.
+2.2.Boundary regularity of relative area minimisers.This subsection proves (R1) from
+(E)(i) alone. By Remark 2.5 the statement is already contained in (E)(ii); what is done here
+is to supply the one step behind (E)(ii) that the literature leaves out, so that nothing in this
+paper rests on it. Clause (i) of (E) produces a minimiser only in the piecewise smooth category,
+and what the exchange lemma needs is regularityup to∂E(K), together with the statement
+that the minimiser meets the boundary exactly in its own boundary. That is the content of
+Theorem 2.10, which is what we call (R1). Throughout this subsectionM denotes a compact
+orientableP 2-irreducible Riemannian3-manifold with the collar data(1), andλ⊂∂Ma smooth
+closed1-manifold.
+Throughout, F,F,Iare as in (E)(i) andF′∈Fhas Area(F′) = I. WriteΓ := Γ F′for a
+graph as in Definition 2.1 and call the closures of the components ofF′\Γthepieces; each is a
+compact smooth surface with corners, smoothly embedded up to its own boundary, and part of
+that boundary may lie inλ. The argument uses nothing aboutF′beyond this and its minimality.
+
+--- PAGE 10 ---
+10 APEX INTELLIGENCE
+Lemma 2.6(Stationarity).Let X be a smooth vector field onM with compact support inIntM.
+Then ∑
+P
+∫
+P
+divPXdA= 0,(5)
+the sum being over the piecesPofF ′. Consequently
+(i)every piece is a minimal surface; and
+(ii) along the interior of every arc ofΓthat lies inIntF′, the two sheets ofF′meeting there
+have opposite outward conormals,η1 +η2 = 0.
+Proof. Let{φt}be the flow ofX. Eachφt is a diffeomorphism ofM equal to the identity near
+∂M, soφt(F′)is properly embedded, is piecewise smooth in the sense of Definition 2.1 — that
+definition is invariant under diffeomorphisms ofM, withΓφt(F′) =φt(Γ)— and is isotopic to
+F′rel ∂F′. Henceφt(F′)∈Fand Area(φt(F′))≥I= Area(F′), with equality att = 0; so the
+derivative att = 0vanishes, and that derivative is∑
+P
+∫
+P divPX, the integrand being continuous
+on each piece because the piece isC1 up to its boundary. This is(5). Note which properties
+ofF have been used: only that it is closed under diffeomorphisms ofM fixing∂Mpointwise
+and thatF′minimises area over it. Both hold underanyreading of “piecewise smooth”, so the
+clause discussed in Remark 2.2 is not consumed here.
+For (i), letq∈IntP. SinceF′is compact and embedded there is a ballB⊂IntMabout q
+with F′∩B⊂IntP. ForX supported inB only one term survives in(5), and the divergence
+theorem on the smooth surfaceIntP turns it into−
+∫
+P⟨HP,X⟩= 0; asX is arbitrary,HP = 0
+nearq.
+For (ii), letq be an interior point of an arce⊂Γ∩IntF′. The surfaceF′is a disc nearq and
+e is an embedded arc in it, soe separates that disc into exactly two sheets, lying in piecesP1,P2;
+and there is a ballB⊂IntMabout q with F′∩Bcontained in their union. FixX supported
+in B and exhaust eachPi by compact subsurfacesPδ
+i ⊂IntPi with ∂Pδ
+i →∂Pi in C1. Since
+HPi = 0by (i), the divergence theorem gives
+∫
+Pδ
+i
+divPiX =
+∫
+∂Pδ
+i
+⟨ηi,X⟩; both sides converge
+as δ→0, the left because the integrand is continuous onPi and the right becauseηi extends
+continuously to∂Pi, the piece beingC1 up to its boundary. So(5) becomes
+∫
+e∩B⟨η1 +η2,X⟩= 0
+for every suchX, whenceη1 +η2 = 0one∩B.□
+Lemma 2.7(Sheets with opposite conormals glue smoothly).LetP1,P2⊂Mbe smooth minimal
+surfaces with boundary, meeting along a common boundary arce and otherwise disjoint near an
+interior pointq of e, and suppose their outward conormals satisfyη1 +η2 = 0along e. Then
+P1∪P2 is a smooth minimal surface nearq.
+Proof. At each point ofe the vectorsη1,η2 are unit, orthogonal to the tangent ofe, and tangent
+to P1,P2 respectively; η2 =−η1 therefore givesTP 1 = span( ˙e,η1) = span( ˙e,η2) =TP 2 along e.
+SoP 1 andP 2 have a common tangent planeTat each point ofenearq.
+Choose coordinates nearq with T ={y= 0}. For a small enough neighbourhood,P1 and P2
+are graphsy =u1,y =u2 over the two closed sides of the projection ofe in{y= 0}, andu1 =u2
+and Du1 =Du2 on that projection; so the functionu equal toui on theith side isC1 on a full
+discD. Write the minimal surface equation for a graph in the ambient metric in divergence form,
+∂i
+(
+ai(x,u,Du)
+)
++b(x,u,Du) = 0, witha and b smooth and the equation uniformly elliptic on
+bounded gradients. Eachui solves it classically on its own side; for a test functionφsupported
+in D, integrating by parts on each side produces two interface integrals ofai(x,u,Du)νiφalong
+the projection ofe, and these cancel becauseDu is continuous across it andν1 =−ν2. Henceu
+is a Lipschitz weak solution on all ofD.
+
+--- PAGE 11 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 11
+Interior regularity for quasilinear divergence-form elliptic equations now applies: difference
+quotients ofu solve linear divergence-form equations with bounded measurable uniformly elliptic
+coefficients, so De Giorgi–Nash–Moser givesDu∈C0,α, after which the coefficientsai(x,u,Du)
+are C0,αand Schauder bootstrapping givesu∈C∞; see [7, 2nd ed., Chs. 6 and 8]. SoP1∪P2 is
+a smooth surface nearq, and it is minimal becauseusolves the equation.□
+Lemma 2.8(Hopf at a boundary point).Let p∈∂M, letT⊂TpM be a plane, letU⊂Tbe a
+closed circular sector with vertex0and opening angle at leastπ, and letW be the graph over
+U∩Bδ(0)of a C1 map into the orthogonal complement ofT which vanishes to first order at0;
+so p∈Wand TpW =T. Assume thatW⊂M, thatW is a minimal surface over the interior
+of U, and thatW meets∂Monly over∂U— over one edge, say, or over the vertex alone. Then
+drp|T̸= 0,equivalentlyT̸=Tp∂M.
+Proof. Put u :=r◦Φon U∩Bδ(0), whereΦis the graph map. Since W⊂M={r≥0}we
+have u≥0; u vanishes at0and, by hypothesis, nowhere on IntU, sou >0there; and u is
+smooth overIntUandC 1 up to0.
+For a minimal surfaceWand a smooth functionr,
+∆ Wu= tr W Hessr+⟨gradr,H⟩= trW Hessr,
+H vanishing. In the collarHessr =φφ′g∂M≤0on vectors tangent to the level sets ofr, by(2),
+while Hessr (∂r,·) = 0because r is a geodesic coordinate; soHessr≤0as a quadratic form and
+∆ Wu≤0. Read in the coordinates ofU, the operator∆ W is uniformly elliptic with continuous
+coefficients and no zeroth-order term, so−uis a subsolution.
+The opening angle ofU is at leastπ, so there is an open discB⊂IntUwith0 ∈∂B. OnB
+we have−u <0 =−u(0), the interior sphere condition holds at0trivially, and the outward
+normal derivative exists becauseu is C1 up to0. Hopf’s boundary point lemma [7, 2nd ed.,
+Lemma 3.4, p. 34] gives∂ν(−u)(0)> 0, that is∂νu(0)< 0for the outwardν. The differential of
+Φat0is the inclusionT ↪→TpM, so∂νu(0) =dr p(ν), whencedrp|T̸= 0.□
+The lemma consumes less convexity than the divergence-form comparison it replaces: only
+Hessr≤0, that isφ′≤0in (1), and not the strict positivity of the mean curvature of∂M. It is
+used twice below, once inside Proposition 2.9 and once, in the simplest caseU a half-plane, as
+the whole of Lemma 2.11.
+Nothing else is needed. In particular the argument below never comparesF′with a least area
+disc, never leaves the piecewise smooth category, and uses no result of [8] beyond the existence
+statement (E)(i) itself.
+Proposition 2.9(Minimisers with fixed boundary are smooth up to∂M).Let F,F,I,F′be as
+at the start of this subsection. ThenF′is a smooth embedded minimal surface, smooth up to
+∂M, withF′∩∂M=∂F′=λ; andF′is stable.
+Proof. By clause (i) of Lemma 2.6 every piece is a minimal surface, and by clause (ii) of that
+lemma together with Lemma 2.7 the surfaceF′is smooth and minimal near every interior point
+of every arc ofΓlying in IntF′. Three things remain: the vertices ofΓin IntF′, the points ofλ,
+and stability.
+Vertices in the interior.Letq be a vertex ofΓin IntF′. Finitely many arcs ofΓemanate
+from q and cut a disc neighbourhoodN of q in F′into closed sectorsS1,...,Sm in cyclic order,
+each contained in a piece, hence minimal and smoothly embedded up to its own boundary, in
+particular up toq. Along the interior of each shared arc the two adjacent sectors have the same
+
+--- PAGE 12 ---
+12 APEX INTELLIGENCE
+tangent plane, by the previous paragraph; and the tangent plane of a sector extends continuously
+toq. So all theS i have one and the same tangent planeTatq.
+Take coordinates withq = 0and T ={y= 0}, and shrinkN so that eachSi is the graph of a
+C1 function over a closed sectorΣi⊂Twith vertex0and opening angle θi, theΣ i consecutive.
+Here θi∈(0,2π), the two boundary arcs ofSi having distinct tangent rays atq by the corner
+clause of Definition 2.1; no boundθi < πis available, and none is used. Letπdenote the
+orthogonal projection ontoT. Then πcarries N\{q}onto a punctured discDε\{0}as a
+covering map of some degreek, with2πk=∑
+iθi. Over each point ofDε\{0}the k preimages
+are distinct points of the embedded surfaceF′, hence have pairwise distinct heights; the heights
+depend continuously on the point and never coincide, so they order the sheets consistently and
+the covering is trivial. ButN\{q}, a disc minus an interior point, is connected. Hencek= 1.
+SoN is the graph of a functionu overDε. It isC1, the sectors having matching tangent planes
+along the arcs; it is smooth off the arcs; and it is a weak solution of the minimal surface equation
+on Dε\{0}, the interface terms cancelling as in the proof of Lemma 2.7. It is then a weak
+solution on all ofDε: cutting a test function off at radiusδabout0changes the weak formulation
+by at mostCδ−1·πδ2→0, u being Lipschitz. By the regularity quoted in Lemma 2.7,u is
+smooth. SoF ′is smooth nearq, andF′is a smooth minimal surface on all ofIntF′.
+Points ofλ.SinceΓis properly embedded, a point p∈λeither lies offΓor is one of the
+finitely many endpoints of arcs ofΓon λ. In the first case some relative neighbourhood ofp
+missesΓaltogether, so lies in F′\Γ, which by Definition 2.1 is a smooth submanifold ofM —
+smooth, that is, up to∂Mand including its boundary points — andF′is smooth up to∂Mat
+p. (The clause about the pieces would give onlyC1 here, which is why it is not the clause used.)
+So only the finitely many endpoints remain; fix such ap.
+Those arcs cut a half-disc neighbourhoodN of p in F′into closed sectorsS0,...,Sm, where
+S0 and Sm carry the two arcsℓ0,ℓm into whichλis divided atp. Exactly as in the interior case,
+all theSi share a tangent planeT at p; take coordinates withp = 0, T ={y= 0}, writeΣ i⊂T
+for the tangent sector ofSi, of angleθi∈(0,2π)as before, and putΘ := ∑
+iθi. The extreme
+edges ofΣ 0 andΣ m are the two tangent rays ofλatp, which are opposite; hence
+Θ≡π(mod 2π),and in particularΘ≥π.(6)
+What is wanted is a sector of opening angle in[π,2π)over which F′is a graph. Letj be
+least withΘ j :=θ0 +···+θj≥π; such aj exists by(6). IfΘ j < 2π, putU := Σ 0∪···∪Σj
+and W := S0∪···∪Sj. If insteadΘ j≥2πthen j≥1, sinceθ0 < 2π, andΘ j−1< πby the
+minimality ofj, so that the single angleθj already exceedsπ; putU:= Σj andW:=S j.
+Either wayU is a sector of opening angle in[π,2π)and W is aC1 graph over it;W lies in
+M; it is minimal overIntU, by the previous step; andW meets ∂Monly over∂U, because
+F′∩∂M=λby properness whileλ∩N=ℓ0∪ℓm, andℓ0,ℓm are the extreme edges, carried by
+S0 andS m. Lemma 2.8 applies and givesdrp|T̸= 0.
+Nowlet v beaunitvectortangentat ptooneofthesectors. Thatsectoris C1 atpandcontained
+in M ={r≥0}, so its points at parametert in the directionv haver = tdrp(v) +o(t)≥0,
+forcingdrp(v)≥0. The sectors are in cyclic order aboutp and consecutive ones share an edge, so
+the set of suchv is the image in the unit circle ofT of an interval of lengthΘ, swept monotonically
+from the tangent ray ofℓ0; and it lies in the closed half-circle{drp≥0}, whose length isπ
+because drp|T̸= 0. WereΘ ≥2πthat sweep would cover the whole circle, which no half-circle
+contains; soΘ < 2π, the sweep is injective, its image is an arc of angular lengthΘ, andΘ≤π.
+With (6),Θ = π. In particular eachθi < πafter all; that bound is a conclusion here, not a
+hypothesis, which is why the selection ofUabove could not be allowed to use it.
+
+--- PAGE 13 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 13
+So theΣ i tile a half-discH⊂Tand N is the graph of a functionu overH. It isC1 on H
+and, by the previous step and the cancellation of the interface terms as in Lemma 2.7, a weak
+solution of the minimal surface equation onIntH. The curved side of∂His the projection
+of λ, a smooth curve, so near0the domain H has smooth boundary; and thereu takes the
+boundary values given byλitself, which are smooth. Boundary regularity for the Dirichlet
+problem now finishes: aC0,1weak solution of a quasilinear divergence-form elliptic equation with
+smooth data on a smooth boundary portion isC1,αup to that portion by the boundary form of
+De Giorgi–Nash–Moser, and thenC∞up to it by boundary Schauder estimates; see [7, 2nd ed.,
+Chs. 6 and 8]. HenceF′is a smoothly embedded surface with boundary up to∂Mnearp.
+It is worth recording that this last step, and not a matching of jets, is what lets Definition 2.1
+ask onlyC 1 of the pieces.
+Globally and stability.The two steps give a smooth structure near every point of the compact
+setF′, soF′is a smooth embedded minimal surface, smooth up to∂M; andF′∩∂M=∂F′=λ
+is part of the hypothesis thatF′is properly embedded, which is the membership condition of
+F. FinallyF′has least area among the piecewise smooth surfaces isotopic to it rel∂F′, so all
+nearby normal deformations fixing the boundary increase area:F′is stable.□
+Theorem 2.10((R1): boundary regularity of relative minimisers).LetF⊂E(K)be properly
+embedded, incompressible and piecewise smooth with∂Fa leaf ofJ, and let
+A:= inf
+{
+Area(G) :Gpiecewise smooth and properly embedded,
+properly isotopic toF, ∂G⊂J
+}
+.
+Then there is a surfaceΣproperly isotopic toF, with∂Σa leaf of J and Area(Σ) = A, which is
+the image of a smooth proper embedding. In particularΣis a stable minimal surface, for some
+ρ>0the setΣ ∩{0≤r≤ρ}is an embedded smooth surface with boundary up to{r= 0}, and
+Σ∩∂E(K) =∂Σ.
+Proof. Let Gi be a minimising sequence forA. EachGi is properly embedded, piecewise smooth,
+incompressible — incompressibility being invariant under isotopy — with∂Gi a leaf ofJ. Apply
+(E)(i) toGi to obtainF′
+i of least areaI(Gi)in the class F(Gi)of piecewise smooth surfaces
+isotopic toGi rel ∂Gi, and apply Proposition 2.9 to it. ThenF′
+i is a smooth embedded stable
+minimal surface, smooth up to∂E(K), withF′
+i∩∂E(K) = ∂F′
+i = ∂Gi a leaf ofJ; andF′
+i is
+properly isotopic toF, so that
+A≤Area(F′
+i) =I(G i)≤Area(Gi)−→A.
+In particular eachF′
+i is a smooth proper embedding of the compact connected surfaceS underlying
+F, whose preimage of∂E(K)is the whole of ∂S, whose image is incompressible, and whose
+boundary is a curve ofJ. In the notation of [16, p. 897], recalled in the proof of Lemma 4.2, this
+says exactly thatF′
+i∈M(S), andArea(F′
+i)≤a:=A+ 1for largeiputs it inM a.
+Membership inM(S)has two requirements, and it is worth naming them separately. The
+first is thatF′
+i be a smooth proper embedding, which is Proposition 2.9 and is the whole point
+of §2.2. The second is stability, and for Kapovich this means stability under variations fixing
+the boundary: it is the fixed-boundary least area surface of [8, Theorem 6.12] that he calls
+“necessarily a stable minimal surface” [16, p. 897], and the proof of [16, Proposition A.1] uses
+stability only through Schoen’s interior estimates at finitely many interior points. Having least
+area rel∂F′
+i,F ′
+i is stable in that sense.
+By [16, Corollary A.3, p. 898] the spaceMa is the disjoint union of finitely many open and
+closed subsets, each consisting of mutually isotopic surfaces; so after passing to a subsequence
+all theF′
+i lie in one such subsetN. By [16, Proposition A.1, p. 897] the spaceMa is compact,
+
+--- PAGE 14 ---
+14 APEX INTELLIGENCE
+so after a further subsequenceF′
+i→Σin the C1 topology withΣ ∈Ma; andN being closed,
+Σ∈N, soΣis isotopic to the F′
+i and hence properly isotopic toF. Area is continuous in the
+C1 topology, soArea(Σ) = lim Area(F′
+i) =A. Membership inM(S)means thatΣis a stable
+minimal surface which is the image of a smooth proper embeddingf: (S,∂S)→(E(K),∂E(K))
+withf−1(∂E(K)) =∂Sandf|∂Sa parametrised curve ofJ. This is smoothness up to∂E(K)in
+a collar, together withΣ∩∂E(K) =∂Σ.□
+Nothing in the proof used that∂E(K)is connected, or thatS has a single boundary circle:
+Kapovich’s standing hypothesis [16, p. 897] is thatf−1(∂iM)be a single component of∂Sfor
+each boundary component∂iM of M, which is what a spanning surface for ann-component link
+satisfies. Theorem 2.10 therefore holds verbatim in then-component setting used in §8.4, and we
+refer to that case as then-component form of (R1).
+Lemma 2.11((R2): transversality along the boundary).LetΣbe as in Theorem 2.10. Then
+TpΣ ̸= Tp∂E(K)for every p∈∂Σ; that is,Σmeets ∂E(K)transversally along ∂Σ, and is
+therefore neatly embedded.
+Proof. This is Lemma 2.8 in its simplest case. By Theorem 2.10,Σis a smooth surface with
+boundary, smooth up to∂E(K), withΣ ∩∂E(K) = ∂Σ. Let p∈∂Σand T := TpΣ. In a
+boundary chart atp the surfaceΣis the graph over a half-discU⊂T, of opening angleπand
+with p on its straight edge, of a smooth map vanishing to first order atp; the graph lies in
+E(K), is minimal, and meets∂E(K)exactly in the image of that straight edge. Lemma 2.8 gives
+drp|T̸= 0, that isTpΣ̸=Tp∂E(K).□
+Remark2.12.The proof consumes only Hessr≤0, that isφ′≤0in (1), and not the strict
+positivity of the mean curvature of∂E(K)that an earlier version of this argument used through
+a divergence-form comparison and an explicit annular barrier. With Lemma 2.8 in hand that
+machinery is not needed, and §2 no longer uses the theory of weak solutions of [7, Ch. 8] at all;
+Chapter 8 returns only in §5, where the operator is genuinely a linearisation with a zeroth-order
+term of uncontrolled sign.
+Remark2.13 (The route through least areamaps).One could instead minimise over thehomotopy
+class rel∂F, using [8, Theorem 6.13, p. 113], which asserts a least areasmooth immersionin that
+class; make it an embedding by the results of [6]; and return to the isotopy class by the rigidity
+theorem of [18], whose hypothesis of∂-incompressibility is Lemma 3.1′. That would dispense
+with §2.2 altogether. We have not taken it, because both analytic steps are weaker than the
+ones they replace. Theorem 6.13 is stated without proof, with the remark that “a version of” it
+“was proved by Lemaire”, and its content at∂Fis precisely the boundary regularity that §2.2
+establishes. The theorems of [6] are proved forclosedsurfaces; the bounded case is discussed in
+their §7, which opens by isolating anExistence Statement7.3 of which the authors write, on
+[6, p. 636], “Presumably, the statement we give below can be proved ...but we have not done
+this”, and then that “on the assumption that this statement holds” the earlier sections extend.
+So the alternative would trade the single dependency of Remark 2.2 for an unproved regularity
+assertion and a result its authors state they did not write.
+3.The Kakimizu complex
+3.1.Surfaces, vertices, simplices.Aknotis a smooth oriented embedding K ↪→S3. Choose
+an open tubular neighbourhoodN(K)and write E(K) =S3\IntN (K)for the compactexterior;
+its boundary is a torus. Thepreferred longitudeis the oriented slope on∂E(K)whose linking
+number withK is zero. ASeifert surface in the exterioris a compact, connected, orientable,
+
+--- PAGE 15 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 15
+neatly embedded surfaceS⊂E(K)whose oriented boundary is a preferred longitude; sinceS is
+connected with a single boundary component,
+χ(S) = 1−2g(S),(7)
+and g(K) = min{g(S)}. Acompressing discfor S is an embedded disc D⊂E(K)with
+D∩S= ∂Dsuch that∂Dis essential onS; if none exists,S isincompressible.Boundary
+incompressibility is not required, and no step below uses it; see §3.2.
+Anambient isotopyis a smooth family of diffeomorphismsHt :E (K)→E(K)with H0 = id;
+anormal isotopyis a smooth family ft :S→E(K)of neat embeddings. Two surfaces determine
+the same vertex if and only if they are ambient isotopic inE(K). The boundary longitude is
+allowed to move on the boundary torus: the isotopy is not required to fix any chosen boundary
+curve pointwise. That an ambient isotopy restricts to a normal isotopy is immediate; the converse
+is Lemma 3.9, so on Seifert surfaces the two equivalence relations agree, and the relative area
+minimisation of §2, which is performed in a normal isotopy class, computes an invariant of a
+vertex.
+The exterior is irreducible [12, p. 228]; this is used in Lemma 3.7.
+Definition 3.1.The vertices of IS(K)are the ambient isotopy classes of incompressible Seifert
+surfaces inE(K). A finite set of pairwise distinct vertices spans a simplex if and only if its
+classes admitsimultaneouslypairwise disjoint representatives. For an integerℓ≥g(K),
+ISℓ(K) = IS(K)
+[
+{[S] :g(S)≤ℓ}
+]
+is thefullsubcomplex on the vertices of genus at mostℓ; in particularISg(K)(K) = MS(K)is the
+minimal-genus complex. We writedist(u,w)for the graph distance in the1-skeleton. A complex
+isflagif every finite clique in its1-skeleton spans a simplex.
+Two notions of disjointness must be kept apart. Anedgespeaks only of a single pair of vertices,
+and different edges may use mutually incompatible representatives; asimplex of dimension at
+least2requires representatives chosen once and for all that are pairwise disjoint as a family. The
+passage from the former to the latter is Proposition 3.3, whose proof uses (E) and (U); it is never
+implicit.
+Finally, dist is not merely a graph metric but Kakimizu’s own distance: by [12, Proposi-
+tion 3.1(1), p. 231] the minimum length of an edge path inIS(L)between two classes equals the
+distance d obtained by counting lifts to the infinite cyclic cover. We use this in §5, where the
+hypothesis of the exchange lemma isdist(u,w) = 2and what the construction is handed is a
+pair of surfaces at Kakimizu distance2. The statement is strictly stronger than connectedness
+and does not appear in version 1 of this work.
+3.2.Whichdefinitionstheseare.ThreeconventionshavetobepinneddownbeforeKakimizu’s
+theorems may be quoted, because the literature does not agree on them.
+Vertices.We use Kakimizu’s definition, not the paraphrase of it that has entered the literature.
+A spanning surface for a linkL is, in [12, p. 225], a surfaceS = Σ∩E(L)withΣoriented in S3,
+∂Σ = L,Σhaving no closed component andpossibly disconnected, andΣ ∩N(L)a collar of ∂Σ;
+it is incompressible ifeach componentis incompressible inE(L). In particular∂-incompressibility
+is not required. Przytycki and Schultens describe the same complex as having for vertices the
+classes of surfaces “incompressible and∂-incompressible” [15]; that description adds a condition
+which is not in [12], and a manuscript which inherits it owes a lemma identifying the two vertex
+sets. We do not impose it, so the vertex set of Definition 3.1 is Kakimizu’s on the nose; and the
+condition is in any case automatic, which we record now, both because it settles the discrepancy
+and because it is the hypothesis under which the rigidity theorems of [18] are stated.
+
+--- PAGE 16 ---
+16 APEX INTELLIGENCE
+Lemma 3.1′(Incompressible spanning surfaces are∂-incompressible).Let L be a link inS3 and
+letΣ ⊂E(L)be an incompressible spanning surface, neatly embedded, with∂Σthe union of the
+longitudes. ThenΣis ∂-incompressible: there is no embedded discD⊂E(L)with D∩Σ = a
+and D∩∂E(L) =b, where∂D=a∪band a is an arc which is essential inΣ, that is, which does
+not cut a disc offΣtogether with an arc of∂Σ. For n = 1this says that every incompressible
+Seifert surface in a knot exterior is∂-incompressible.
+Proof. Suppose such aD exists. Since D∩Σ = a and λ:= Σ ∩∂E(L) = ∂Σlies inΣ, the
+interior ofb misses λ; sob is an arc properly embedded in the surface obtained by cutting∂E(L)
+along λ, and both endpoints ofb lie on the same torusTi, on which the cut yields an annulusAi
+with boundary circlesλ+
+i ,λ−
+i , the two sides ofλi in Ti. A properly embedded arc in an annulus
+either has both endpoints on the same boundary circle, and is then∂-parallel, or joins the two.
+Both endpoints on the same circle.Thenb together with an arcλ0⊂λi bounds a disc∆ ⊂Ai,
+so Int ∆∩λ=∅. NowD∪∆is an embedded disc, the two meeting exactly inb, its boundary
+is the closed curvea∪λ0⊂Σ, and its interior missesΣ; pushing∆off ∂E(L)makes it a
+disc meetingΣexactly in its boundary. If a∪λ0 is essential inΣthis is a compressing disc,
+contradicting incompressibility. If it is inessential it bounds a disc inΣ, soa cuts a disc offΣ
+together with an arc of∂Σand was not essential.
+Endpoints on the two different circles.Near a point of λi the pair( E(L),Σ)is the pair
+({z≥0},{x= 0,z≥0}), so the two sides ofλi in Ti are the traces of the two sides ofΣ.
+Perturb∂Dby pushinga offΣto the side on which D lies. The interior ofb missesΣ, since
+b⊂∂E(L)andΣ ∩∂E(L) =λ, so the resulting closed curve meetsΣonly near the two endpoints
+of b; and at such an endpoint it crosses or does not according asb leaves the endpoint on the
+far side ofΣfrom D or on the near one. In the case at handb leaves its two endpoints on
+opposite sides, so exactly one of them is the far side and there is exactly one crossing. Hence the
+algebraic intersection number of∂DwithΣis ±1. ButΣis Poincaré dual to the total linking
+homomorphism φ:H1(E(L))→Z, γ↦→lk(γ,L), which is the homomorphism of §8.3 — nothing
+proved there is needed here, the duality holding for any spanning surface of any link by a count of
+meridians. So that number isφ(∂D), which vanishes because∂Dbounds the discD inE(L). □
+The only remaining discrepancy, connectedness, is vacuous for a knot: a spanning surface
+for a knot has no closed component and exactly one boundary circle, hence is connected, so
+“connected and incompressible” and “incompressible componentwise” select the same surfaces.
+Non-splitness.Kakimizu’s Theorem A is stated for a non-split oriented link, and the hypothesis
+is used, not decorative: it is what makesE(L)irreducible. For a knot it is vacuous. It returns in
+Theorem D, where it is assumed.
+Edges.Kakimizu spans an edge on two classes with disjoint representatives [12, 1.3(b), p. 227];
+Przytycki and Schultens instead require Kakimizu distance one, and point out that the two
+conditions differ for links, precisely because spanning surfaces there are allowed to be disconnected.
+We use the disjointness convention, as in Definition 3.1. For a knot the two agree, since spanning
+surfaces are then connected, so the discrepancy is vacuous here; for Theorem D it is neutralised
+by the linking condition, which forces every spanning surface to be connected.
+3.3.Connectedness, flagness, non-emptiness.
+Proposition 3.2(Connectedness). IS(unknot)is a single point. For every non-trivial knotK,
+the complexIS(K)is connected.
+Proof. The exterior of the unknot is a solid torusV, the complementary handlebody of a genus-
+one Heegaard splitting ofS3, and the preferred longitude is a meridian ofV. If S⊂Vis an
+
+--- PAGE 17 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 17
+incompressible Seifert surface thenπ1(S)→π1(V )∼= Z is injective, since an essential circle of
+S that died inV would, after innermost-circle and outermost-arc surgery on a null-homotopy
+in general position, bound a compressing disc. A free group of rank2g(S)≥2does not embed
+in Z, sog(S) = 0and S is a meridian disc; two meridian discs may be isotoped to share their
+boundary, made disjoint by innermost-circle surgery, and then the sphere they assemble bounds a
+ball by Alexander–Schoenflies, which isotopes one to the other. For non-trivialK the statement
+is [12, Theorem A, p. 226], quoted in §1.□
+The engine behind that theorem is [12, Theorem 2.1, p. 228], whose proof splits on p. 229
+into a minimal-genus case and an incompressible case; it is the second that we need. Nothing
+is claimed here about the connectedness of a truncationISℓ(K). That is proved in §8, as part
+of Theorem C and by way of Corollary 6.7; the implication runs from the global statement to
+the truncations and never in the reverse direction, and an independent source is recorded in
+Remark 8.1.
+Proposition 3.3(Flagness).IS(K)is flag, and hence so is every full subcomplexISℓ(K).
+Proof. Let{v1,...,vn}be a clique in the1-skeleton. Its vertices are distinct, so the corresponding
+surfaces are pairwise non-isotopic and all incompressible. By (E) fix, once and for all and one
+class at a time, a relative area minimiserAi in the classvi. Leti̸=j. Since{vi,vj}is an edge,
+the two classes contain disjoint representatives, so Theorem 2.3(i) applies to the pairAi,Aj
+and yields that they are disjoint or coincide; andvi̸= vj excludes coincidence. TheAi were
+fixed before any pair was examined and do not depend on(i,j), so{A1,...,An}is a family of
+simultaneouslypairwise disjoint representatives, which is the simplex required. Fullness makes
+the truncations retain the same simplices.□
+The proof consumes only the two-surface clause of (U); then-surface clause is not needed,
+because the choice made in advance already converts pairwise information into simultaneous
+information. Flagness is therefore conditional on two citations and on no hypothesis. The same
+mechanism, applied to a vertex and two of its neighbours, is what the exchange lemma is handed,
+and we isolate it here because it is the exact point at which the argument for links breaks.
+Proposition 3.4(Disjointness from two neighbours at once).Letu,wbe vertices ofIS(K)with
+dist(u,w) = 2, letx∈I(u,w)be a common neighbour, and letS+∈u, S−∈wand S∈xbe
+relative area minimisers supplied by(E), chosen one class at a time. Then
+S∩(S+∪S−) =∅.
+Proof. Sincex andu are adjacent, their classes contain disjoint representatives, so Theorem 2.3(i)
+applies toS and S+: they are disjoint or they coincide. A Seifert surface for a knot is connected,
+so “coincide” means thatS and S+ are equal as sets and hence thatx =u, which is excluded.
+Therefore S∩S+ =∅, and the same argument on the edge{x,w}givesS∩S−=∅. The three
+minimisers were fixed before any pair was examined, so the two conclusions hold for one and the
+sameS. □
+The step that fails for a general link is the sentence beginning “A Seifert surface for a knot is
+connected”. For a link, Kakimizu’s spanning surfaces may be disconnected, Theorem 2.3(i) then
+yields only that each component ofS is disjoint from or equal to a component ofS+, and two
+distinct vertices may share a component; the intersectionS∩S+ need not be empty. This is the
+obstruction analysed in §8.4, and the linking condition of Theorem D removes it by forcing every
+spanning surface to be connected.
+
+--- PAGE 18 ---
+18 APEX INTELLIGENCE
+Proposition 3.5(Non-emptiness). IS(K)̸=∅for every knotK, and ISℓ(K)̸=∅for every
+integerℓ≥g(K).
+Proof. Seifert’s algorithm, applied to a regular diagram ofK, produces a compact connected
+oriented surfaceS0⊂S3 with∂S0 =K; made transverse toN(K), it meets it in an annulus, and
+S =S0∩E(K)is a Seifert surface in the exterior; connectedness ofS0 is part of the definition
+over which the existence statement quantifies [11, Definition 2.1 and Theorem 2.2, pp. 15–16]. If
+S is incompressible then[S]is a vertex. Otherwise compress and keep the component carrying
+the longitudinal boundary; by Lemma 3.6 each such step strictly lowers the genus, so after finitely
+many steps the process stops at an incompressible Seifert surface. For the truncations, a Seifert
+surface of least genus is incompressible, since a compression would produce one of smaller genus,
+so it is a vertex of genusg(K)and lies in everyISℓ(K)withℓ≥g(K).□
+3.4.Compression and the robustness of neighbours.Throughout this subsectionA and
+B are transverse, neatly embedded compact surfaces. Cutting both alongA∩B, the resulting
+components are calledpatchesand the intersection curves and arcs duplicated on their boundaries
+are calledexchange seams; adisc patchis a disc component of the result, never a component of a
+set-theoretic symmetric difference. This is the vocabulary of §5.
+Lemma 3.6(Euler characteristic and compression).Let A,Bbe compact and transverse. Cut
+along A∩Band reglue by the orientation-compatible normal exchange, and letPtot be the union
+of the output components. Thenχ(Ptot) =χ(A) +χ(B), so that ifPtot =P⊔C1⊔···⊔Cm then
+χ(P) =χ(A) +χ(B)−
+∑
+j
+χ(Cj).(8)
+Moreover, compressing a connected Seifert surface along an essential circle and keeping the
+component that carries the longitudinal boundary strictly lowers the genus; iterating therefore
+terminates at an incompressible Seifert surface.
+Proof. TriangulateA∪Bso that each intersection curve is a subcomplex. Cutting duplicates
+exactly the cells of the intersection trace and the normal regluing identifies the same cells again,
+so the Euler correction is the same before and after the exchange; additivity over components
+gives (8). For the second statement: compressing along a non-separating circle removes a handle
+and keeps the unique boundary component, so the genus drops by one; compressing along a
+separating essential circle discards a closed side, which has positive genus since otherwise the
+circle would bound a disc, and this again lowers the genus of the component with boundary. The
+genus is a non-negative integer, so the process is finite, and it stops only where no compression is
+available. □
+Lemma 3.7(Prescribed compressions performed away from a fixed neighbour).LetM be an
+irreducible orientable3-manifold, let P⊂Mbe connected, neatly embedded, with non-empty
+boundary, and letQ⊂Mbe incompressible, neatly embedded and disjoint fromP. Given any
+finite compression sequence forP, each step keeping the component with boundary, there is a
+compression sequence whose intermediate and final ambient isotopy classes agree with the given
+ones one by one and all of whose discs are disjoint fromQ. In particular the final surface has a
+representative disjoint fromQ.
+Proof. It suffices to clean a single prescribed compressing discD and then induct along the
+sequence, transporting the next prescribed disc to the current representative at each step. Put
+D transverse toQ. As ∂D⊂Pand P∩Q=∅, the intersectionD∩Qconsists of circles.
+Each is null-homotopic inM, being the boundary of a subdisc ofD, hence null-homotopic in
+Q by incompressibility, hence bounds a disc inQ; choose such a discE⊂Qinnermost, so
+
+--- PAGE 19 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 19
+IntE∩D=∅. Its boundary circle bounds inD a unique subdiscF not containing∂D, and
+E∪Fis a sphere with a corner along that circle; rounding the corner by the qualitative part of
+Lemma 5.1, at a width small enough that the tube missesP, gives a smoothly embedded sphere,
+and by irreducibility it bounds a ballB. By clause (5) of that lemma the rounding does not
+change the region bounded, up to the tube; soB agrees off the tube with the region bounded
+byE∪F, and we use it in that form below. That sphere is disjoint fromP, sinceBlies in the
+interior ofM while P is connected with its boundary on∂M. PushingF across B to a parallel
+copy ofE is an isotopy ofD rel ∂Dthrough compressing discs, keeps the disc interiors offP,
+and removes that circle together with every intersection circle insideF. Repeating producesD′
+disjoint fromQ and isotopic toD rel boundary, so compressing alongD′gives a surface ambient
+isotopic to the one obtained by compressing alongD. The component with boundary remains
+disjoint fromQ and furnishes the input for the next step; the discarded closed components play
+no role. □
+Corollary 3.8(Robustness of neighbours).Let P be connected, neatly embedded, with non-
+empty boundary and disjoint from an incompressible surfaceQ. Theneveryambient isotopy class
+obtained by compressingP down to an incompressible descendant with boundary is, inIS(K),
+equal or adjacent to[Q].
+Proof. Apply Lemma 3.7 to the chosen compression sequence; its final representative is disjoint
+from Q. If the two classes coincide they are equal, and otherwise their disjoint representatives
+span an edge. □
+3.5.Normal isotopies are ambient.
+Lemma 3.9(Isotopy extension; [19, Theorem 2.4.6, p. 52]).LetM and F be compact smooth
+manifolds with boundary and letf:F×[0,1]→Mbe a smooth isotopy through neat embeddings,
+that is,f−1
+t (∂M) =∂Fand ft(F)meets ∂Mtransversally along its boundary. Then there is a
+smooth ambient isotopyHt :M→MwithH 0 = idM andH t◦f0 =f t for allt.
+Wall’s hypotheses are compactness ofF and neatness of the embeddings; there is no orientability
+hypothesis and no dimension condition relatingF to M, and the ambient isotopy is covered by a
+diffeotopy ofM, which is what we use.
+TakingM =E(K), which is compact with boundary, andF a Seifert surface, every normal
+isotopy is a smooth family of neat embeddings, so the lemma applies: a normal isotopy class, as
+used in relative area minimisation, is exactly an ambient isotopy vertex.
+Remark3.10 (No silent strengthening).The ambient isotopy produced above preserves∂E(K)
+setwise, and the longitudinal boundary curve is allowed to move. Strengthening this to “fixing
+the boundary pointwise” would make the statement false: onM = S1×[0,1]the rotational
+isotopy of the boundary is realised by no ambient isotopy fixing the boundary pointwise. In
+citations, and in formalisation, this must be written setwise.
+4.Complexity and the frontier construction
+Two things are assembled here. The first is the complexity function that will be fed to
+Definition 6.1, together with the one fact about it that is not formal, namely that the set of
+values it attains is well-ordered. The second is the cyclic-cover construction which, given a vertex
+and two of its neighbours, manufactures the pair of candidate surfaces on which §5 operates.
+
+--- PAGE 20 ---
+20 APEX INTELLIGENCE
+4.1.The complexity.
+Definition 4.1(Complexity).Let v be a vertex ofIS(K). Write g(v)for the genus of any
+representative, which by (7) is determined byv, and
+A(v) := inf
+{
+Area(F) :F∈v, ∂F⊂J
+}
+,
+the infimum of area over the surfaces in the class with boundary on a leaf of the longitudinal
+foliation. Set
+c(v) :=
+(
+g(v),A(v)
+)
+∈N×R>0,
+and orderN×R>0 lexicographically. Finally put
+W:=c
+(
+IS(K)(0))
+,
+the set ofattainedvalues, with the induced order.
+The infimum is attained, by (E)(ii) of Theorem 2.4 applied to the normal isotopy class of a
+representative — which is the vertex, by Lemma 3.9 — soA(v)is a minimum and is realised by
+a stable minimal surface, smooth and embedded inIntE (K). Both coordinates are therefore
+invariants ofvand not of a representative.
+It is W, and not N×R>0, that is required to be well-ordered in Definition 6.1, and the
+distinction is not cosmetic:N×R>0 is not well-ordered, sinceR>0 is not. What has to be proved
+is that the values actually taken byc are sparse. That is the content of the next lemma, and it is
+the only place in this paper where a statement about the totality of vertices ofIS(K)is needed.
+Lemma 4.2(Well-foundedness of the complexity).LetK be a non-trivial knot, with the relative
+metric and the foliationJof §2. Then:
+(i)for everyh∈Nand everya>0the set{v∈IS(K)(0) :g(v) =h, A(v)≤a}is finite;
+(ii) consequently, for eachh the setWh :={A(v) :g(v) =h}is a closed discrete subset of
+R>0 and is well-ordered of order type at mostω;
+(iii)W is well-ordered of order type at mostω2; in particular there is no infinite strictly
+descending chain inW, and every non-empty subset ofWhas a least element;
+(iv)IS(K)has countably many vertices.
+Proof. Fix h and letS be the compact orientable surface of genush with one boundary circle.
+We use the compactness theorem of Kapovich’s appendix to [16] in the form printed there, and
+we transcribe its membership conditions rather than paraphrasing them. Its setting [16, p. 897]
+is aP 2-irreducible compact Riemannian3-manifoldM with smooth strictly convex boundary,
+together with a compact familyF of smooth curves on∂M, the case of interest being that in
+which ∂Mis a single torus andF is a smooth foliation of it by closed curves. For a proper
+embeddingf: (S,∂S)→(M,∂M)whose class is admissible — meaning thatf−1(∂M)is a single
+component of∂Sand f(S)is incompressible — one writesM([f])for the set of stable minimal
+surfaces in the proper isotopy class[f]whose boundary is a parametrised curve ofF, modulo
+reparametrisation, and
+M(S) =
+⋃
+[f]
+M([f]),
+the union being over all such classes, topologised byC1 convergence;Ma denotes the subset of
+surfaces of area at mosta. Two features of this definition are used below and are worth naming.
+The union runs overalladmissible proper isotopy classes at once, and the boundary of a member
+is required only to be a curve ofF, not a prescribed one.
+These hypotheses hold forM =E(K),F =J: the exterior is compact and orientable and
+is irreducible [12, p. 228], and an orientable3-manifold contains no two-sided projective plane,
+
+--- PAGE 21 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 21
+so E(K)is P 2-irreducible; ∂E(K)is a torus, made strictly convex by(1); andJ is a smooth
+— indeed real-analytic — foliation of it by closed curves. A Seifert surface in the exterior is
+properly embedded, incompressible, and meets∂E(K)in its single boundary circle, so its class is
+admissible.
+Now letv be a vertex withg(v) = h and A(v)≤a, and letΣv be a minimiser supplied by
+(E)(ii). It is a stable minimal surface with boundary a leaf ofJ and areaA(v)≤a, soΣ v∈Ma.
+By [16, Corollary A.3, p. 898] the setMa is the disjoint union of finitely many open and closed
+subsetsMa([g]), each consisting of surfaces isotopic to one another. Distinct vertices are distinct
+ambient isotopy classes, hence, by Lemma 3.9 and the convention fixed with it, distinct proper
+isotopy classes; sov↦→the piece containingΣv is injective on the set in (i), which is therefore
+finite.
+For (ii):Wh∩(0,a]is the image of the finite set of (i), hence finite, for everya> 0; a subset
+of R>0 meeting every interval(0,a]in a finite set is closed and discrete inR>0 and is order-
+isomorphic to an initial segment ofN. For (iii): lexicographically,W is the ordered sum∑
+h∈NWh
+of well-orders of type at mostωindexed by N, hence a well-order of type at mostω·ω=ω2.
+For (iv): each set in (i) is finite andIS(K)(0) =⋃
+h∈N
+⋃
+n∈N{v:g(v) =h, A(v)≤n}.□
+Remark4.3 (Least elements without choice).Remark 6.5 records that in general the passage
+from “no infinite descending chain” to “every non-empty subset has a least element” uses
+dependent choice. For the complexity of Definition 4.1 it does not. Let∅̸= T⊆W. The
+set{h: (h,α)∈Tfor someα}is a non-empty subset of N and so has a least elementh0.
+Pick anyα1 with( h0,α1)∈T— a single instance, not a choice function. By Lemma 4.2(i)
+the set{α: (h0,α)∈T, α≤α1}is finite and non-empty, so it has a least elementα0, and
+(h0,α0) = minT . No form of choice is used. The use of choice flagged in Remark 6.5 is elsewhere:
+in the well-ordering of the fibres in Lemma 6.6.
+Remark4.4 (Two remarks on the hypotheses of Lemma 4.2).First, the appendix [16, p. 897]
+carries two standing hypotheses on the surface: that it is connected, and that its preimage of
+each boundary component ofM is a single component of its own boundary. For a knot both are
+automatic, a spanning surface in the sense of §3.2 having no closed component and exactly one
+boundary circle; for links they are supplied by Lemma 8.3.
+Second, on this route the hypothesis thatK is non-trivial is not consumed. Every knot exterior,
+the unknot’s included, satisfies those hypotheses, so the finiteness statement (i) holds for the
+unknot as well — where, by Proposition 3.2, it is anyway visible. The hypothesis is kept in the
+statement because it is the standing hypothesis of Theorem A and of every result of §5, and
+because a version of this lemma proved instead by normalising surfaces in the infinite cyclic cover
+doesconsume it. The exponent inω2 is an upper bound only: whetherW has order typeωis
+exactly the question (F) of §7.4, which is open.
+4.2.The cyclic-cover frontier construction.The exchange lemma is handed a vertexx
+and two verticesu,wadjacent to it and at distance2from one another. What Proposition 3.4
+supplies is one surface disjoint from two others which meet each other; the construction below
+turns that configuration into two new Seifert surfaces. It is stated for surfaces, not for classes,
+and no minimality is assumed or concluded.
+Lemma 4.5(Frontier construction).LetS,S+,S−be Seifert surfaces inE(K)with
+S∩(S+∪S−) =∅,(9)
+withS+ meetingS−, the pairS+,S−transverse,∂S+∩∂S−=∅, and with no disc patch produced
+by cuttingS + andS−alongS +∩S−. Then there are Seifert surfacesP↑,P↓such that
+
+--- PAGE 22 ---
+22 APEX INTELLIGENCE
+(1)each is disjoint fromS,S +,S−and from the other;
+(2) every compact surfaceZ disjoint fromS+∪S−is disjoint from some choice of represen-
+tatives ofP↑,P↓;
+(3)writingT ↑,T↓for the possibly disconnected frontier outputs containingP↑,P↓,
+χ(T↑) +χ(T↓) =χ(S+) +χ(S−),(10)
+and every component discarded from either output is a closed surface of Euler characteristic
+at most0.
+Proof. Let p: ˜E→E(K)be the infinite cyclic cover determined by the linking number homo-
+morphismπ1(E(K)) ↠Z and letτgenerate its positive deck group. A Seifert surface carries the
+primitive class dual top, hence is non-separating, and cutting alongS produces the fundamental
+domainC between a liftS0 andS1 =τS0, withp|C :C→E(K)\S a homeomorphism. Hypoth-
+esis (9) is what makesS+ and S−lie inE(K)\S, so the inverse of that homeomorphism lifts
+them toS+
+0,S−
+0 ⊂C; this is the only place(9) is used, and it is used for both surfaces at once.
+Each ofS±
+0 is a wall in the corresponding stacking ofC-translates and its complement in˜E has
+two components; writeM±
+↑,M±
+↓for them, the upper one being the one containingS1. Put
+˜B↓= fr
+(
+M−
+↓∩M+
+↓
+)
+, ˜B↑= fr
+(
+M−
+↑∩M+
+↑
+)
+.(11)
+These are assembled from complementary subsurfaces ofS+
+0 ∪S−
+0 and are piecewise smooth with
+corners exactly alongΓ :=S+
+0 ∩S−
+0 , which by transversality and∂S+∩∂S−=∅is a finite family
+of disjoint smooth closed curves in the interior. Round the corners by Lemma 5.1 to get smooth
+neatly embedded ˆB↑,ˆB↓, then push each into its own open region at scaleσby Lemma 5.2. The
+two regions are opposite, so the results are disjoint from the lifted inputs and from each other;
+they lie inC, on whichp is injective, and project to embedded surfacesT↑(σ),T↓(σ)disjoint
+from S,S+,S−. By clause (3) of Lemma 5.2 allσ∈(0,σ0]give isotopic outputs, soσlabels a
+representative and not a class, and is suppressed.
+Each frontier is the frontier of a region in an orientable cover, hence two-sided and consistently
+oriented across the resolved seams, and the algebraic intersection number of a lifted meridian
+with its boundary is+1.
+We count the boundary curves, since the conclusion depends on it. The preimage of∂E(K)in
+˜E is an annulus, the longitude lifting and the meridian not, and∂S+
+0 and ∂S−
+0 are two disjoint
+core circles of it; so one of them separates the other from the positive end. Say∂S−
+0 lies below
+∂S+
+0 . Points ofS+
+0 near ∂S+
+0 then lie aboveS−
+0 , that is inM−
+↑, andS+
+0 separates M +
+↑from M +
+↓;
+so they are frontier points ofM−
+↑∩M+
+↑and∂S+
+0 ⊂˜B↑. Symmetrically, points ofS−
+0 near∂S−
+0
+lie belowS+
+0 , so∂S−
+0 ⊂˜B↓. SinceΓis a family of closed curves in the interior, cutting along it
+creates no new boundary, and∂˜B↑=∂S+
+0 , ∂˜B↓=∂S−
+0 : each frontier has exactly one boundary
+circle. Hence each output has exactly one component with boundary, a connected oriented Seifert
+surface whose boundary is a longitude, and the others are closed. These areP↑,P↓, and clause
+(1) holds.
+For (2): ifZ is compact and disjoint from the compact setS+∪S−their distance is positive,
+so the push-off may be taken small enough to missZ, and two sufficiently small push-offs on the
+same side are isotopic through the collar between them, so only the representative changes.
+For (3): the two frontiers exhaust the cut-openS+
+0 ∪S−
+0 , and Lemma 3.6 applied to this
+exchange gives(10). A discarded component is closed, and being cut from the orientableS+∪S−
+it is orientable, so it hasχ≤0unless it is a sphere; suppose one were. If it carried no exchange
+seam it would be a whole component of one of the inputs with the intersection curves deleted,
+and no such component is closed, the inputs being connected with non-empty boundary. So it
+
+--- PAGE 23 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 23
+carries a seam, and an innermost seam on it bounds a seam-free disc on the sphere: a disc patch,
+which the hypothesis excludes.□
+Remark4.6.The corresponding construction in the literature assumes minimal genus in its
+hypotheses and asserts it in its conclusion. Nothing of the kind is used or claimed here: Lemma 4.5
+says nothing about the genus of either output beyond what(10) forces, and that is all §5 consumes.
+The hypothesis(9) is, by contrast, indispensable, and it is the exact sentence that fails for a
+general link; see §8.4.
+5.The exchange lemma
+This section proves axiom (N2) forIS(K). Given two vertices at distance2and a common
+neighbour, it produces two new vertices, each an apex of the two-interval, whose complexities
+cannot both fail to drop. The mechanism is Lemma 4.5 applied to relative area minimisers, and
+the difficulty is quantitative: rounding the corners of a frontier gains area, pushing the result off
+the inputs costs area, and the gain must be pinned down before the cost — and, in §§5.3–5.5,
+before the further parameter introduced by making two tangent minimisers transverse.
+Throughout, K is a non-trivial knot, and by Theorem 2.10 and Lemma 2.11 every minimiser
+supplied by (E) may be taken smooth up to∂E(K)and is then neatly embedded.
+5.1.Rounding and pushing off.The frontier of Lemma 4.5 is piecewise smooth with corners,
+whereas A(·)is an infimum over smooth neatly embedded surfaces. Two steps separate the two,
+and their order is the pivot of the quantifier structure below. Lemma 5.1 is stated pointwise —
+varying angle, varying width, gain an integral — because in §5.4 the angle degenerates near a
+tangency point and a single global width would collapse with it.
+Lemma 5.1(Corner rounding, pointwise form).LetΓbe a finite disjoint union of compactC2
+curves without boundary in a compact Riemannian3-manifold, let˜B be an embedded surface with
+a corner alongΓ, smooth offΓand with its two sheets smooth up toΓ— every constant below
+depends on them only through theirC2 bounds — and letΓ∩∂˜B =∅. Assume that in the normal
+slice at eachx∈Γthe trace of ˜B consists of the two edges of a wedge with vertexx and opening
+angleα(x)∈(0,π)— so thatα, and with it the slopem:= cot(α/2), isC1 alongΓ— and put
+θ(x) := min{α(x),π−α(x)}>0.(12)
+Then there are continuousηmax,κ:Γ →(0,∞), a continuous non-decreasingg0 : (0,π/2]→
+(0,∞), and non-decreasingη,κ: (0,π/2]×(0,∞)2→(0,∞)determined by the ambient metric,
+by theC 2 bounds of the two sheets on the normal slice atx, by thelocal reach
+ϱ(x) := sup
+{
+ϱ>0 : exp⊥is injective on
+{(z,ξ) :z∈Γ,|ξ|<ϱ, dΓ(z,x)<ϱ},
+andB(x,ϱ)∩Γis connected
+}
+(13)
+and byϱ∂(x) :=d(x,∂˜B), such that
+ηmax(x)≥η
+(
+θ(x),ϱ(x),ϱ∂(x)
+)
+, κ(x)≥κ
+(
+θ(x),ϱ(x),ϱ∂(x)
+)
+,(14)
+and such that for everyC1 width functionηsubject to
+0<η(x)≤ηmax(x)and|η ′(x)|≤κ(x)(15)
+there is a compactC∞neatly embedded surfaceˆB= ˆB(η)with:
+
+--- PAGE 24 ---
+24 APEX INTELLIGENCE
+(1) ˆB agrees pointwise with˜B outside the tubular neighbourhood{d(·,x)< η(x)}ofΓ; in
+particular∂ˆB=∂˜B;
+(2) inside that neighbourhoodˆB lies on the closed side of˜B into which the wedge of angleα
+opens; consequently, if˜B is the frontier of an openU⊂E(K)and the wedge opens into
+U at every point ofΓ, then ˆB⊂U and there is a one-sided collarˆB×[0,ϵ1)→E(K)
+intoU;
+(3) ˆB is carried to ˜B by anambientisotopy of the ambient manifold supported in that
+neighbourhood;
+(4)the area gain is non-negative slice by slice, and
+Area(ˆB)≤Area(˜B)−
+∫
+Γ
+g0
+(
+θ(s)
+)
+η(s)ds;(16)
+(5) (The bounded region is unchanged.)WriteT :={d(·,x)<η(x)}for the tubular neigh-
+bourhood of (1). If˜B is a closed surface separating the ambient manifold, then so isˆB,
+and the complementary regions correspond under the ambient isotopy of (3): ifR is a
+complementary region of˜Band ˆRthe corresponding one ofˆB, then ˆR\T=R\T.
+In particular the integral in (4) may be restricted to any measurable subset ofΓand the rest
+discarded.
+Proof. Take an oddχ∈C∞([−1,1],[−1,1])with0 ≤χ≤1on[0 ,1], χ≡1near1and χ(0) = 0,
+and putΘ( t) = c0 +
+∫t
+0χwith c0 := 1−
+∫1
+0 χ≥0. ThenΘis even,Θ( ±1) = 1,Θ ′(±1) =±1
+andΘ (k)(±1) = 0for k≥2, soΘmeets |·|to infinite order at|t|= 1; and t↦→Θ(t)−tis
+non-increasing on[0,1]with value0at1, soΘ ≥|·|; finallyΘ′(0) = 0and |Θ′|≤1. Form> 0
+put
+g(m) :=
+∫ 1
+−1
+(√
+1 +m 2−
+√
+1 +m 2Θ′(τ)2
+)
+dτ,
+which is positive because|Θ′|≤1everywhere andΘ ′(0) = 0, and continuous inm. Moreoverg
+is non-decreasing: differentiating under the integral sign,
+∂mg(m) =
+∫ 1
+−1
+m
+[
+(1 +m 2)−1/2−Θ′(τ)2(
+1 +m 2Θ′(τ)2)−1/2]
+dτ≥0,
+since u↦→u(1 +m2u)−1/2has derivative(1 + m2u)−3/2(1 + 1
+2m2u) > 0andΘ ′(τ)2≤1. Set
+g0(θ) := 1
+2 min{g(m) :m∈[tan(θ/2),cot(θ/2)]}>0; sinceα(x)lies in[ θ(x),π−θ(x)], the slope
+m(x) = cot(α(x)/2)lies in that interval. The minimum is therefore attained at the left endpoint,
+g0(θ) = 1
+2g(tan(θ/2)), andg0 isnon-decreasing: as θ↓0the wedge degenerates to a slit, the two
+sheets are nearly parallel, and smoothing them saves almost nothing, sog0(θ)→0.
+Straighten first.Each sheet is smooth up toΓ, and the two meet there at the angleα∈(0,π),
+so they are transverse alongΓ. Extend both acrossΓto smooth surfacesˆA±meeting transversally
+inΓ. Straighten ˆA+ to{y= 0}withΓthe z-axis; transversality makesˆA−a graph{x=G(y,z)}
+with G(0,z) = 0, and(x,y,z)↦→(x−G(y,z),y,z)is a diffeomorphism carrying it to{x= 0}
+and fixing{y= 0}. So there is a smooth chart, fixingΓpointwise, in which the two sheets are
+half planes meeting along theΓ-axis.
+The metric in that chart is arbitrary, and correcting it is where the construction has to be
+done with care. Both sheets are planescontainingtheΓ-axis, so both are preserved not only by
+linear maps of the normal plane but also by shears alongΓ,(z,x,y)↦→(z +ax +by, x, y); and
+it is the shears that are needed, because a linear map of the normal plane alone cannot alter the
+cross termsh(∂z,∂x), h(∂z,∂y), which the straightening step — a purely smooth normal form,
+carrying no metric information — leaves arbitrary. With both at hand, apply Gram–Schmidt in
+
+--- PAGE 25 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 25
+the order forced by the sheets: normalise∂z; project∂x and ∂y h-orthogonally to it, which is
+a shear and so keeps each sheet planar; then map the two resulting rays to the rays at angles
+±α(s)/2from+ ξ1, which is a linear map of the nowh-orthogonal normal plane. Doing this
+smoothly ins leavess arclength onΓ, the slices{s= const}h-orthogonal toΓ, and h =δat
+every point ofΓ— cross terms included — while the wedge is the standard one of opening angle
+α(s), that angle being measured inh. Writing(s,ξ1,ξ2)for this chart, with the bisector along
++ξ1,
+˜B={ξ1 =m(s)|ξ2|}nearΓ, h=δ+O(|ξ|).(17)
+What matters is that the first of these is an equality. A replacement profile matched to the
+model wedgem|ξ2|while the true sheets are onlym|ξ2|+O(|ξ|2)would miss them byO(η2)at
+the seam, and the surface obtained by gluing would fail to be continuous there, let alone smooth;
+the chart removes that mismatch rather than estimating it. The price is thatCmet below now
+depends on the two sheets, through the distortion of the straightening, and not on the ambient
+metric alone.
+On|ξ2|≤η(s)replace the two sheets by ξ1 = m(s)η(s) Θ(ξ2/η(s)). At |ξ2|= η(s)this
+equals m(s)η(s) = m(s)|ξ2|; and the difference of the two profiles ism(s)η(s)Ψ(ξ2/η(s))with
+Ψ := Θ −|·|, every derivative of which is a finite sum of terms carrying a factorΨ(k)(t), so all of
+them vanish at|t|= 1. The glued surface is thereforeC∞across the seam and coincides with˜B
+outside the tube. SinceΘ ≥|·|the new sheet lies in the closed wedge side{ξ1≥m(s)|ξ2|}, and
+in its interior where|ξ2|<η— which is the local half of (2), the global half following from it
+under the additional hypothesis stated there. Takingηmax less than half the normal injectivity
+radius keeps the tubes disjoint and embedded, and less than halfϱ∂keeps them clear of∂˜B.
+This is (1)–(2), the collar in (2) coming from compactness.
+For (3): inside the tube the old and the new sheets are, in each normal slice, two graphs over
+the same segment|ξ2|≤η(s), namelyξ1 =m|ξ2|and ξ1 =mηΘ(ξ2/η), agreeing to infinite order
+at the two ends. The linear interpolation between them is therefore a family of embedded surfaces,
+constant outside the tube, and pushing across the region they cobound gives an ambient isotopy
+supported in the tube. Clause (5) is then immediate, an ambient isotopy carrying complementary
+regions to complementary regions, together with the fact that the isotopy is the identity outside
+T; separation of the ambient manifold is preserved becauseˆB is the image of˜B under an ambient
+homeomorphism. This is the statement that “rounding does not change the region bounded”,
+used three times below and in §3, and it is proved here once rather than asserted there.
+A varying width does not spoil the matching. Writingt :=ξ2/η(s), the new sheet is the graph
+ξ1 =F(s,ξ2)withF=mηΘ(t), so
+Fξ2 =m(s)Θ ′(t), F s =η(s)m′(s)Θ(t) +m(s)η′(s)
+(
+Θ(t)−tΘ′(t)
+)
+,(18)
+and at the seam|t|= 1we haveΘ(1) = 1andΘ ′(±1) =±1, soΘ −tΘ′vanishes there and
+Fs =ηm′, which by(17) is exactly the corresponding derivative of the old sheet: that sheet is
+m(s)|ξ2|, whoses-derivative at|ξ2|= ηis m′η. The η′term switches itself off exactly at the
+seam, and the two pieces still meet to infinite order along the boundary curves|ξ2|=η(s), which
+are now non-parallel.
+That sameη′term is why(15) constrainsη′at all. It isO(η′)and not O(η), so no shrinking of
+ηmax controls it: forη(s) =ϵ
+(
+2 +sin(s/ϵ2)
+)
+one hasη≤3ϵ→0while |η′|→∞. Sincec0≤Θ ≤1
+and|Θ′|≤1on[−1,1]we have|Θ−tΘ′|≤2, whence
+F 2
+s ≤2η2m′2+ 8m2η′2.(19)
+One slice.Fix s. Over|ξ2|≤η(s)the old surface is the two graphsξ1 =±mξ2 of (17), so in
+the Euclidean model of the chart their total length is2η
+√
+1 +m 2 +E1 with E1 = 0. The term
+
+--- PAGE 26 ---
+26 APEX INTELLIGENCE
+is carried through the estimate below under the weaker bound|E1|≤C1η2, C1 depending only
+on theC2 bounds of the two sheets, so that nothing depends on the straightening having been
+exact; in the chart just built the third entry of(22) may be read as+∞, as the second already
+is wherem′= 0. The new profile has length
+η
+∫ 1
+−1
+√
+1 +m 2Θ′2+F 2s dt≤η
+∫ 1
+−1
+√
+1 +m 2Θ′2dt+ηmax
+t
+F 2
+s,
+by
+√
+a+b≤√a +b/(2√a)with a≥1over an interval of length2. So the Euclidean decrease in
+the slice is at leastη
+[
+g(m)−2η2m′2−8m2η′2−C1η
+]
+, using (19).
+Passing to the true metric.By(17)h =δ+O(|ξ|)in the chart built above, and inside the
+tube|ξ|≤η
+√
+1 +m 2. Let a graphξ1 =u have Euclidean first fundamental formQ and true
+one Q +E. Every tangent vectorv satisfies|E(v,v)|≤∥h−δ∥|v|2 =∥h−δ∥Q(v,v), so the
+eigenvalues ofQ−1Eare bounded by∥h−δ∥irrespective of|∇u|, and
+⏐⏐⏐
+√
+det(Q+E)−
+√
+detQ
+⏐⏐⏐ ≤Cmetη
+√
+1 +m 2√
+detQ.(20)
+The uniformity in the gradient is what lets the estimate survivem→∞. Both profiles have
+Euclidean lengthO(η
+√
+1 +m 2), so (20) costs at most6Cmetη2(1 +m 2), and
+Area(˜B)−Area(ˆB)≥
+∫
+Γ
+η
+[
+g(m)−2η2m′2−8m2η′2
+−C1η−6Cmetη(1 +m2)
+]
+ds.
+(21)
+Choosingηmax andκ.Sinceg(m(s))≥2g0(θ(s))by the definition ofg0, put
+ηmax := min
+{ ϱ
+2
+√
+1 +m 2,
+√
+g0(θ)
+8m′2,g0(θ)
+4C1
+,
+g0(θ)
+24Cmet(1 +m 2),ϱ∂
+2
+}
+,
+κ:=
+√
+g0(θ)
+6m ,
+(22)
+all five entries being read pointwise atx∈Γ, withϱthe local reach(13), ϱ∂(x) =d(x,∂˜B)> 0
+by the hypothesisΓ∩∂˜B =∅, and the second entry read as+∞where m′= 0. The fifth entry
+is what makes the words “in particular∂ˆB =∂˜B” in (1) legitimate: the conclusion thatˆB agrees
+with ˜B outside the tube says nothing about the boundary unless the tube is known to miss it, and
+none of the other four entries mentions∂˜B. Bothϱandϱ∂are positive and lower semicontinuous
+onΓ, and it is only their values on the subset over which the gain is collected that enter the
+estimates below; this is the reason for stating them pointwise rather than as the global normal
+injectivity radius and the global distanced(Γ,∂˜B), both of which degenerate in the applications
+of §§5.4–5.5. The second, third and fourth entries, together withκ, make the four error terms in
+(21) at most 1
+4g0(θ)each: the second bounds2η2m′2, the thirdC1η, the fourth6Cmetη(1 +m2),
+while8 m2η′2≤8m2κ2 = 2
+9g0(θ) < 1
+4g0(θ). The first and fifth entries do not enter(21) at all:
+the first secures the legitimacy of the Fermi chart and the disjointness and embeddedness of the
+tubes, the fifth their avoidance of∂˜B. So the bracket is at least2g0(θ)−35
+36g0(θ)>g 0(θ)≥0for
+eachs separately. That is(16) together with the slicewise non-negativity asserted in (4), and it
+is what allows the integral to be restricted to a measurable subset.
+Finally (14). Where θ(x)≥θ•, ϱ(x)≥ϱ•and ϱ∂(x)≥ϱ∂,•, the slopem = cot(α/2)lies in
+[tan(θ•/2),cot(θ•/2)]and g0(θ)≥g0(θ•), so (22) is bounded below by the quantity obtained
+from it by replacingm with cot(θ•/2), m′with M′:= supΓ|m′|<∞, g0(θ)with g0(θ•), ϱwith
+
+--- PAGE 27 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 27
+ϱ•and ϱ∂with ϱ∂,•; call theseη(θ•,ϱ•,ϱ∂,•)and κ(θ•,ϱ•,ϱ∂,•). Both are non-decreasing in each
+argument, sinceg0 is non-decreasing andcot(θ/2)is decreasing. The dependence onθcannot be
+removed: the first entry of(22) forces ηmax ≲ϱ/m→0as α→0, andg(m)/(1 +m2)→0at
+bothends α→0and α→π. So no bound in terms of the reach and the metric alone is available,
+and Corollary 5.9 below must supply an angle bound before it can supply a width bound.□
+Lemma 5.2(Pushing off).Let ˆB be a compactC∞neatly embedded surface satisfying clause
+(2) of Lemma 5.1 for an open regionU, with∂ˆB a leaf of the longitudinal foliation. Then there
+areσ0> 0and C <∞, depending only onˆB and on the ambient metric near it, such that for
+every σ∈(0,σ0]there is a compactC∞neatly embeddedT(σ)with T(σ)⊂U; ∂T(σ)a leaf; T (σ)
+isotopic to ˆBand any two of them isotopic to each other; and
+⏐⏐Area(T(σ))−Area(ˆB)
+⏐⏐≤Cσ.
+Proof. Let νbe the unit normal ofˆB pointing intoU and n the outward normal of∂E(K),
+extended through the boundary collar; putX := ν−ψ(r)⟨ν,n⟩nwith ψ≡1near r = 0and
+supported in the collar. ThenX is tangent to∂E(K), and neatness with compactness gives
+⟨ν,n⟩2≤1−c, so⟨X,ν⟩≥c>0. On∂E(K)replace X by a field transverse toJ whose flow
+carries leaves to leaves, oriented towardsU, and interpolate inr, shrinking the collar so that
+⟨X,ν⟩≥c/2persists. Its flowΨ s exists fors∈[0,σ0], preserves∂E(K)and carries leaves
+to leaves; putT (σ) := Ψ σ(ˆB). Transversality makes(x,s)↦→Ψs(x)an embedding into the
+one-sided collar forσ0 small, which gives the first three clauses, the last of them becauseΨ
+is an ambient isotopy andΨ σ′Ψ−1
+σ joins two push-offs. With K1 := sup|∇X|near ˆB, the
+Jacobian ofΨ s|ˆB obeys ∂s logJ = divX≤2K1 in absolute value, so|Area(T (σ))−Area(ˆB)|≤
+(e2K1σ−1) Area(ˆB)≤CσwithC:= 2K1e2K1σ0 Area(ˆB), independent ofσ.□
+The order of the two steps is forced: a normal push-off of a cornered surface is not embedded,
+while the frontier of an inner parallel set is again cornered. HenceC is determined byˆB, that is,
+by the cornered frontier and the once-chosen widthη:the rounding gain is fixed beforeσis.
+The next lemma excludes a disc in the symmetric difference. It carries an error term because
+in §§5.4–5.5 one of the two surfaces is a perturbation of a minimiser and not a minimiser.
+Lemma 5.3(No disc patch).Let A0,Bbe relative area minimisers in two distinct vertices of
+IS(K), letA be neatly embedded, incompressible, normally isotopic toA0 with ∂Aa leaf ofJ,
+and pute := Area(A)−Area(A0)≥0. SupposeA and B are transverse with∂A∩∂B=∅, and
+suppose that cuttingA and B alongΓ := A∩Bproduces a disc patch. For a closed curveγ⊂Γ
+and a width function admissible along it, letG(γ)denote the rounding gain (16) along γ; by (12)
+it is one and the same number for either of the two pairs of opposite sectors atγ. Then there are
+closed curvesa,b⊂Γ, not necessarily distinct, with
+G(a) +G(b)≤e.(23)
+One point aboutG has to be made before the proof, because the lemma is applied with a width
+function chosen for adifferentsurface. In §§5.4–5.5 the gain alongγis computed for the cornered
+frontiers of Lemma 4.5, whereas the proof below rounds the cornered surfaces produced by a disc
+exchange. A singleηserves both. Indeed, by(22) the boundsηmax and κat x∈γdepend only
+on: the opening angleθ(x), which by(12) is the same for all four sectors atx and hence for both
+surfaces; the local reach(13) of γ, which depends onγalone; theC2 bounds of the two sheets
+meeting alongγ, which in both cases are those ofA and ofB, the exchange surface differing
+from one of them by a push-off whose scale we let tend to0and in which all the estimates below
+are continuous; andϱ∂(x). For the last, every surface occurring here — the two frontiers,A, B,
+and the exchanged surfaces — has its boundary on∂E(K), soϱ∂(x)≥d
+(
+x,∂E(K)
+)
+in every
+case; replacingϱ∂byd(·,∂E(K))in (22) only decreasesηmax, and we do so throughout. With
+
+--- PAGE 28 ---
+28 APEX INTELLIGENCE
+that reading a width admissible alongγfor one of these surfaces is admissible for all of them,
+andG(γ)is unambiguous.
+Proof. No patch has a boundary arc on its frontier, since the endpoints of such an arc would lie
+in ∂A∩∂B=∅; soΓis a finite disjoint union of closed curves inIntE (K)and the frontier of a
+disc patch is a single one of them.
+Step0: the discs DA(γ).A simple closed curve γin the interior ofA bounds at most one
+disc inA: the two sides of a separatingγcannot both be discs, orA would be a sphere, and
+the disc side is the one missing∂A. WriteDA(γ)for that disc when it exists andAγfor the
+closure ofA\D A(γ); sinceA is connected, a component ofAγmissing γwould be a component
+of A, soAγis connected, and so isAγ\γ. Use the same notation forB. LetD⊂Γbe the set
+of curves bounding a disc inA or inB. Forγ∈Dbothdiscs exist: γbounds a disc, hence is
+null-homotopic inE(K); a two-sided incompressible surface isπ1-injective, soγis null-homotopic
+in the other surface as well; and a null-homotopic simple closed curve on a surface bounds a disc
+there. A disc patch isDA(γ)or DB(γ)for γits frontier, by the uniqueness just proved, soD̸=∅.
+SinceD A(γ)⊂AandA∩B= Γ, the sets
+A:={γ∈D: IntDA(γ)∩B=∅},B:={γ∈D: IntDB(γ)∩A=∅}
+are the sets of curves whose disc on the respective side is a disc patch.
+Step1: A andB are non-empty.Γis finite, hence so isD. Letγ∈DhaveDA(γ)minimal
+under inclusion among{DA(γ′) :γ′∈D}. If a curveγ′ofΓmet IntDA(γ)it would lie in it, and
+would cut off a subdisc ofDA(γ), which isDA(γ′)by Step0; then DA(γ′) ⊊D A(γ)contradicts
+minimality. Soγ∈A, and symmetricallyB̸=∅.
+Step2: one-sided exchange.Let γ∈ Aand write D := DA(γ), D′:= DB(γ). Then
+IntD∩B=∅forces D∩B= γ, soD∪D′is an embedded sphere, and it lies inIntE (K)
+because A∩∂E(K) =∂Ais not met byD, and likewise forD′. It has a corner alongγ; round
+it by the qualitative part of Lemma 5.1, at a widthη♯small enough that the tubeT about γ
+misses ∂E(K). By irreducibility the resulting smooth sphere bounds a ballQ, and by clause (5)
+of that lemmaQ agrees offT with the region bounded byD∪D′; moreoverQ∩∂E(K) =∅,
+since a point of∂E(K)inQwould have to lie on∂Q⊂IntE(K). Now
+B∩IntQ=∅.(24)
+Indeed,Bγ\γis connected by Step0and is disjoint fromD∪D′— fromD′becauseBγ∩D′=γ,
+and fromD because D∩B=γ. It is therefore disjoint from∂Q: outsideT the two coincide,
+and insideT the sphere∂Qlies, by clause (2) of Lemma 5.1, in the closed sector of the normal
+slice bounded byD and D′, meeting the boundary of that sector only inD∪D′, whereas the
+two sheets ofB at γbound the twoothersectors and so meet that closed sector only alongγ,
+which is not on∂Q. HenceBγ\γlies in a single complementary region of∂Q, and that region
+is notQ because it contains∂B, which lies on∂E(K)while Q does not meet∂E(K). As forD′:
+outside T it lies on∂Q, and insideT it lies on the boundary of the sector while∂Qlies in the
+sector’s interior, so it is disjoint fromIntQas well. SinceB=D′∪Bγ, this is (24).
+By (24), pushingD′acrossQ to a parallel copy ofD is an ambient isotopy ofE(K), supported
+in a neighbourhood ofQ; this is the only point at which the position of the second surface matters,
+and it is what a simultaneous replacement of both discs would not supply. The isotopy carriesB
+to a neatly embeddedB′with ∂B′=∂Band with Area(B′)→Area(B)−Area(D′) + Area(D)
+as the push-off tends to0. Along the corner circleB′has a genuine corner, sinceA⋔B ; rounding
+by Lemma 5.1 gives a smooth neatly embeddedB′′, isotopic toB, with boundary still the
+
+--- PAGE 29 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 29
+same leaf andArea(B′′)≤Area(B)−Area(D′) + Area(D)−G(γ). AsB minimises in its class,
+Area(B′′)≥Area(B), whence
+Area
+(
+DB(γ)
+)
++G(γ)≤Area
+(
+DA(γ)
+)
+, γ∈A.(25)
+The argument used only that the disc in thefirstsurface is a patch, so exchanging the roles ofA
+andB it applies toγ∈Band produces a smooth neatly embeddedA′′, isotopic toA and hence to
+A0, with the same boundary leaf andArea(A′′)≤Area(A)−Area(DA(γ)) +Area(DB(γ))−G(γ).
+HereArea(A′′)≥Area(A0) = Area(A)−e, whence
+Area
+(
+DA(γ)
+)
++G(γ)≤Area
+(
+DB(γ)
+)
++e, γ∈B.(26)
+Step3: the two curves.Put φ(γ) := Area(DA(γ))−Area(DB(γ))on D, so that(25) reads
+φ≥GonA and (26) reads φ≤e−GonB. Choose a∈Awith Area(DA(a))least and b∈B
+with Area(DB(b))least. Then Area(DA(a))≤Area(DA(b)): if b∈Athis is the choice ofa,
+and otherwise IntDA(b)meetsΓ, and choosing among the curves ofΓinside it one, c, whose
+disc DA(c)— a subdisc of DA(b), by Step0— is minimal under inclusion, the argument of
+Step1gives c∈Aand hence Area(DA(a))≤Area(DA(c)) <Area (DA(b)). Symmetrically
+Area(DB(b))≤Area(DB(a)). Adding the two,φ(a)≤φ(b), soG(a)≤φ(a)≤φ(b)≤e−G(b),
+which is (23). □
+The exchange is performed one surface at a time because(24) is available only on that side: a
+simultaneous replacement of both discs would requireDA(γ)and DB(γ)to be patches for one
+and the sameγ, which no innermost choice supplies. What replaces it is the pair(25), (26) at
+two possibly distinct curves, glued by the monotonicity ofφ. Note also that the proof uses only
+that A0 and B separately minimise, not thatA does; the no-product-region statements in the
+literature assume both surfaces minimal, which the perturbedAof §§5.4–5.5 is not.
+5.2.The exchange theorem.
+Theorem 5.4(Incompressible exchange lemma).Let K be a non-trivial knot and letx,u,wbe
+vertices ofIS(K)with
+dist(x,u) = dist(x,w) = 1,dist(u,w) = 2.
+Then there are verticesw↑,w↓, determined before any further vertex is considered, such that
+(a)each ofw ↑,w↓is equal or adjacent to each ofx,u,w;
+(b) for these two fixed vertices, every vertexz equal or adjacent to bothu and w is equal or
+adjacent to bothw↑andw↓;
+(c)g(w ↑) +g(w↓)≤g(u) +g(w);
+(d)if(c)is an equality thenA(w ↑) +A(w↓)<A(u) +A(w).
+Clause(a)asserts adjacency pair by pair and doesnotassert that the five vertices carry simulta-
+neously disjoint representatives; they cannot, sincedist(u,w) = 2forces the two minimisers to
+meet.
+Proof when the minimisers are transverse.By (E) fix, one class at a time, relative area minimis-
+ers S∈x, S+∈u, S−∈w; by Proposition 3.4 the single surfaceS is disjoint from both others,
+and S+∩S−̸=∅since dist(u,w) = 2. Assume in this proof thatS+ and S−are transverse with
+∂S+∩∂S−=∅.
+WriteΓ := S+∩S−, which by neatness and∂S+∩∂S−=∅is a finite family of disjoint
+smooth closed curves in the interior, of total lengthℓ0> 0. In the normal slice aty∈Γthe two
+
+--- PAGE 30 ---
+30 APEX INTELLIGENCE
+tangent planes cut the plane into four sectors of anglesα,π−α,α,π−αwith α(y)∈(0,π), and
+transversality together with the compactness ofΓmakes
+θ0 := min
+Γ
+min{α,π−α}>0.(27)
+Choose a constant widthη≤minΓηmax once and for all: the minimum is positive becauseΓis
+compact andθ≥θ0> 0on it, and a constant width satisfies the constraint onη′in (15) vacuously.
+With this width the gain(16) along a closed curveγ⊂Γis at least g0(θ0)ηlength(γ) > 0,
+uniformly inγ. NowS−is itself a relative area minimiser, so Lemma 5.3 applies withe = 0: were
+there a disc patch it would supply closed curvesa,bwithG(a) +G(b)≤0, whereas both gains
+have just been bounded below by a positive number. So cuttingS+ and S−alongΓproduces no
+disc patch, Lemma 4.5 applies, and it yieldsP↑,P↓.
+By (10) and χ≤0for the discarded closed components,χ(P↑) +χ(P↓)≥χ(S+) +χ(S−);
+substituting (7) gives
+g(P↑) +g(P↓)≤g(u) +g(w).(28)
+Compress eachP along essential circles, always keeping the component with the longitudinal
+boundary, until it is incompressible; by Lemma 3.6 the genus does not increase and the process
+terminates. Call the resulting verticesw↑,w↓; with(28) this is (c). EachP is disjoint from each
+of S,S+,S−, so Corollary 3.8, applied separately to the three, gives (a). For (b): ifz /∈{u,w}is
+equal or adjacent to both, take a minimiserZ∈z; by Theorem 2.3(i) it is disjoint fromS+ and
+from S−, so by clause (2) of Lemma 4.5 the coarse outputs have representatives disjoint from
+Z, and Corollary 3.8 applies again. That the push-off scale depends onZ is harmless: all small
+push-offs represent the same coarse classes and the chosen compression sequence is transported
+along the isotopy between them, so the outputverticesdo not move. Ifz∈{u,w}, (a) already
+gives the conclusion.
+Suppose now (c) is an equality. Then(28) and every compression inequality is an equality, so
+no compression occurred and eachP is already incompressible and represents the corresponding
+w. The two frontiers(11) pick out, in the normal slice aty∈Γ, a pair of opposite sectors, so
+both have the same opening angleα(y)and θ0 of (27) bounds the angle for both. The two
+cornered frontiers partitionS+∪S−up to the measure-zero setΓ, so
+Area(˜B↑) + Area(˜B↓) = Area(S+) + Area(S−).(29)
+Round both frontiers with the widthηalready fixed; by(16) the total gain is at least2ε0 with
+ε0 :=g0(θ0)ηℓ0> 0, which depends onS±and on this one choice and on nothing later. Apply
+Lemma 5.2 to the two rounded surfaces, obtainingσ0 andC fixed beforeσ, and chooseσ∈(0,σ0]
+withCσ <ε0. Combining, and discarding the closed components, which have positive area,
+Area(P↑) + Area(P↓)≤Area(S+) + Area(S−)−2ε0 +Cσ
+< A(u) +A(w)−ε0.
+These are smooth neatly embedded competitors with boundary a leaf ofJ, soA(w↑) +A(w↓)is
+at most the left-hand side, which is (d).□
+5.3.Non-transverse minimisers.The proof just given assumed two things, and both may
+fail. We record first that the failures are of exactly two kinds.
+Both ∂S+ and ∂S−are leaves of the foliationJ, and two leaves of a foliation are equal or
+disjoint. So either∂S+∩∂S−=∅or ∂S+ =∂S−, and in each case the two surfaces may or may
+not be transverse in the interior. Three configurations therefore remain to be treated beyond the
+one just settled:
+(T0)∂S+∩∂S−=∅andS+ ⋔S−; this is the case proved above;
+
+--- PAGE 31 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 31
+(T1)∂S+∩∂S−=∅, withS+ andS−tangent at one or more interior points;
+(T2)∂S+ =∂S−, so that the two surfaces meet along a whole curve of common boundary and
+the argument above cannot even start.
+The surfaces of (T2) need not be tangent along the shared leaf, and in general are not: by(34) in
+clause (2) of Proposition 5.5 they are transverse at all but finitely many of its points. What fails
+in (T2) is not transversality but the disjointness of the boundaries, on which the cutting and
+pasting of §5.2 depends throughout. Configuration (T1) is not a curiosity of the write-up either:
+two distinct minimal surfaces with disjoint boundaries may perfectly well touch at an interior
+point, and there it is transversality that fails. Freedman, Hass and Scott record on [6, p. 636]
+that non-transverse behaviour occurs and give no structure theorem for it; Proposition 5.5 is
+that structure theorem, its first clause covering the interior tangencies of both (T1) and (T2),
+its second the collar of (T2). Both configurations are then disposed of by perturbingS−to a
+transverse competitor and running the transverse argument on the perturbation; what has to be
+controlled in each case is that the area lost to the perturbation stays below the area gained by
+rounding, and it is Lemma 5.3, with its error terme, that makes the two comparable. We take
+them in the order (T2), §5.4, then (T1), §5.5, and not in the order of their labels: the argument
+for (T1) is the argument for (T2) with the collar deleted, so writing (T2) first is what makes
+(T1) short. The labels themselves group by boundary behaviour, (T0) and (T1) being the cases
+with∂S+∩∂S−=∅.
+Throughout §§5.3–5.5 writeA:=S−andB:=S +, keepingSfixed and disjoint from both.
+The interior picture.Let p be a point of IntA∩IntBat whichTpA = TpB. In normal
+coordinates( x1,x2,y)at p with the common tangent plane{y= 0}, both surfaces are graphs
+over a discD about the origin, sayB ={y=β}and A ={y= ˆf}with β(0) = ˆf(0) = 0and
+Dβ(0) =D ˆf(0) = 0; both are smooth by Theorem 2.10. Both graphs are minimal, so subtracting
+the two minimal graph equations and applying the mean value theorem along the segment joining
+the two gradients gives, classically onD,
+Lpfp :=∂i
+(
+aij∂jfp
+)
++bi∂ifp +cfp = 0, f p := ˆf−β,(30)
+with aij smooth and uniformly elliptic andbi,csmooth. The tangency points ofA and B in D
+are exactly the points of{fp = 0, dfp = 0}.
+The collar picture, in configuration(T2)only.Suppose the two boundary leaves coincide
+along a longitudeL. Take a vector field on∂E(K)transverse to J whose flow carries leaves
+to leaves, extend it into the collar, and use its direction as a coordinatey, the inward distance
+r≥0, and arclengths along L. The resulting chart(s,r,y)is bi-Lipschitz onto its image with a
+constantC′
+met<∞depending only on the ambient metric nearL and on the chosen vector field.
+By Lemma 2.11 both surfaces are neat, so the extension may be taken transverse alongL to
+both tangent planes, and both are graphs over one half-cylinder:
+∂E(K) ={r= 0}, B={y= 0}, A={y=f(s,r)}, f(s,0) = 0.(31)
+By Theorem 2.10 the functionf is smooth up to{r= 0}. Both graphs are minimal on{r>0},
+so subtracting the two minimal graph equations and applying the mean value theorem along the
+segment joining the two gradients gives, classically on the closed half-disc,
+Lf:=∂i
+(
+aij∂jf
+)
++bi∂if+cf= 0,(32)
+witha ij smooth and uniformly elliptic andbi,csmooth, all up to{r= 0}.
+Proposition 5.5(Structure of the tangency set).Let A and B be as above: distinct relative
+area minimisers in two vertices at distance2, meeting each other. Then:
+
+--- PAGE 32 ---
+32 APEX INTELLIGENCE
+(1) (Interior; no hypothesis on the boundaries.)Write T ⊂IntA∩IntBfor the set of
+interior tangency points. Everyp∈Tis isolated inIntA∩IntBand has an integer
+order mp≥1and constants c1,c2 > 0with |dfp|≥c1ρmp−c2ρmp+1 > 0at distance ρ
+fromp on a punctured neighbourhood,fp being the local difference of(30); sop is the
+only critical point offp in a discDp. Moreover
+for eachp∈T, fp takes both positive and negative values in every
+neighbourhood ofp.(33)
+(2) (Collar; in configuration (T2).)If∂A=∂B=L, then withf as in(31) there isr0> 0
+withT ⊂{r≥r0}and
+in the open collar{0<r<r0}one hasdf̸= 0everywhere,
+while the critical points offon{r= 0}are finite in
+number and all lie on{f= 0}.(34)
+(3)In both configurationsTis finite; putN:= #T.
+We refer to(34) and (33) as the collar conditions, though strictly(34) concerns the collar and
+(33) the interior tangency set. In configuration (T2) they are used together. In configuration
+(T1) only(33) is available, and only it is needed, because there is no collar to control: the whole
+intersection is then at a positive distance from∂E(K).
+Proof. Both clauses rest on the same two devices, applied on different domains: the zeroth-order
+term is removed by dividing by a positive solution, and the resulting divergence-form equation
+without zeroth-order term is factorised in the sense of Vekua. We set the first up once, for a
+domain∆which is either a discD R(p)about an interior tangency point, carrying the operator
+Lp of (30), or a half-discD+
+R about a point ofL, carrying the operatorL of (32). In both cases
+we writeLfor the operator andffor its solution.
+Removing the zeroth-order term.SolveLh = 0on∆with h = 1on ∂∆. We donotassume a
+sign condition on the zeroth-order coefficient, so the existence theorems of [7, 2nd ed., Ch. 8],
+which all carry hypothesis (8.8), are not available as stated; smallness ofR replaces the sign
+condition. Indeed foru∈W1,2
+0 (∆)the Poincaré inequality gives∥u∥L2≤CR∥Du∥L2, whence
+the associated bilinear form satisfies
+B[u,u]≥
+(
+λ−C∥b∥∞R−C2∥c∥∞R2)
+∥Du∥2
+L2,
+which is positive definite forR small; B is bounded onW 1,2
+0 (∆)because the coefficients are, so
+the Lax–Milgram theorem [7, 2nd ed., Theorem 5.8, p. 83] yields a unique weak solution. Writing
+h = 1 +ϖ, the functionϖsolvesLϖ=−cwith zero boundary data. Rescalex↦→x/Rto the
+unit disc or half-disc, under which the drift becomesO(R)and the zeroth-order coefficientO(R2);
+testing the equation againstϖand using the same Poincaré inequality gives∥ϖ∥L2 =O(R2).
+The global maximum principle [7, 2nd ed., Theorem 8.15, p. 189], applied toϖand to−ϖ,
+both of which lie inW 1,2
+0 and so are≤0on the boundary in the generalised sense, then gives
+∥ϖ∥∞≤C
+(
+∥ϖ∥L2 +ν−1∥c∥Lq/2
+)
+=O(R2), soh≥1
+2 for R small. We use Theorem 8.15 rather
+than the sharper [7, 2nd ed., Theorem 8.16, p. 191] precisely because the latter assumes hypothesis
+(8.8): in Theorem 8.15 the zeroth-order coefficient enters only throughλ−1|d|in (8.6), so its sign
+is unconstrained, and the∥ϖ∥L2 term that this costs is supplied by the energy estimate just
+made. Putv:=f/h; expandingL(hv) = 0withLh= 0gives, weakly,
+∂i
+(
+haij∂jv
+)
++
+(
+aij∂jh+hb i)
+∂iv= 0,(35)
+
+--- PAGE 33 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 33
+with Lipschitz leading coefficients, bounded drift andno zeroth-order term; in the half-disc case
+one has in additionv = 0on L, sincef does. Multiplying by the reciprocal square root of the
+determinant of the leading matrix normalises that determinant to1and changes only the drift.
+The zeroth-order term has to be removed afresh on each domain on which the factorisation or
+the maximum principle is used: with a zeroth-order term of uncontrolled sign both fail.
+Proof of(1).Let p∈T, run the previous paragraph on∆ = DR(p)with the operator Lp
+of (30), and writevp := fp/hp for the resulting solution of(35); note vp(p) = 0. Choose a
+smooth Jordan subdomainΩ⋐D R(p)containingp. As in the paragraph “An isothermal chart
+up toL” below — the argument is the same and shorter, no boundary arc being distinguished
+— Lichtenstein’s theorem [10, Theorem 4.1, casem = 1] supplies aC1,αdiffeomorphism of D
+onto Ω, conformal for the metric(36), and by the density law recorded there the equation
+for ˆvp becomes (37) on the disc, with no boundary condition and no reflection needed. The
+factorisation of the paragraph “Finite order” below then applies verbatim: eitherw := 2∂zˆvp has
+isolated zeros of finite integer orderm with c′
+1|z−z0|m≤|w|≤c′
+2|z−z0|m nearby, orw≡0.
+In the second case∇ˆvp≡0, so ˆvp is constant, and the constant is0because ˆvp vanishes at the
+image ofp; thenfp≡0near p, the set on which the two sheets agree is open by this argument
+applied at each of its points and closed by continuity, so the two surfaces coincide, contradicting
+dist(u,w) = 2. Transporting through the bi-Lipschitz chart gives|dˆvp|≍ρm and|ˆvp|=O(ρm+1)
+at distanceρfromp, andfp =hpvp withhp≥1
+2 gives|dfp|≥c1ρm−c2ρm+1> 0on a punctured
+neighbourhood ofp. In particularp is the only critical point offp in a discDp, and, the tangency
+points inDp being critical points offp,pis isolated inIntA∩IntB.
+For (33), supposefp≥0near p, the other sign being identical. Thenvp≥0on the disc on
+which it is defined andvp(p) = 0, so by the strong maximum principle at this regularity [7,
+2nd ed., Theorem 8.19, p. 198], whose hypotheses are met since the operator is in divergence
+form with no zeroth-order term andvp∈W1,2, we getvp≡0, hencefp≡0, and the same
+contradiction as above.
+Proof of(2).Assume ∂A=∂B=L and run the removal of the zeroth-order term on half-discs
+∆ =D +
+R againstL, writingv:=f/has there.
+An isothermal chart up toL.Choose a smooth Jordan subdomainΩof the half-disc whose
+boundary contains a subarc ofL around the point in question. Writea = (aij)for the leading
+matrix of (35) after the normalisationdeta≡1,bfor its drift, and
+g:=a −1,(36)
+a Riemannian metric withdetg = 1; it is theinverseof the leading matrix that carries the
+relevant conformal structure, as the computation below shows. Being the inverse of a Lipschitz
+uniformly elliptic matrix,g is Lipschitz onΩ, henceC0,α, and∂Ωis C1,α; so by the global form of
+Lichtenstein’s theorem [10, Theorem 4.1, casem = 1] there is a diffeomorphismτ:D→Ω of class
+C1,α, conformal from the flat metric tog. Letφbe a Möbius map ofD onto the upper half-plane
+carrying the arcτ−1(L∩∂Ω)into R andτ−1of the base point to0, and putF :=φ◦τ−1. Then
+F is C1,αup toL, sendsL into R and the interior into the upper half-plane, and is bi-Lipschitz,
+DFbeing continuous and invertible on a compact set.
+It remains to see that in the coordinatez = F(·)the operator becomes the flat Laplacian
+with a bounded drift. A divergence-form operator transforms under aC1,αdiffeomorphism
+by the density law: testing
+∫
+(a∇v)·∇ϕdxagainst ϕand substitutingx = F−1(z)turns the
+leading matrix intoDFaDF T/|detDF|and the drift intoDFb/|detDF|, no derivative ofDF
+appearing anywhere. Three consequences. First, the transformed drift is again inL∞, sinceDF
+and( detDF )−1are bounded. Second, the transformed leading matrix again has determinant1,
+the factors( detDF )2 cancelling. Third, that matrix is a positive multiple of the identity exactly
+
+--- PAGE 34 ---
+34 APEX INTELLIGENCE
+when a =λ(DF TDF )−1for a positive functionλ, that is, exactly wheng =a−1is a conformal
+multiple of the pullbackF∗δof the flat metric — which is what the choice ofτarranged, φ
+being conformal. A positive multiple of the identity of determinant1is the identity. Hence(35)
+becomes
+∆ˆv+ ˆb·∇ˆv= 0,ˆb∈L∞,ˆv= 0onR.(37)
+Odd reflection.Extend ˆvto the full disc by ˆv(z) := −ˆv(¯z)for Imz < 0, and extend ˆb
+by ˆb1(¯z) = ˆb1(z), ˆb2(¯z) = −ˆb2(z). For a test function ϕsupported in the full disc, split∫
+∇ˆv·∇ϕ−
+∫
+(ˆb·∇ˆv)ϕover the two half-discs and substitutez↦→¯zin the lower one: the two
+interior terms cancel by(37), and the two conormal boundary terms alongR cancel because the
+leading matrix is the identity, so its off-diagonal entry vanishes onR and the conormal derivative
+is ∂2ˆv, which is even under the reflection while the outward normals are opposite. Hence the
+extension solves(37) weakly on the full disc. This is the one point at which the vanishing of
+the off-diagonal coefficient onL is used, and it is why the isothermal chart is taken before the
+reflection and not after.
+Finite order.Put w := 2∂zˆv. Since∂¯z∂z = 1
+4∆and ˆb·∇ˆv= 1
+2[(ˆb1 +iˆb2)w + (ˆb1−iˆb2)w]for
+realˆv, equation (37) reads
+∂¯zw=−1
+4(ˆb1 +i ˆb2)w−1
+4(ˆb1−iˆb2) w,
+a generalized analytic function with coefficients inL∞⊂Lp for everyp >2; this is exactly
+Vekua’s standing hypothesis [17, Ch. III, §1, condition (1.10), p. 137], the equation already
+being in the canonical form [17, Ch. III, (1.5), p. 131], whose leading coefficient is identically1.
+By the similarity principle [17, Ch. III, §4.1, Basic Lemma, p. 144, and formula (4.3), p. 146],
+w = ΦeωwithΦholomorphic and ωbounded and Hölder; so unlessw≡0its zeros are isolated
+of finite integer orderm, withc′
+1|z−z0|m≤|w|≤c′
+2|z−z0|m nearby [17, Ch. III, §4.2, p. 145,
+Theorem 3.5, pp. 146–147, and the inequalities (4.15), p. 152]. The alternativew≡0forces
+∇ˆv≡0, hence ˆv≡0since ˆv= 0on R, hencef≡0on an open set; the set where the two
+minimal sheets agree is then open by this argument applied at each of its points and closed
+by continuity, so the sheets coincide, contradictingdist(u,w) = 2. Transporting through the
+bi-LipschitzF gives|dˆv|≍ρm and|ˆv|=O(ρm+1)at distance ρ, andf =hv with h≥1
+2 gives
+|df|≥c1ρm−c2ρm+1>0on a punctured half-neighbourhood.
+Every critical point off on L is therefore isolated in the closed half-neighbourhood, and
+at a non-critical boundary point continuity gives a neighbourhood free of critical points;L is
+compact, so finitely many critical points remain and a uniformr0 exists with no critical point in
+{0<r<r 0}. They lie on{f= 0}because f vanishes onL. Since a tangency point in the collar
+would be a critical point off, this also givesT ⊂{r≥r0}, and clause (2) is proved.
+Proof of(3).In configuration (T1) one has A∩B∩∂E(K) = ∂A∩∂B=∅, soA∩Bis a
+compact subset ofIntE (K); in configuration (T2), clause (2) confinesT to the compact set
+A∩B∩{r≥r0}, which again misses∂E(K)— a point ofA∩Bon ∂E(K)lies on L, where
+r = 0. In both casesT is a subset of a compact subsetC of IntA∩IntB. Tangency is a closed
+condition, the tangent planes varying continuously, soT is closed inIntA∩IntBand hence
+closed inC; being also discrete by clause (1), it is finite.□
+5.4.Configuration (T2): a common boundary leaf.
+Lemma 5.6(No small closed intersection curves).Letft be the perturbation off described in
+(38) below. There areρ0> 0and δ1> 0such that for everyt∈(0,δ1]every closed componentγ
+ofA t∩Bhasdiam(γ)≥ρ0.
+
+--- PAGE 35 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 35
+We first describe the perturbation, since the lemma depends on its exact form. Its sign is a
+free parameter, and fixing it correctly is what keeps the intersection curves away fromL; so we
+begin with that choice.
+Lemma 5.7(A sign, and an arc ofL swept clear).Put a(s) :=∂rf(s,0)andΛ := sup|∂2
+rf|<∞.
+Then a̸≡0, and there areς∈{±1}, a closed arcI⊂L, and constantsa0 > 0, r1 > 0, all
+depending only onAandB, such that
+ςf(s,r)≥1
+2a0r >0fors∈I,0<r≤r 1.
+Proof. Since f(s,0)≡0we have ∂sf(s,0)≡0, sodf(s,0) = (0,a(s))and the critical points off
+on{r= 0}are exactly the zeros ofa. By (34) there are finitely many, soa̸≡0. Picks0 with
+a(s0)̸= 0, setς:= signa (s0)and a0 := 1
+2|a(s0)|, and use the continuity ofa to choose a closed
+arcI∋s0 withςa≥a0 onI. Putr 1 := min{a0/(2Λ), r0/4}. Fors∈Iand0≤ρ≤r1,
+ς∂rf(s,ρ)≥ςa(s)−Λρ≥a0−Λr1 ≥1
+2a0,
+and integrating inr gives the claim. Nothing in the construction refers to the perturbation
+parameter. □
+Take a cut-offχ(r)equal to1near r = 0, supported in the collar{r<r0}, with its transition
+band placed where{u= 0}is regular, and pairwise disjoint discsDp ⋑D′
+p around the points of
+Twith bumpsψp equal to1onD ′
+p; withςas in Lemma 5.7 set
+At :=
+{
+y=f+ςtχ(r)−ςt
+∑
+p∈T
+ψp
+}
+.(38)
+Near the boundaryAt∩Bis the level set{f=−ςt}, regular for smallt̸= 0by (34); on the
+transition band, if transversality failed alongtn→0the bad points would converge to a point
+withf = 0and df = 0, excluded by the placement of the band. OnD′
+p one hasAt∩B={f=ςt},
+and by the last clause of Proposition 5.5 the only critical point off in Dp is p, with critical
+valuef(p) = 0, so everyt̸= 0is a regular value of either sign; on the annulusDp\D′
+p one has
+|du|≥c >0, hence|d(f−ςtψp)|≥c/2for t small. Elsewhere At = A and transversality is
+open. Thus there isδ(1) > 0such that for t∈(0,δ(1)]the surface At is neat, incompressible,
+transverse toB, with∂At the leaf{y=ςt}disjoint from∂B, disjoint fromS, andAt→AinC1.
+The interior perturbation is of subtract-a-constant type, and this cannot be weakened: a family
+guaranteeing only transversality would lose the fact thatft and f differ by a constant nearp,
+and the proof below would fail.
+Proof of Lemma 5.6.Otherwise there aretn→0and closed components γn with diam(γn)→0;
+byC0 convergence, pointsxn∈γn subconverge to somex∈A∩B. Ifx is a transverse point
+outside the collar, then in a fixed ball atx the intersection is a single arc crossing it, andC1
+stability keeps that true for smallt, soγn cannot lie in the ball. Ifx =p∈T, takeDp as above;
+for largen the curveγn bounds a discDn⊂Dp, andft vanishes onγn. Ifft≡0on Dn then
+dft≡0there, impossible since ft has at most the one critical pointp in Dp; otherwiseft attains
+a strict interior extremum onDn, at a critical point, hence atp — but onD′
+p the functionsft
+and f differ by the constantt, and by(33)p is not a local extremum off, hence not offt. Ifx
+lies in the collar, thenDn does not meet∂B, soDn⊂{r>0}, where by(34)df̸= 0and hence
+|dft|≥c/2for small t; butft vanishes on∂Dn, so both its maximum and its minimum onDn
+are0, forcingf t≡0anddft≡0. Each case is a contradiction.□
+
+--- PAGE 36 ---
+36 APEX INTELLIGENCE
+Choice ofρ2.The next two results share a scale, and we fix it here rather than inside either of
+them. Chooseρ2>0with the ballsB 2ρ2(p),p∈T, pairwise disjoint,
+4Nρ2<ρ0/8, ρ2≤r0/8, ρ2≤r1/(2C′
+met),(39)
+and putP :=⋃
+pB2ρ2(p), G :=E(K)\P and G′:=E(K)\⋃
+pBρ2(p), so thatG⊂G′. Onlyρ0,
+r0,r1 andT enter this choice. Lemma 5.8 below quotes clause (1) of Corollary 5.9, which is stated
+after it; there is no circle, as the proof of Corollary 5.9 uses only Lemma 5.6, Proposition 5.5 and
+Lemma 5.1.
+Lemma 5.8(Every closed component has uniform length away fromL).Let ς,I,a0,r1 be as in
+Lemma 5.7 and writeC:=L×(0,r0)for the open collar. Then
+(i)for everyt>0the setΓ t :=A t∩Bis disjoint fromI×(0,r1];
+(ii)no closed component ofΓt contained inCis null-homotopic inC;
+(iii) there isc⋆> 0, depending only onA, B and the perturbation scheme, such that for every
+t∈(0,min{δ1,δ(1)}]every closed componentγofΓt satisfies
+length
+(
+γ∩G∩{r≥r1}
+)
+≥c⋆.
+Proof.(i) In the collarΓt is the level set{f=−ςt}, that isςf=−t<0, whereasςf≥1
+2a0r> 0
+onI×(0,r1]by Lemma 5.7.
+(ii) Suppose a closed componentγ⊂Cbounds a closed discD⊂C. Then f≡−ςton ∂D.
+If maxDf >−ςtthe maximum is interior andf has a critical point there, contradicting(34);
+likewise for the minimum. Sof≡−ςtonDanddf≡0there, contradicting (34) again.
+(iii) Note first thatγ∩∂E(K) = ∅, since At∩∂E(K) = ∂At is the leaf{y= ςt}while
+B∩∂E(K) =∂B=L ={y= 0}. Next,T lies in{r≥r0}by Proposition 5.5(2), andρ2≤r0/8
+by (39), soP= ⋃
+pB2ρ2(p)⊂{r>3r0/4}and hence
+{r1≤r≤r0/2} ⊂G∩{r≥r1}=:Z.(40)
+Letγbe a closed component ofΓt. Three cases exhaust the possibilities.
+Case A: minγr≥r1.Then γ⊂{r≥r1}, soγ∩G⊂Zand clause (1) of Corollary 5.9 gives
+length(γ∩Z)≥3ρ0/8.
+Case B: minγr < r1 and maxγr > r0/2.The function r is continuous on the circleγand
+takes a value belowr1 and a value abover0/2, soγcontains two disjoint subarcs each joining
+{r=r1}to{r=r0/2}inside{r1≤r≤r0/2}. In the collar chartr is1-Lipschitz, so each has
+length at least(r0/2−r1)≥r0/4up to the bi-Lipschitz constantC′
+met; by(40) both lie inZ,
+and together they givelength(γ∩Z)≥r0/(2C′
+met).
+Case C: minγr < r1 and maxγr≤r0/2.Then γ⊂{0< r≤r0/2}⊂C, so by (ii)γis not
+null-homotopic in the annulusC and its projection toL is onto. In particularγhas points over
+everys∈I, and by (i) each of them hasr > r1; by hypothesis each also hasr≤r0/2, so the
+part ofγlying overI is contained inZ by (40). The projection is1-Lipschitz in the collar chart,
+so that part has length at least the arclengthℓ(I)ofI, up toC′
+met.
+Takec⋆:= min{3ρ0/8, r0/2, ℓ(I)}/C′
+met.□
+Corollary 5.9(Bounds independent oft).With ρ2, P, G, G′as in the choice ofρ2 above, there
+are θ1∈(0,π/2], ηgeo
+1 > 0, κ1 > 0and δ2 > 0such that for every t∈(0,δ2]and every closed
+componentγofAt∩B:
+(1)length(γ∩G)≥3ρ0/8;
+(2) the opening angleαalong γ∩G′∩{r≥r1/2}satisfies thetwo-sidedbound min{α,π−
+α}≥θ1;
+
+--- PAGE 37 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 37
+(3) alongγ∩G′∩{r≥r1/2}the functions of Lemma 5.1, read pointwise, satisfyηmax≥ηgeo
+1
+andκ≥κ1.
+Proof.(1) By Lemma 5.6 there area,b∈γwith d(a,b) ≥ρ0/2. Collapse each of the N
+components ofP to a point and letd′be the resulting quotient pseudometric. CollapsingN
+sets of diameter at most4ρ2 decreases distances by at most4Nρ2, sod(a,b)≤d′(a,b) + 4Nρ2;
+and the image of an arc ofγfrom a to b is a path of length exactlylength(γ∩G) =: Λ. Hence
+ρ0/2≤Λ + 4Nρ2 < Λ + ρ0/8, soΛ > 3ρ0/8. The quotient formulation is needed, not a
+decoration: a curve may enter and leave the same ball an unbounded number of times, so the
+count “Nballs, each costing4ρ2” is not valid, whereas each component is collapsed only once.
+(2) PutG′′:=E(K)\ ⋃
+pBρ2/2(p), soG′⊂G′′, and put
+K:=A∩B∩G′′∩{r≥r1/4},
+with the convention thatr is extended byr≡r0 outside the collar. The setK is compact, and
+A meets B transversally at every point of it. Indeed, at a point ofK inside the collar the two
+sheets are the graphs{y=f}and{y= 0}of §5.3, and transversality along{f= 0}is exactly
+the conditiondf̸= 0, which holds by(34); the tangency points ofL itself lie on{r= 0}and are
+excluded by the constraintr≥r1/4. At a point ofK outside the collar Proposition 5.5 gives
+transversality away fromT , andT has been excised byG′′. Hence min{α,π−α}, a continuous
+positive function onK, has a positive infimum2θ1; the upper bound is included because the
+two frontiers occupy opposite sectors and Lemma 5.1 needsαbounded away fromπas well
+as from0. For small t the curveAt∩Blies in themin{ρ2/4,r1/4}-neighbourhood ofA∩B
+and onG′′the C1 distance fromAt to A is O(t), so the two-sided bound persists withθ1 along
+γ∩G′∩{r≥r1/2}.
+(3) By the last paragraph of the proof of Lemma 5.1, the lower boundηof (14) is obtained
+from (22) by replacingm with cot(θ/2), m′with sup|m′|and g0(θ)with g0(θ•); besides the
+angle it involves the local reachϱof (13), the distanceϱ∂to ∂˜B, and a constantC1 bounding
+the C2 norms of the two sheets. Each of the three is bounded below alongγ∩G′∩{r≥r1/2},
+uniformly int≤δ2.
+Forϱ∂: on{r≥r1/2}the distance to∂E(K)is at leastr1/(2C′
+met), and ˜B may be taken to
+contain ther 1/(4C′
+met)-neighbourhood of that set, soϱ∂≥r1/(4C′
+met).
+ForC1 and sup|m′|: by the construction ofAt the graph functions ofAt overA haveC3 norms
+bounded by a constant independent oft≤δ(1), andB is fixed; together with the two-sided angle
+bound of (2) this bounds the second fundamental forms of the two sheets and the derivative of
+the angle function alongγ, uniformly int.
+Forϱ: the curvature ofγis bounded by a constantK1 independent oft, by the previous
+paragraph, so the normal exponential map ofγis injective on a tube of radiusϱ′> 0around
+any arc ofγof length at mostϱ′, withϱ′depending only onK1 and the ambient injectivity
+radius. It remains to rule out that two arcs ofγfar apart inγcome close inE(K). Suppose not:
+there aretn↓0and points xn,yn on componentsγn of Atn∩B, both inG′∩{r≥r1/2}, with
+dγn(xn,yn)≥ϱ′and d(xn,yn)→0. Passing to a subsequence,xn,yn→x∈G′∩{r≥r1/2},
+and x∈A∩BbyC1 convergence, sox∈Kand A meets B transversally atx. Transversality
+gives a ballB(x,ζ)in which A∩Bis a single embedded arc, and byC1 convergence the same
+holds forAtn∩Bfor largen; but thenxn and yn lie on one arc ofAtn∩Bof diameter at most
+2ζ, whose length is at most2ζ·(1 +o(1))<ϱ′once ζis small, contradictingdγn(xn,yn)≥ϱ′.
+Henceϱ≥ϱ1>0alongγ∩G′∩{r≥r1/2}, uniformly int.
+Takeηgeo
+1 :=η(θ1,ϱ1,r1/(4C′
+met))andκ1 :=κ(θ1,ϱ1,r1/(4C′
+met)), both positive sinceθ1>0.
+
+--- PAGE 38 ---
+38 APEX INTELLIGENCE
+The angle bound has to come first: by the last paragraph of the proof of Lemma 5.1 the
+admissible width degenerates as the angle does, so there is no bound onηmax in terms of the
+reach and the metric alone.□
+Proof of Theorem 5.4, configuration(T2).Putη1 := min{ηgeo
+1 , κ1ρ2/4}and
+ε∗:=g 0(θ1)·η1·c⋆>0,(41)
+with c⋆the constant of Lemma 5.8, which depends onA,Band on the once-chosen perturbation
+scheme and on nothing later.
+No disc patch, uniformly int.Suppose cutting At and B along At∩Bproduces a disc patch.
+Every closed componentγof At∩Bsatisfies, by Corollary 5.9, Lemma 5.8(iii) and the slicewise
+non-negativity in Lemma 5.1,
+G(γ)≥g0(θ1)η1 length
+(
+γ∩G∩{r≥r1}
+)
+≥ε∗,
+the gain being computed with the width function(43) constructed below, which equalsη1 on
+G∩{r≥r1}, and the rest of the curve being discarded. So(23) gives2 ε∗≤G(a) +G(b)≤
+e(t) := Area(At)−Area(A), ande(t)→0by C1 convergence. So there isδ3> 0with e(t)<ε∗,
+hence no disc patch,for everyt∈(0,δ3]. The quantifier order matters:ε∗is pinned down before
+t, since the patch exists only aftert and both the length of its frontier and the angle along it
+vary witht.
+The output vertices do not depend ont.For t in a compact subinterval of(0,δ(1)]the surfaces
+At are transverse toB with disjoint boundaries and disjoint fromS, so there is an ambient
+isotopy Ht with Ht0 = id, Ht(At0) = At, Ht(B) = B and Ht|S = id, preserving∂E(K): take
+Xt =∂tjt for embeddingsjt with imageAt, correct it along the compact intersection track by a
+tangential term so that it becomes tangent toB there — possible because transversality makes
+the relevant map ontoTpE(K)/TpB surjective and the metric supplies a smooth right inverse —
+and extend by Hadamard’s lemma and a partition of unity to a time-dependent field tangent to
+B and to∂E(K)and vanishing onS, whose flow is the required isotopy. LiftHt to the infinite
+cyclic cover starting at the identity. It fixesS0 and S1 and the fundamental domain between
+them, commutes with the deck generator, and cannot interchange the two sides of a wall, since
+the upper side is the one containingS1; so it carries the frontiers(11) at t0 to those att and
+small push-offs to admissible push-offs. Hence the two coarse classes are independent oft> 0.
+Fix once and for all, at one value oft, a compression sequence from each coarse surface to an
+incompressible descendant with boundary, givingw↑,w↓; transporting the coarse surfaces and
+the discs along the isotopy gives the same two vertices at everyt> 0.This is what makes (b)
+hold in the order stated: givenz with minimiserZ disjoint fromA∪B, one may choosetz > 0
+after Z is known so thatZ∩Atz =∅, and take the push-offs attz small enough to avoidZ; the
+classes, and therefore the vertices, are the ones already fixed, sotz changes only a representative.
+The area estimate.Since ∂At∩∂B=∅, the setΓ t := At∩Bis a finite union of closed
+curves, and it is non-empty, for otherwiseAt and B would be disjoint representatives ofw and u.
+Corollary 5.9 and Lemma 5.8 apply to every component, and the slicewise gain is non-negative
+everywhere, so rounding the two cornered frontiers alongΓt gains at leastε∗in total. The order
+of choices is
+A,B⇒(perturbation scheme, includingς)⇒ρ0⇒r1⇒ρ2
+⇒(θ1,ϱ1)⇒(ηgeo
+1 ,κ1)⇒η1⇒c⋆⇒ε∗
+⇒δ⇒t⇒η2⇒(ˆB↑,ˆB↓)⇒C⇒σ,
+
+--- PAGE 39 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 39
+each step using only what precedes it; in particulart appears in the chain, afterδand before the
+rounded surfaces. Choose
+δ≤min{δ(1),δ1,δ2,δ3}and small enough that
+Area(At)<Area(A) +ε∗/2fort∈(0,δ], (42)
+and fix such at. It remains to name the width function, and this is the one place where the
+constraint|η′|≤κin (15) is doing work: the width must beη1 out onG∩{r≥r1}, where
+the gain is collected, and must fall to something admissible inside the ballsBρ2(p), where the
+angle degenerates andηmax with it, and inside the collar{r≤r1/2}, where the two sheets meet
+∂E(K). Put
+w(x) := min
+{
+ρ2, d
+(
+x,⋃
+pBρ2(p)
+)
+, d
+(
+x,{r≤r1/2}
+)}
+,
+η2 := min
+{
+η1,min
+Γt
+ηmax,1
+2 min
+Γt
+ϱ
+}
+>0,
+so thatwis1-Lipschitz onE(K)and hence alongΓ t, and set
+η(s) := min
+{
+η1, η2 + κ1
+2 w(x(s))
+}
+,(43)
+smoothed at a scale≪ρ2 so as to beC1 with|η′|≤κ1. OnΓ t∩G∩{r≥r1}we have
+w = ρ2: the second entry isρ2 because G omits the ballsB2ρ2(p), and the third is at least
+r1/(2C′
+met)≥ρ2 because r is C′
+met -Lipschitz in the collar chart. Sinceη2 +κ1ρ2/2≥2η1 by
+the choiceη1≤κ1ρ2/4, we getη≡η1 there. Where w = 0we have η≡η2≤ηmax pointwise,
+by the definition ofη2. In between,w> 0forces the point to lie outside⋃
+pBρ2(p), hence inG′,
+and outside{r≤r1/2}, hence in{r > r1/2}, so Corollary 5.9(3) givesη≤η1≤ηgeo
+1 ≤ηmax
+and|η′|≤κ1≤κ. So (15) holds along all ofΓt, and by slicewise non-negativity the gain over
+Γt∩G∩{r≥r1}alone already accounts forε∗.
+An absolute bound onη′, rather than a relative one such as|η′|≤Λη, is what makes this fit:
+under a relative bound the descent fromη1 to η2 needs arclengthΛ−1log(η1/η2), unbounded
+as η2→0, whereas the transition length available is the fixedρ2/2; under the absolute bound
+it needs(η1−η2)/κ1≤η1/κ1, independent ofη2. That an absolute bound is the right form is
+visible in (21), where the lossm2η′2·ηand the gaing(m)·ηare of the same order inη.
+Now obtainC from Lemma 5.2, and chooseCσ <ε∗/4. Running steps (a)–(d) of the transverse
+case with(At,B)in place of(S−,S+)andε0 replaced byε∗gives
+Area(P↑) + Area(P↓)≤Area(At) + Area(B)−ε∗+Cσ
+<A(w) +A(u)−ε∗/4,
+whence (d). The genus computation is topological and is transported by the isotopy, so (c) is
+unchanged, and (a) follows as before.□
+5.5.Configuration (T1): disjoint boundaries, interior tangencies.This is the easier
+of the two non-transverse configurations, and it is treated by the same device: perturbA to a
+transverse competitor and bound the area lost against the area gained. What makes it easier is
+that the intersection stays away from∂E(K)altogether, so that the collar apparatus of §5.4 —
+the signςand the arcI, the length estimate inside the collar, the third scale of the width ramp
+— is not needed and is replaced by a single positive number.
+Assume ∂A∩∂B=∅andT ̸=∅. Since A∩∂E(K) = ∂Aand B∩∂E(K) = ∂Bwe have
+A∩B∩∂E(K) =∂A∩∂B=∅, andA∩Bis compact, so
+d0 := dist
+(
+A∩B, ∂E(K)
+)
+>0.(44)
+The perturbation.By Proposition 5.5(1) each of the finitely manyp∈Tcarries a discDp,
+inside the graph chart of(30), on whichp is the only critical point offp andfp(p) = 0. Shrinking,
+
+--- PAGE 40 ---
+40 APEX INTELLIGENCE
+take theDp pairwise disjoint and contained in{d(·,∂E(K))>d 0/2}, choose concentric smaller
+discs D′
+p ⋐D p, and take bumpsψp supported inDp and equal to1on D′
+p. LetAt be obtained
+fromAby replacing, over eachD p, the graph{y=fp}by
+{y=fp−tψp}.(45)
+Then ∂At =∂A, still a leaf ofJ disjoint from∂B; At is smooth, neatly embedded and normally
+isotopic toA, hence incompressible and a representative ofw; andAt =A outside a compact
+subset of IntE (K), soAt∩S=∅for smallt andAt→AinC∞. As in(38), the perturbation is
+of subtract-a-constant type onD′
+p, and this is what the second case of Lemma 5.10(1) consumes.
+Transversality holds for all smallt >0: on D′
+p one hasAt∩B={fp = t}, andt̸= 0is a
+regular value because the only critical point offp in Dp is p, with critical value0; onDp\D′
+p
+one has|dfp|≥c>0, hence|d(fp−tψp)|≥c/2for t small; elsewhereAt =A, which meetsB
+transversally away fromT . Fix δ(1) > 0accordingly. For t∈(0,δ(1)]the setΓ t := At∩Bis
+therefore a finite union of disjoint smooth closed curves — closed, because an arc would have its
+endpoints in∂At∩∂B=∅— lying in{d(·,∂E(K))≥d0/2}; and it is non-empty, for otherwise
+At andBwould be disjoint representatives ofwandu, contradictingdist(u,w) = 2. Finally
+e(t) := Area(At)−Area(A)−→0 (t↓0),(46)
+andArea(A) =A(w),Abeing a minimiser.
+Lemma 5.10(Bounds independent oft, tangency case).There areρ0> 0, ρ2> 0, θ1∈(0,π/2],
+ηgeo
+1 > 0, κ1 > 0and δ2 > 0, depending only onA, B and the perturbation scheme, such that,
+writing P :=⋃
+pB2ρ2(p), G := E(K)\P and G′:= E(K)\⋃
+pBρ2(p), the following hold for
+everyt∈(0,δ2]and every closed componentγofΓt:
+(1)diam(γ)≥ρ0 andlength(γ∩G)≥3ρ0/8;
+(2)the opening angleαsatisfies the two-sided boundmin{α,π−α}≥θ1 alongγ∩G′;
+(3) along γ∩G′the functions of Lemma 5.1, read pointwise, satisfyηmax≥ηgeo
+1 and κ≥κ1.
+Proof. Each clause is the corresponding statement of §5.4 with the collar deleted, and we say
+what the deletion is.
+Diameter.Run the proof of Lemma 5.6. Suppose tn→0and closed components γn with
+diam(γn)→0; pointsxn∈γn subconverge to somex∈A∩B. Two cases now exhaust the
+possibilities, the third case of that proof being vacuous becauseΓt misses the collar by(44). Ifx
+is a transverse point, a fixed ball atx meets A∩Bin a single arc crossing it, andC1 stability
+keeps that true for smallt, soγn cannot lie in the ball. Ifx =p∈T, then for largen the curveγn
+bounds a discDn⊂Dp on whichfp−tψp vanishes on the boundary; it cannot vanish identically,
+since then its differential would vanish onDn while p is its only critical point inDp; so it attains
+a strict interior extremum at a critical point, necessarilyp — but onD′
+p it differs fromfp by
+the constantt, and by(33)p is not a local extremum offp. This gives ρ0 > 0, valid for all
+sufficiently smallt. Now chooseρ2 > 0with the balls B2ρ2(p)pairwise disjoint,4 Nρ2 < ρ0/8
+and2 ρ2<d 0/2; the collapsing argument of Corollary 5.9(1), which uses nothing butρ0 and this
+choice ofρ2, giveslength(γ∩G)≥3ρ0/8.
+Angle.Put G′′:=E(K)\⋃
+pBρ2/2(p)and K :=A∩B∩G′′, a compact set on whichA meets
+B transversally,T having been excised. The restriction{r≥r1/4}of Corollary 5.9(2) is not
+needed and has no analogue here: there it removed the tangencies alongL, and here∂A∩∂B=∅.
+So min{α,π−α}has a positive infimum2θ1 onK, and fort small the two-sided bound persists
+withθ1 alongγ∩G′.
+Widths.As in Corollary 5.9(3), ηand κare controlled by the angle, by bounds on theC2
+norms of the two sheets and onsup|m′|, by the local reachϱand byϱ∂. The first three are
+
+--- PAGE 41 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 41
+bounded exactly as there. For ϱ∂the collar estimate is replaced by(44): the boundary of
+the cornered frontier lies on∂E(K), andΓ t is at distance at leastd0/2from it. For ϱ, the
+compactness argument of Corollary 5.9(3) applies verbatim withKas above.□
+Proof of Theorem 5.4, configuration(T1).Putη1 := min{ηgeo
+1 , κ1ρ2/4}and
+ε∗:=g 0(θ1)·η1·3
+8ρ0>0,(47)
+fixed beforet, in the orderA,B⇒perturbation scheme⇒ρ0⇒ρ2⇒θ1⇒(ηgeo
+1 ,κ1)⇒η1⇒
+ε∗⇒δ⇒t.
+The width function.Put w(x) := min{ρ2, d(x,⋃
+pBρ2(p))}, which is1-Lipschitz, and, after
+t is chosen,η2 := min{η1,minΓtηmax,1
+2 minΓtϱ}>0; setη(s) := min{η1, η2 + κ1
+2 w(x(s))},
+smoothed at a scale≪ρ2 so as to beC1 with|η′|≤κ1. OnΓ t∩Gwe havew =ρ2, soη≡η1
+byη1≤κ1ρ2/4; wherew = 0we have η≡η2≤ηmax pointwise; and wherew> 0the point lies
+inG′, so Lemma 5.10(3) givesη≤η1≤ηgeo
+1 ≤ηmax and|η′|≤κ1≤κ. So (15) holds along all of
+Γt, and by the slicewise non-negativity of Lemma 5.1(4) the gain along a closed componentγ
+satisfies
+G(γ)≥g0(θ1)η1 length(γ∩G)≥ε∗,
+the rest of the curve being discarded.
+No disc patch, uniformly int.If cutting At andB alongΓ t produced a disc patch, Lemma 5.3
+— applicable becauseA is a minimiser,At is normally isotopic to it with∂At a leaf, andAt ⋔B
+with ∂At∩∂B=∅— would give closed curvesa,bofΓ t with2 ε∗≤G(a) +G(b)≤e(t). By (46)
+there isδ3>0withe(t)<ε ∗, hence no disc patch, for everyt∈(0,δ3].
+Conclusion.Choose δ≤min{δ(1),δ2,δ3}, small enough in addition thatArea(At)<Area (A) +
+ε∗/2for t∈(0,δ], and fix such at. Lemma 4.5 applies to the pair(At,B)and yields P↑,P↓;
+rounding the two cornered frontiers alongΓt with the widthηgains at leastε∗in total, and
+Lemma 5.2 then costsCσ, which we take belowε∗/4. Exactly as in configuration (T2), an
+ambient isotopy carryingAt0 to At, fixingB and S and preserving∂E(K), shows that the two
+coarse classes, and hence the two output verticesw↑,w↓, do not depend ont; the construction
+of that isotopy used only transversality, the disjointness of the boundaries and the disjointness
+fromS, all of which hold here. Then
+Area(P↑) + Area(P↓)≤Area(At) + Area(B)−ε∗+Cσ
+<A(w) +A(u)−ε∗/4,
+which is (d); the genus computation is topological and transported by the isotopy, giving (c);
+and (a) follows as in the transverse case. For (b) thet-independence just established is what is
+needed, exactly as in configuration (T2): givenz with minimiserZ disjoint fromA∪B, choose
+tz > 0after Z is known so thatZ∩Atz =∅and take the push-offs attz small enough to avoid
+Z; the coarse classes, and hence the vertices, are the ones already fixed, sotz changes only a
+representative. □
+The three configurations (T0), (T1), (T2) exhaust the possibilities, so Theorem 5.4 is proved.
+5.6.Axiom (N2) forIS(K).
+Proposition 5.11(Apices of a two-interval).Let K be a non-trivial knot. Letu,wbe vertices
+ofIS(K)withdist(u,w) = 2. Then
+(1)I (u,w)has an apex; indeed both outputs of Theorem 5.4, applied tou,wand any common
+neighbour, are apices;
+(2)some apexxofI(u,w)satisfiesc(x)<max{c(u),c(w)};
+
+--- PAGE 42 ---
+42 APEX INTELLIGENCE
+(3)ifg(u),g(w)≤ℓthen the apex in(2)hasg(x)≤ℓ.
+Consequently
+(
+IS(K),c
+)
+is an exchange complex in the sense of Definition 6.1.
+Proof.(1) Letx0∈I(u,w), which is non-empty sincedist(u,w) = 2, and lety be either output
+of Theorem 5.4 applied to(x0;u,w). By (a),y is equal or adjacent tou and tow; it cannot
+equalu, since it would then be adjacent tow, contradictingdist(u,w) = 2, and likewise it cannot
+equalw; soy∈I(u,w). By (b), everyz equal or adjacent to bothu andw — in particular every
+member ofI(u,w)— is equal or adjacent toy. Soyis an apex.
+Local descent.Suppose x∈I(u,w)satisfies c(x)≥c(u)and c(x)≥c(w), and lety↑,y↓be
+the outputs of Theorem 5.4 applied to(x;u,w). Lexicographic comparison givesg(x)≥g(u)
+and g(x)≥g(w), so by (c)g(y↑) +g(y↓)≤g(u) +g(w)≤2g(x)and the minimum of the two
+genera is at mostg(x). If it is strictly smaller, the corresponding outputy has c(y) < c(x)
+and g(y)≤g(x). If it equals g(x), then both genera equalg(x), the sum is2g(x), and (c)
+is an equality withg(u) = g(w) = g(x); then A(x)≥A(u)and A(x)≥A(w), so (d) gives
+A(y↑) + A(y↓) < A(u) + A(w) ≤2A(x)and the output of smaller area has g(y) = g(x),
+A(y)<A(x), hence againc(y)<c(x)andg(y)≤g(x).
+(2) The set of complexities of apices ofI(u,w)is a non-empty subset ofW, so by Lemma 4.2(iii)
+it has a least element; letx∗be an apex attaining it. Supposec(x∗)≥max{c(u),c(w)}. An apex
+is a common neighbour, so local descent applies to(x∗;u,w)and produces an output y with
+c(y)<c (x∗). By the argument in (1),y is itself an apex ofI(u,w), contradicting the minimality
+ofc(x∗). Hencec(x∗)<max{c(u),c(w)}, which is (2).
+(3) Fromc(x∗)<max{c(u),c(w)}and the lexicographic order,g(x∗)≤max{g(u),g(w)}≤ℓ.
+For the last sentence:IS(K)is non-empty by Proposition 3.5, connected by Proposition 3.2,
+and flag by Proposition 3.3;W is well-ordered by Lemma 4.2(iii); (N1) is clause (1) and (N2) is
+clause (2). □
+Remark5.12 (What is and is not chosen).Theorem 5.4 produces its two outputs from minimisers
+chosen one class at a time, and different common neighbours may produce different apices; no
+map( u,w)↦→xis defined anywhere above, and none is needed, because Definition 6.1 asks only
+for existence. This is exactly the point at which the obstruction identified in [15] is bypassed
+rather than solved. The passage in (2) to an apex of least complexity is a single instantiation
+inside a proof by contradiction, legitimate inZFby Remark 4.3.
+6.Exchange complexes
+From this section to the end of §7 no three-dimensional topology is used. Nothing is quoted
+from §§2–5 except Definition 6.1 itself.
+6.1.The axioms.Let X be a connected flag simplicial complex with vertex setX(0), and write
+distfor the edge-path metric onX(0). Foru,wwithdist(u,w) = 2thetwo-intervalis
+I(u,w) =N(u)∩N(w),
+the set of common neighbours; it is non-empty by definition of the distance. A vertexx∈I(u,w)
+is anapexof the interval ifx is equal or adjacent to every member ofI(u,w); equivalently, since
+Xis flag, the full subcomplex onI(u,w)is a cone with apexx.1
+1The word “apex” is used in a different sense by Chepoi, Chalopin, Hirai and Osajda [3] for a vertex of a graph
+adjacent to all others. We keep it here because it is the natural word for a cone point, but the two usages should
+not be conflated.
+
+--- PAGE 43 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 43
+Definition 6.1(Exchange structure).Let W be a well-ordered set — one in which every
+non-empty subset has a least element. Anexchange structureonX is a mapc:X (0)→Wsuch
+that
+(N1) every two-interval has an apex; and
+(N2) wheneverdist(u,w) = 2,someapexxofI(u,w)satisfiesc(x)<max{c(u),c(w)}.
+A non-empty connected flag complex carrying such acis anexchange complex.
+Remark6.2 ((N1) is implied by (N2)).Axiom (N2) asserts thatsome apexof I(u,w)has a
+certain property, and in particular that an apex exists; so (N1) follows from it. We keep both
+because the two are used for different purposes — (N1) alone in the manufacture of the cone
+structure, (N2) in the descent — and because in §8 they are verified by different arguments.
+Three further comments on the definition, each of which is load-bearing.
+Remark6.3 (No apex is selected).The axioms assert that an apexexists; they never assert that
+one can bechosen, and no map(u,w)↦→xis part of the data. This does not solve the difficulty
+identified in [15] — that a projection cannot be made well defined on isotopy classes — it avoids
+it. Everything below is written so that no such choice is ever needed.
+Remark6.4 (Non-emptiness cannot be dropped).The induction of Theorem 7.1 is based at
+“order type1”, and the empty complex, of order type0, is not contractible.
+Remark6.5 (The choice-theoretic dependence, stated once).For a total order, “every non-empty
+subset has a least element” implies “no infinite strictly descending sequence” inZF; the converse
+needs dependent choice. We use the well-ordering theorem, hence the axiom of choice, in
+Lemma 6.6, to well-order the fibres of the complexity. That is the only use in this paper, and we
+flag it here rather than repeatedly. In particular §7 does not add one: it treats|X|as a CW
+complex with one open cell per simplex, and never needs the total ordering of the vertices that
+a∆-complex structure would require [9, p. 107]. For the complexity actually used in §8 the
+descending-chain form is what Lemma 4.2 proves directly, and the passage to least elements is
+available there inZF; see the remark following that lemma.
+6.2.Breaking ties.
+Lemma 6.6(Ties may be broken).IfX carries an exchange structure, then it carries one whose
+complexity is injective and well-ordersX(0).
+Proof. The set of attained values is well-ordered. Well-order each fibrec−1(a)and order X(0)
+lexicographically, first by the old value and then within the fibre. A lexicographic sum of
+well-orders indexed by a well-order is a well-order, and the new complexity is injective. Axiom
+(N1) does not mentionc. If the old (N2) had a witnessx with c(x) <max{c(u),c(w)}, then
+the value block ofx strictly precedes the block of the larger endpoint, so the strict inequality
+survives the refinement.□
+From here on the complexity is assumed injective.
+6.3.The ordering theorem.An injective exchange structure well-orders the vertices, and
+axiom (N2) then says exactly that any two vertices at distance2have a common neighbour
+strictly below their maximum. That hypothesis — without the word apex, without flagness, and
+without (N1) — is already enough for the following.
+Corollary 6.7.Let( X,c)be an exchange complex withc injective and letD⊆X(0) be downward
+closed forc. Then the full subcomplexXD onD is isometrically embedded inX, and is connected.
+
+--- PAGE 44 ---
+44 APEX INTELLIGENCE
+In particular, for any two verticesp,qthere is a geodesic fromp to q all of whose verticesz
+satisfyc(z)≤max{c(p),c(q)}.
+Proof. Let u,w∈Dand letn := distX(u,w), finite becauseX is connected. Ifn≤1there is
+nothing to prove, so assumen≥2. Among all pathsv0 =u,v1,...,vn =w of lengthn in X —
+a non-empty set — consider
+M(v•) := max{c(vi) : 0<i<n} ∈W.
+The order onW is a well-order, so the set of attained values has a least element; fix a path
+attaining it.
+Suppose some interior vertex hasc(vi)>max{c(u),c(w)}, and letvi be the interior vertex
+attaining M, unique becausec is injective. Thenc(vi−1)< c(vi)and c(vi+1)< c(vi): each of
+vi±1is either an endpoint, and then its complexity is belowc(vi)by assumption, or an interior
+vertex, and then its complexity is at most the maximum, with equality excluded becausec is
+injective andvi±1̸=vi. The verticesvi−1and vi+1 are neither equal nor adjacent, since a path
+of lengthn between vertices at distancen admits no shortcut; hencedist(vi−1,vi+1) = 2, and
+(N2) suppliesx∈I(vi−1,vi+1)with
+c(x)<max{c(vi−1),c(vi+1)}<c(vi).
+Replace vi byx. The result is a walk of lengthn from u to w; it is a path, for a repeated vertex
+would allow a loop to be excised and produce a walk of length<n , contradictingdistX(u,w) =n.
+Every interior vertex of it other thanx had complexity strictly belowc(vi), by injectivity, and
+c(x)<c(v i); soMhas strictly dropped, contradicting minimality.
+So every vertex of the chosen path satisfiesc(vi)≤max{c(u),c(w)}, andD being downward
+closed withu,w∈D, the whole path lies inXD. Hence distXD(u,w)≤n= distX(u,w), and
+the reverse inequality is automatic;XD is isometrically embedded, and connected because these
+distances are finite. The last sentence of the statement is the displayed property of the chosen
+path, withD=X (0).□
+Remark6.8 (Where this sits in the literature).A considerably more general statement is [3,
+Lemma 9.13, p. 150]: for a well-order⪯on the vertex set of a graph such that anyu,wat
+distance2admit v∈I(u,w)\{u,w}with v≺max{u,w}, every level setLv ={u: u⪯v}
+induces an isometric subgraph. Their hypotheses are strictly weaker than ours — no apex, no
+flagness, no local finiteness — and the argument above is theirs: they too take a shortest path
+whose largest vertex is least in the well-order and exchange at that vertex, which is what is done
+here withc in place of⪯. We have nevertheless given it, so that §§6–7 are self-contained and no
+citation stands between the axioms and Theorem 7.1.
+6.4.Heredity.
+Lemma 6.9(Heredity).Let( X,c)be an exchange complex withc injective. For a vertexv
+let X<v be the full subcomplex on{u:c(u)<c (v)}and letL(v)be the full subcomplex on the
+descending linkLc(v) ={u∈N(v) :c(u)<c(v)}. Then
+(1)if non-empty,X <v is an exchange complex;
+(2) if non-empty,L(v)is an exchange complex, and it is non-empty unlessv is the least
+vertex.
+Proof. A full subcomplex of a flag complex is flag. Letu,wbe non-adjacent vertices, either at
+distance2in X<v or both inLc(v). In the first case a common neighbour inside the sublevel set
+
+--- PAGE 45 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 45
+witnesses distX(u,w) = 2; in the secondv itself is a common neighbour, so againdistX(u,w) = 2.
+By (N2) there is an apexxofI(u,w)with
+c(x)<max{c(u),c(w)}< c(v).(48)
+ForX<v this placesx in the sublevel set at once. ForL(v), the apex is equal or adjacent to every
+member ofI(u,w), andv∈I(u,w); the strict inequality(48) excludesx =v, sox is adjacent to
+v and lies inLc(v). In both casesx lies in the smaller interval and is an apex of it, which is (N1)
+there, and (48) is (N2).
+Connectedness of L(v): two non-adjacent members have the common neighbour x just
+produced, so the graph diameter is at most2. Connectedness ofX<v is Corollary 6.7 with
+D={u:c(u)<c(v)}.
+Finally, ifv is not the least vertexv0, apply Corollary 6.7 tov andv0: the vertex adjacent tov
+on the resulting geodesic is a neighbourz̸=v with c(z)≤c(v), and injectivity givesc(z)<c (v),
+soz∈Lc(v). □
+Remark6.10 (The strict inequality is not decoration).The only point at which(48) is used with
+its full strength is the exclusion ofx =v in the descending-link case. Everything in §7.4 that
+fails, fails there.
+6.5.A machine-checked fragment.
+Remark6.11.Four statements of this section and the next have been formalised in Lean 4 against
+mathlib: the ordering statement quoted in Remark 6.8, in the form used here, for an arbitrary
+linearly ordered well-foundedW, an injective complexity, the weak form of (N2) and a possibly
+infinite vertex set; the reduction to an injective complexity of Lemma 6.6 without any finiteness
+assumption; a combinatorial reformulation of dismantlability; and the seven-vertex example of
+§7.3, whose four defining properties are settled by kernel evaluation. The development is913lines,
+contains no sorry, no axiom declaration and no appeal tonative_decide, and every headline
+declaration depends only onpropext, Classical.choice and Quot.sound.Theorem 7.1 itself
+has not been formalised and no such claim is made.
+7.Contractibility
+7.1.Two facts about CW complexes.The geometric realisation|X|of a simplicial complex
+carries the weak topology: a set is closed exactly when its intersection with every closed simplex
+is closed. For a complex that is not locally finite this isstrictly finerthan the metric topology,
+and IS(K)is not locally finite [12, p. 231]. All topological statements below refer to the weak
+topology, under which|X|is a CW complex with one open cell per simplex. We use two standard
+facts, both cited and neither reproved.
+(A) A compact subspace of a CW complex is contained in a finite subcomplex [9, Proposition
+A.1, p. 520].
+(B) If( Y,A)is a CW pair and A is contractible, then the quotient mapY→Y/A is a
+homotopy equivalence. This is [9, Proposition 0.17, p. 15], whose hypothesis is the
+homotopy extension property, combined with [9, Proposition 0.16, p. 15], which supplies
+that property for a CW pair.
+Fact (B) is what replaces, in this version, the appeal to “a cofibration which is a homotopy
+equivalence is the inclusion of a strong deformation retract”. That implication is true but was
+quoted in version 1 without proof and without a checked reference; the argument below does not
+need it.
+
+--- PAGE 46 ---
+46 APEX INTELLIGENCE
+7.2.The main combinatorial theorem.
+Theorem 7.1.Every exchange complex is contractible.
+Proof. By Lemma 6.6 we may assume the complexityc is injective, so that it well-orders the
+vertex set. For an exchange complex(Z,c)withcinjective, theorder typeof(Z,c)is the order
+type of(Z(0),c); if it isαwe writeZ(0) ={zβ}β<αin increasing order and letZγbe the full
+subcomplex on{zβ:β <γ}, so thatZ0 =∅and Zα=Z. By Lemma 6.9(1),Zγwith1 ≤γ≤α
+is again an exchange complex with injective complexity, of order typeγ.
+We prove by transfinite induction onαthe statement
+(∗α)Everyexchange complex with injective complexity and order type at most
+αis contractible.
+The universal form is not a convenience but a necessity: the successor step below applies the
+inductive hypothesis to a descending link, which is not one of the subcomplexesZγof the complex
+being treated. Lemma 6.9(2) is what makes that application legitimate — the descending link of
+the largest vertex has all its vertices below that vertex, hence order type at mostα, which is
+strictly less thanα+ 1.
+Base.Order type1: a single vertex.
+Successor.Let α≥1, assume(∗α), and letZ be an exchange complex with injective complexity
+of order typeα+ 1. Sinceα+ 1is a successor,Z has ac-largest vertexv; putY =Z, A =Zα
+(the full subcomplex on the remaining vertices) andL =L(v), the descending link ofv. SinceY
+is the full subcomplex on an initial segment containingv, the neighbours ofv in Y are exactly
+the vertices ofL. A simplex ofY either omitsv, and then has all its vertices belowv and so lies
+in A; or it is{v}∪τwith τa simplex ofY contained inLc(v), hence a simplex ofL because L
+is a full subcomplex. ConverselyL⊆A, again by fullness. Hence
+Y=A∪(v∗L), A∩(v∗L) =L,
+the second equality because a simplex ofv∗Llies inA exactly when it omitsv. The paragraph
+above gives the inclusionY⊆A∪(v∗L); the reverse inclusionv∗L⊆Yis where flagness is
+used, and it should be said, because it is easy to read the displayed equality as pure bookkeeping.
+A simplex ofv∗Lis{v}∪τwithτa simplex ofL, andτ⊆Lc(v)⊆N(v), so{v}∪τis a clique
+of the1-skeleton; that it is asimplexof X is exactly flagness. This costs nothing — flagness is
+part of Definition 6.1, so(∗α)and Theorem 7.1 carry it — but the hypothesis is used here and
+not only in Lemma 6.9. BothA andL are exchange complexes with injective complexity of order
+type at mostα(Lemma 6.9, usingα≥1for the non-emptiness ofL), so both are contractible by
+(∗α).
+Now apply fact (B) twice. First to the CW pair(v∗L, L): the conev∗Lis contractible —
+the straight-line homotopy towards the cone point is continuous for the weak topology because
+|v∗L|×Iis again a CW complex,I being locally compact — andL is contractible, so(v∗L)/L
+is contractible. Second to the CW pair(Y,A): A is contractible, soY→Y/A is a homotopy
+equivalence. CollapsingAcollapsesL⊆A, and no cell ofv∗LoutsideLlies inA, so
+Y/A= (v∗L)/L,
+which we have just seen to be contractible. ThereforeYis contractible.
+Limit.Let λbe a limit ordinal, assume(∗α)for every α < λ, and letZ be an exchange
+complex with injective complexity of order typeλ. Then|Z|=⋃
+1≤α<λ|Zα|, an increasing union
+of non-empty subcomplexes, each contractible by(∗α), andZ is connected by Corollary 6.7.
+Let n≥0and let f:S n→|Z|be continuous. Its image is compact, hence by fact (A) meets
+
+--- PAGE 47 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 47
+only finitely many simplices; those simplices have finitely many vertices in total, and each has
+index <λ, so there isα<λwith f(Sn)⊆|Zα|— hereλbeing a limit is used to find a singleα
+strictly above the finitely many indices. SinceZαis contractible,f is null-homotopic in|Zα|,
+hence in|Z|. Thusπn(|Z|) = 0for all n≥0, and|Z|is a CW complex, so it is contractible by
+Whitehead’s theorem [9, Theorem 4.5, p. 346, and the remark on p. 348].
+Applying(∗κ), whereκis the order type of(X,c), toXitself gives the theorem.□
+Remark7.2.No step of the proof selects an apex. Axiom (N2) is used only inside Lemma 6.9,
+and there only to assert thatsomevertex with the stated properties exists; the induction never
+transports a choice from one stage to the next. This is the whole reason the argument applies to
+IS(K)and not merely toMS(K).
+7.3.The exchange axioms do not give a dismantling.A vertexu of a graph isdominated
+byw ifN[u]⊆N[w], and a finite graph isdismantlableif repeated deletion of dominated vertices
+reduces it to a single vertex [15, Definition 7.1, p. 1503]. Deleting a dominated vertex is exactly
+deleting a vertex whose link is a cone, and it is by this mechanism that dismantlability yields
+contractibility [2].
+Axioms (N1) and (N2) donotdeliver that mechanism. What they deliver, through
+Lemma 6.9(2), is a descending link of diameter at most2— contractible, by Theorem 7.1 applied
+to it — and a complex of diameter2need not be a cone.
+Proposition 7.3.There is a finite exchange complexX on seven vertices, with complexity the
+identity on{0,1,...,6}, whose descending link at the top vertex is contractible but is not a cone.
+Proof. Let X be the flag complex on{0,...,6}generated by the hexagon0–1–2–3–4–5–0, the
+three chords0–2,2–4,4–0, and the six edges joining6to each of0,...,5. Takec= id.
+The descending link of6is the full subcomplexL on{0,...,5}. Its maximal simplices are
+the triangles{0,1,2},{2,3,4},{4,5,0}and{0,2,4}: a triangulated hexagonal disc, hence
+contractible. It is not a cone, because a cone point would have to be adjacent to all five other
+vertices ofL, and none is: insideL the vertices1,3,5have exactly two neighbours each, while0
+misses3,2misses5and4misses1.
+That X satisfies (N1) and (N2) forc = id is a finite verification over the pairs at distance2; it
+has been carried out by kernel evaluation in Lean 4 (Remark 6.11), as has the failure of the cone
+property. □
+Remark7.4 (What Proposition 7.3 does and does not say).It says that the exchange structurec
+is not a dismantling order: one cannot run the induction of Theorem 7.1 by deleting dominated
+vertices in the order given byc. It doesnotsay that this particular X is undismantlable — it is
+dismantlable, sinceN[1] ={0,1,2,6}⊆N[0]— and no such claim is needed. The point is that
+the axioms hand one a contractible descending link and nothing stronger, so Theorem 7.1 is not
+a corollary of the dismantlability theory even in the finite case; and in the infinite case, which is
+the case ofIS(K), there is no dismantlability theory to be a corollary of.
+7.4.The relation to the descending-link criterion.The remaining comparison is with
+Bestvina–Brady Morse theory in the form given by Zaremsky, which applies to arbitrary simplicial
+complexes.
+Definition 7.5([20, Definition 2.1]).A maph:K→R on a simplicial complexK is aMorse
+functionif the imageh(K(0))is a closed discrete subset ofR and the restriction ofh to any simplex
+takes distinct values on the vertices of that simplex. Fort∈RletKh≤tdenote the full subcomplex
+on{v:h(v)≤t}, and letlk↓
+h(v)denote the full subcomplex oflk(v)on {u∈lk(v) :h(u)<h (v)}.
+
+--- PAGE 48 ---
+48 APEX INTELLIGENCE
+When h is injective on vertices, thislk↓
+h(v)agrees with the descending link of [20, Definition
+2.2], which is defined through the descending star: a simplex oflk(v)all of whose vertices are
+h-belowvspans, together withv, a simplex havingvas its maximum.
+Theorem 7.6([ 20, Lemma 2.3]).Let h:K→R be a Morse function and lets < tin R. If
+lk↓
+h(v)is contractible for every vertexv with s < h(v)≤t, then the inclusionKh≤s↪→Kh≤t
+is a homotopy equivalence. Iflk↓
+h(v)is contractible for every vertexv with h(v)> t, then the
+inclusionK h≤t↪→Kis a homotopy equivalence.
+The statement is relative, and necessarily so. It concludes that an inclusion is a homotopy
+equivalence, never thatK is contractible, and it could not conclude the latter: forK a disjoint
+union of two copies of the bi-infinite line withh the vertex index, every descending link is a
+single point whileK is not even connected. To obtain contractibility from Theorem 7.6 one must
+exhibit a levelt at whichKh≤tis already contractible — in practice, a level below which nothing
+lies.
+There is no local finiteness hypothesis here. Consequently the fact thatIS(K)fails to be
+locally finite is by itself no obstruction to applying Theorem 7.6, and we make no novelty claim
+on that basis.
+What does obstruct a direct application is the order type. Zaremsky’sh takes values in a
+closed discrete subset ofR, and such a subset is order-isomorphic to a subset ofZ; in particular
+it contains no increasingω-sequence with a supremum belonging to it. The complexity of §4
+is not of this kind: by Lemma 4.2 the set of values attained byc = (g,A)has order type at
+most ω2, and we do not know that it is at mostω. Soc cannot simply be substituted forh, and
+the question is whether it can be replaced. The honest comparison runs through the following
+condition.
+Definition 7.7.An exchange complex(X,c)satisfies (F) if every descending linkLc(v)is finite.
+Condition (F) is implied by local finiteness and byc having order type at mostωwith finite
+fibres, but is weaker than either.
+Theorem 7.8(Reindexing under (F)).Let( X,c)be a countably infinite exchange complex with
+c injective and satisfying(F). Then there is a bijectionh:X (0)→Nsuch that lk↓
+h(v) =Lc(v)
+for every vertexv.
+Proof. Orient each edge{u,w}of X from thec-smaller to thec-larger end and letP be the
+reflexive transitive closure of this relation;P is a partial order becausec is strictly increasing along
+oriented edges. Fix a vertexv and consider the treeTv of finite descending pathsv =u0,u1,...,uk
+with ui+1∈Lc(ui). Each node has finitely many children by (F), andTv has no infinite branch
+because c decreases strictly along a branch and the values are well-ordered. By König’s lemma
+Tv is finite, sovhas finitely manyP-predecessors.
+A countable partial order in which every element has finitely many predecessors admits a
+bijective linear extension ontoN: enumerateX(0) asw0,w1,...and defineh by recursion, at stage
+n assigning the least unused natural numbers, in anyP-compatible order, to thoseP-predecessors
+ofw n not yet assigned and then town itself. This is possible because the set ofP-predecessors
+of wn is finite and its own predecessors are already handled; every vertex is reached by stagen
+at the latest, sohis onto, and it is injective andP-increasing by construction.
+For a vertexv and a neighbouru: ifc(u)< c(v)then uPv and h(u)< h(v); ifc(u)> c(v)
+thenvPuandh(u)>h(v). Hencelk ↓
+h(v) =L c(v).□
+
+--- PAGE 49 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 49
+Corollary 7.9.Let( X,c)be an exchange complex withc injective which is either finite, or
+countably infinite and satisfying(F). Then X is contractible. The proof uses Theorem 7.6,
+Lemma 6.9 and an induction on the number of vertices; it does not use Theorem 7.1.
+Proof. Finite case, by induction on the numbern of vertices. Forn = 1there is nothing to
+prove. Letn≥2and let h:Z (0)→{0,...,n−1}be the rank function ofc on a finite exchange
+complex Z with c injective. Its image is finite, hence closed and discrete inR, andh is injective,
+so h is a Morse function; andlk↓
+h(v) =Lc(v)because h and c induce the same order. For eachv
+with h(v)> 0the descending linkL(v)is a non-empty exchange complex by Lemma 6.9(2), with
+at mostn−1vertices, hence contractible by the inductive hypothesis. SinceZh≤0is a single
+vertex, the second half of Theorem 7.6 witht = 0makes Zh≤0↪→Za homotopy equivalence, so
+Zis contractible.
+Countably infinite case.By Theorem 7.8 there is a bijectionh:X (0)→Nwith lk↓
+h(v) =Lc(v);
+since N⊂Ris closed and discrete andh is injective,h is a Morse function. Hereh−1(0)is
+the c-least vertexv0, which is not something Theorem 7.8 says: it gives a bijection matching
+descending links, not one matching least elements. It does follow. The vertexu := h−1(0)
+has lk↓
+h(u) =∅, henceLc(u) =∅; and the last paragraph of the proof of Lemma 6.9 produces
+a c-smaller neighbour for every vertex other thanv0, sou = v0. The point matters because
+Lemma 6.9(2) asserts non-emptiness of the descending link only away from the least vertex, and
+the empty complex is not contractible. For eachv with h(v)> 0we therefore havev̸=v0, so
+the descending linkL(v)is a non-empty exchange complex by Lemma 6.9(2) and is finite by
+(F), hence contractible by the finite case. AgainXh≤0is a single vertex, and the second half of
+Theorem 7.6 witht = 0gives the result. (In the finite case above the same point is free:h is the
+rank function ofc, soh(v 0) = 0by construction.)□
+So under (F) the combinatorial theorem is Zaremsky’s Morse lemma together with the heredity
+of the axioms. We state the converse plainly, because it delimits what is left.
+Proposition 7.10.The conclusion of Theorem 7.8 implies(F).
+Proof. If h:X (0)→Nis injective withlk↓
+h(v) =Lc(v), thenLc(v)injects into{0,1,...,h(v)−
+1}. □
+So the reindexing route is available exactly under (F), and the residual content of Theorem 7.1
+is confined to exchange complexes that possess an infinite descending linkor are uncountable;
+the second class has to be named separately because Corollary 7.9 assumes the complex finite or
+countably infinite, and it is non-empty, as the cone onω1 vertices over a single vertexv0 shows.
+Two things should be said about that residue.
+Remark7.11 (The residue is not obviously empty).Proposition 7.10 shows only that the height
+function produced by Theorem 7.8 is unavailable when (F) fails, not that Theorem 7.6 is
+inapplicable. What would be needed is a Morse functionh whose descending links are all
+contractibleanda level t with Xh≤tcontractible. The order-type obstruction blocksh = c;
+and anh unbounded below, which is what would allow a vertex infinitely many descending
+neighbours, makes the second requirement harder, there being then no bottom level to start from.
+We can neither produce such anhnor rule one out.
+Remark7.12 (Where our application sits).We do not know whetherIS(K)satisfies (F). The
+condition must be asked of the tie-broken complexity of Lemma 6.6, and for a general exchange
+complex the choice of tie-break matters; forIS(K)it does not, because the fibres ofc are finite by
+Lemma 4.2(i), so the descending link differs from{u∈lk(v) :c(u)<c (v)}by a finite set. Thus
+
+--- PAGE 50 ---
+50 APEX INTELLIGENCE
+(F) is equivalent to a statement aboutc = (g,A)itself:for every vertex v, the set ofu∈lk(v)
+with c(u)≤c(v)is finite. Concretely, can a vertex ofIS(K)have infinitely many neighbours
+of strictly smaller genus? That is the only way the set can be infinite. Kakimizu’s example
+of non-local-finiteness [12, p. 231] produces infinitely many neighbours but does not control
+their genus. If the answer is no then,IS(K)having countably many vertices by Lemma 4.2(iv),
+Corollary 7.9 makes the combinatorial half of this paper Theorem 7.6 plus bookkeeping, and the
+contribution is the geometry of §§2–5 alone.
+8.The Kakimizu complex, and what the method reaches
+8.1.Proof of Theorem A.
+Proof of Theorem A.Let K be a non-trivial knot. We check thatIS(K), with the complexity
+c(v) = (g(v),A(v))∈N×R>0 of §4 ordered lexicographically, is an exchange complex in the
+sense of Definition 6.1.
+IS(K)is non-empty, and it is a flag complex by Proposition 3.3: a set of classes admits
+simultaneously pairwise disjoint representatives as soon as it does so pairwise. It is connected
+by Kakimizu’s Theorem A [12, p. 226], in the incompressible case of that statement, and its
+edge-path metric is the distanced[12, Proposition 3.1(1), p. 231].
+The complexity takes values in a well-ordered set: this is Lemma 4.2, which is where (E) and
+the finiteness argument of §4 are consumed. Axiom (N1) then holds becauseIS(K)is connected
+— two vertices at distance2have a common neighbour — together with Proposition 5.11, which
+produces an apex of the interval from the flagness ofIS(K)and the exchange lemma. Axiom
+(N2) is Theorem 5.4, whose proof consumes (U), (E), (R1) — that is, Theorem 2.10 — and the
+collar conditions (34), (33) of §5.3.
+Theorem 7.1 now applies, andIS(K)is contractible.□
+8.2.Truncations: proof of Theorem C.
+Proof of Theorem C.Fix ℓ≥g(K)and let Dℓ={v:g(v)≤ℓ}. Since the order onN×R>0 is
+lexicographic with genus in the first coordinate,c(u)≤c(v)and g(v)≤ℓforce g(u)≤ℓ; soDℓ
+is downward closed. It is non-empty becauseℓ≥g(K). By Corollary 6.7 the full subcomplex
+ISℓ(K)on Dℓis isometrically embedded inIS(K)and connected, and by Lemma 6.9(1) it is an
+exchange complex; contractibility is Theorem 7.1.
+For the second family, fix in additiona0 > 0and let Dℓ,a0 ={v: g(v) < ℓ}∪{v: g(v) =
+ℓ, A(v)≤a0}. This is again downward closed for the lexicographic order, and non-empty as
+soon asℓ>g(K), orℓ=g(K)and a0 is at least the least relative area in genusg(K). The same
+two citations apply verbatim.□
+Takingℓ=g(K)recovers [15, Theorem 1.1, p. 1490], which is stated there for the complex of
+spanning surfaces of minimal Thurston norm; we do not claim that case. The truncationsISℓ(K)
+for ℓ>g(K), and the second family, are new, and they cost nothing: the proof above adds no
+hypothesis, no citation and no construction to the proof of Theorem A. The reason is structural.
+The argument of §7 never uses the complex as a whole; it only ever uses initial segments of the
+complexity, and a truncationisan initial segment. A proof organised around a global projection
+would not have this property.
+Remark8.1.Theconnectednessof ISℓ(K)is part of Theorem C and is obtained in the proof
+above from Corollary 6.7, hence ultimately from the connectedness ofIS(K)itself; it also has a
+direct source, [4, Proposition 5.15, p. 9 of v4], which we do not use.
+
+--- PAGE 51 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 51
+8.3.Links: proof of Theorem D.Kakimizu’s complexes are defined for links, and it is natural
+to ask how much of the above survives. The obstacle is not the combinatorics but the definition
+of a vertex.
+Before the definition, one point of vocabulary has to be settled, because forn≥2the boundary
+slope of a spanning surface is not the preferred longitude. Forn≥2the intersection λi :=
+Σ∩∂N(Li)of a spanning surface with thei-th boundary torus is thesurface-framed longitude:
+sinceΣ ⊂E(L)misses Li, its boundary bounds in the complement ofLi, so lk(∂Σ,Li) = 0and
+therefore
+lk(λi,Li) =−
+∑
+j̸=i
+lk(Lj,Li),(49)
+a slope depending only onL. The foliationJi of Ti used in §2 is taken by curves of this slope.
+The total linking number defines a homomorphismφ:H1(E(L))→Zsending every meridian to
+1, and,[c] = ∑
+j lk(c,Lj) [mj]for a curvecinE(L),
+φ(λi) = lk(λi,Li) +
+∑
+j̸=i
+lk(Li,Lj) = 0
+by (49). So eachλi lifts to a closed curve in the infinite cyclic cover determined byφ, and the
+lifting argument of Lemma 4.5 applies verbatim.
+Definition 8.2.A link L =L1∪···∪Ln in S3 islinking-indecomposableif for every partition
+{1,...,n}=I⊔Ic into two non-empty parts there is an indexm with lk(Lm,LJ)̸= 0, whereJ
+is the part not containingmandL J =⋃
+j∈JLj. Forn= 1the condition is vacuous.
+Lemma 8.3.Let L be linking-indecomposable. Then every spanning surface forL in E(L)—
+that is, every properly embedded orientable surface whose boundary is the union of then longitudes
+— is connected, and has exactlyn boundary curves. Moreover the property is inherited by the
+surfaces produced by the frontier construction of §5.
+Proof. Suppose F is a spanning surface with a decompositionF = F′⊔F′′into non-empty
+unions of components. A spanning surface has no closed component, so every component ofF
+carries at least one longitude; letI be the set of indices whose longitude lies in∂F′and Ic the
+set forF′′. These are non-empty and partition{1,...,n}, the components ofFbeing disjoint.
+WriteLI =⋃
+i∈ILi. The chainF′lies inE(L), hence missesL, and∂F′is the union of the
+longitudes λi, i∈I, each of which is isotopic toLi inside the solid torusN(Li)by an isotopy
+disjoint from every other component. Therefore
+[LI] = [∂F′] = 0inH 1(S3\LIc).
+Forj∈Ic the linking numberlk(LI,Lj)is the image of[LI]under H1(S3\Lj)∼= Z, and the
+inclusion S3\LIc ↪→S3\Lj carries the vanishing class to it; solk(Lj,LI) = lk(LI,Lj) = 0for
+everyj∈Ic. The same argument applied toF′′gives lk(Lm,LIc) = 0for every m∈I. AsI and
+Ic are the two parts of a partition into non-empty sets, this sayslk(Lm,LJ) = 0foreveryindex
+m, withJthe part not containingm, contradicting linking-indecomposability.
+Two things about this deserve emphasis, since each is a place where a shorter argument would
+fail. First, the conclusion needsbothhalves: F′alone yields lk(Lj,LI) = 0for j∈Ic and
+nothing about the indicesm∈I, and it is the second application, toF′′, that supplies those.
+Only with the two together does one havelk(Lm,LJ) = 0for every m, which is the negation of
+linking-indecomposability. Second, note which factor carries the surface: the bounding chainF′
+controls the class of theunionLI, and it is paired with asinglecomponent on the other side;
+the pairing in the opposite direction is not available, since a component ofF′may carry several
+longitudes and then bounds only their sum.
+
+--- PAGE 52 ---
+52 APEX INTELLIGENCE
+So F is connected, its boundary consists of then longitudes, and there are exactlyn of them.
+The frontier construction outputs surfaces which are again spanning surfaces forL, so the same
+argument applies to them.□
+The compression step of Lemma 3.6 needs a companion in the link setting, for the same reason:
+“keep the component with boundary” has to be unambiguous. We number it beside Lemma 8.3,
+which it uses.
+Lemma 8.3′(Compression of a spanning surface for a link).LetL be linking-indecomposable
+and let F be a connected spanning surface forL, with n boundary curves. Compressing F
+along an essential circle that separatesF produces two disjoint surfacesF1,F2. Exactly one
+of them carries boundary, and it carries alln boundary curves; so “keep the component with
+boundary” is unambiguous, and the genus of that component strictly decreases. Compression
+along a non-separating circle keeps the surface connected and again lowers the genus.
+Proof. If bothF1 andF2 carried boundary curves, thenF1⊔F2 would be a disconnected spanning
+surface forL — it is properly embedded, orientable, and its boundary is the union of then
+longitudes, compression having alteredF only in the interior — contradicting Lemma 8.3.
+So exactly one side, sayF1, carries boundary, and it carries alln curves; F2 is closed and
+is discarded. The compressing circle being essential,F2 is not a sphere, soχ(F2)≤0and
+χ(F1) =χ(F ) + 2−χ(F2)≥χ(F ) + 2; withn fixed andχ= 2−2g−nthis makes the genus
+drop by at least one. The non-separating case is that of Lemma 3.6 verbatim.□
+Lemma 8.3 is what makes the link case tractable, and it does so by removing a discrepancy
+rather than by proving something about surfaces. Kakimizu’s vertices are isotopy classes of
+spanning surfaces that are allowed to be disconnected and are required only to be incompressible
+componentwise; ours are connected. On a linking-indecomposable link the two notions coincide,
+and with them the two edge conventions: the convention of [12, (1.3)(b)], that disjointness is
+equivalent to distance1, is false for links in general precisely because of disconnected surfaces,
+and here that failure cannot occur.
+Proof of Theorem D.Let L be non-split, linking-indecomposable and not the unknot. By
+Lemma 8.3 the vertex set ofIS(L)is the set of isotopy classes of connected incompressible
+spanning surfaces. Connectedness ofIS(L)is Kakimizu’s Theorem A for a non-split link [12,
+p. 226] — this is where non-splitness is used, through the irreducibility ofE(L)— while flagness
+is Proposition 3.3, whose proof consumes only (U) and (E) and runs unchanged once every
+spanning surface is known to be connected. The two are separate inputs and neither is a corollary
+of the other.
+The complexity is again(g,A), now withg the genus of the connected spanning surface. The
+geometric inputs are available inn-component form: (U) and (E) are stated in [16] with the
+constraint∂F⊂Jand with∂Mallowed to be a union of tori, the second standing hypothesis of
+the appendix being imposed separately on each boundary component [16, Theorem 4, p. 885
+=Theorem A.5, p. 899, for (U); Theorem 2, p. 885=Corollary A.4, p. 898, for (E)]. Both
+results rest on the appendix, which assumes that the surface is connected and that it meets each
+boundary torus in a single curve [16, p. 897]. Both hold here: by Lemma 8.3 every spanning
+surface representing a vertex ofIS(L)is connected, and a connected spanning surface for an
+n-component link meets each of then tori in exactly one curve. So the two inputs transfer
+without change, and so does (R1) in then-component form recorded after Theorem 2.10. The
+argument of §5 then runs with three modifications:
+
+--- PAGE 53 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 53
+(1) The exchange lemma onn boundary tori.Everything in §§5.3–5.5 is local to a single
+boundary torus apart from finitely many global constants, and the bookkeeping is as
+follows.
+On each torusTi the curves∂iA and ∂iB are leaves ofJi, hence equal or disjoint; let
+E⊆{1,...,n}be the set of indices at which they are equal. The trichotomy of §5.3
+becomes: E =∅and A⋔B , which is (T0);E =∅with interior tangencies, which is (T1)
+and needs no change whatever, the proof there never mentioning the boundary except
+through (44); andE̸=∅, which is (T2).
+In the last case Proposition 5.5(1) is unchanged, its proof being local at an interior
+tangency point. Clause (2) is applied on eachTi with i∈Eseparately, in the collar
+chart( s,ri,y)of that torus, the collars being taken disjoint; it yields r(i)
+0 > 0and
+T ⊆⋂
+i∈E{ri≥r(i)
+0 }, and clause (3) then givesT finite as before. Lemma 5.7 gives on
+each such torus a signςi, an arcIi⊂Li and constantsa(i)
+0 ,r(i)
+1 . The perturbation(38)
+becomes
+At =
+{
+y=f+t
+∑
+i∈E
+ςiχi(ri)−t
+∑
+p∈T
+ψp
+}
+,
+with χi supported in the collar ofTi; on a torus withi /∈Enothing is done,∂iAt =∂iA
+being already disjoint from∂iB. The sign of the interior bumps is immaterial,(33) being
+a statement about both signs at once, and that is what lets the boundary signs be chosen
+independently torus by torus.
+Lemma 5.6 and Lemma 5.8(i),(ii) are proved one collar at a time. In Lemma 5.8(iii)
+the one genuinely new point is that a closed componentγofΓ t may visit several collars,
+so the three cases must be read per torus. Ifγmeets no set{ri<r (i)
+1 }, Case A applies
+and gives length(γ∩G)≥3ρ0/8. Otherwise fix ani with γ∩{ri<r (i)
+1 }̸=∅; the collars
+being disjoint, eitherγstays inside the collar ofTi, which is Case C for that torus, or it
+leaves it and thenmaxγri>r (i)
+0 /2, which is Case B for that torus. Both cases use only
+the behaviour ofγinside that one collar, so the per-torus statement suffices, withc⋆the
+minimum of3ρ0/8, of the numbersr(i)
+0 /2and of the arclengthsℓ(Ii), i∈E, divided by
+the largest of then bi-Lipschitz constants of the collar charts. Corollary 5.9 is unchanged,
+its constants being the minima of the per-torus ones over finitely many tori, and the
+ramp (43) acquires one collar term for eachi∈E, the single entryd
+(
+x,{r≤r1/2}
+)
+being replaced bymini∈Ed
+(
+x,{ri≤r(i)
+1 /2}
+)
+. With these readings(41) and the proof of
+Theorem 5.4 go through word for word.
+Lemma 5.3 needs no change: ofA and B its proof uses only that each is connected,
+which is Lemma 8.3, that each has non-empty boundary on∂E(L), and thatE(L)is
+irreducible. In Lemma 4.5 the boundary count is made torus by torus: overTi the lifted
+boundary is an annulus containing the two disjoint circles∂iS+
+0 and ∂iS−
+0 , one above the
+other, and the argument given there sends them to opposite frontiers. Which frontier
+receives∂iS+
+0 may depend oni, and nothing requires it not to; either way each frontier
+meets eachTi in exactly one curve, hence is a spanning surface forL once its closed
+components are discarded, hence is connected by Lemma 8.3 and carries alln boundary
+curves.
+(2) Lemma 8.3 is consumed at four places, and it is worth listing them rather than gesturing
+at them:
+(i) in Proposition 3.4, where the alternative “coincide” is turned intox =u — a step
+that needs the surface to be connected, since otherwise two distinct vertices may
+share a component;
+
+--- PAGE 54 ---
+54 APEX INTELLIGENCE
+(ii) in Lemma 4.5, where each frontier output must have exactly one component with
+boundary and that component must carry allnboundary curves;
+(iii) in Lemma 8.3′, where a separating compression is not allowed to separate the
+boundary curves, so that “keep the component with boundary” names a single
+surface;
+(iv) in aligning our vertex set and edge convention with Kakimizu’s, as explained after
+Lemma 8.3.
+(3) The knot argument invokes, through Lemma 4.5, the assertion that a Seifert surface
+represents a primitive generator ofH2(E(K),∂E(K)). For a linkH2(E(L),∂E(L))∼= Zn
+and the assertion isfalseas stated. It is replaced by the following, which is what the
+argument actually needs: the total linking number defines a homomorphismπ1(E(L))→
+Z, and a spanning surface forL is Poincaré dual to a primitive class, namely to the
+image of the generator under the induced map onH1. Primitivity holds because the
+homomorphism is onto, each meridian mapping to1.
+Axiom (N1) and axiom (N2) are then obtained exactly as in the proof of Theorem A, and
+Theorem 7.1 gives the result.□
+Remark8.4 (The hypothesis is load-bearing).Linking-indecomposability is not a convenience.
+It is used in Lemma 8.3, and through it at the four points listed in the proof of Theorem D;
+removing it breaks each of them separately. The last of the four is what aligns the two vertex
+definitions and the two edge conventions. For connected sums, the structure ofIS is governed by
+[1] rather than by anything proved here.
+8.4.Where the method stops.General links.For a link which is not linking-indecomposable
+the failing step is not the connectedness ofIS(L), which Kakimizu proves for every non-split link,
+nor the combinatorics of §§6–7. It is the hypothesisS∩(S+∪S−) =∅of Lemma 4.5, supplied
+for knots by (U) through Proposition 3.4. For a link, two distinct vertices may share the isotopy
+class of one component of the surface; the minimisers thencoincideon that component rather
+than being disjoint from it, and the opening sentence of the proof of Theorem 5.4 is false. This
+is an obstruction tothis proofonly: we have constructed no example realising the failure, and
+we have not checked whether the appendix of [16] yields the stronger dichotomy “disjoint or
+identical”, which would repair the step.
+Equivariance.Let G be a finite group of symmetries ofK acting on IS(K). One would like
+IS(K)G to be contractible, since [15, §8] obtains a symmetric minimal-genus Seifert surface in
+that way. The obstruction here is structural. To run Theorem 7.1 onIS(K)G one needs, foru,w
+fixed byG at distance2, aG-fixed apex of smaller complexity. The set of least-complexity apices
+spans aG-invariant simplex, by flagness, butG may permute its vertices without fixing one; and
+a G-invariant simplex is not aG-fixed vertex. This is the exact mirror of the paper’s advantage
+over [15]: their projection is canonical, hence equivariant, and that canonicity is what confines
+them to MS(K); ours requires existence and not selection, which is what reachesIS(K). One
+cannot have both by this route. Nor is there a shortcut through fixed-point theory: Floyd and
+Richardson [5, §3, pp. 74–75] construct a simplicialA5-action without fixed points on a finite
+complex|L|which they prove acyclic and simply connected, hence contractible by the Hurewicz
+theorem and [9, Theorem 4.5, p. 346]; the general picture is Oliver’s [14].
+Haken manifolds.For a Haken manifoldM with a boundary pattern one may defineIS(M,γ,α)
+in the same way, and every step of §§4–7 that we have checked goes through with one exception:
+we know of no source for theconnectednessofIS(M,γ,α), Kakimizu’s proof being written for
+links inS3 and using the infinite cyclic cover. Since Definition 6.1 requires connectedness outright,
+
+--- PAGE 55 ---
+CONTRACTIBILITY OF THE COMPLEX OF INCOMPRESSIBLE SEIFERT SURF ACES 55
+we state no theorem; the missing input is one sentence, and if it is supplied the rest of this paper
+applies verbatim.
+References
+[1] J. E. Banks,The Kakimizu complex of a connected sum of links, Trans. Amer. Math. Soc.365(2013), no. 11,
+6017–6036;arXiv:1109.0965.
+[2] J. A. Barmak and E. G. Minian,Strong homotopy types, nerves and collapses, Discrete Comput. Geom.47
+(2012), no. 2, 301–328.
+[3] J. Chalopin, V. Chepoi, H. Hirai and D. Osajda,Weakly modular graphs and nonpositive curvature, Mem.
+Amer. Math. Soc.268(2020), no. 1309. Lemma 9.13 is cited by its number and page in the Memoir; it carries
+the same number inarXiv:1409.3892v4.
+[4] X. Chen and W. Shen,A linear bound on the diameter of the Kakimizu complex for hyperbolic knots, preprint,
+arXiv:2508.03353v4. The version matters: v1 does not containISℓ.
+[5] E. E. Floyd and R. W. Richardson,An action of a finite group on ann-cell without stationary points, Bull.
+Amer. Math. Soc.65(1959), 73–76.
+[6] M. Freedman, J. Hass and P. Scott,Least area incompressible surfaces in3-manifolds, Invent. Math.71
+(1983), no. 3, 609–642.
+[7] D. Gilbarg and N. S. Trudinger,Elliptic Partial Differential Equations of Second Order, 2nd ed., Grundlehren
+der mathematischen Wissenschaften224, Springer, Berlin, 1983. All numbers and pages cited here refer to
+this edition; Chapters 8 and 9 differ from the 1977 first edition.
+[8] J. Hass and P. Scott,The existence of least area surfaces in3-manifolds, Trans. Amer. Math. Soc.310(1988),
+no. 1, 87–114.
+[9] A. Hatcher,Algebraic Topology, Cambridge University Press, Cambridge, 2002.
+[10] S. Hildebrandt and H. von der Mosel,Conformal representation of surfaces, and Plateau’s problem for Cartan
+functionals, Riv. Mat. Univ. Parma (7)4∗(2005), 1–43. Theorem 4.1 is on p. 18.
+[11] W. B. R. Lickorish,An Introduction to Knot Theory, Graduate Texts in Mathematics, vol. 175, Springer-Verlag,
+New York, 1997.
+[12] O. Kakimizu,Finding disjoint incompressible spanning surfaces for a link, Hiroshima Math. J.22(1992),
+no. 2, 225–236.
+[13] W. H. Meeks III, L. Simon and S. T. Yau,Embedded minimal surfaces, exotic spheres, and manifolds with
+positive Ricci curvature, Ann. of Math. (2)116(1982), 621–659. Cited once, in Remark 2.2, for the shape
+of an argument and not for a statement: their Theorem 1, p. 624, concerns the isotopy class of aclosed
+embedded surface — the classS on p. 623 consists of surfaces without boundary — and so does not cover the
+case at issue there.
+[14] R. Oliver,Fixed-point sets of group actions on finite acyclic complexes, Comment. Math. Helv.50(1975),
+155–177.
+[15] P. Przytycki and J. Schultens,Contractibility of the Kakimizu complex and symmetric Seifert surfaces, Trans.
+Amer. Math. Soc.364(2012), no. 3, 1489–1508.
+[16] J. Schultens,The Kakimizu complex is simply connected, with an appendix by M. Kapovich, J. Topol.3
+(2010), no. 4, 883–900.
+[17] I. N. Vekua,Generalized Analytic Functions, Pergamon Press, Oxford, 1962.
+[18] F. Waldhausen,On irreducible3-manifolds which are sufficiently large, Ann. of Math. (2)87(1968), 56–88.
+Cited only in Remark 2.13 and in §3.2, for the statement that homotopic two-sided incompressible and
+∂-incompressible properly embedded surfaces in an irreducible,∂-irreducible3-manifold are ambient isotopic.
+No internal number is quoted: we have not checked one against the source, and nothing in this paper rests on
+the statement.
+[19] C. T. C. Wall,Differential Topology, Cambridge University Press, Cambridge, 2016.
+[20] M. C. B. Zaremsky,Contractible Vietoris–Rips complexes ofZn, Proc. Amer. Math. Soc.154(2026), no. 2,
+503–508,doi:10.1090/proc/17468; arXiv:2410.11993. Definition 2.1, Definition 2.2 and Lemma 2.3 carry
+the same numbers in the arXiv version and in the published one.

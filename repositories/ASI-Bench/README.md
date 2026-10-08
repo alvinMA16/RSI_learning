@@ -1,0 +1,687 @@
+<div align="center">
+
+# ASI-Bench: At the Dawn of Artificial Superintelligence
+
+### Evaluating General Intelligence, Innovation, and Autonomous Execution in Scientific Research
+
+<p><strong>Help build ASI-Bench: we are actively seeking high-quality scientific task contributions.</strong></p>
+
+<p>
+  <a href="https://asibench.apexin.ai/submit"><img src="https://img.shields.io/badge/Contribute_a_Task-Submit_Now-16A34A?style=for-the-badge&amp;logo=googledocs&amp;logoColor=white" alt="Contribute a Task"></a>&nbsp;
+  <a href="https://discord.gg/ARCCtXSjU"><img src="https://img.shields.io/badge/Discord-Join_Community-5865F2?style=for-the-badge&amp;logo=discord&amp;logoColor=white" alt="Join the ASI-Bench Discord"></a>&nbsp;
+  <a href="docs/assets/wechat-group-qr.svg"><img src="https://img.shields.io/badge/WeChat-Scan_QR-07C160?style=for-the-badge&amp;logo=wechat&amp;logoColor=white" alt="Join the ASI-Bench WeChat group"></a>
+</p>
+
+<p>
+  <a href="https://asibench.apexin.ai/"><img src="https://img.shields.io/badge/Website-ASI--Bench-2563EB?style=for-the-badge&amp;logo=googlechrome&amp;logoColor=white" alt="Website"></a>&nbsp;
+  <a href="https://arxiv.org/abs/2608.17271"><img src="https://img.shields.io/badge/Paper-arXiv%3A2608.17271-B31B1B?style=for-the-badge&amp;logo=arxiv&amp;logoColor=white" alt="Paper on arXiv"></a>&nbsp;
+  <a href="https://github.com/apexin-ai/ASI-Bench"><img src="https://img.shields.io/badge/Code-GitHub-181717?style=for-the-badge&amp;logo=github" alt="GitHub"></a>&nbsp;
+  <a href="https://github.com/apexin-ai/ASI-Bench/actions/workflows/ci.yml"><img src="https://github.com/apexin-ai/ASI-Bench/actions/workflows/ci.yml/badge.svg" alt="CI"></a>&nbsp;
+  <a href="https://huggingface.co/datasets/Apexintelligence-AI/ASI-Bench-seed31415"><img src="https://img.shields.io/badge/Data-Hugging%20Face-FFD21E?style=for-the-badge&amp;logo=huggingface&amp;logoColor=black" alt="Hugging Face"></a>&nbsp;
+  <a href="https://asibench.apexin.ai/leaderboard"><img src="https://img.shields.io/badge/Leaderboard-View%20Results-7C3AED?style=for-the-badge&amp;logo=googleanalytics&amp;logoColor=white" alt="Leaderboard"></a>
+</p>
+
+<p><sub>
+  <strong>Core Authors</strong> &nbsp;
+  Junwei Zhou<sup>5,†</sup>, Zhen Sun<sup>1,†</sup>, Binyu Li<sup>1</sup>, Jiangyu Zhou<sup>1</sup>, Yuexi Pan<sup>1</sup>, Hengyu Wang<sup>1</sup>, Honghe Ren<sup>1</sup>, Xiaohan Jia<sup>1</sup>, Xueyang Zhou<sup>1</sup>, Xiaoyu Cao<sup>1</sup>, Yongchao Chen<sup>1,*</sup><br>
+  <sup>†</sup> Equal contribution &nbsp;·&nbsp; <sup>*</sup> Corresponding author<br>
+  <strong>Contributors</strong> &nbsp;
+  Yuanning Feng<sup>1</sup>, Junhao Wu<sup>1</sup>, Cheng Zhang<sup>13</sup>, Sijia Chen<sup>10</sup>, Haoyu Xue<sup>1</sup>, Chengsong You<sup>1</sup>, Huan Wang<sup>1</sup>, Koutian Wu<sup>13</sup>, Peigan Gao<sup>9</sup>, Jiakun Wu<sup>1</sup>, Wenzhe Li<sup>1</sup>, Ergan Shang<sup>4</sup>, Qingyuan Zheng<sup>1</sup>, Jingjing Zhou<sup>1</sup>, Ruixuan Jia<sup>1</sup>, Yan Xu<sup>2</sup>, Hongrui Zhang<sup>7</sup>, Xiao-Han Ma<sup>9</sup>, Zhengxiang Cheng<sup>1</sup>, Yuexing Hao<sup>2</sup>, Liting Mai<sup>6</sup>, Xianglin Ji<sup>2</sup>, Wenjun Zhang<sup>8</sup>, Zhuofan Chen<sup>1</sup>, Yixiao Huang<sup>1</sup>, Chi Wang<sup>12</sup>, Wenyue Hua<sup>11</sup>, Yilun Hao<sup>2</sup>, Yuantao Zhai<sup>1</sup>, Ziyan Zhao<sup>1</sup>, Jingyan Xie<sup>3</sup><br>
+  <sup>1</sup> Tsinghua University &nbsp;&nbsp;·&nbsp;&nbsp;
+  <sup>2</sup> Massachusetts Institute of Technology &nbsp;&nbsp;·&nbsp;&nbsp;
+  <sup>3</sup> Harvard University &nbsp;&nbsp;·&nbsp;&nbsp;
+  <sup>4</sup> Carnegie Mellon University &nbsp;&nbsp;·&nbsp;&nbsp;
+  <sup>5</sup> University of Michigan &nbsp;&nbsp;·&nbsp;&nbsp;
+  <sup>6</sup> University of Illinois Urbana–Champaign &nbsp;&nbsp;·&nbsp;&nbsp;
+  <sup>7</sup> Boston University &nbsp;&nbsp;·&nbsp;&nbsp;
+  <sup>8</sup> University of Queensland &nbsp;&nbsp;·&nbsp;&nbsp;
+  <sup>9</sup> University of Science and Technology of China &nbsp;&nbsp;·&nbsp;&nbsp;
+  <sup>10</sup> Flatiron Institute &nbsp;&nbsp;·&nbsp;&nbsp;
+  <sup>11</sup> Microsoft Research &nbsp;&nbsp;·&nbsp;&nbsp;
+  <sup>12</sup> AG2 AI &nbsp;&nbsp;·&nbsp;&nbsp;
+  <sup>13</sup> Independent Researcher
+</sub></p>
+
+</div>
+
+## Paper
+
+**ASI-Bench: At the Dawn of Artificial Superintelligence**
+
+[arXiv:2608.17271](https://arxiv.org/abs/2608.17271)
+
+<p align="center">
+  <img src="docs/assets/asi-bench-overview.png" alt="ASI-Bench overview: 60 project-level tasks across scientific domains and benchmark results across difficulty levels" width="100%">
+</p>
+
+<p align="center"><em><strong>Figure 1:</strong> Overview of ASI-Bench. Left: B3 performance across agents. Right: scores from B1 to B4, where B1 provides full methods, B2 only the method name, B3 only the research goal and data, and B4 further adds distractors.</em></p>
+
+## Overview
+
+ASI-Bench is the first benchmark to jointly evaluate **general intelligence,
+innovation, and autonomous execution**, and the first to progressively withdraw
+human methodological guidance within the same research project. It tests how
+far an AI agent can independently select methods, conduct end-to-end research,
+and produce verifiable scientific results instead of merely following a
+human-specified procedure.
+
+| Benchmark scope | Description |
+|---|---|
+| Tasks | 60 project-level tasks |
+| Scientific coverage | 11 domains |
+| Information levels | Four matched B1–B4 conditions with progressively less methodological guidance |
+| Evaluation | Expert cross-review, AI-assisted auditing, sandbox execution, and scorer validation |
+| Evaluated systems | 18 agent–model configurations |
+
+The scientific objective, input data, required artifacts, and scoring criteria
+remain fixed across four matched guidance conditions:
+
+| Level | Information provided | What the agent must do |
+|---|---|---|
+| B1 | Scientific background, method, equations, and full procedure | Implement and execute the prescribed approach |
+| B2 | Intended method and relevant constraints, without the full procedure | Turn the method into a working research workflow |
+| B3 | Objective, data, constraints, and required outputs only | Select the method and construct and validate the workflow independently |
+| B4 | B3 plus factually correct but non-essential information | Conduct the same autonomous research while resisting distraction |
+
+These are long-horizon investigations rather than isolated questions. Across
+the 60 tasks, complete research trajectories involve more than 2,600 interaction
+turns and 2,400 execution steps, spanning over 35 hours of agent execution.
+
+The benchmark was distilled from more than 1,300 candidate research ideas
+through five review rounds, over 1,100 review assignments, more than 2,000 task
+revisions, and over 1,500 sandbox runs. Its construction and validation involved
+more than 31,000 human-hours.
+
+### Resources
+
+| Resource | Link |
+|---|---|
+| Paper | [ASI-Bench: At the Dawn of Artificial Superintelligence](https://arxiv.org/abs/2608.17271) |
+| Project homepage & documentation | [asibench.apexin.ai](https://asibench.apexin.ai/) |
+| Source code | [apexin-ai/ASI-Bench](https://github.com/apexin-ai/ASI-Bench) |
+| Leaderboard | [View official results](https://asibench.apexin.ai/leaderboard) |
+| Dataset · seed42 | [Apexintelligence-AI/ASI-Bench-seed42](https://huggingface.co/datasets/Apexintelligence-AI/ASI-Bench-seed42) |
+| Dataset · seed31415 | [Apexintelligence-AI/ASI-Bench-seed31415](https://huggingface.co/datasets/Apexintelligence-AI/ASI-Bench-seed31415) |
+| Python package | [asibench on PyPI](https://pypi.org/project/asibench/) |
+
+## Quick start
+
+### 1. Install ASI-Bench
+
+```bash
+pip install asibench
+asibench --help
+```
+
+**Requirements:** Python 3.11 or later. The default installation is lightweight
+and includes everything needed to download public benchmark instances. For
+local agent execution or task authoring, install the optional full stack:
+
+`asibench` is the canonical CLI. The legacy `ai4sci-bench` command remains only
+as a backwards-compatibility alias.
+
+```bash
+pip install 'asibench[full]'
+```
+
+### 2. Download a benchmark set
+
+Each fixed-seed dataset contains its own prompts and input data. `seed31415`
+also publishes references for local scoring; `seed42` keeps references private.
+Choose one seed for each run:
+
+```bash
+mkdir asi-bench-run
+cd asi-bench-run
+
+asibench task pull \
+  --repo seed31415 \
+  --output-dir hf_instances_seed31415/
+```
+
+### 3. Run an agent
+
+```bash
+asibench run \
+  --instances-dir hf_instances_seed31415/ \
+  --agent-cmd 'python my_agent.py --workspace {workspace}' \
+  --sandbox linux_ns \
+  --output-dir out_seed31415/
+```
+
+The command above evaluates all four prompt levels (`b1,b2,b3,b4`). Use
+`--prompt-levels` only when intentionally running a subset.
+
+### 4. Score locally or submit
+
+`seed31415` can be scored locally with its public references and the scoring
+contracts in this GitHub checkout:
+
+```bash
+asibench score \
+  --repo seed31415 \
+  --results-dir out_seed31415/ \
+  --instances-dir hf_instances_seed31415/ \
+  --tasks-dir /path/to/ASI-Bench/tasks/ \
+  --parallel 4
+```
+
+The command writes a separate `local_score_seed31415.json` and never overwrites
+the produce-only result. Local scores are reproducible but non-official. Report
+schema v2 keeps a valid scored zero as `0.0`, but records an internal scorer
+failure as `evaluation_status: evaluation_invalid` with `final_score: null`.
+Invalid evaluations are shown as `NOT SCORED`, excluded from aggregate score
+denominators, counted in `scorer_error_count`, and make the command exit
+non-zero after the report is written.
+
+`--parallel N` runs at most `N` independent result evaluations at once and
+defaults to `1`. Each result gets a fresh worker process because custom scorers
+may modify process-global imports, environment, or working directory. Gates,
+weighted scorers, retries, and `num_judges` samples within one result remain
+sequential and keep their declared order, so Judge request concurrency is also
+bounded by `N`. The coordinator validates the complete batch before starting
+scorers, preserves source order in the report, and writes the report atomically.
+
+#### BenchFlow integration
+
+BenchFlow owns scheduling and agent execution, while
+`asibench benchflow-score` scores one already-materialized seed31415 attempt.
+The score is local and non-official; seed42 is not accepted by this interface.
+
+See the **[BenchFlow integration guide](docs/guide/benchflow.md)** for the
+end-to-end run, schema-v2 manifest, scoring command, status fields, retries,
+and Judge API configuration.
+
+#### Configure an LLM/VLM Judge API
+
+Some seed31415 scoring contracts use an LLM or VLM Judge. Judge credentials and
+transport overrides are runtime operator settings: keep the secret in an
+ignored `.env` file or process environment, never in `task_eval.yaml` or a
+command-line argument. `score`, `run-score`, and `benchflow-score` expose the
+same options:
+
+| Option | Environment equivalent | Meaning |
+|---|---|---|
+| `--judge-api-base` | `ASIBENCH_JUDGE_API_BASE` | Optional custom Judge endpoint |
+| `--judge-api-key-env` | `ASIBENCH_JUDGE_API_KEY_ENV` | **Name** of the variable containing the key, not the key itself |
+| `--judge-api-protocol` | `ASIBENCH_JUDGE_API_PROTOCOL` | `native` or `openai` for an OpenAI-compatible endpoint |
+
+For native Google Gemini, put `GEMINI_API_KEY=...` in `.env`. Existing
+`google/gemini-*` task models then use the Gemini API directly. To select and
+validate that credential explicitly, add only its variable name:
+
+```bash
+asibench score \
+  --repo seed31415 \
+  --results-dir out_seed31415/ \
+  --instances-dir hf_instances_seed31415/ \
+  --tasks-dir /path/to/ASI-Bench/tasks/ \
+  --judge-api-key-env GEMINI_API_KEY
+```
+
+For TokenRouter or another OpenAI-compatible gateway, put the secret in `.env`
+as `TOKENROUTER_API_KEY=...`, then provide all three transport settings:
+
+```bash
+asibench score \
+  --repo seed31415 \
+  --results-dir out_seed31415/ \
+  --instances-dir hf_instances_seed31415/ \
+  --tasks-dir /path/to/ASI-Bench/tasks/ \
+  --judge-api-base https://api.tokenrouter.com/v1 \
+  --judge-api-key-env TOKENROUTER_API_KEY \
+  --judge-api-protocol openai
+```
+
+The OpenAI-compatible route automatically sends a task model such as
+`google/gemini-3.5-flash` as `openai/google/gemini-3.5-flash`; the public task
+configuration does not need to be copied or edited. Alternatively, place the
+three `ASIBENCH_JUDGE_*` settings shown in `.env.example` in `.env` and run any
+of the three scoring commands without repeating the flags. Public score details
+record only the endpoint, protocol, and key-variable name—not the secret.
+
+During `run-score`, a dedicated nonstandard Judge variable such as
+`TOKENROUTER_API_KEY` and all `ASIBENCH_JUDGE_*` selectors are removed from the
+agent-run subprocess; they remain available to the scoring subprocess. Standard
+provider variables such as `GEMINI_API_KEY` remain shared for backward
+compatibility. Use a dedicated Judge variable when the evaluated agent must not
+receive the scoring credential. ASI-Bench also prevents its `run` child from
+reloading the removed key from the project `.env`, then restores normal dotenv
+behavior before starting the evaluated agent.
+
+For `seed42`, repeat the pull and run with separate directories using the
+required Docker OS sandbox, then submit for private-reference scoring. Because
+generic `--agent-cmd` does not support `os`, use an OS-compatible built-in
+adapter:
+
+```bash
+asibench run \
+  --instances-dir hf_instances_seed42/ \
+  --agent codex_cli \
+  --agent-config '{"model": "gpt-5.6-sol"}' \
+  --sandbox os \
+  --output-dir out_seed42/
+asibench login
+asibench submit --results-dir out_seed42/ \
+  --benchmark-repo Apexintelligence-AI/ASI-Bench-seed42
+```
+
+`submit` creates an authenticated draft on the ASI-Bench website. Review the
+completeness summary and confirm the draft to enter the official scoring queue.
+Only seed42 result directories produced with `--sandbox os` are accepted: the
+CLI checks every instance ID and each result's verified Docker provenance before
+building a bundle or authenticating. It rejects non-OS runs, seed31415, unknown,
+or mixed-seed results. If `--benchmark-repo` is supplied, it must identify the
+official seed42 dataset.
+`asibench score --repo seed42` is rejected before reading local inputs because
+seed42 GT is not public. Local benchmark runs never calculate official scores.
+
+### Run configuration
+
+| Setting | Behavior |
+|---|---|
+| Dataset seed | `seed31415` supports public local scoring; `seed42` is private-reference and Portal-scored |
+| Downloaded instances | `--instances-dir` is read-only; run-specific framework metadata is written under the output directory |
+| Prompt levels | All four levels run by default; select a subset with `--prompt-levels` |
+| Timeout | `--timeout` defaults to 10,800 seconds and applies uniformly to every task |
+| Produce-only reports | Unscored placeholders are never displayed as `0.0`; all-unscored per-task score tables are omitted |
+| Submission | seed42 requires verified `--sandbox os` results; `submit` uploads a draft by default and `--no-upload` creates a local bundle only |
+| Local scoring | `score --repo seed31415` writes a separate non-official JSON report; internal scorer failures are unscored and excluded from aggregates; seed42 is rejected |
+| Judge API | `score`, `run-score`, and `benchflow-score` accept credential-safe runtime overrides for native providers and OpenAI-compatible gateways |
+| Custom agents | `--agent-cmd` supports the `none` and `linux_ns` sandboxes for local runs; official seed42 submission requires an `os`-compatible built-in adapter |
+| Built-in agents | Use `--agent` with `--agent-config`; compatible adapters can use Docker-based `os` isolation |
+
+### Model-call observability
+
+Each result records model-call evidence separately from its visible trajectory.
+For a result base name such as `<instance>__b2`, the output directory can contain:
+
+- `<instance>__b2.model_calls.json`: versioned per-call lifecycle records;
+- `<instance>__b2.agent_stdout.<format>`: redacted native adapter evidence,
+  including a zero-byte file when an empty JSONL stream was observed;
+- `<instance>__b2.trajectory.json`: normalized visible reasoning, message, and
+  tool events, including an empty list when no visible event was retained.
+
+The result JSON links these files through `agent_output` and includes a
+`model_call_observability.summary`. A numeric `empty_response_rate`, including
+`0.0`, is emitted only when the attempted-call denominator and every call's
+content state are observable. `empty_response_rate_status: unknown` means the
+evidence is insufficient; it must not be read as zero empty responses.
+`content_state: omitted` identifies a complete tool-only or reasoning-only
+response and is distinct from `content_state: empty`.
+The text report and exported report JSON also expose an aggregate
+`model_call_summary`; one unknown result keeps the aggregate denominator and
+rate unknown.
+
+Transport fields are evidence-based. CLI output can prove a logical request or
+response boundary without proving that provider HTTP headers or an SSE stream
+were observed, so those transport fields remain `null` unless the source emits
+them explicitly.
+
+| Adapter | Completion boundary | IDs and usage | HTTP/SSE evidence | Coverage behavior |
+|---|---|---|---|---|
+| Codex CLI | Explicit provider response/message events when emitted; `turn` is retained only as an agent-level coverage record because one turn may contain multiple completions | Native when emitted; framework `run_id`/`call_id` | Unknown for ordinary CLI JSONL; explicit provider lifecycle events are retained | A turn-only, empty, unavailable, truncated, or malformed stream leaves the attempted-call denominator unknown |
+| Claude Code CLI | Native assistant events | Message/request IDs and usage when emitted | Not exposed by ordinary CLI JSONL | Missing or malformed boundaries make the denominator unknown |
+| direct LLM | Framework boundary around the single LiteLLM completion | Response/request IDs, finish reason, and usage when LiteLLM exposes them | HTTP status/headers are native metadata when available; non-streaming otherwise | The wrapper observes the attempted-call denominator directly |
+| pi CLI | Native `message_start`/`message_end` | Session/message IDs and usage when emitted | Not exposed by ordinary CLI JSONL | Missing, truncated, or malformed boundaries make the denominator unknown |
+| opencode CLI | Native `step_start`/`step_finish` | Session/step IDs, usage, and cost when emitted | Not exposed by ordinary CLI JSONL | Missing, truncated, or malformed boundaries make the denominator unknown |
+| HTTP agent | `/solve` may encapsulate an unknown number of model calls | Unavailable under the current `/solve` contract | Only the outer agent HTTP request is visible | Reported as `not_supported`; no call denominator is inferred |
+| Other/custom adapters | Adapter-specific and currently unregistered | Unavailable unless the adapter supplies versioned records | Unavailable | Reported as `not_supported`; no call denominator is inferred |
+
+Raw evidence is sanitized before persistence: credential fields, authorization
+headers, cookies, prompt/reference content, and host paths are redacted. Safe
+provider request IDs and HTTP(S) endpoint identity are retained when available.
+
+> **Platform note:** The examples use Linux Bash, and the `linux_ns` sandbox
+> requires Linux. Windows users should run it through WSL2. PowerShell and
+> Command Prompt use different line-continuation and JSON-escaping syntax.
+
+See [Getting Started](docs/guide/getting-started.md) for agent configuration,
+sandbox selection, and platform-specific commands.
+
+### Scientific MCP tools
+
+For opt-in, revision-pinned repairs of the SketchUp, Fusion 360 and CadQuery
+stdio servers, see [CAD MCP repair instructions](scripts/mcp/cad-repairs/README.md)
+and the [local smoke results](docs/mcp/cad-mcp-repair-smoke.md). These patches do
+not modify your MCP configuration or certify real CAD backends.
+
+
+ASI-Bench ships an operator-configured catalog for COMSOL, OpenFOAM, MATLAB,
+Simulink, MWORKS, PyNite, EnergyPlus, Text2Sim, NetLogo, AFSIM, Blender,
+FreeCAD, AutoCAD, Fusion 360, SketchUp, PubChem, and GNS3. The catalog records
+the upstream source, prerequisites, and an editable launch template; it does
+not bundle commercial applications, licenses, third-party source code, or
+credentials.
+
+```bash
+asibench mcp catalog
+asibench mcp init --servers netlogo,pubchem --output science-mcp.json
+# Edit placeholder paths/environment values before checking.
+asibench mcp check --config science-mcp.json
+
+asibench run --agent codex_cli \
+  --agent-config '{"model":"gpt-5.6-sol"}' \
+  --mcp-config science-mcp.json \
+  --instances-dir hf_instances_seed31415/ \
+  --sandbox none --output-dir out_with_mcp/
+```
+
+`--mcp-config` implies `--tool-mode search`, accepts the portable
+`{"mcpServers": {...}}` format, and is limited to `claude_code_cli` and
+`codex_cli`. It loads only the named servers into each run's isolated harness
+home; ambient user MCP configuration remains excluded. It is intentionally
+rejected with `--sandbox os`: GUI applications, licensed host binaries, local
+sockets, and Docker-based MCP servers need deployment-specific mounts/network
+policy that the benchmark cannot infer safely. MCP-enabled runs have external
+tool authority and are not equivalent to the default restricted baseline.
+
+### External simulation benchmark integrations
+
+Use `asibench integration list` to inspect the local adapters. Convert private
+ScienceAgentBench inputs with `asibench integration convert-scienceagentbench`
+and generate pinned local runtime templates with `asibench integration runtime
+cfdllmbench` or `cosmo-agent`. Source records remain under a local `private/`
+directory; solver binaries, proprietary software, and licenses are never bundled.
+
+If a run completes but scores below expectations, follow the
+[result troubleshooting guide](docs/guide/troubleshooting-results.md). It
+explains why `direct_llm` is a single-turn, no-tool baseline, when to consider
+multi-turn CLI agents, and how to diagnose execution, evaluation, artifact,
+environment, timeout, and score-variance issues.
+
+### Package and CLI compatibility
+
+- `asibench` is the only published Python distribution and the canonical CLI.
+- Existing Python integrations may continue to import `ai4sci_bench`.
+- `ai4sci-bench` remains available as a legacy CLI alias.
+- Benchmark instances are downloaded separately with `asibench task pull`.
+- Runtime and declared-output metadata come from `tasks/` or `--tasks-dir`.
+- Retired internal orchestration commands are not part of the public CLI. Use
+  `run`, `report`, `batch-report`, `review`, and the Portal workflows.
+
+## Built-in CLI agents — installation
+
+Install the CLI agent you want to evaluate, then select its ASI-Bench adapter
+with `--agent`.
+
+- **New model, existing harness.** When a supported harness such as Codex CLI,
+  Claude Code, or Kimi Code adds a model, select the new model through
+  `--agent-config`. If the model is served through a third-party endpoint and
+  the adapter supports that route, also set `api_base`, `api_key`, and
+  `api_protocol` (`openai` or `anthropic`). No ASI-Bench code change is normally
+  needed while the harness accepts the model and the endpoint remains protocol
+  compatible.
+- **New agent harness.** A new CLI or runtime can be used immediately through
+  `--agent-cmd` when it can read the prepared workspace and write result files;
+  this generic mode supports `none` and `linux_ns`. First-class built-in
+  integration—its own `--agent` name, harness-specific authentication and
+  configuration, proxy wiring, and Docker-based `os` support—requires ASI-Bench
+  maintainers to implement and test a new adapter.
+
+| Agent | Install command | Notes |
+|-------|----------------|-------|
+| Claude Code | `npm install -g @anthropic-ai/claude-code` | Requires Anthropic API key or local login (`claude /login`) |
+| Codex CLI | `npm install -g @openai/codex` | Requires OpenAI API key |
+| Kimi Code | `npm install -g @moonshot-ai/kimi-code` | **Use the npm package.** The PyPI package (`kimi-cli`) has different CLI arguments and is not compatible with this adapter. Requires Moonshot API key or local login (`kimi /login`) |
+| CodeWhale | See [CodeWhale docs](https://github.com/codewhale-ai/codewhale) | Requires DeepSeek API key by default |
+| AntiGravity | `curl -fsSL https://antigravity.google/cli/install.sh \| bash` | Experimental |
+| pi | `npm install -g @earendil-works/pi-coding-agent@0.84.3` | Native JSONL trajectories + cost extraction. Requires local login (`pi` + `/login`) or provider API key; `model` uses `provider/model` syntax |
+| opencode | `npm install -g opencode-ai@1.17.15` | Native JSONL trajectories + cost extraction. Requires `opencode auth login` or provider API key; `model` uses `provider/model` syntax |
+
+Example with Kimi Code:
+
+```bash
+asibench run --agent kimi_code_cli \
+  --agent-config '{"model": "kimi-k2.7"}' \
+  --output-dir out/
+```
+
+Example with pi (local login) and opencode (explicit endpoint):
+
+```bash
+# pi with harness-local login state
+asibench run --agent pi_cli \
+  --agent-config '{"model": "anthropic/claude-opus-4-6"}' \
+  --output-dir out/
+
+# opencode against a third-party OpenAI-compatible endpoint
+asibench run --agent opencode_cli \
+  --agent-config '{"model": "deepseek-chat", "api_base": "https://api.deepseek.com/v1", "api_key": "sk-...", "api_protocol": "openai"}' \
+  --output-dir out/
+```
+
+Framework-managed model proxies use text-only input by default. For endpoints
+that accept images, set `"supports_image_input": true` in `--agent-config`.
+Without this flag, image attachments are replaced with a short notice before
+the next model request. Direct endpoints outside the framework proxy remain the
+responsibility of the connected agent.
+
+Harness session state (transcripts, history, auto-memory) never carries over
+between instances or repeated executions of the same instance: the OS sandbox
+gives each run a one-shot container with a fresh `HOME`, and host-side runs
+build execution-scoped, isolated per-run homes for
+`claude_code_cli` / `codex_cli` and a per-instance `KIMI_CODE_HOME` for
+`kimi_code_cli` (an explicitly configured `kimi_home` stays shared by choice).
+See TEST.md (“Per-run harness home isolation”) for details.
+
+For `runtime.dockerfile`, the declared Dockerfile builds the reusable task base
+image. When an OS-sandbox agent is selected, ASI-Bench layers only that agent's
+CLI onto the task base; runs without an agent use the task base directly. The
+agent type, exact install command, and task-base image identity are included in
+the derived image cache key. Formal-task Dockerfiles are fail-closed and must be
+listed exactly for their task in `config/public_task_runtimes.json`.
+
+## Contribute a task
+
+We welcome project-level scientific tasks from the research community. Authors
+can draft a task locally or in the Portal, validate it, and submit a frozen
+revision for review.
+
+### Quick start for task authors
+
+```bash
+# 1. Create a task scaffold
+asibench task create --domain physics --name my_new_task
+
+# 2. Edit the generated files in tasks/physics/my_new_task/:
+#    - task_meta.yaml   — task metadata (public)
+#    - task_eval.yaml   — evaluation and generation config during authoring
+#    - task_submission.yaml — Portal-only author evidence (private; never exported)
+#    - generate_gt.py   — ground-truth generator (private)
+#    - custom_scorer.py — custom scoring logic, if needed
+#    - prompt_b1.md … prompt_b4.md — local starter prompts for the guidance gradient
+
+# 3. Required pre-submit validation
+asibench validate --pre-submit tasks/physics/my_new_task/
+
+# 4. Required explicit multi-turn-agent trial across B1, B2, B3, and B4
+asibench difficulty-check --task physics.my_new_task \
+  --agent codex_cli \
+  --agent-config '{"model":"gpt-5.6-sol","effort":"medium"}' \
+  --sandbox os
+
+# 5. Upload an exact Draft snapshot, then review and submit it in the Portal
+asibench task submit --task-dir tasks/physics/my_new_task/
+```
+
+### Submission requirements
+
+- A complete task package must define the scientific objective, B1–B4 prompts,
+  agent-visible inputs and required artifacts, reproducible reference generation,
+  evaluation gates and weighted scorers, runtime dependencies, and local-testing
+  evidence.
+- Complete `validate --pre-submit` and an explicitly configured
+  `difficulty-check` across B1–B4 in the Docker OS sandbox before submission.
+  The command has no default agent: every `--agent` needs a matching
+  `--agent-config` with an explicit model, and formal evidence must contain at
+  least one multi-turn harness such as `codex_cli`, `claude_code_cli`, or
+  `kimi_code_cli`. `direct_llm` may be added only as a single-turn baseline.
+  While the check runs, the terminal prints a global progress bar plus the
+  current task, agent, B1–B4 level, instance ID, completion percentage, and
+  completed score, so long agent runs do not appear stalled.
+- Record all four scores on the 0–100 scale.
+  B1 and B2 have no score ceiling; every B3 and B4 mean score must be strictly
+  below 40. The CLI marks
+  B1/B2 as `RECORDED` and gates the verdict only on B3/B4. `--threshold` may
+  make the B3/B4 ceiling stricter but cannot raise it above 40.
+- Use lowercase letters, digits, and underscores for task IDs. The canonical
+  form is `domain.task_name`.
+- `asibench task submit --task-dir ...` exact-syncs the local files to an
+  owner-only Portal Draft. It verifies the returned relative paths and SHA-256
+  hashes, and prints the recoverable Draft URL if synchronization fails. It
+  never sends the Draft for review by itself.
+- On first use, `asibench login` opens **Settings → CLI tokens**. Create a PAT,
+  copy it, and paste it into the hidden prompt; the CLI validates and saves it
+  in `~/.asibench/credentials` with mode `0600`. Later submissions reuse it.
+- Set `ASIBENCH_NO_BROWSER=1` to print URLs without opening a browser. For CI,
+  set `ASIBENCH_SUBMIT_TOKEN`; tokens are intentionally not accepted as command
+  arguments so they do not enter shell history.
+- The Portal requires `local_testing_done` and one finite score for each level
+  before freezing a revision. Every `local_test_results` entry must record
+  `sandbox: os`; the required difficulty verdict follows the B3/B4-below-40
+  policy above.
+- Authors do not create repository pull requests. Administrators publish
+  accepted tasks after review.
+
+The Portal also provides a 15-step Guided Flow for constructing a Task entirely
+in the browser:
+[asibench.apexin.ai/submit/proposals/new](https://asibench.apexin.ai/submit/proposals/new).
+Use `--endpoint` or `ASIBENCH_SUBMIT_ENDPOINT` to select another Portal.
+
+### Runnable samples from the official benchmark
+
+The following `final` tasks can be used to verify the runner workflow:
+
+| Task | Domain | Description |
+|------|--------|-------------|
+| `astronomy.nbody_close_encounters` | Astronomy | Close-encounter few-body scattering |
+| `math.homotopy_poly_roots` | Math | Isolated complex roots via homotopy continuation |
+
+Pull and run one in produce-only mode:
+
+```bash
+asibench task pull \
+  --repo seed42 \
+  --tasks astronomy.nbody_close_encounters \
+  --output-dir example_instances/
+
+asibench run \
+  --instances-dir example_instances/ \
+  --tasks astronomy.nbody_close_encounters \
+  --agent-cmd 'python my_agent.py --workspace {workspace}' \
+  --sandbox os \
+  --output-dir example_results/
+
+asibench submit --results-dir example_results/
+```
+
+For official benchmark tasks, GitHub publishes the catalog metadata, scoring
+configuration, and scorer implementations for auditability. Prompts and input
+data come from Hugging Face. Ground-truth generators, generator settings,
+reference specifications, and private solver assets remain exclusively on the
+scoring service and are not present in this repository. seed42 reference
+answers are private. seed31415 reference answers are intentionally public on
+Hugging Face, so its GitHub scorers can produce reproducible local,
+non-official scores.
+
+Public scorer code only consumes pre-generated instance/reference bundles. A
+formal task may therefore include an evaluator-only `*_eval_runtime.py` helper,
+but never a GT generator, reference builder, or seed-to-instance entry point.
+The public `submission_sandbox.py` is execution isolation infrastructure and
+contains neither task answers nor generation logic.
+
+The native `pi_cli` and `opencode_cli` adapters retain verified CLI facts
+(`pi` 0.84.3 and `opencode` 1.17.15). At startup the runner probes the actual
+binary with `--version`; these versions are the compatibility baseline, not a
+substitute for the runtime probe.
+
+Five opt-in `sample` tasks are fully public examples. Their B1–B4 prompts,
+ground-truth generators, and scorer implementations or configurations are
+available under `tasks/`:
+
+- `robotics.minimum_snap_trajectory_conditioning`
+- `chemistry.bsse_counterpoise_cbs_extrapolation`
+- `materials.phonon_dispersion`
+- `medicine.ethics_disclosure_diagnosis_1670`
+- `medicine.jama_id0014_malignant_an`
+
+The examples were synchronized from
+[`apexin-ai/Agent-AI4Sci-Bench`](https://github.com/apexin-ai/Agent-AI4Sci-Bench/tree/2ba9258442bf53ad6c4911957234e03e767476ad/tasks)
+at revision `2ba9258442bf53ad6c4911957234e03e767476ad`.
+
+### Dataset layout
+
+| Item | Contract |
+|---|---|
+| Official tasks | 60 `final` task definitions shared by both fixed-seed datasets |
+| Public examples | 5 opt-in `sample` tasks with complete prompts and scoring assets |
+| Instance layout | `<output-dir>/<instance-id>/` after `asibench task pull` |
+| Default selection | Unfiltered official runs exclude `sample` tasks |
+| Including samples | Use `--include-sample` or name a sample explicitly with `--tasks` |
+
+Pull the two fixed-seed datasets separately:
+
+```bash
+asibench task pull --repo seed42 --output-dir hf_instances_seed42/
+asibench task pull --repo seed31415 --output-dir hf_instances_seed31415/
+```
+
+`seed42` and `seed31415` are the only official Hugging Face contracts, and
+`--repo` is required. They share task schemas and declared outputs but contain
+different generated inputs. Matching schemas live in
+`tasks/**/task_meta.yaml`; matching public scoring contracts live in
+`task_eval.yaml` and optional `custom_scorer.py` files. seed31415 additionally
+contains public `reference/` directories. Private manifests, ground-truth
+generators, generator settings, seed42 references, and solver assets stay on
+the scoring side.
+
+The task workflow uses the grouped `asibench task create`, `task pull`, and
+`task submit` commands. See [Contribute a Task](docs/guide/authoring-a-task.md)
+for the complete authoring guide.
+
+## How scoring works (and stays fair)
+
+For a one-step run followed by local scoring on seed31415, use
+`asibench run-score --instances-dir <instances> --tasks-dir tasks/`. It accepts
+the same task/agent settings plus `--parallel` and `--repetitions`; repeated
+runs are written below `run_N/` and scored independently. `--parallel` is one
+global concurrency budget: all task-sized agent jobs share one queue, then a
+phase barrier waits for every agent job before scoring begins. Repetitions are
+scored one at a time, while up to `N` independent results within that repetition
+use isolated scoring workers. This avoids nested \(N \times N\) fan-out. Judge API
+options are validated once and forwarded to every scoring subprocess.
+`benchflow-score` accepts the same three Judge API options for a materialized
+BenchFlow attempt.
+
+- **Public execution framework:** agent adapters, sandboxes, instance loading,
+  output collection, and submission packaging are auditable in this repository.
+- **Public local scoring:** seed31415 publishes references on Hugging Face and
+  uses the GitHub scoring configuration/custom scorers through `asibench score`.
+- **Private official scoring:** seed42 never publishes references;
+  `asibench submit` accepts only seed42 outputs and sends them to the website
+  for authenticated scoring.
+- **Score status:** seed31415 local reports are explicitly non-official;
+  its results cannot be packaged by `asibench submit`, and self-reported scores
+  are not accepted as leaderboard results.
+
+## Sandboxing & reproducibility
+
+- Runs support `task`, `os`, and `linux_ns` sandboxes with pinned per-task
+  runtimes.
+- Every run records agent, model, effort, sandbox, and framework provenance.
+- Source checkouts are installed editable into task environments; wheel-based
+  runs install the matching `asibench` version.
+- Mutable caches live under `~/.asibench/`, never under `site-packages`.
+- Namespace and Docker prerequisites are checked before execution. Missing
+  prerequisites produce a non-zero CLI exit.
+
+## Documentation
+
+Installation, execution, submission, task contribution, catalog, and
+leaderboard documentation are available on the
+[ASI-Bench website](https://asibench.apexin.ai/).
+
+## License
+
+See [LICENSE](LICENSE).

@@ -1,0 +1,374 @@
+
+--- PAGE 1 ---
+An effective Gordan–Noether theorem
+for quaternary quintics
+Apex-Math autonomous research fleet *
+September 4, 2026
+Abstract
+Letkhave characteristic zero and letf∈k[x 0, x1, x2, x3] be homogeneous of degree
+five with det Hess(f) = 0 and generic (function-field) Hessian rank three. We prove
+that the Hessian kernel contains a nonzeroconstantvectore∈k 4 – equivalently,f
+is a cone: after a linear change of coordinates it depends on three variables. This is
+the quintic, corank-one case of the classical Gordan–Noether theorem that quaternary
+forms with vanishing Hessian are cones; the proof given here is new, elementary, and
+effective. It runs entirely inside the polynomial ring: the unique polar relation of the
+gradient produces a primitive self-vanishing kernel field by a locally-nilpotent-derivation
+gcd descent; a degeneration-of-trajectories argument forces the projective image of that
+field to be a single line; and a first-order Wronskian elimination then forces the field to
+be constant or the rank to drop. Every algebraic identity in the proof is certified by an
+exact frozen checker.
+The homogeneity hypothesis is not removable. We exhibit the explicit inhomoge-
+neous potential
+f=x(z 2 +z 4) +y(z 3 +z 5) +w 3
+with layers of degrees 3,4,5,6, whose Hessian has generic rank three and whose one-
+dimensional kernel field ismoving: no nonzero constant kernel vector exists. The
+example is sharp in a precise sense: the polar relation, the primitive descent, and the
+self-vanishing identity all survive verbatim, and exactly the two consequences of Euler’s
+identity fail. A short independent argument – found by an adversarial audit inside the
+source campaign – isolates the same mechanism on the subclass of quintics linear in two
+variables, where Euler’s relation upgrades proportional gradients to a constant ratio in
+one line.
+The theorem removes the last literature dependency from the homogeneous 3+4+5
+stratification of an ongoing program on the four-variable Hessian conjecture HC(4),
+whose resolution would decide the planar Jacobian conjecture; that program remains
+open and nothing beyond the stated theorems is claimed here.
+1 Introduction
+Hesse claimed [5] that a projective hypersurface whose Hessian determinant vanishes iden-
+tically is a cone. Gordan and Noether [4] proved this for forms inn≤4 variables and
+* This manuscript was researched and written entirely by artificial-intelligence systems. The mathemat-
+ics was produced during an autonomous multi-agent research campaign on the Jacobian-conjecture cascade
+(fleet repository01-jc-cascade, 2026-08-04 through 2026-08-18); the two main results carry ledger identi-
+fiersH248andH249, six recorded cross-window audit verdicts (five distinct auditors, allconfirmed), and
+two hostile referee rounds each. The present paper was organized and written from those records by Claude
+(Anthropic) on 2026-09-04. No human being wrote or verified the mathematical content. Section 8 states
+the verification model, every load-bearing citation, and an explicit unresolved priority-check caveat.
+1
+
+--- PAGE 2 ---
+refuted it for everyn≥5; the quaternary case has remained a small classic, with several
+modern treatments [3, 1]. This paper gives a new, self-contained, machine-verified proof of
+its quintic, corank-one case, together with a sharp inhomogeneous counterexample showing
+exactly which two consequences of homogeneity carry the theorem.
+Theorem 1.1(main theorem; ledgerH248).Letkbe a field of characteristic zero and let
+f∈k[x 0, x1, x2, x3]be homogeneous of degree five withdet Hess(f) = 0andrank k(x) Hess(f) =
+3. Then there is a nonzero constant vectore∈k 4 with
+Hess(f)e= 0,
+equivalentlye· ∇f= 0: after a linear change of coordinatesfdepends on three variables.
+Theorem 1.2(sharpness; ledgerH249).Over every characteristic-zero field, the polynomial
+f=x(z 2 +z 4) +y(z 3 +z 5) +w 3 ∈k[x, y, z, w],
+with nonzero homogeneous layers exactly in degrees3,4,5,6, satisfiesdet Hessf= 0and
+rankk(x,y,z,w) Hessf= 3, yet its Hessian kernel contains no nonzero constant vector. More-
+over the failure is located exactly: the kernel field produced by the polar-relation construction
+of Theorem 1.1 is still primitive and self-vanishing, and precisely the two Euler identities
+v(v(X)) = 0andv· ∇f= 0become false.
+The pair is a closed answer to a well-posed question:does the constant-kernel (cone)
+conclusion for degenerate quaternary Hessians persist with the hypotheses actually used?
+Yes for one homogeneous quintic layer, by a proof that never leaves the polynomial ring;
+no for inhomogeneous multi-layer potentials, by an explicit certificate; and the boundary
+between the two is Euler’s identity and nothing else. A second, independent proof of the
+linear-in-two-variables subcase (Proposition 5.1) displays that boundary in one line.
+Motivation
+The question is not antiquarian. Writing HC(4) for the four-variable Hessian (Legendre-
+transform) conjecture, one has the implication HC(4)⇒JC(2) – the planar Jacobian
+conjecture – via the symmetric reduction of de Bondt and van den Essen [2]; following
+the 2026 collapse of the higher-dimensional Jacobian landscape (an explicit non-injective
+Keller map onC 3, and Meng–Yang’s five-variable refutation of the Hessian conjecture,
+leaving exactlyn= 4 open [6]), the four-variable case became the live gateway. The
+source campaign stratifies Keller potentials with layers 3+4+5; every stratum theorem
+needed one upstream premise, namely aconstantmissing direction for the quintic layer.
+Under the campaign’s standing rule that no literature theorem may sit inside a proof chain,
+Theorem 1.1 supplies that premise in-house – it was, at campaign close, the most heavily
+audited single claim in the fleet ledger – and Theorem 1.2 shows the premise is genuinely
+about the homogeneous layer: it fails for the inhomogeneous total potential. HC(4) itself,
+and hence JC(2), remain open; nothing in this paper claims otherwise.
+Novelty status, stated plainly
+Thestatementof Theorem 1.1 is contained in the classical Gordan–Noether theorem and is
+not claimed as new. The contributions are the proof – elementary, effective, uniform over
+all characteristic-zero fields, with every identity exactly certified – and the sharp counterex-
+ample of Theorem 1.2, which we have not found in the literature. One priority check is
+outstanding: a 2014 article (Jin–Guo) on quaternary forms with vanishing Hessian could
+2
+
+--- PAGE 3 ---
+not be obtained in full text during the campaign’s audits, and the campaign’s own rule –
+adopted here – is that novelty of the proof is not asserted until that article is read. Section 8
+records this.
+2 Conventions and the cone equivalence
+Convention 2.1.kis a field of characteristic zero,x= (x 0, x1, x2, x3),g=∇fis the
+gradient column,C= Hess(f) = (∂ 2f /∂xi∂xj)ij, and generic rank means rank over the
+rational function fieldk(x). For a polynomial vector fieldu= (u 0, . . . , u3),D u =P
+i ui ∂i
+denotes the associated derivation andJ(u) its Jacobian matrix, so thatD uu=J(u)u. A
+vector field isprimitiveif the gcd of its entries is 1.
+Lemma 2.2(cone equivalence).Letfbe homogeneous of degreed≥2ande∈k 4 a nonzero
+constant vector. The following are equivalent:(i) Hess(f)e= 0;(ii)e· ∇f= 0;(iii)after
+a linear change of coordinates takingeto a coordinate direction,fdoes not involve that
+variable.
+Proof.Hess(f)e=∇(e· ∇f), so (i) sayse· ∇fis a constant; being homogeneous of degree
+d−1≥1, it is then zero, giving (ii). Given (ii), extendeto a basis; in the new coordinates
+∂f /∂x′
+0 =e· ∇f= 0, giving (iii). (iii)⇒(i) is immediate.
+3 Proof of the main theorem
+Throughout this sectionfis as in Theorem 1.1. We may extend scalars to an algebraic
+closure ¯kwhile proving the claim: generic rank is unchanged, and at the end the equation
+Hess(f)e= 0 for a constanteis a finite homogeneouslinearsystem in the entries ofewith
+coefficients ink; a nonzero solution over ¯kforces a nonzero kernel overk. So assumek
+algebraically closed.
+3.1 A primitive self-vanishing kernel field
+If the four entries ofgare linearly dependent overk, a constant relation already gives the
+theorem via Lemma 2.2. Assume they are independent.
+Differential rank equals transcendence degree.For elementsh 1, . . . , hN of a rational
+function field overk, the rank ofdh 1, . . . , dhN equals trdeg k k(h1, . . . , hN): choose a tran-
+scendence basis among theh i; its differentials are independent (extend to a transcendence
+basis of the ambient field, over which the residual algebraic extension is separable in char-
+acteristic zero, and differentiate); every remainingh j is separably algebraic over the basis,
+and differentiating its minimal polynomial expressesdh j in the span. This proves both
+inequalities with no geometric input.
+Applying this to the entries ofg, whose Jacobian isC: a nonzero 3×3 minor ofCgives
+rank at least three, and detC= 0 gives at most three, so trdeg k k[g0, . . . , g3] = 3. Hence
+the kernel of
+k[Y0, Y1, Y2, Y3]− →k[g 0, g1, g2, g3]
+is a height-one homogeneous prime; the polynomial ring being a UFD, it is generated by
+one irreducible homogeneousG(an irreducible factor of any nonzero element generates a
+height-one prime inside it, and strict containment of height-one primes is impossible). Put
+w=∇G(g).
+3
+
+--- PAGE 4 ---
+Thenw̸= 0: otherwiseGwould divide each of its own first partials, which have smaller
+degree, forcing them all to vanish – impossible for a nonconstant polynomial in characteristic
+zero. DifferentiatingG(g) = 0 by the chain rule,
+Cw= 0, J(w) = Hess(G)(g)C,henceD ww=J(w)w= 0.(2)
+Primitive descent.Writew=ρvwithρ= gcd of the entries andvprimitive. We claim
+Dvv= 0.(3)
+By (2) the derivationD w kills each of its own coefficients, hence is locally nilpotent (its
+square vanishes on the generators, and degree bounds the iterate needed on any polynomial).
+Letπbe an irreducible factor ofρand pick an entryv i not divisible byπ; theπ-adic leading
+term ofD w(ρvi) = 0 givesπ|D wπ. But a locally nilpotent derivation admits no nonzero
+Darboux cofactor: ifD wπ=Aπthen exp(tD w)(π) =U(t)πwithUinvertible ink[t, x]
+andU(0) = 1, soU= 1 andD wπ= 0. HenceD wρ= 0, andD w =ρD v turns (2) into
+ρ2Dvv= 0, proving (3).
+Self-vanishing.All entries ofvare homogeneous of one degreem; ifm= 0 we are
+done, so assumem >0. Iterating (3), the derivationD v killsv, whence the exact transport
+identity
+v(x+t v(x)) =v(x) (4)
+ink[t, x]. Comparing coefficients oft m gives
+v(v(x)) = 0.(5)
+Thus the projective imageYofvlies in the base locusB=V(v 0, . . . , v3); primitivity
+excludes a common hypersurface component, so codimB≥2 and dimY≤1. Finally,
+along a transported kernel line,C(x+tv)v= 0; the matrixCis cubic, itst 3 coefficient is
+C(v)v, and quintic Euler gives
+C(v)v= 4g(v) = 0,(6)
+the transported cubic coefficient used below (this, and every displayed identity of this
+section, is verified exactly by the frozen checker; see Section 6).
+3.2 The degenerate trajectories force a line image
+If dimY= 0 thenvhas constant projective direction and the theorem follows fromCv= 0.
+Suppose dimY= 1; we showYis a projective line.
+LetU=P 3 \Bandψ:U→Ythe map defined byv; a general fibre has dimension
+two. Fix an irreducible surface component of a fibre closure,F q; every surface inP 3 is
+a hypersurface, and the transport identity (4) says that for every definedx∈F q the line
+⟨x, q⟩lies in Fq.
+Choose two distinct general pointsq 1, q2 ∈Y. The hypersurfacesF q1,F q2 meet in
+dimension at least one (two homogeneous equations have height at most two, the irrelevant
+ideal height four), and their intersection lies inB, since a point ofUcannot take both
+values. Choose a pointt̸=q 1, q2 on a curve of that intersection. For eachi,F qi has local
+dimension two attwhile dimB≤1, so some curve throughtinF qi is not contained in
+B; normalize it at a point overtand lift to a formal arc of affine-cone representatives
+xi(ϵ)∈ ¯k[[ϵ]]4 withx i(0) =T̸= 0. On the punctured generic point the projective value is
+qi, so for a fixed representativeQ i,
+v(xi(ϵ)) =c i(ϵ)Q i, c i(ϵ)̸= 0, c i(0) = 0.
+4
+
+--- PAGE 5 ---
+Apply (4) over ¯k((ϵ)) with transport parameterλ/c i(ϵ) and specialize atϵ= 0:
+v(T+λ Q i) = 0 for everyλ.
+Thus each line⟨t, q i⟩lies inB. A general point of the irreducible curveYlies on no other
+irreducible curve component ofB, so⟨t, q i⟩=Y:Yis a projective line. (This is the step
+that absorbs the trajectories on which the rational kernel chart degenerates: they cannot
+support a separate moving-kernel component.)
+After a constant linear change of source coordinates (r, p, s, z) placing this line as the
+(s, z)-plane direction,
+v= (0,0, a, b), a, b∈k[r, p, s, z].(7)
+We remove the fibre variables. Work overK=k(r, p); primitivity gives gcd(a, b) = 1 in
+K[s, z], and (3) reads
+a as +b a z = 0, a b s +b b z = 0.(8)
+Ifb= 0 thena∈K ×. Otherwise the second equation with coprimality givesb|b s, sob s = 0
+by degree, thenb z = 0, sob∈K ×. In the first equation letm= deg s a: form≥2 the term
+aas hass-degree 2m−1 against at mostmforba z; form= 1, writinga=A(z)s+B(z),
+thes-coefficient readsA 2 +bA ′ = 0, andz-degree forcesA= 0. Hencem= 0 and then
+az = 0 by (8). Clearing a common denominator,
+v= (0,0, a(r, p), b(r, p)),gcd(a, b) = 1.(9)
+3.3 The first-order group forces constancy
+Quintic Euler andCv= 0 givev·g= 0. Differentiating inrandp, symmetry ofCremoves
+the second-order terms:
+vr ·g= 0, v p ·g= 0.
+With (9) the complete group is
+afs +bf z = 0, a rfs +b rfz = 0, a pfs +b pfz = 0.(10)
+(These are exactly the connection terms retained because the kernel coordinate itself moves:
+on the chartb= 1, the changeX(r, p, s, z) = (r, p, s+a(r, p)z, z) hasX z =vand 0 =
+(f◦X) rz =X ⊤
+r CXz +g·v r =g·v r, and likewise inp. This is the group a silent constancy
+assumption would lose.) Setting
+Wr =a b r −b a r, W p =a b p −b a p,
+elimination from (10) gives
+Wrfs =W rfz =W pfs =W pfz = 0.(11)
+If some Wronskian is nonzero thenf s =f z = 0 identically, and Hess(f) has rank at most
+two – against the rank-three hypothesis. SoW r =W p = 0. Ifa̸= 0, thenb/ahas both
+partial derivatives zero ink(r, p): for the reduced fractionA/Bther-equation makesA|A r
+andB|B r, so both vanish by degree, and likewise inp; henceb/a∈k. The coprime pair
+(a, b) is therefore constant up to a unit (the casesa= 0 orb= 0 being immediate), sov
+has a nonzero constant projective directione, andCv= 0 givesCe= 0 identically.□
+By Lemma 2.2,fis a cone. This completes Theorem 1.1.
+5
+
+--- PAGE 6 ---
+4 Sharpness: the moving-kernel counterexample
+Proof of Theorem 1.2.PutA=z 2 +z 4,B=z 3 +z 5 =zA, andR=xA ′′ +yB ′′. Then
+C= Hessf=
+
+
+0 0A ′ 0
+0 0B ′ 0
+A′ B′ R0
+0 0 0 6w
+
+ .
+The first two rows are proportional overk(z), so detC= 0; the minor on rows and columns
+(x, z, w) equals−6w(A ′)2 =−24wz 2(1 + 2z2)2 ̸= 0, so the generic rank is three. The kernel
+is generated byκ= (B ′,−A ′,0,0), with primitive form (after removing the gcdz)
+v=
+ 
+z(3 + 5z2),−2(1 + 2z 2),0,0
+
+.
+No nonzero constantesatisfiesCe= 0: thex-row givesA ′ez = 0 soe z = 0; thew-row gives
+ew = 0; thez-row then reads (2z+ 4z 3)ex + (3z2 + 5z4)ey = 0, and thez, z 2 coefficients
+forcee x =e y = 0.
+The construction of Section 3.1 survives verbatim. The gradient isg= (A, B, xA ′ +
+yB ′,3w 2), of transcendence degree three, and the unique height-one polar relation is gen-
+erated by the irreducible
+G(Y0, Y1) =Y 5
+0 −Y 2
+0 Y 2
+1 −Y 4
+1
+(localizing atY 0 and settingt=Y 1/Y0 givesG=Y 4
+0 (Y0 −t 2 −t 4), whose localized quotient
+k[t,(t 2 +t 4)−1] is a domain, andY 0 ∤G). Pulling back,∇G(g) =A 3z v: the polar construc-
+tion produces exactly the moving fieldv, and sincevhas onlyx, ycomponents withz-only
+coefficients,
+Dvv= 0, v(X+τ v(X)) =v(X)
+– primitive gcd descent and self-vanishing both hold. What fails is homogeneity, in exactly
+two places. First, the top-τextraction (5): here
+v(v(X)) = (0,−2,0,0)̸= 0,
+and indeed the base locus isempty, by the B´ ezout identity−4z v 1 + (−5z2 − 1
+2)v 2 = 1 –
+so the projective line-image argument of Section 3.2 has no source to run on. Second, the
+Euler consequencev· ∇f= 0 used to open Section 3.3: here
+v· ∇f=z 3(1 +z 2)2 ̸= 0,
+while the correspondingz-Wronskianv 1∂zv2 −v 2∂zv1 = 2(3 + 9z2 + 10z4) is nonzero with
+no contradiction, because the first equation of the system (10) is precisely the false identity
+above. Thus the extension of Theorem 1.1 from one homogeneous quintic layer to the
+inhomogeneous 3+4+5+6 sum is false, and it breaks at Euler’s identity and nowhere else.
+5 The Euler mechanism in one line: an independent subcase
+proof
+The following proposition and proof arose as an adversarialauditof Theorem 1.1 inside the
+source campaign: the auditor, working without access to the authoring repository, tried to
+break the theorem by homogenizing Theorem 1.2’s counterexample – and proved instead
+that this cannot work. It is included because it displays the load-bearing role of Euler’s
+identity with maximal clarity.
+6
+
+--- PAGE 7 ---
+Proposition 5.1.LetA, B∈k[z, w]be quartic forms, not both zero, and letf=xA+yB,
+a quaternary quintic linear in(x, y). Ifrank k(x) Hessf= 3thenHessfhas a nonzero
+constant kernel vector; explicitlyB=λAfor a constantλ(or symmetrically),f= (x+
+λy)A(z, w)depends on three variables after a linear change, and the constant kernel direc-
+tion is(λ,−1,0,0).
+Proof.In coordinates (x, y, z, w),
+Hessf=
+ 0M
+M⊤ N
+
+, M=
+Az Aw
+Bz Bw
+
+,
+for some symmetricN, and Laplace expansion along the first two rows gives det Hessf=
+(detM) 2 =J 2 withJ=A zBw −AwBz. Rank three forcesJ≡0, i.e. (B z, Bw) =λ(A z, Aw)
+for some rationalλ. Euler’s identity for quartic forms gives
+4B=zB z +wB w =λ(zA z +wA w) = 4λA,
+soB=λA; differentiating,B z =λ zA+λA z =λA z forcesλ zA= 0, and likewiseλ wA= 0,
+soλis constant. Thenf= (x+λy)A, and Hess(f) (λ,−1,0,0) ⊤ =∇
+ 
+(λ∂x −∂ y)f
+
+=
+∇(λA−λA) = 0.
+Remark5.2.Theorem 1.2’s counterexample is exactly this shape with the quartic forms
+replaced by theinhomogeneousunivariate polynomialsA=z 2+z 4,B=zA: there the ratio
+B/A=zis a nonconstant function, and no Euler identity is available to force it constant.
+Homogeneity, through Euler’s relation, upgrades “gradients proportional” to “functions
+proportional by a constant”; that one upgrade is the entire distance between Theorems 1.1
+and 1.2.
+6 Effectivity and machine verification
+The proof of Theorem 1.1 is effective: givenf, the polar relationGis computable by
+elimination, the kernel fieldvby differentiation and gcd removal, and the final constant
+direction by linear algebra. Every displayed identity is certified by the frozen exact checker
+check hc4 three layer rank3 top kernel constancy.py: the transported cubic coeffi-
+cient (6), all four Wronskian eliminations (11), a rank-three constant-direction control, and a
+negative control (imposing the moving fieldv= (0,0, r, p) on a generic homogeneous quintic
+leaves exactly the six binary quintics in (r, p), all of Hessian rank at most two). A separate
+exact search over coprime moving fields of degrees one to three returned zero non-binary
+survivors (data/hc4 three layer rank3 moving top kernel search.json); this search is
+falsification evidence only – the theorem rests on Section 3. Theorem 1.2 is certified by
+check hc4 weighted multilayer rank3 moving kernel.py. In the source ledger the two
+results underwent two hostile referee rounds each and carry six recorded cross-window audit
+verdicts by five distinct auditors, allconfirmed; one auditor’s verdict isconfirmed-with-
+named-scope, its content being Proposition 5.1 together with the explicit statement that
+the general (nonlinear in (x, y)) case was confirmed only against attack, not re-derived –
+a scope the present paper’s Section 3 closes with the full argument. No step has been
+formalized in a proof assistant.
+7 Application: theHC(4)stratification
+In the source campaign’s stratification of four-variable Keller potentialsQ+H 3 +H 4 +H 5,
+every branch theorem for the generic rank-three quintic layer (ledgerH242–H246) required a
+7
+
+--- PAGE 8 ---
+constant missing direction for that layer. Theorem 1.1 supplies the premise foreverygeneric
+rank-three homogeneous quintic layer, removing the campaign’s last upstream literature
+dependency in that stratification, while Theorem 1.2 shows the premise cannot be obtained
+for the total inhomogeneous potential and must indeed be extracted layer-by-layer. The
+unrestricted four-variable Hessian conjecture, and with it the planar Jacobian conjecture,
+remain open; the shortest unresolved case in the campaign’s ledger is a two-layer 3+4
+weighted determinant identity.
+8 Provenance and disclosure
+The mathematics was produced autonomously by an AI research fleet (repository01-jc-cascade,
+2026-08-04 through 2026-08-18) under a standing rule forbidding literature theorems inside
+proof chains; Theorem 1.1 exists precisely because the classical Gordan–Noether theorem
+could therefore not be cited. Classical and modern references on vanishing Hessians – Hesse
+[5], Gordan–Noether [4], Garbagnati–Repetto [3], Ciliberto–Russo–Simis [1] – are cited for
+context and priority, not used in any proof. The motivation chain (HC(4)⇒JC(2), and the
+2026 status of the cascade) cites [2, 6] and is likewise not load-bearing.Priority caveat:
+a 2014 article by Jin and Guo on quaternary forms with vanishing Hessian was inaccessible
+in full text during the campaign (repository record: CNKI retrieval failed); until it is read,
+novelty is claimed for nothing beyond what Section 6 documents – the specific proof, its
+effectivity and certification, and the counterexample – and even that subject to the check.
+All certificates and the audit trail are archived in the campaign repository.
+References
+[1] C. Ciliberto, F. Russo, and A. Simis,Homaloidal hypersurfaces and hypersurfaces with
+vanishing Hessian, Adv. Math.218(2008), 1759–1805.
+[2] M. de Bondt and A. van den Essen,A reduction of the Jacobian conjecture to the
+symmetric case, Proc. Amer. Math. Soc.133(2005), 2201–2205.
+[3] A. Garbagnati and F. Repetto,A geometrical approach to Gordan–Noether’s and
+Franchetta’s contributions to a question posed by Hesse, Collect. Math.60(2009), 27–41.
+[4] P. Gordan and M. N¨ other,Ueber die algebraischen Formen, deren Hesse’sche Determi-
+nante identisch verschwindet, Math. Ann.10(1876), 547–568.
+[5] O. Hesse, ¨Uber die Bedingung, unter welcher eine homogene ganze Function vonnun-
+abh¨ angigen Variabeln durch line¨ are Substitutionen vonnandern unabh¨ angigen Variabeln
+auf eine homogene Function sich zur¨ uckf¨ uhren l¨ asst, die eine Variable weniger enth¨ alt,
+J. Reine Angew. Math.42(1851), 117–124.
+[6] Meng and Yang,a five-variable counterexample to the Hessian conjecture (title as
+recorded in the campaign’s literature audit), preprint, arXiv:2607.22198 (2026).
+8

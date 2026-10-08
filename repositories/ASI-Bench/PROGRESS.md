@@ -1,0 +1,818 @@
+# Progress
+
+## 2026-09: Scientific MCP catalog and integrations
+
+- Added auditable MCP profiles and integration helpers for scientific
+  simulators, CAD/FEA, EDA, robotics, flight, traffic, instrumentation, and
+  laboratory tooling. Catalog entries remain operator-configured and do not
+  bundle proprietary software or credentials.
+- Verification: MCP catalog and integration tests pass; external runtimes are
+  tested separately when locally available.
+- Implementation commits: `74aeeea`, `72ccba8`, `98be95e`.
+
+## Public formal-task scorers without GT disclosure
+
+- Problem: formal task scoring logic was not auditable in the public repository,
+  while publishing the private task tree directly would also expose GT
+  generators, generation settings, references, and private solver assets.
+- Resolution: import scoring-only contracts for all 60 formal tasks, 57 custom
+  scorers, and one required scorer helper from source revision `f7d41c97`; strip
+  every `generation` block and exclude every generator/reference asset.
+- Prevention: `config/public_scorers.json` is the exact scorer allowlist and new
+  fail-closed policy tests require scoring-only YAML, compile every custom
+  scorer, and reject formal-task GT generators, reference specs, protected
+  directories, undeclared files, secrets, and symlinks.
+- Verification: source audit matched all 60 evaluation configs and normalized
+  scorer blobs; default suite `2093 passed / 4 skipped / 22 deselected`; wheel
+  and sdist passed `twine check --strict` and contained zero task files.
+- Implementation commit: `af3c525`
+
+## Latest-paper README alignment
+
+- Problem: the README contributor list lagged the latest paper, and its compact
+  B1–B4 description omitted the matched-condition controls and precise
+  information boundaries used to measure scientific autonomy.
+- Resolution: synchronize the front-page contributor order and new contributor,
+  document the four guidance conditions, add the paper's long-horizon execution
+  scale, and align task-submission requirements with the 15-step Guided Flow.
+- Prevention: compare future README revisions directly against the paper's title
+  page, benchmark-design section, author appendix, and contribution appendix;
+  retain the user's decision not to include a separate main-findings section.
+- Verification: default suite `2090 passed / 4 skipped / 22 deselected`; wheel
+  and sdist both passed `twine check --strict` with the updated README metadata.
+- Implementation commit: `7f793b5`
+
+## Model versus agent-harness extension contract
+
+- Problem: user documentation listed configurable adapters but did not explain
+  whether a future model or a wholly new agent harness requires framework work;
+  Getting Started also overstated third-party routing as supported by every
+  adapter.
+- Resolution: document that compatible new models normally use the existing
+  harness plus `--agent-config`, while new harnesses can start with generic
+  `--agent-cmd` but require a new adapter for first-class integration and Docker
+  `os` support.
+- Prevention: README regression coverage requires both the model and harness
+  extension paths to remain explicit in README and Getting Started.
+- Verification: README tests pass 7 cases; the default suite passes `2086
+  passed / 2 skipped / 22 deselected`.
+- Implementation commit: `94cce96`
+
+## CI public-tree compatibility
+
+- Problem: the first online CI run failed because tracked `AGENTS.md` was a
+  symlink, which the repository's public-tree secret-container policy rejects;
+  the initial Actions versions also emitted Node.js 20 deprecation warnings.
+- Resolution: store `AGENTS.md` as a regular copy of `CLAUDE.md`, test that the
+  two remain identical, and move checkout, setup-uv, and artifact upload to
+  current Node.js 24 action releases.
+- Prevention: run the full suite only after new files have been staged so
+  `git ls-files` policy checks see their final tracked modes, and verify the
+  real GitHub Actions run after every workflow change.
+- Verification: public-policy and CI regression tests pass; the full Python
+  3.11 suite passes `2085 passed / 2 skipped / 22 deselected`.
+- Implementation commit: `84c5308`
+
+## Locked CI and package verification
+
+- Problem: tests and packaging checks existed only as manual instructions, so
+  pushes and pull requests could merge without exercising them; the latest
+  README also omitted a still-required legacy CLI compatibility note.
+- Resolution: add a read-only GitHub Actions workflow that tests the locked
+  environment on Python 3.11/3.13, builds and validates wheel/sdist artifacts,
+  installs the wheel cleanly, and exposes one stable `CI required` gate; restore
+  the README compatibility note and document the library lockfile contract.
+- Prevention: regression coverage locks the workflow triggers, permissions,
+  locked test commands, package checks, aggregate gate, and identical regular
+  copies of `AGENTS.md` and `CLAUDE.md`.
+- Verification: full offline suite passes `2084 passed / 2 skipped / 22
+  deselected` on both Python 3.11 and 3.13; `twine check --strict`, clean wheel
+  installation, and both CLI smoke tests pass.
+- Implementation commit: `624e8b0`
+
+## README fenced-code rendering
+
+- Problem: an extra `````bash`` opener before explanatory prose caused CommonMark
+  to render the following paragraphs, heading, and task table as one code block.
+- Resolution: remove the stray opening fence so only the runnable shell commands
+  remain fenced.
+- Prevention: a README regression test now detects headings swallowed by fenced
+  code and unclosed fences.
+- Verification: `tests/test_readme_examples.py` passes 6 tests; the default suite
+  passes `2083 passed / 2 skipped / 22 deselected`.
+- Implementation commit: `34c525f`
+
+## Offline-safe current-contract tests
+
+- Problem: nine assertions still encoded retired local scoring, pre-protocol API
+  setup, one-level instance counts, and old Codex/scorer behavior. Two permanently
+  skipped VIC tests referenced a removed task, live model/CLI tests ran under the
+  default command, and dependency metadata tests emitted deprecation warnings.
+- Resolution: remove retired local-score and VIC tests; update useful API,
+  generator, parallel/resume, scorer, and Codex coverage to current contracts;
+  exclude `integration` and `e2e` markers by default; record dependency versions
+  through distribution metadata.
+- Prevention: external tests require explicit `-m integration` or `-m e2e`, prompt
+  fixture rewriting now fails loudly if its source block changes, and the missing
+  dependency test contains a real assertion.
+- Verification: default offline suite `2081 passed / 2 platform skips / 22 external
+  tests deselected`; integration and e2e collections contain 20 and 2 tests.
+- Implementation commit: `e9beb66`
+
+## PyPI wheel sandbox runtime root
+
+- Problem: `BenchmarkOrchestrator` inferred the repository root from
+  `__file__`. In a wheel this resolves to `site-packages`, so `task` and
+  `linux_ns` task environments attempted `uv pip install -e site-packages` and
+  failed before the agent started; related `os` setup paths also treated the
+  installed package directory as mutable runtime state.
+- Resolution: resolve a real source checkout when present and otherwise use a
+  writable `~/.asibench/runtime` root. Task environments install source
+  checkouts editable, but wheel installations pin the active `asibench`
+  distribution version. Wheel caches live under `~/.asibench/`. Run commands
+  now fail before instance creation when Linux user namespaces or Docker are
+  unavailable.
+- Prevention: regression tests cover source and wheel install targets, runtime
+  root fallback, and non-zero host-backend preflight failures.
+- Verification: a clean 0.1.1 wheel created a nested task environment without
+  treating `site-packages` as a project; the reported astronomy task started
+  Codex under both `task` and Docker `os`. Docker sandbox self-test passed.
+  The latest full suite passed 2079 tests with 18 skipped and the same 9 known
+  unrelated failures.
+- Implementation commit: `a851c48`
+
+## PyPI 0.1.2 release preparation
+
+- Problem: PyPI `0.1.1` predates the current public task-contract, documentation,
+  CI, and CLI fixes on `main`.
+- Resolution: synchronize every public framework version field at `0.1.2` and
+  regenerate the development lock file before building release artifacts.
+- Prevention: verify the wheel and sdist with strict metadata checks, scan both
+  archives for private task files, and smoke-test both CLI entry points plus a
+  public seed42 pull from a clean wheel installation before uploading.
+- Verification: default suite `2086 passed / 2 skipped / 22 deselected`; wheel
+  and sdist passed `twine check --strict`, contained no private-file hits, and
+  the clean-install seed42 nbody pull succeeded.
+- Implementation commit: `5a1d457`
+
+## GitHub-aligned PyPI publishing
+
+- Problem: PyPI releases required a manual local upload and could drift from the
+  source and version published on GitHub.
+- Resolution: publish only when a GitHub Release is published, require its tag to
+  match the package version, rerun the locked suite, and build and validate both
+  distributions before uploading with an Actions Secret.
+- Prevention: a workflow regression test locks the trigger, read-only repository
+  permission, tag/version gate, strict artifact validation, secret reference, and
+  absence of token-shaped plaintext in the workflow.
+- Verification: workflow tests `3 passed`; default suite `2087 passed / 2 skipped
+  / 22 deselected`; `uv version --short` reports `0.1.2`.
+- Implementation commit: `eee5c47`
+
+## PyPI 0.1.3 release
+
+- Problem: PyPI `0.1.2` did not include the current public documentation and the
+  fixes that preserve pulled instance directories and distinguish unscored
+  submissions from zero scores.
+- Resolution: synchronize all public framework version fields at `0.1.3` and
+  publish the matching `main` commit through the GitHub Release workflow.
+- Prevention: require a clean locked test suite, strict wheel/sdist validation,
+  an archive scan for benchmark-only files, and a clean-wheel smoke test of
+  both CLI names plus a public Hugging Face pull before publishing.
+- Verification: `2090 passed / 4 skipped / 22 deselected`; both distributions
+  passed `twine check --strict`, contained no task prompts, generators, scorers,
+  or references, and the clean Python 3.11 wheel pull from seed42 succeeded.
+- Implementation commit: `d732b85`
+
+## Clean public repository migration
+
+- Problem: exporting the latest private-repository tree verbatim would have
+  republished 37 prompt, generator, scorer, and reference files from five
+  formal benchmark task directories, even without copying Git history.
+- Resolution: build the new public repository from a fresh object database,
+  retain only `task_meta.yaml` in formal task directories, and keep
+  `tasks/_template/` as the sole framework-level author scaffold.
+- Prevention: the public-task policy and documentation now enforce the
+  metadata-only boundary, and migrations verify both the staged tree and the
+  absence of old commit objects before pushing.
+- Verification: public-policy tests passed `13 passed`; the complete default
+  offline suite passed `2087 passed / 2 skipped / 22 deselected`.
+- Implementation commit: `a877776`
+
+## Restore allowlisted public task examples
+
+- Problem: the clean repository migration also removed the five intentionally
+  public, end-to-end sample tasks used to demonstrate task authoring and local
+  scorer integration.
+- Resolution: restore exactly the 37 prompt, GT generator, scorer/configuration,
+  and reference files belonging to the five allowlisted samples.
+- Prevention: `config/public_examples.json` and the public-task policy test keep
+  every other formal task metadata-only and reject unlisted private-like files.
+- Verification: focused policy/lifecycle tests passed `27 passed`; the complete
+  default offline suite passed `2087 passed / 2 skipped / 22 deselected`.
+- Implementation commit: `989808e`
+
+## CLI Task Draft upload with browser confirmation
+
+- Problem: `asibench task submit` only opened a blank Portal form, forcing
+  authors to select the same files and re-enter evidence they already prepared
+  locally.
+- Resolution: authenticate with a manually created Portal PAT, exact-sync the
+  complete Task-relative file snapshot into an owner-only Draft, and open that
+  Draft for file/field review while keeping final submission browser-only.
+  `task_submission.yaml` carries private author evidence without entering Task
+  repository exports.
+- Prevention: CLI tests cover safe file collection, hidden token validation,
+  credential reuse, Draft-only behavior, exact snapshot reconciliation, and
+  headless failure; Portal tests enforce strict manifest validation and the
+  export exclusion.
+- Verification: after rebasing onto the public-scoring release, the public suite
+  passed `2102 passed / 2 skipped / 22 deselected`; Portal CLI-sync tests passed
+  `76 passed`; Portal frontend passed `63` contract tests, `2` WebKit tests, and
+  the production build. A live CLI-to-WebKit E2E reached 100% completeness,
+  verified ten exact files, clicked the browser-only final submit, froze R1,
+  and excluded the Portal-only manifest from export.
+- Implementation commit: `9161998`
+
+## Split public seed31415 and private seed42 scoring
+
+- Problem: both fixed seeds were documented and enforced as website-only even
+  though seed31415 intentionally publishes references, while the puller could
+  also copy a cached `reference/` tree for private seed42.
+- Resolution: add a standalone `asibench score --repo seed31415` path that uses
+  GitHub scoring contracts and public HF references without rewriting run
+  results; reject seed42 before path access and filter its references during
+  both snapshot download and cached-tree copying.
+- Prevention: regression tests lock the seed-specific CLI boundary, independent
+  non-official report, source-result immutability, deferred scientific imports,
+  and two-layer seed42 reference exclusion.
+- Verification: a real GPT-5.5 medium seed31415 B1 result passed both hard gates
+  and all four scorers; real HF pulls contained 0 seed42 reference files and 6
+  seed31415 reference files; the full suite passed `2112 passed / 4 skipped /
+  22 deselected`; wheel/sdist strict checks passed and contained no task files.
+- Implementation commit: `573c760`
+
+## Restrict official result submissions to seed42
+
+- Problem: `asibench submit` documented the private-reference seed42 workflow
+  but accepted seed31415, unknown-seed, and mixed-seed result directories; the
+  optional `--benchmark-repo` value was unvalidated provenance rather than an
+  enforcement boundary.
+- Resolution: validate every result `instance_id` before creating the bundle,
+  reading credentials, or contacting Portal; accept only the seed42 suffix and,
+  when supplied, the seed42 alias or canonical Hugging Face repository ID.
+- Prevention: regression tests cover seed31415, unknown and mixed seeds,
+  repository mismatch, both valid seed42 repository spellings, and failure
+  before authentication or bundle creation.
+- Verification: focused submission/scoring/documentation tests passed `37
+  passed`; the full offline suite passed `2119 passed / 4 skipped / 22
+  deselected`; wheel and sdist passed `twine check --strict` and contained no
+  task or reference files.
+- Implementation commit: `1f3d6bc`
+
+## Publish the ASI-Bench arXiv link
+
+- Problem: the README carried the paper title but did not link readers to the
+  published manuscript.
+- Resolution: add the arXiv paper as a header badge, a dedicated Paper section,
+  and a Resources-table entry.
+- Prevention: README regression coverage locks the exact title and arXiv URL.
+- Verification: focused documentation/packaging tests passed `12 passed`; the
+  full offline suite passed `2120 passed / 4 skipped / 22 deselected`.
+- Implementation commit: `c7dbf6e`
+
+## Gate contributed-task difficulty on B3 and B4
+
+- Problem: the difficulty check applied one default ceiling of 50 to every
+  prompt level, although task acceptance should constrain only the low-guidance
+  B3/B4 conditions and leave B1/B2 unrestricted.
+- Resolution: record B1/B2 as `RECORDED`, gate only B3/B4 at a strict mean-score
+  ceiling below 40, reject CLI thresholds above 40, and restrict catalog
+  flagging to B3/B4.
+- Prevention: terminal, JSON, Markdown, CSV, CLI, persistence, catalog, template,
+  and documentation tests cover 100-point B1/B2 acceptance, 39.9-point B3/B4
+  acceptance, the strict 40-point failure boundary, and threshold bypass
+  rejection.
+- Verification: focused policy tests passed `173 passed`; the full offline suite
+  passed `2123 passed / 4 skipped / 22 deselected`; wheel and sdist passed
+  `twine check --strict` and contained no task or reference files.
+- Implementation commit: `d5bd2d6`
+
+## Release evaluator-only scorer runtimes in asibench 0.1.4
+
+- Problem: `asibench==0.1.3` and the corresponding public task tree could not
+  import six advertised seed31415 scoring contracts because their sandbox or
+  task runtime dependencies were absent from the published artifacts.
+- Resolution: release the public submission sandbox and four evaluator-only
+  task runtimes introduced in `f77c6929`, then bump the package and runtime
+  versions from 0.1.3 to 0.1.4 without changing dependency pins.
+- Prevention: public policy tests import all six scorers using only public
+  files, enforce exact helper allowlists, reject `generate_gt` imports, and scan
+  evaluator runtimes for generator and hidden-reference symbols.
+- Verification: the locked Python 3.11 offline suite passed `2128 passed / 2
+  skipped / 22 deselected`; `asibench-0.1.4` wheel and sdist both passed
+  `twine check --strict`.
+- Release preparation commit: `5b172fff`
+
+## 2026-08-26 — BenchFlow seed31415 scorer adapter
+
+- Problem: BenchFlow had no stable single-attempt interface for feeding
+  already-materialized seed31415 prediction artifacts into the public scorer,
+  and could not receive machine-readable ScoreDetail/provenance output.
+- Resolution: add `asibench benchflow-score` and the JSON manifest adapter.
+  It validates the seed, instance suffix, reference location, task contract and
+  optional scorer revision; hashes prediction artifacts; and emits gate/scorer
+  details, status, revisions, framework version and harness/model/effort
+  provenance. It never generates instances, imports `generate_gt.py`, or
+  accepts seed42.
+- Verification: adapter/policy/local-scoring tests passed `30 passed`; the
+  complete public offline suite passed `2133 passed, 2 skipped, 22 deselected`;
+  the built wheel contains `ai4sci_bench/benchflow.py`.
+- Implementation commit: `a209722d`
+
+## 2026-08-27 — Bind BenchFlow scores to strict run evidence
+
+- Problem: `asibench run` returned zero after persisting failed agent attempts,
+  and the BenchFlow scorer trusted a caller-supplied prediction directory
+  without independently reading its ASI-Bench run result.
+- Resolution: add opt-in `run --fail-on-agent-error`, evaluated from the final
+  retry attempt after all evidence is saved; require a schema-v2 BenchFlow
+  manifest to bind `run_result` to its persisted output directory and report
+  separate attempt and evaluation statuses plus both artifact hashes.
+- Prevention: CLI tests cover non-zero strict exits and recovered retries;
+  adapter tests cover missing/mismatched run evidence and failed attempts.
+- Verification: focused CLI/BenchFlow/reporting tests passed `163 passed`; the
+  complete public suite passed `2138 passed, 2 skipped, 22 deselected`; the
+  previous real seed31415 B1 failure is now reported as `attempt_failed` while
+  retaining `evaluation_status=completed` and scorer details.
+- Implementation commit: `77c394d`
+
+## 2026-08-27 — Preserve API provenance and clarify BenchFlow status
+
+- Problem: persistence path sanitization restarted its absolute-path match at
+  the second slash of an HTTP(S) URL, turning endpoints such as
+  `https://api.apexin.ai/v1` into `https:/<abs_path>`; BenchFlow also exposed
+  the ambiguous raw attempt value `failed` alongside scorer completion.
+- Resolution: protect complete HTTP(S) URL spans while redacting host paths in
+  surrounding text, and normalize attempt outcomes to `execution_failed`,
+  `execution_timeout`, and `execution_incomplete` while retaining independent
+  `evaluation_status`.
+- Prevention: persistence tests cover API endpoints, URL paths/query strings,
+  mixed URL/host-path text, and final result provenance; BenchFlow tests cover
+  failed, timed-out, and incomplete execution states.
+- Verification: focused regressions passed `18 passed`; the complete public
+  suite passed `2144 passed, 2 skipped, 22 deselected`; the real seed31415 B1
+  failure now reports `attempt_status=execution_failed` with
+  `evaluation_status=completed`.
+- Implementation commit: `db57b7a`
+
+## 2026-08-29 — Native pi/opencode PR audit fixes
+
+- Problem: PR #4's two native adapters validated raw constructor arguments
+  before resolving `api_key_env`/`api_base_env`, and persisted provenance could
+  expose credential values. The PR also lacked live CLI evidence.
+- Resolution: resolve environment-backed credentials before validation and
+  native-provider selection; recursively redact credential config keys while
+  retaining endpoint values; record verified CLI baselines and document live
+  `--version`/`--help` probes.
+- Verification: focused additions passed `11 passed`; full public suite passed
+  `2239 passed, 2 skipped, 22 deselected`; npx probes returned pi `0.84.3` and
+  opencode `1.17.15` with the documented flags. Docker daemon was available,
+  but no global CLIs were installed, so no fake container smoke result was
+  recorded.
+- Commits: implementation and tests are in the local public branch; parent
+  submodule remains local and unpushed.
+
+## 2026-08-31 — Native adapter real Docker and seed31415 closure
+
+- Problem: mock tests did not reveal that Docker installed pi through a
+  floating npm tag (`0.74.2`), reused stale agent images after CLI/base changes,
+  passed OS prompts in argv, used Node 20 although pi `0.84.3` requires Node
+  `>=22.19`, installed task packages as an unprivileged build user, and dropped
+  native token cost from produce-only result JSON.
+- Resolution: pin pi `0.84.3` and opencode `1.17.15`; use Node 22 and Docker
+  stdin; bind agent image tags to the base schema and exact install command;
+  install overlays as root then restore agent ownership/non-root runtime; carry
+  `CostInfo` through the produce-only branch.
+- Verification: native/OS regression passed `218 passed`; the built wheel
+  contains both native adapters and trajectory extractors. Real Docker
+  runs used Node `22.23.2`, exact CLI versions, API-key env injection and image
+  SHA provenance. Formal seed31415 B1 completed for both adapters: Pi used 5
+  turns/22 tools/74,157 tokens, OpenCode used 11 turns/21 tools/95,728 tokens;
+  both produced the required files and scored `93.02/100` locally. Persisted
+  results contain no API key.
+- Prevention: never use floating CLI tags in evaluator images; every overlay
+  cache key must include its parent image and installation recipe; real Docker
+  acceptance is required when a native CLI schema changes.
+- Implementation commit: `8bc8b8e405d1e97133d26fea7eab425249f5f0c4`.
+
+## 2026-09-03 — Runtime LLM/VLM Judge API routing
+
+- Problem: public Gemini-based scorers could use provider-default credentials,
+  but users could not safely select a custom Judge endpoint, key variable, and
+  protocol from `score` or `run-score`; gateway secrets risked being placed in
+  task configuration or command-line JSON.
+- Resolution: add `--judge-api-base`, `--judge-api-key-env`, and
+  `--judge-api-protocol` (plus `ASIBENCH_JUDGE_*` equivalents) to public scoring
+  entry points. Text, VLM, BenchFlow, and the CMOS custom scorer now share one
+  runtime resolver for native providers and OpenAI-compatible gateways such as
+  TokenRouter.
+- Prevention: only an environment-variable name crosses the CLI; secrets are
+  redacted from errors, retry logs, raw responses, and reports. `run-score`
+  removes dedicated Judge credentials from the agent-run child without
+  disabling an evaluated agent's own dotenv behavior.
+- Verification: focused Judge/local-score/BenchFlow tests passed `234 passed`;
+  the complete offline suite passed `2305 passed, 2 skipped, 22 deselected`
+  after rebasing onto `db94593`.
+- Implementation commit: `d64663a`.
+
+## 2026-09-04 — BenchFlow workflow migration
+
+- Problem: the standalone `JiangyuZhou1/ASI-Bench-benchflow` repository carried
+  a complete operator workflow, while the public main branch documented only
+  the manifest boundary. Directly replacing files from the fork would also
+  remove newer Judge routing, run-score, and harness-isolation changes.
+- Resolution: confirm that main already contains the BenchFlow schema-v2
+  adapter, strict attempt-status handling, CLI, and tests, then migrate only
+  the missing end-to-end README workflow. Adapt the clone URL to the canonical
+  repository and retain the newer runtime Judge API contract.
+- Verification: `tests/test_benchflow.py tests/test_cli.py` passed `152`; CLI
+  help and the persisted result/output naming contract were checked against
+  the documented commands.
+- Prevention: when importing from a long-lived fork, compare commit ancestry
+  and feature-specific trees rather than copying the fork wholesale.
+- Documentation commit: `ac8bd96`.
+
+## 2026-09-04 — BenchFlow guide split
+
+- Problem: the complete BenchFlow workflow made the top-level README much
+  longer than the surrounding feature summaries.
+- Resolution: keep a short BenchFlow overview and link in README, move the
+  installation, run, manifest, scoring, status, retry, and Judge API details to
+  `docs/guide/benchflow.md`, and add the guide to the documentation index.
+- Verification: all local Markdown links from README and the guide index
+  resolve; BenchFlow/CLI regression tests passed `152`.
+- Prevention: README should provide feature discovery and route detailed
+  operational workflows to focused guides.
+- Documentation commit: `b068978`.
+- Follow-up: move the short README overview out of `Contribute a task` and
+  place it under Quick start → `Score locally or submit`, where the scoring
+  integration belongs. Rename the heading to `BenchFlow integration`.
+- Follow-up commit: `547d196`.
+
+## 2026-XX: Harness home isolation (claude host HOME, kimi per-instance home)
+
+- Problem: in host-side run modes (`--sandbox none|task|linux_ns`) the Claude
+  Code CLI shared the ambient `HOME` across sequentially executed instances
+  (session transcripts, `~/.claude.json` project history, auto-memory, user
+  hooks/MCP all visible), and `kimi_code_cli` reused one adapter-level
+  `KIMI_CODE_HOME` (with `sessions/` + `logs/`) for every instance, both on
+  the host and via the `--sandbox os` rw mount. Only the OS-sandbox path was
+  inherently safe (one-shot `--rm` container, fresh `HOME=/home/agent`).
+- Resolution: `claude_code_cli` now builds a per-run isolated HOME under
+  `.ai4sci-bench/claude_home/<run_key>/` copying only `.credentials.json` +
+  `settings.json` (same surface as the OS-sandbox auth mounts) and forcing
+  `HOME`/`USERPROFILE`/`CLAUDE_CONFIG_DIR` when `tool_mode != unrestricted`;
+  `kimi_code_cli` now keys auto-generated homes by `run_key` under a temp
+  root removed at teardown (explicit `kimi_home` stays shared by choice);
+  `safe_run_key()` was hoisted into `subprocess_base.py` and codex refactored
+  onto it (behavior-equivalent).
+- Verification: 9 new unit tests (auth mirroring, memory-surface exclusion,
+  per-run keying, `CLAUDE_CONFIG_DIR` override, unrestricted opt-out, kimi
+  per-instance env/mounts, teardown); full suite `uv run pytest -q` →
+  2258 passed, 2 skipped.
+- Prevention: whenever a new harness adapter is added, enumerate every state
+  directory it writes (sessions, history, memory, config) and decide per
+  directory whether it must be per-run, shared-by-explicit-choice, or
+  ephemeral; prefer mirroring the OS-sandbox auth surface so host and
+  container runs stay comparable.
+- Review pending: upstream issue #5, PR #6 (branch
+  `task-harness-home-isolation`, implementation commit
+  `12b62b2cbfe5d54d18aae454ac405f13b91d1467`).
+
+## 2026-09: PR #6 execution-level isolation hardening
+
+- Problem: PR #6 keyed Claude homes only by `instance_id + prompt_level`, left
+  them on disk, used collision-prone truncated directory names, and initialized
+  Kimi's temporary root without synchronization. Normal orchestrator runs also
+  never invoked adapter teardown.
+- Resolution: add a unique Claude execution root with teardown cleanup, append
+  a SHA-256 suffix to sanitized run keys, lock Kimi root creation/cleanup, and
+  guarantee orchestrator teardown on success and failure.
+- Verification: added regressions for repeated identical run keys, sanitized-key
+  collisions, concurrent Kimi first use, and exceptional teardown. Targeted
+  adapter/runner tests passed `423`; the full offline suite passed `2263`, with
+  `2 skipped` and `22 deselected`.
+- Prevention: isolation identities must include both execution and instance
+  scope; cleanup code is ineffective unless the workflow owner invokes it in a
+  `finally` block; predictable truncated names require a content hash.
+- Implementation commit: `bda8c3f`.
+- Review follow-up: Copilot correctly identified that a host
+  `CLAUDE_CONFIG_DIR` containing `~` was not expanded. Use `expanduser()` and
+  cover credential discovery through a user-relative config path; also remove
+  the unused Kimi test import. Targeted tests passed `424`; the full offline
+  suite passed `2264`, with `2 skipped` and `22 deselected`.
+- Review follow-up commit: `1bf84a0`.
+
+## 2026-09: PyPI 0.1.5 release
+
+- Problem: PyPI remained at `0.1.4` while `main` already contained the new
+  BenchFlow adapter, Judge API routing, execution isolation hardening, and
+  updated BenchFlow documentation.
+- Resolution: bump the package and lockfile versions to `0.1.5`, validate the
+  complete offline suite, and publish through the repository's tagged GitHub
+  Release workflow.
+- Verification: `uv run --project . python -m pytest -q` passed with `2305`
+  tests, `2 skipped`, and `22 deselected`; `uv build` and strict Twine checks
+  passed for both distributions.
+- Prevention: publish from an annotated version tag only after the locked test
+  suite and distribution metadata checks pass.
+- Version bump commit: `1dc79cd`.
+
+## 2026-09: Results-below-expectations troubleshooting
+
+- Problem: user documentation listed `direct_llm` alongside agentic adapters
+  without explaining that it is a single-turn, no-tool baseline, so users could
+  mistake an unsuitable harness choice for unexpectedly weak model performance.
+- Resolution: add a dedicated troubleshooting guide that separates execution,
+  evaluation, and genuine low-score cases; explains when iterative CLI agents
+  are a better fit; and covers artifacts, provenance, environment, timeout,
+  transient API failures, and repeated-run variance. Link it from README,
+  Getting Started, and the guide index.
+- Verification: the documentation regression test passed and all relative
+  Markdown links under README/docs resolved locally; the full offline suite is
+  run before integration.
+- Prevention: keep adapter capability recommendations tied to regression tests
+  so documentation changes when harness behavior or public adapter names do.
+- Implementation commit: `147ac23`.
+
+## 2026-09: Agentic difficulty-evidence policy
+
+- Problem: `difficulty-check` silently defaulted to the single-turn
+  `direct_llm` adapter (and its legacy default model), allowing an otherwise
+  easy iterative task to appear difficult because the baseline could not
+  inspect, execute, and repair its work. Task Draft validation checked only the
+  OS sandbox and reports did not expose complete effective agent provenance.
+- Resolution: require explicit position-matched `--agent` / `--agent-config`
+  values with a model; require at least one supported multi-turn harness;
+  retain `direct_llm` only as an optional additional baseline; reject
+  direct-only Task Draft evidence before authentication; and record agent,
+  model, effort, measured CLI/adapter version, framework version, and sandbox
+  in difficulty reports. Update the Codex CLI and Codex judge defaults to
+  `gpt-5.6-sol` and synchronize the CLI/package version display with 0.1.5.
+- Verification: policy, report, submission, adapter, judge, documentation, and
+  static-validation tests passed `682`; the full offline suite is run before
+  integration.
+- Prevention: difficulty evidence must identify both model and harness, and a
+  no-tool/single-turn baseline must never be the sole formal difficulty gate.
+- Implementation commit: `47bf572`.
+
+## 2026-09: Fix MPSC evaluator solution construction
+
+- Problem: `math.mpsc_safety_filter` raised `TypeError: MPSCSolution() takes no arguments`
+  because the public evaluator runtime declared fields on `MPSCSolution` without
+  generating an initializer, while all solver paths instantiate it with values.
+- Resolution: annotate `MPSCSolution` with `@dataclass`; add a regression test
+  that imports the public runtime and constructs the value object using its
+  keyword fields.
+- Verification: the MPSC public-policy and regression tests pass (`20 passed`);
+  full offline suite is run before integration.
+- Prevention: whenever evaluator runtimes expose typed result records, test both
+  construction and at least one scorer path instead of checking only syntax or
+  class presence.
+- Implementation commit: `5b40ad0`.
+
+## 2026-09: Difficulty-check terminal progress
+
+- Problem: `asibench difficulty-check` could spend hours inside an agent run
+  without visible terminal feedback, leaving authors unable to tell which
+  task, harness, prompt level, or instance was currently executing.
+- Resolution: add an optional orchestrator instance-progress callback and use
+  it to render durable global progress-bar lines before and after every
+  difficulty instance. The output identifies task, agent/model preparation,
+  B1–B4 level, instance ID, percentage, score, and failed/timeout state.
+- Verification: add CLI regressions for level-aware 0–100% output and a runner
+  regression for start/completion callbacks; the full offline suite passed
+  `2316` tests, with `2 skipped` and `22 deselected`.
+- Prevention: long-running author workflows must emit a visible stage before
+  blocking external work begins, and progress hooks must remain optional so
+  library callers and other CLI commands keep their existing output.
+- Implementation commit: `b70cd1c`.
+
+## 2026-09: Replace GPT-5.4 Judge configuration
+
+- Problem: several formal image/text Judge contracts still selected GPT-5.4,
+  while the requested review standard is GPT-5.5 at medium reasoning effort.
+- Resolution: update all seven GPT Judge task contracts to `openai/gpt-5.5`
+  with `reasoning_effort: medium`; add GPT-5.5 model resolution and forward
+  reasoning effort through generic text/VLM and CMOS custom Judge paths.
+- Verification: targeted Judge, CMOS, NNLS, and public-policy tests passed
+  (`105 passed`); full offline suite passed `2320`, with `2 skipped` and
+  `22 deselected`.
+- Implementation commit: `97fef0e`.
+
+## 2026-09: Remove remaining GPT-5.4 runtime references
+
+- Problem: after migrating formal Judge contracts, CLI examples, compatibility
+  mappings, and API test fixtures still referenced GPT-5.4, allowing accidental
+  use of the retired Judge model.
+- Resolution: migrate those runtime/test references to GPT-5.5 and remove the
+  GPT-5.4 model aliases while retaining the existing GPT-5.5 OpenRouter alias.
+- Verification: targeted CLI, Judge, CMOS, batch-record, issue-fix, and model
+  API tests passed; the full offline suite passed `2320`, with `2 skipped` and
+  `22 deselected`.
+- Implementation commit: `ee139f0`.
+
+## 2026-09: Synchronize framework version and Codex effort levels
+
+- Problem: run metadata hard-coded framework version `0.1.3` while the package
+  and CLI reported `0.1.5`; Codex CLI validation also rejected the installed
+  CLI's supported `ultra` effort level.
+- Resolution: derive metadata version from `ai4sci_bench.__version__` and add
+  `ultra` to Codex adapter validation and regression coverage.
+- Verification: targeted metadata, adapter, difficulty, and integration tests
+  passed; `asibench --version` and metadata both report `0.1.5`.
+- Implementation commit: `c653ec4`.
+
+## 2026-09: Migrate Gemini scoring judges to GPT-5.5
+
+- Problem: formal task scoring still selected Gemini for text and image Judge
+  paths, and the generic Judge fallback defaulted to Gemini.
+- Resolution: migrate all formal Gemini Judge contracts to `openai/gpt-5.5`
+  with `reasoning_effort: medium`; change the generic Judge default likewise.
+- Verification: public-policy coverage rejects Gemini Judge configs and checks
+  all GPT Judge configs; targeted Judge and policy tests pass.
+- Implementation commit: `8e474b7`.
+
+## 2026-09: Add selected-agent overlays for custom task images
+
+- Problem: `runtime.dockerfile` returned the task image directly, so formal task
+  Dockerfiles had to bundle agent CLIs and could not provide agent-specific
+  cache identities; the CMOS image also lacked regression coverage for Linux
+  host UID remapping.
+- Resolution: treat a custom Dockerfile as a reusable task base, layer only the
+  selected agent CLI on top, include the task-base identity and exact agent
+  install command in the overlay cache key, and keep no-agent runs on the task
+  base. Remove bundled Claude/Codex CLIs from the CMOS base image.
+- Verification: `218 passed, 2 skipped, 1 deselected` across the OS sandbox,
+  pi, and opencode suites; the Docker integration test built the CMOS base and
+  pi overlay, then passed ngspice, Python-package, pi CLI, agent-isolation, and
+  UID/GID `12345:12345` HOME-write probes.
+- Prevention: custom task Dockerfiles must provide task dependencies only;
+  agent installation belongs to framework-managed, agent-keyed overlays with
+  both mock coverage and an opt-in Docker runtime probe.
+- Implementation commit: `361f093`.
+
+## 2026-09: Close custom task image PR policy and CI gaps
+
+- Problem: the CMOS `Dockerfile.os` was rejected by the fail-closed public-task
+  policy, while its real UID-remapping and agent CLI probes were excluded from
+  the required CI workflow; cache tests also did not directly prove that a
+  Dockerfile content change invalidates the selected-agent overlay.
+- Resolution: add an exact task-level public runtime allowlist, require it to
+  match every formal `runtime.dockerfile` declaration, add the focused Docker
+  integration suite to `CI required`, and cover both Dockerfile-content cache
+  invalidation and the original Claude Code executable smoke path.
+- Verification: public policy, task image, and CI workflow tests pass; the
+  Docker integration suite validates pi and Claude Code overlays separately.
+- Prevention: formal task runtime files must be explicitly allowlisted, and any
+  custom-image agent regression must have both offline cache coverage and a
+  required Linux Docker smoke test.
+- Implementation commit: `41e5615`.
+
+## 2026-09: Distinguish scorer failures from scored zeros
+
+- Problem: the MPSC scorer caught trusted bundle/runtime failures and submitted
+  controller failures under the same `setup_error` shape, so infrastructure
+  failures could leave `scorer_error_count` at zero and depress aggregate scores
+  as if the submission had legitimately scored zero.
+- Resolution: classify MPSC evaluator/runtime/reference failures with
+  `scorer_internal_error: true` while retaining submitted-code failures as
+  scored-zero submission errors. Upgrade the seed31415 local report to schema
+  v2, mark invalid evaluations with `final_score: null`, and exclude them from
+  aggregate numerators and denominators while preserving legitimate zero scores.
+- Verification: focused scoring, CLI, BenchFlow, policy, and fault-isolation
+  tests passed (`197 passed`); the full offline suite passed `2350` tests, with
+  `2 skipped` and `24 deselected`.
+- Prevention: custom scorers must identify failure ownership explicitly, and
+  aggregate reports must never serialize evaluator failures as numeric scores.
+- Implementation commit: `68b599d`.
+
+## 2026-09: PyPI 0.1.6 release
+
+- Problem: the published `0.1.5` release predated the MPSC solution-constructor
+  fix and the distinction between evaluator failures and legitimate zero scores,
+  so Issue #2 did not yet have a complete released validation target.
+- Resolution: synchronize the package, runtime, lockfile, and version regression
+  at `0.1.6`, then publish the current public scorer contracts through the
+  repository's tagged GitHub Release workflow.
+- Verification: the full locked offline suite passed `2350` tests, with `2
+  skipped` and `24 deselected`; wheel and sdist passed strict Twine checks; both
+  CLI entry points reported `0.1.6`; and all six Issue #2 custom scorers imported
+  against the built wheel in an isolated `asibench[full]` environment.
+- Prevention: release validation must compare both package metadata and runtime
+  `__version__`, and exercise public task scorers against the built wheel before
+  publishing.
+- Version bump commit: `80b0968`.
+
+## 2026-09: Preserve model-call lifecycle evidence
+
+- Problem: exported trajectories retained visible messages and tool events but
+  did not preserve completion lifecycle boundaries, transport/process evidence,
+  retry relationships, or empty-stream coverage gaps, so a non-empty-message
+  count could be misread as a zero-percent model-call empty-response rate.
+- Resolution: add versioned, adapter-aware model-call records and redacted raw
+  sidecars; link provider and benchmark retries; restore records through the
+  result loader; and add denominator-aware per-result and aggregate reporting.
+  Codex agent turns are retained as coverage evidence but are not treated as
+  provider completions unless an explicit provider boundary is emitted.
+- Verification: the focused observability suite passed `25` tests; the full
+  locked offline suite passed `2375` tests, with `2 skipped` and `24 deselected`.
+- Prevention: call metrics must remain separate from visible trajectory metrics,
+  unknown or malformed coverage must fail closed, and a numeric empty-response
+  rate is valid only when every attempted-call boundary and content state is
+  observable.
+- Implementation commit: `43cf4ce`.
+
+## 2026-09: Require trusted sandbox timeout markers
+
+- Problem: OS and Linux namespace adapters classified any log containing the
+  words `timed out` as a benchmark timeout, so successful agent output or an
+  ordinary failed command could be mislabeled as `RunStatus.TIMEOUT`.
+- Resolution: require a failed sandbox result plus the complete framework-owned
+  timeout marker, and apply the shared check to every OS-capable CLI adapter.
+- Verification: focused adapter regressions passed `474` tests; the full locked
+  offline suite passed `2385` tests, with `2 skipped` and `24 deselected`.
+- Prevention: timeout tests must cover genuine runner markers, successful logs
+  containing timeout language, and malformed or unrelated failure messages.
+- Implementation commit: `cc01f47`.
+
+## 2026-09: Repair formal task scorer runtime inputs
+
+- Problem: the Levin scorer looked for trusted training data in agent outputs,
+  its search result type lacked the decorator required by its positional
+  constructors, and the CMOS scorer still loaded the removed monolithic
+  `task.yaml` before building its ngspice image.
+- Resolution: read Levin training data from the reference bundle, make
+  `SearchResult` a dataclass, and load CMOS metadata through the framework's
+  split-aware `TaskLoader`.
+- Verification: three regression tests failed before the fixes and passed
+  afterward; public-policy and CMOS Judge tests passed, and the full locked
+  offline suite passed `2388` tests, with `2 skipped` and `24 deselected`.
+- Prevention: task scorer regressions must keep trusted inputs separate from
+  submission outputs and exercise task runtime metadata through the same
+  loader used by the framework.
+- Implementation commit: `1dd3922`.
+
+## 2026-09: Preserve Judge temperature for compatible endpoints
+
+- Problem: LiteLLM treated an explicit OpenAI-compatible GPT-5.5 endpoint as
+  native OpenAI and rejected the task's `temperature: 0` locally before any
+  HTTP request, even though the configured gateway accepts that parameter.
+- Resolution: centralize Judge temperature handling and send it in the request
+  body for explicit `openai/` compatible endpoints, while retaining the normal
+  top-level parameter and LiteLLM validation for native provider calls. Apply
+  the same behavior to text, VLM, and both CMOS Judge paths.
+- Verification: the actual LLM Judge completed successfully against the
+  configured compatible endpoint with GPT-5.5, medium reasoning, and zero
+  temperature; focused tests passed `105` tests, and the full locked offline
+  suite passed `2390` tests, with `2 skipped` and `24 deselected`.
+- Prevention: endpoint-override tests must assert the final LiteLLM request
+  shape for every Judge implementation and separately preserve native-provider
+  validation coverage.
+- Implementation commit: `587b550`.
+
+## 2026-09: Add bounded process-isolated local scoring
+
+- Problem: public seed31415 scoring remained serial even when `run-score` used
+  multiple agent workers, while custom scorers mutate process-global state and
+  therefore cannot safely share concurrent threads.
+- Resolution: add `score --parallel N` with full-batch preflight, fresh spawned
+  processes per result, stable result ordering, atomic coordinator-owned report
+  writes, fail-closed worker errors, Judge-secret redaction, cancellation
+  cleanup, and cross-process Docker image build locking. Keep each result's
+  gate/scorer/retry/Judge sequence serial, and place a phase barrier between all
+  `run-score` agent jobs and per-repetition scoring to prevent nested fan-out.
+- Verification: concurrency, process isolation, source ordering, serial parity,
+  Judge override/redaction, crash/start failure, atomic report, CLI forwarding,
+  and Docker lock regressions passed; the broader focused suite passed `427`
+  tests with `1 skipped` and `2 deselected`; the full locked offline suite
+  passed `2411` tests with `2 skipped` and `24 deselected`.
+- Prevention: result-level concurrency must use isolated processes, preserve a
+  single workflow-wide budget, never parallelize work inside a result
+  implicitly, and classify all lost worker results as evaluator failures rather
+  than valid zero scores.
+- Implementation commit: `c908aed`.
+
+## 2026-09-21 — CAD MCP 三项离线兼容修复
+
+- Commit: `d697881` (`fix: add reproducible CAD MCP compatibility repairs`).
+- 问题：SketchUp 的 FastMCP 构造参数不兼容；Fusion stdio 并非标准 MCP；
+  CadQuery 同时存在 src 布局导入、Pydantic v2 和自定义 stdio 协议问题。
+- 解决：独立上游副本修复，revision/SHA-256 固定补丁与依赖快照；提供先预检所有
+  checkout 再应用的 helper；不改凭据配置，不捆绑软件。4 个 live 回归由红转绿，
+  各发现 10 个工具；离线项目相关测试 16 passed。完整回归 2415 passed、2 failed，
+  两失败在未修改 origin/main 同样复现（macOS linux_ns、临时路径假定），不是全绿。
+- 避免复发：从安装包而非源码 cwd 验证导入；测试完整握手/列表/错误后存活；
+  区分源代码生成与真实 CAD 执行；原始 CRLF patch 通过局部 attributes 保留字节。
+  原始 smoke 安装和历史失败报告保留，不以 patched 本地通过冒称上游已修复。

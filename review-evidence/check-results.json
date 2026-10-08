@@ -1,0 +1,29 @@
+{
+  "sld_nonzero_exit_still_has_score": {
+    "returncode": 1,
+    "score": 0.99
+  },
+  "sld_three_failed_tasks": {
+    "suite_mean": 0.999989,
+    "failed_tasks": 3,
+    "main_returned_normally": true
+  },
+  "mls_crash_reporting": {
+    "exception": "KeyError: max_diff"
+  },
+  "nanochat_recalculated": {
+    "n": 10,
+    "mean": 0.8927922,
+    "sample_std": 0.0007662281064481209
+  },
+  "nan_comparison_guard": {
+    "nan_gt_threshold": false,
+    "finite_guard_needed": true
+  },
+  "attention_numeric_witness": {
+    "scaled_logit": 32,
+    "exp_logit": 78962960182680.69,
+    "fp16_max": 65504,
+    "gpu_executed": false
+  }
+}

@@ -1,0 +1,1640 @@
+
+--- PAGE 1 ---
+THE COMPLEX OF CURVES PAIRWISE INTERSECTING AT MOST
+ONCE IS CONTRACTIBLE IN GENUS TWO
+Abstract. Let S2 be the closed orientable surface of genus two and letC1(S2) be the flag
+complex on isotopy classes of essential simple closed curves in which a finite set of classes spans
+a simplex when the classes pairwise have geometric intersection number at most one. We prove
+that C1(S2) is contractible. The proof transports the whole problem to the six-times-marked
+sphere through the hyperelliptic involution, for which we give a self-contained proof of the
+required dictionary, and then runs a filtration spectral sequence on Hatcher’s contractible arc
+complex of the marked sphere. The single arithmetic input is that a genus two surface has
+exactly six Weierstrass points; it enters as a budget which forces every filtration stratum to have
+a contractible link.
+1.Introduction
+1.1.The complexes Cd.Let Sg be the closed connected orientable surface of genusg and let
+S(Sg)denote the set of isotopy classes of essential simple closed curves inSg;essentialmeans
+embedded and not bounding a disc. Writei(·,·)for the geometric intersection number, that is,
+the minimum of|a∩b|over transverse representatives of the two classes. For an integerd≥0
+the d-curve complexCd(Sg)is the simplicial complex with vertex setS(Sg)in which a finite
+subset{γ0,...,γk}spans ak-simplex if and only ifi(γa,γb)≤dfor alla,b. ThusC0(Sg)is the
+classical curve complex of Harvey, and eachCd(Sg)is by construction the flag complex on its
+own1-skeleton. The inclusions C0(Sg) ↪→C1(Sg) ↪→···are equivariant for the action of the
+mapping class group.
+The homotopy type ofC0(Sg)is known: it is homotopy equivalent to a wedge of spheres
+of dimension2g−2, so it is highly connected but never contractible. Souto [7] observed that
+the situation changes as soon as one allows curves to cross: he proved that the inclusion
+C0(S)↪→C1(S)is homotopic to a constant map, and asked whetherC1(S)— or, if not, some
+Cd(S)— is contractible. That question is the subject of the present paper. It is genuinely a
+question about the ambient complex: all three ofC0(Sg), C1(Sg)and Cd(Sg)have the same,
+infinite, vertex set, andC1 differs fromC0 only by the additional simplices created by the edges
+withi= 1.
+Two features ofC1 make it harder to handle thanC0. First, it is not pure: it has maximal
+simplices of different dimensions, so no argument by collapsing top cells is available. Second, the
+natural sources of contractible models for curve complexes — arc complexes and their relatives
+— are complexes ofdisjointobjects, and the passage from “disjoint” to “crossing at most once”
+loses exactly the property that makes those models combinatorially transparent.
+1.2.Results.Our main theorem answers Souto’s question affirmatively in genus two.
+Theorem 1.1.Let S2 be the closed orientable surface of genus two andC1(S2)the flag complex
+on isotopy classes of essential simple closed curves, with a simplex for each finite set of classes
+pairwise of geometric intersection number at most one. ThenC1(S2)is contractible.
+2020Mathematics Subject Classification.Primary 57K20; Secondary 57M50, 20F38.
+Key words and phrases.curve complex; hyperelliptic involution; arc complex; spectral sequence; contractibility.
+1
+
+--- PAGE 2 ---
+2 THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE
+The proof yields the homological statement first and the homotopy statement afterwards; the
+intermediate results are of independent interest and are stated separately.
+Theorem 1.2. ˜H∗
+(
+C1(S2);Z
+)
+= 0.
+Theorem 1.3.For everyg≥2the complexC 1(Sg)is simply connected.
+Theorem 1.3 is not new — it is asserted without proof by Souto [7] — but the argument we
+give in Section 7 is self-contained and uses only Hatcher’s contractibility theorem, which is in any
+case an input to the main line of the proof. Theorems 1.2 and 1.3 give Theorem 1.1 by Hurewicz
+and Whitehead.
+Along the way we prove, in a self-contained manner, the genus two correspondence which
+is usually quoted as a consequence of the Birman–Hilden theorem. Letιbe the hyperelliptic
+involution ofS2, letπ:S2→S2/ι∼=S2 be the quotient branched double cover and letB⊂S2
+be its branch set, a set of six points. WriteΣ = (S2,B).
+Theorem 1.4.The map α↦→π−1(α)induces a bijection from the set of isotopy classes inΣof
+essential arcs joining two distinct points ofB, together with the set of isotopy classes of simple
+closed curves inS2\B separatingB into two sets of three, onto the set of isotopy classes of
+essential simple closed curves inS2. Arcs correspond to non-separating curves and3|3circles to
+separating curves.
+Two further corollaries of Theorem 1.1 deserve mention. First,Hk(C1(S2); Z) = 0for all k≥1
+and H0 = Z; in particular the top reduced homology˜H11 vanishes,11being the dimension of
+C1(S2)(Proposition 6.2). Second, the full subcomplex ofC1(S2)spanned by the non-separating
+classes is contractible as well.
+1.3.Method.The proof has four movements.
+(i) Transport to the marked sphere.A genus two surface carries a unique hyperelliptic
+involutionι, with six fixed points, andιacts trivially on isotopy classes of simple closed curves.
+Consequently the whole complexC1(S2)can be read on the quotient orbifoldΣ = (S2,B), where
+non-separating curves become essential arcs joining two distinct branch points and separating
+curves become circles splittingB as3|3. We prove this dictionary rather than quote it (Section 4);
+the proof consists of a lifting lemma for ambient isotopies, a projection lemma forι-invariant
+curves, and a descent lemma whose argument goes back to Winarski’s combinatorial proof of the
+Birman–Hilden theorem.
+(ii) The intersection formula.Under the dictionary, the geometric intersection number upstairs
+is computed downstairs by
+i(˜α,˜β) = 2ˆȷ(α,β) +e(α,β),
+where ˆȷis the minimal number of interior intersections of the two arcs ande∈{0,1,2}the
+number of shared endpoints. The proof of this formula is where the choice of metric matters, and
+it is the step at which a naive argument fails. If one equipsS2\B with a complete hyperbolic
+metric of finite area, then the six branch points become cusps, their preimages upstairs become
+cusps as well, and the preimage of an arc isnota closed geodesic; the standard bigon technology
+is then unavailable upstairs. Instead we put on(S2,B)a hyperbolicconemetric with cone angle
+πat each of the six points. Its pullback underπhas cone angle2πat each Weierstrass point,
+that is, it is a smooth closed hyperbolic metric onS2, for whichιis an isometry; preimages
+of arcs are then honest closed geodesics and the classical statement that distinct simple closed
+geodesics are in minimal position applies verbatim. The formula follows by squeezing an upper
+bound obtained from the cone metric against a lower bound which is a purely topological count
+
+--- PAGE 3 ---
+THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE 3
+over the covering, once a perturbation lemma has been proved that makes the two minima range
+over the same set of representatives.
+(iii) A spectral sequence on the arc complex.LetA = A(S2,B)be Hatcher’s arc complex,
+which is contractible. Its simplices are collections of arcs with disjoint interiors;X, the complex
+which models the non-separating part ofC1(S2), is the subcomplex obtained by discarding
+two kinds of configuration: single loop arcs, and pairs of distinct arcs with the same pair of
+endpoints. FilteringA by the number of vertices involved in such bad configurations produces a
+first quadrant spectral sequence whoseE1-page is⨁
+S ˜Hq(LS)over the strataS, converging to
+˜H∗(A) = 0and whose column p = 0is ˜H∗(X). The whole work then consists in showing that the
+linksL S of the positive strata are contractible.
+(iv) A budget.The link LS of a stratum is a full flag subcomplex ofX, and to prove it a cone
+it suffices to exhibit a vertex adjacent to all others. The stratumS decomposes canonically into
+objects: its loops, and its maximal families of arcs sharing a pair of endpoints. Each object is
+a connected embedded graph inS2 with at least two complementary discs, and we show that
+at least two of these complementary discs arefree, meaning that no other object touches their
+closure. Each free disc must contain a marked point not touched byS, by essentiality; and the
+number of untouched marked points is6−V′where V′is the number of marked points met by
+S. The count
+k(g1) +k(g 2)≤6−V′≤5
+forces one of the two free discs to contain exactly one or two marked points, and on such a disc
+an explicit cone point can be produced. This inequality is the only place where the number six
+enters, and it is the reason the argument stops at genus two.
+1.4.What is not claimed.Three boundaries of the result should be stated explicitly.
+First,only g = 2is settled. The identity6 = 2g + 2is a hard input to the budget argument of
+Section 9: at genus three there are eight branch points, the inequality above becomes vacuous,
+and the argument does not survive. More fundamentally, a general surface of genusg≥3carries
+no hyperelliptic involution at all, so the entire transport to a marked sphere is unavailable.The
+method gives no information whatsoever aboutC1(Sg)forg≥3.
+Second,the punctured versions are not a weaker instance. One hasC1(Σg,1)≃C1(Sg), the
+closed complex being a simplicial retract of the punctured one; so a proof for surfaces with
+boundary or punctures cannot be leveraged into a proof for the closed case, and conversely
+nothing is gained by first passing to a punctured model.
+Third,this paper contains no finite truncation computation. All arguments are structural.
+We record this because homology computed on a finite pool of vertices, or on a finite quotient
+of such a pool, carries no information about the ambient complex: there is no map in either
+direction relating the homology of a finite subcomplex spanned by a chosen finite set of curves to
+the homology ofC1(S2), and a non-vanishing Betti number of such a truncation is not evidence
+against Theorem 1.1.
+1.5.Organisation.Section 2 fixes the complexes, the notion of isotopy that will be used
+throughout, and the transversality convention. Section 3 constructs the two hyperbolic structures
+and proves what is needed about geodesic representatives of arcs. Section 4 proves the hyperelliptic
+dictionary, Theorem 1.4. Section 5 proves the intersection number formula and deduces the
+adjacency criterion. Section 6 identifiesC1(S2)up to homotopy with the complexXon the
+marked sphere and computes its dimension. Section 7 proves Theorem 1.3. Section 8 sets up
+the spectral sequence on the augmented chain complex. Section 9 proves the budget lemma and
+
+--- PAGE 4 ---
+4 THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE
+produces a good face, and Section 10 proves that the links are cones. Section 11 assembles the
+proof of Theorems 1.2 and 1.1.
+2.Complexes, arcs and conventions
+2.1.The surface and its involution.Throughout, S2 is a closed connected orientable surface
+of genus two. Acurvein S2 means an embedded circle; it isessentialif it does not bound a disc.
+We writeSfor the set of isotopy classes of essential curves, and
+C1(S2) :=
+{
+{γ0,...,γk}⊂Sfinite:i(γa,γb)≤1for alla,b
+}
+,
+the flag complex on the graph with vertex setS and an edge wheneveri≤1. We writeCns
+1 (S2)
+for the full subcomplex spanned by the classes of non-separating curves.
+We fix once and for all the following model. LetB⊂S2 be a set of six points and let
+θ:π1(S2\B)−→Z/2
+be the homomorphism sending each small meridian loop around a point ofB to the non-trivial
+element;θis well defined because the product of the six meridians is trivial inπ1(S2\B)and6
+is even, and it is surjective. LetS◦
+2→S2\B be the connected double cover corresponding to
+kerθand let
+π:S2−→S2
+be the branched double cover obtained by filling in one point over each point ofB; near such a
+point πhas the local modelz↦→z2. Riemann–Hurwitz givesχ(S2) = 2·2−6 =−2, so the total
+space is indeed a closed orientable surface of genus two, and every closed orientable surface of
+genus two is homeomorphic to it. We write
+W:=π−1(B) (the sixWeierstrass points), ι:S 2→S2
+for the deck involution of the cover, so thatFix(ι) = W, π◦ι= π, and πrestricts to an
+unbranched double coveringπ◦:S 2\W→S2\Bwith deck group⟨ι⟩. Finally set
+Σ := (S 2,B).
+Since all closed genus two surfaces are homeomorphic, it suffices to prove Theorem 1.1 for this
+model.
+2.2.Isotopy in the marked sphere.Objects onΣwill always be compared by ambient isotopy
+of the sphere which does not move the marked points.
+Convention 2.1(Isotopy inΣ).Two subsets Z,Z′⊂S2 areisotopic inΣ, written Z≃Z′, if
+there is an isotopy{ht}t∈[0,1]ofS2 withh0 = id, withht|B = id for everyt, and withh1(Z) =Z′.
+Remark2.2.It is enough to require that eachht preserveB setwise. IndeedB is finite hence
+discrete,t↦→ht(b)is continuous with values inB, andh0(b) =b; soh t(b) =bfor allt.
+Convention 2.1 isnotisotopy relative to the boundary of a sub-disc, and it isnotisotopy
+of S2\B with the marked points deleted in a way that would freeze the direction in which an
+arc leaves a marked point: an arc may rotate freely about its endpoints. This will matter in
+Sections 5 and 10, where the results are sensitive to which notion is used, and we shall say so at
+the places concerned.
+
+--- PAGE 5 ---
+THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE 5
+2.3.Arcs.We use Hatcher’s notion of essential arc.
+Definition 2.3.AnarcinΣis an embedded arc α⊂S2 meetingB exactly in its two endpoints,
+which lie inB and are permitted to coincide. The arc isessentialif it does not separateS2 into
+two components one of which is a disc meetingB only in the endpoints ofα. An arc whose
+endpoints coincide is aloop; otherwise it is anon-loop arc, and itsendpoint pairep(α)⊂Bis
+the two-element set of its endpoints.
+Observation 2.4.Every non-loop arc is essential. Indeed ifαhas distinct endpoints thenS2\α
+is homeomorphic to an open disc, soαdoes not separateS2 at all. Only loops can fail to be
+essential.
+We also use3|3circles: embedded circles inS2\B which separateB into two sets of three
+points.
+Definition 2.5.A :=A(S2,B)is the simplicial complex whose vertices are the isotopy classes
+(Convention 2.1) of essential arcs inΣ, loops included, and in which{α0,...,αk}spans ak-
+simplex when the classes admit representatives which are pairwise disjoint except possibly at
+endpoints and which are pairwise non-isotopic.
+Xis the flag complex on the graphG whose vertices are the isotopy classes ofnon-looparcs in
+Σ, with α∼β(for α̸=β) if and only if the two classes can be realised with disjoint interiors
+andep(α)̸= ep(β).
+Remark2.6.Xis a subcomplex of A, but it isnota full subcomplex: two distinct non-loop arcs
+with the same endpoint pair can be realised with disjoint interiors, hence are adjacent inA, while
+they are not adjacent inX.
+2.4.Transversality, smoothness, and the three intersection quantities.Fix a smooth
+structure onS2 and giveS2 the smooth structure for whichπis smooth and has the local model
+z↦→z2 at each Weierstrass point; this is produced concretely in Section 3.
+Convention 2.7(Smooth representatives).All representatives of arc classes are smooth em-
+bedded arcs which meetB only at their endpoints and have non-vanishing derivative at the
+endpoints.
+Convention 2.8(Transversality).Two arcsα,βaretransverse, writtenα⋔β, if
+(a)α∩βis afiniteset, and
+(b) at each point ofintα∩intβthe two tangent lines are distinct.
+No condition is imposed at a shared endpoint.
+The finiteness clause (a) is not implied by (b) and must be imposed. Indeed, in a coordinate
+u centred at a marked pointb, putα:u =t and β:u =teig(t) with g(t) = e−1/tsin(1/t)for
+t> 0and g(0) = 0. Theng is smooth with all derivatives vanishing at0, both arcs are smooth
+and regular atb, every interior intersection is transverse in the sense of (b), and the intersection
+set accumulates atb. Imposing (a) changes none of the minima below, since these minima are
+attained on pairs with finitely many intersections.
+Definition 2.9.For transverse arcsα,βset
+j(α,β) :=
+⏐⏐intα∩intβ
+⏐⏐, e(α,β) := #{shared endpoints}∈{0,1,2},
+and for isotopy classesa̸=bof essential arcs
+ˆȷ(a,b) := min
+{
+j(α,β) :α∈a, β∈b, α⋔β
+}
+.
+
+--- PAGE 6 ---
+6 THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE
+Lemma 2.10.edepends only on the pair of isotopy classes; explicitly, for non-loop arcs
+e(a,b) =
+⏐⏐ep(a)∩ep(b)
+⏐⏐.
+Moreoverπ−1carries the set of shared endpoints bijectively ontoπ−1(ep(a))∩π−1(ep(b))⊂W.
+Proof. By Convention 2.1 an isotopy fixesB pointwise, and the endpoints of an arc lie inB;
+hence the endpoint pair of an arc is unchanged along an isotopy, andep is a function of the class.
+The set of shared endpoints is thenep(a)∩ep(b). Finallyπ|W :W→Bis a bijection.□
+By contrastj isnotan isotopy invariant of a pair of classes; only its minimumˆȷis. Wherever
+the letterjappears below in a statement about classes it stands forˆȷ.
+3.Two hyperbolic structures
+The marked sphereΣ = (S2,B)will carry two different hyperbolic structures, and it is essential
+to keep their roles apart. Thecone metricof §3.1 has the six marked points as cone points
+of angleπ; its virtue is that its pullback toS2 is asmoothclosed hyperbolic metric, so that
+preimages of arcs become honest closed geodesics. Thecusped metricof §3.3 has the six marked
+points as cusps; its virtue is that arcs themselves — loops included — acquire complete geodesic
+representatives realising minimal intersection, simultaneously for an arbitrary family. Neither
+metric can do the other’s work; see Remarks 3.7 and 4.3.
+3.1.A hyperbolic cone metric with all cone anglesπ.
+Lemma 3.1.There is a regular geodesic hexagon inH2 all of whose interior angles equalπ/2.
+Proof. Fort> 0let P (t)⊂H2 be the hexagon whose vertices are the six points at distancet from
+a fixed origin along the geodesic rays making angles2πk/6, k = 0,...,5, consecutive vertices
+being joined by geodesic segments. The hexagonP (t)is embedded and its six interior angles are
+equal by symmetry; writeϑ(t)for the common value. The vertices depend continuously ont and
+so doesϑ.
+As t→0+ the rescaled hexagons converge to the Euclidean regular hexagon, whose interior
+angle is2π/3; henceϑ(t)→2π/3. As t→∞the vertices converge to six distinct points of
+∂∞H2 and P (t)converges, edge by edge, to the ideal regular hexagon, whose interior angles are
+0; henceϑ(t)→0. Sinceπ/2∈(0,2π/3), the intermediate value theorem providest0> 0with
+ϑ(t0) =π/2. □
+We deliberately do not record the value oft0: the construction below uses only the existence
+supplied by Lemma 3.1, and no numerical quantity enters any argument in this paper.
+WriteP :=P (t0). By the Gauss–Bonnet formula for hyperbolic polygons, a geodesicn-gon
+with interior anglesθ1,...,θn (ideal vertices counted withθ= 0) has area(n−2)π−∑
+iθi; thus
+Area(P) = (6−2)π−6·π
+2 =π.(1)
+Proposition 3.2.Let D(P )be the double ofP, that is, two isometric copiesP +,P−of P glued
+by the identity along corresponding edges. ThenD(P )is homeomorphic to S2 and carries a
+hyperbolic cone metric: it has constant curvature−1away from the six images of the vertices,
+and at each of these six points it has a cone point of angleπ. Its total area is2π.
+Proof. Doubling a disc along its boundary gives a sphere. Away from the vertices, the metric
+on D(P )is smooth: in the interior ofP±this is clear, and along the interior of an edge the
+two sides are exchanged by the reflection which is an isometry of the local model, so the two
+hyperbolic half-discs glue to a hyperbolic disc. At an image of a vertex, two corners of angleπ/2
+
+--- PAGE 7 ---
+THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE 7
+meet, one fromP + and one fromP−, giving a cone point of angleπ. The area is2Area(P ) = 2π
+by (1). Consistently, the orbifold Euler characteristic of a sphere with six cone points of order
+two isχorb = 2−6(1−1
+2) =−1and−2πχorb = 2π.□
+We identify the topological pairΣ = (S2,B)with D(P )together with its six cone points,
+and write ¯ρfor the resulting hyperbolic cone metric onΣ. This is legitimate because any two
+six-element subsets ofS2 are carried onto one another by a homeomorphism ofS2.
+Remark3.3.The metric ¯ρdetermines a conformal, hence smooth, structure onS2\B, and this
+structure extends over each cone point, a cone of angleπbeing conformally a disc. We take the
+smooth structure of Convention 2.7 to be this one. Since any two smooth structures onS2 are
+related by a diffeomorphism, and a diffeomorphism may be post-composed by one carrying any
+given six-element set to any other, the cusped metric of §3.3 may be, and is, transported to the
+same smooth manifold.
+3.2.The pullback is a smooth closed hyperbolic surface.
+Proposition 3.4.Let ρ:=π∗¯ρ. Thenρis asmoothhyperbolic metric on all of S2, of area4π,
+andιis aρ-isometry. In particular each Weierstrass point is a smooth point of(S2,ρ).
+Proof. OnS2\W the mapπis a local homeomorphism, indeed a covering, soρis there a smooth
+metric of curvature−1. Atw∈Wthe mapπhas the local modelz↦→z2, which pulls a cone
+point of angleϕback to a cone point of angle2ϕ; hereϕ=π, so the cone angle upstairs is2π,
+that is,wis a smooth point.
+The following cell count verifies this directly. The two open hexagonsintP±are simply
+connected and disjoint fromB, so each has two disjoint homeomorphic preimages;S2 is thus
+tiled by four hexagons. The interior of each of the six edges has two preimages, giving twelve
+edges, and the six cone points have six preimages, namelyW. Hence
+χ(S2) = 6−12 + 4 =−2,
+as it must be. At each point ofW exactly four hexagon corners meet, each of angleπ/2, so the
+total angle is2π: a smooth point. The area is4 Area(P) = 4π=−2πχ(S2).
+Finallyπ◦ι=πgivesι∗ρ=ι∗π∗¯ρ= (π◦ι)∗¯ρ=π∗¯ρ=ρ.□
+Thus(S2,ρ)is a closed hyperbolic surface. We record the three classical facts about closed
+hyperbolic surfaces that we shall use.
+Fact 3.5.LetXbe a closed hyperbolic surface.
+(G1) Every essential closed curve inX is freely homotopic to a unique closed geodesic, and if
+the curve is simple then that geodesic is simple.
+(G2) Distinct simple closed geodesics inX are in minimal position; in particular the number
+of their intersection points equals their geometric intersection number.
+(G3) Two essential simple closed curves inXare isotopic if and only if they are homotopic.
+For (G1) see Farb–Margalit [2, Proposition 1.6]; the existence and uniqueness part alone is [2,
+Proposition 1.3], while the assertion that the geodesic representative of a simple curve is simple
+is the content of Proposition 1.6. Statement (G2) is [2, Corollary 1.9], and (G3) is [2, Proposition
+1.10].
+The hyperbolic metricρmakesS2 into a closed Riemann surface of genus two, andι, being an
+orientation preserving isometry, is a conformal involution with quotient of genus zero; that is,ι
+is the hyperelliptic involution of that Riemann surface. We may therefore invoke:
+
+--- PAGE 8 ---
+8 THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE
+Fact 3.6(Haas–Susskind [4, Theorem 1]).Let J be the hyperelliptic involution of a genus
+two Riemann surfaceM. Then every simple closed geodesic onM is mapped onto itself byJ.
+Moreover, ifa is a simple closed geodesic, thenJ preserves the orientation ofa when a is a
+dividing curve and reverses it whenadoes not divideM.
+Remark3.7.The cone angle πis smaller than2π, so(Σ ,¯ρ)isnotlocally CAT(0)at the marked
+points: a path through a cone point can always be shortened by cutting the corner, and
+consequently(Σ ,¯ρ)contains no geodesic passing through a marked point, and the usual existence
+and uniqueness statements for geodesic representatives are unavailable downstairs. We never use
+them there. In this paper the cone metric is used only through its pullbackρ, which lives on a
+smooth closed surface where Fact 3.5 applies verbatim; downstairs¯ρplays a purely topological
+role.
+3.3.The cusped metric and geodesic representatives of arcs.LetP∞⊂H2 be the ideal
+regular hexagon and letΣ◦be the doubleD(P∞)with its six ideal vertices removed. Doubling
+gives a complete hyperbolic metrich of curvature−1, smooth everywhere (the argument of
+Proposition 3.2 applies along the edges), with six cusps and area2·4π= 8π=−2πχ(Σ◦), since
+χ(S2\B) = 2−6 =−4. IdentifyingD(P∞)with( S2,B)as in Remark 3.3, we regardh as a
+complete hyperbolic metric of finite area onΣ◦:=S 2\B.
+We keep the following notation for the rest of §3.3. Letp:H 2→Σ◦be the universal cover
+with deck groupΓ∼=π1(Σ◦), a free group of rank five;Γis discrete, acts freely, and is torsion
+free. For eachb∈Bfix an embedded cusp neighbourhoodCb⊂Σ◦, theCb pairwise disjoint, so
+that p−1(Cb)is a disjoint union of open horoballs, any two of which are equal or disjoint; each
+such horoballH has a base point in∂∞H2 whose stabiliser inΓis infinite cyclic generated by
+a parabolic, andH/Stab (H)∼=Cb. LetP Γ
+∞⊂∂∞H2 denote the set of base points of all these
+horoballs. Ifαis an essential arc, we writeα◦:=α\B, a properly embedded line inΣ◦. Finally we
+writemb∈H1(Σ◦; Z)for the class of a small loop aroundb; one hasH1(Σ◦; Z)∼= ZB/
+(∑
+b∈Bmb
+)
+.
+After shrinking theCb we may and do assume that for each of the finitely many arcs under
+consideration at a given moment,α∩Cb consists exactly of the ends ofαrunning intob.
+Lemma 3.8(Ideal endpoints).Let αbe an arc inΣand ˜α⊂H2 a lift ofα◦. Then each end of˜α
+converges to a point ofP Γ
+∞, the two limitsx,ybeing the base points of the horoballs containing the
+two ends, and ˜α∪{x,y}is an arc in the closed discH2 = H2∪∂∞H2. We write∂∞˜α:={x,y}.
+Proof. One end ofα◦eventually lies inCb, b being the corresponding endpoint ofα; that end is
+connected, so its lift eventually lies in a single componentHx ofp−1(Cb), with base pointx. The
+closure ofHx in H2 meets ∂∞H2 only inx, and the end is a proper ray inH2, so it leaves every
+compact set and its limit set is contained in{x}; hence it converges tox. The same applies to
+the other end, with limity. Extending a parametrisationR→H2 of ˜αto[−∞,+∞]→H2 gives
+a continuous injection from a compact space to a Hausdorff space, hence a homeomorphism onto
+its image. □
+Lemma 3.9(Essential arcs have distinct ideal endpoints).Ifαis essential thenx̸=y.
+Proof. If the two endpoints ofαare distinct pointsb̸= b′then x and y are base points of
+horoballs lying over different cusps, hence in differentΓ-orbits, sox̸=y.
+Suppose then that αis a loop based at b, and assume x = y; write H := Hx and let
+StabΓ(x) =⟨g⟩, generated by a parabolic, withg corresponding to the loop∂Cb. The arc α
+separates S2 into two open discsD1,D2; putni :=|Di∩B|, son1 +n2 = 5, and essentiality
+says exactly thatn1≥1andn2≥1.
+
+--- PAGE 9 ---
+THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE 9
+The two ends ofαdivide the circle∂Cb into two arcs; letc1 be the one contained inD1 and let
+γ1 :=
+(
+α\Cb
+)
+∪c1,
+a simple closed curve inΣ◦. On one side ofγ1 lie then1 marked points ofD1∩B; on the other
+side lieband then 2 marked points ofD2∩B. Consequently, with a suitable orientation,
+[γ1] =
+∑
+q∈S
+mq ∈H1(Σ◦;Z), S:=D 1∩B, b /∈S,|S|=n1.(2)
+We now compute[γ1]a second way. Sincex =y, both ends of˜αlie inH; asα∩Cb consists
+exactly of the two ends andαis embedded, ˜α∩p−1(Cb)consists exactly of those two ends, so
+K := ˜α\His a compact arc with endpointsp−,p+∈∂H. Liftγ1 starting atp−: the lift runs
+along K to p+ and then along a lift ofc1, which is a path in∂H, ending at someq∈∂H. If
+k∈Γis the deck transformation corresponding to[γ1]under this choice of base point, then
+q =k(p−). Nowp−∈∂Hand k(p−)∈∂Hforce k(H)∩H̸= ∅, hencek(H) =H and k∈⟨g⟩.
+Therefore[γ1]is an integral multiple ofmb inH 1(Σ◦;Z), say[γ1] =κmb.
+Comparing with (2) inZB/(∑
+q∈Bmq)means that inZ B
+1S−κeb =λ1B for someλ∈Z.
+Reading off the coordinate at a pointq /∈S∪{b}givesλ= 0; reading off the coordinate at a
+point q∈Sgivesλ= 1. Hence eitherS = ∅, that isn1 = 0, orS∪{b}=B, that isn1 = 5and
+n2 = 0. Both contradict essentiality.□
+Lemma 3.10(Linking forces crossing).Let ℓ1,ℓ2⊂H2 be properly embedded lines with ideal
+endpoint pairs{x,y}and{u,v}, the four points being distinct, and suppose{u,v}separates
+{x,y}on∂∞H2. Thenℓ1∩ℓ2̸=∅.
+Proof. By Lemma 3.8, ¯ℓ1 := ℓ1∪{x,y}is an arc in the closed disc H2 with its endpoints
+on the boundary circle and its interior in the open disc. LetA1,A2 be the two open arcs of
+∂∞H2\{x,y}. Then ¯ℓ1∪A1 is a Jordan curve, and by the Jordan curve theoremH2\¯ℓ1 has
+exactly two componentsU1⊇A1 andU2⊇A2, both open inH2. Linking means, after renaming,
+u∈A1 and v∈A2. The set ¯ℓ2 is connected and meets bothU1 and U2, hence meets¯ℓ1; since
+the four ideal points are distinct, the intersection point is not ideal.□
+Corollary 3.11.Two distinct complete geodesics ofH2 meet if and only if their ideal endpoint
+pairs link, and in that case they meet in exactly one point, transversally.
+Proof. If they link they meet, by Lemma 3.10. If they meet in two points they coincide, since a
+geodesic through two points ofH2 is unique; and if they shared an ideal endpoint or had unlinked
+endpoint pairs they would be disjoint. Meeting in exactly one point with distinct tangents is
+transversality. □
+Proposition 3.12(Geodesic representatives of arcs).Let a be an isotopy class of essential arcs
+inΣ, α0∈a, and let{x,y}=∂∞˜α0 for some lift˜α0; x̸=y by Lemma 3.9. Letℓbe the complete
+geodesic ofH2 with ideal endpointsx,yand puta∗:=p(ℓ). Then
+(1)a ∗is a complete geodesic of(Σ◦,h)whose closure inS2 is an arc ofΣisotopic toα0;
+(2)a ∗depends only ona, and is the unique complete geodesic representative ina;
+(3)a ∗is simple, that isp|ℓis injective.
+Proof.(i) Letr:H 2→ℓbe the nearest point projection; it is continuous. PutF (s,t) :=the point
+at parametert on the geodesic segment[˜α0(s), r(˜α0(s))]. ThenF is continuous,F(·,0) = ˜α0 and
+F (·,1) =r◦˜α0, whose image isℓ. The homotopy is proper: ass→−∞both ˜α0(s)and r(˜α0(s))
+converge tox, and horoballs are convex, so once both endpoints of a geodesic segment lie in a
+
+--- PAGE 10 ---
+10 THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE
+horoball based atx the whole segment does; henceF
+(
+(−∞,s0]×[0,1]
+)
+lies in that horoball for
+s0 small enough. Symmetrically at the other end. Projecting,p◦Fis a proper homotopy from
+α◦
+0 to a∗whose two ends stay in the respective cusp neighbourhoods throughout, so it extends to
+an isotopy of arcs inΣ, in the sense of Convention 2.1, after adding the endpoints. In particular
+the closure ofa∗inS 2 is an arc with the same endpoints asα0.
+(ii) The ideal endpoint pair is invariant under proper homotopy of arcs. Indeed ifH: [0,1]2→
+S2 is a homotopy through arcs withH(0,t)≡b, then by compactness there isδ >0with
+H
+(
+(0,δ)×[0,1]
+)
+⊂Cb; a lift of this connected set lies in a single horoball, so the corresponding
+ends of all the lifted arcs converge to the same ideal point. The same holds at the other end.
+Two complete geodesics with the same ideal endpoint pair coincide, whence uniqueness.
+(iii) First, the setwise stabiliser ofℓinΓis trivial. An element γwith γℓ=ℓpermutes{x,y};
+if it swaps them thenγ2 fixes both, and sinceΓis torsion free and free,γ2 = 1forces γ= 1; if it
+fixes both thenγis hyperbolic with axisℓor the identity, and a hyperbolic element cannot share
+exactly one fixed point with a parabolic element in a discrete group, whileStabΓ(x)contains a
+parabolic. Hence γ= 1. The same argument applies to˜α0, whose ideal endpoint pair is also
+{x,y}.
+Now supposep|ℓis not injective. Then there isγ∈Γ\{1}with γℓ∩ℓ̸= ∅, andγℓ̸=ℓby
+the previous paragraph. By Corollary 3.11 the pairs{x,y}and{γx,γy}link. But ˜α0 and γ˜α0
+have exactly these ideal endpoint pairs, so they meet by Lemma 3.10. Takingz∈γ˜α0∩˜α0, the
+two distinct pointsγ−1z and z of ˜α0 have the same image underp, contradicting the injectivity
+ofp|˜α0, which holds becauseα0 is embedded.□
+Theorem 3.13(Geodesic representatives realise ˆȷ, simultaneously).Let a̸=b be isotopy classes
+of essential arcs inΣwith geodesic representatives a∗,b∗. Then for every pair of transverse
+representativesα0∈a,β0∈b,
+j(a∗,b∗)≤j(α0,β0),
+so j(a∗,b∗) = ˆȷ(a,b). Consequently, for any family a1,...,ak of pairwise distinct classes of
+essential arcs, the geodesic representativesa∗
+1,...,a∗
+k realise ˆȷfor every pair simultaneously; in
+particular, ifˆȷ(am,an) = 0for allm,n, then thea∗
+m have pairwise disjoint interiors.
+Proof. The classes being distinct,a∗̸=b∗by Proposition 3.12(ii). Fix a liftℓof a∗and let ˜α0 be
+the lift ofα◦
+0 with the same ideal endpoint pair, which exists by Proposition 3.12(ii). Index the
+lifts ofb∗and ofβ◦
+0 byΓcompatibly, so that ˜β(γ)and ˜β(γ)
+0 have the same ideal endpoint pair
+for eachγ; this is possible because both families are freeΓ-orbits and the ideal endpoint pair is
+Γ-equivariant.
+Sincea∗is simple,p|ℓis injective and
+j(a∗,b∗) =
+⏐⏐ℓ∩p−1(b∗)
+⏐⏐ =
+∑
+γ
+⏐⏐ℓ∩˜β(γ)⏐⏐.
+Each summand is at most1by Corollary 3.11, so with J := #{γ: ℓ∩˜β(γ)̸= ∅}we get
+j(a∗,b∗) =J. Ifℓ∩˜β(γ)̸= ∅ then the two ideal endpoint pairs link by Corollary 3.11, hence˜α0
+and ˜β(γ)
+0 meet by Lemma 3.10. Therefore
+j(α0,β0) =
+⏐⏐˜α0∩p−1(β◦
+0)
+⏐⏐ =
+∑
+γ
+⏐⏐˜α0∩˜β(γ)
+0
+⏐⏐ ≥J.
+This proves the inequality; taking the infimum over transverse pairs givesj(a∗,b∗) = ˆȷ(a,b). As
+the geodesic representative of a class depends only on the class, a family of classes gives a fixed
+family of curves realisingˆȷfor every pair at once.□
+
+--- PAGE 11 ---
+THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE 11
+Theorem 3.13 also shows, a posteriori, that geodesic representatives bound no empty bigon
+and no empty half-bigon: such a configuration could be removed by a homotopy supported near
+the corresponding disc, loweringj below ˆȷ. In the half-bigon case the homotopy rotates the
+arc about the marked point which is a corner of the disc, which is legitimate precisely because
+the isotopies of Convention 2.1 allow an arc to turn about its endpoints. We shall not need
+this remark, but it explains why no bigon criterion for arcs is invoked anywhere in this paper:
+Theorem 3.13 was proved directly inH2, using only that two distinct complete geodesics meet at
+most once.
+4.The hyperelliptic dictionary
+This section proves Theorem 1.4. Nothing here is quoted from the Birman–Hilden theory in
+the form of a black box; the one argument we borrow, the descent lemma of §4.4, is reproduced
+in full with its attribution and with the step that our situation requires supplied.
+Throughout,A̸=denotes the set of isotopy classes (Convention 2.1) of essential arcs ofΣwith
+twodistinctendpoints, C the set of isotopy classes of3|3circles, and S the set of isotopy classes
+of essential simple closed curves in the closed surfaceS2. Recallθ:π1(S2\B)→Z/2from §2:
+it sends every meridian of a point ofB to the non-trivial element, and a loop lifts to a loop in
+S2\W if and only ifθkills it. We will use repeatedly the form of Riemann–Hurwitz appropriate
+here: ifq: ˜Y→Y is a double cover of compact surfaces, branched overk interior points with
+local modelz↦→z2, thenχ(˜Y) = 2χ(Y)−k.
+4.1.Lifting isotopies.
+Lemma 4.1.Let H:S 2×[0,1]→S2 be continuous, with eachHt :=H(·,t)a homeomorphism,
+H0 = id and Ht(B) =B for allt. Then there is a unique continuous˜H:S 2×[0,1]→S2 with
+˜H0 = id and π◦˜Ht = Ht◦πfor all t. Each ˜Ht is a homeomorphism commuting withιand
+fixingWpointwise. Consequently, for everyι-invariant subsetZ⊂S2,
+˜H1
+(
+π−1(Z)
+)
+=π−1(
+H1(Z)
+)
+.
+Proof. By Remark 2.2,Ht|B = id, soHt preservesX :=S2\B and F :=H◦(π◦×id): (S2\
+W )×[0,1]→Xis continuous. Asπ◦is a covering map, the homotopy lifting property and
+the uniqueness of lifts [3, Propositions 1.30 and 1.34] give a unique continuous lift˜H of F on
+(S2\W)×[0,1]with˜H0 = id; it satisfiesπ˜Ht =H tπthere.
+Lifting the inverse isotopyt↦→H−1
+t likewise gives˜H−, andGt := ˜H−t◦˜Ht is a lift of the
+constant homotopyπ◦starting at the identity; by uniqueness of liftsGt = id, and symmetrically.
+So each ˜Ht is a homeomorphism ofS2\W. Similarly G′
+t := ι−1˜Htιlifts F and starts at the
+identity, whenceG′
+t = ˜Ht, that is,˜Ht commutes withι.
+Extend by ˜H(w,t) := w for w∈W. For continuity at(w,t0), letb :=π(w)and let U′∋b
+be an open disc withU′∩B={b}; the setsU := π−1(U′)form a neighbourhood basis ofw.
+Continuity ofH at(b,t0), together withH(b,t0) =b, gives an openV′∋band an intervalJ∋t0
+with H(V′×J)⊂U′; putV :=π−1(V′). For(x,t)∈V×J: if x∈Wthen ˜H(x,t) = x and
+π(x) =H(πx,t)∈U′, sox∈U; ifx /∈Wthen π˜H(x,t) =H(πx,t)∈U′, so ˜H(x,t)∈U. Thus
+˜H(V×J)⊂U.
+Finally each ˜Ht is a continuous bijection of the compact Hausdorff spaceS2, hence a home-
+omorphism; the identitiesπ˜Ht = Htπand ι˜Ht = ˜Htιhold on the dense setS2\W , hence
+everywhere. The last display follows by applying the first identity to˜H1 and to ˜H−1
+1 .□
+
+--- PAGE 12 ---
+12 THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE
+4.2.Preimages.
+Lemma 4.2.Letαbe an arc andca simple closed curve inS 2\B.
+(1) If αhas two distinct endpoints thenπ−1(α)is a non-separating simple closed curve in
+S2; in particular it is essential.
+(2) If c is a3|3circle then π−1(c)is a separating essential simple closed curve which splits
+S2 into two one-holed tori.
+(3) If αis a loop based atb then π−1(α)is a wedge of two circles joined atw =π−1(b); it is
+not a simple closed curve.
+Proof.(i) Over the interior ofαthe mapπis a double covering and over each endpoint it is
+one-to-one, soπ−1(α)is obtained from two copies of the interior by gluing their ends in pairs at
+the two Weierstrass points: a circle, embedded becauseαis. Its complement isπ−1(D), where
+D =S2\αis an open disc containing the remaining four points ofB; the groupπ1(D\B )is
+generated by four meridians, each sent byθto the non-trivial element, so the cover is connected.
+A curve with connected complement does not separate.
+(ii) The class[c]in H1(S2\B; Z/2)is the sum of the three meridians on one side, soθ([c])̸= 0
+and π−1(c)is connected: a simple closed curve double coveringc. Write D1,D2 for the two
+closed discs bounded byc, each containing three points ofB. Eachπ−1(Di)is connected, again
+because a meridian is not killed byθ, and Riemann–Hurwitz givesχ(π−1(Di)) = 2·1−3 =−1.
+A connected compact surface with one boundary circle hasχ= 1−2g, sog = 1: eachπ−1(Di)
+is a one-holed torus. Henceπ−1(c)separates and is essential.
+(iii) Removingb from αleaves an open arc whose preimage is two open arcs, and both ends of
+each of them converge tow; soπ−1(α)is the union of two circles meeting exactly atw.□
+Remark4.3.Part (iii) is the reason the cone metric cannot be used everywhere. The whole
+apparatus attached toρ— unique closed geodesics, minimal position — speaks only about simple
+closed curves upstairs, and the preimage of a loop arc is not one. Families of arcs containing
+loops are handled exclusively by the cusped metric, through Theorem 3.13.
+4.3.Projections.
+Lemma 4.4.Let a⊂S2 be anι-invariant essential simple closed curve, not assumed geodesic.
+Then exactly one of the following holds.
+(1)a∩Wconsists of two points,a is non-separating,π(a)is an essential arc joining two
+distinct points ofB, andπ−1(π(a)) =a.
+(2)a∩W=∅,ais separating,π(a)is a3|3circle, andπ−1(π(a)) =a.
+Proof.ι-invariance givesπ−1(π(a)) =a∪ι(a) =a at once. The restrictionι|a is an involution of
+a circle, not the identity (elsea⊆W, a finite set). A non-trivial involution of a circle is either
+orientation-reversing with exactly two fixed points, or orientation-preserving and free. Its fixed
+point set isa∩W.
+Case (i):a∩W={w1,w2}. Thenbi :=π(wi)are two distinct points ofB, the quotienta/ιis
+an arc, andπ|a factors through it injectively, soπ(a)is an embedded arc with endpointsb1,b2; its
+interior missesB because a∩Wconsists of the two endpoints. It is essential by Observation 2.4.
+Non-separation follows as in Lemma 4.2(i).
+Case (ii): a∩W= ∅. Then π(a)is an embedded circle inS2\B, bounding closed discs
+D1,D2 with ki :=|Di∩B|and k1 +k2 = 6. If someki = 0then π−1(Di)is a disjoint union of
+two discs anda bounds a disc, contradicting essentiality. Sincea is connected,π(a)does not lift,
+that is,θ([π(a)])̸= 0; as[π(a)]is the sum of theki meridians insideDi, eachki is odd. Ifki = 1
+
+--- PAGE 13 ---
+THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE 13
+then π−1(Di)is connected withχ= 2·1−1 = 1and one boundary circle, hence a disc, again
+contradicting essentiality. Thereforek1 =k2 = 3. The two setsπ−1(intDi)are connected and
+disjoint, soaseparates.□
+4.4.Descent.The next lemma is the heart of the matter: an isotopyupstairs, which is not
+assumed equivariant in any way, forces an isotopydownstairswhich fixes the six marked points.
+The scheme of the proof is Winarski’s combinatorial-topology proof of the Birman–Hilden theorem,
+in the exposition of Margalit and Winarski [5, the section “Winarski’s proof: combinatorial
+topology”]; we give the argument in full because the step asserting that an innermost bigon
+injects under the covering requires, in our situation, the case analysis of Lemma 4.5 below, and
+because the annulus case requires the supplement given in the proof of Lemma 4.6.
+Throughout this subsectionc1,c2 denote multicurves inS2\B, by which we mean finite unions
+of disjoint simple closed curves, and˜ci :=π−1(ci). Each ˜ci is anι-invariant multicurve disjoint
+fromW, andιacts freely on it.
+Lemma 4.5(Innermost bigons inject).Let c1̸=c2 be transverse multicurves inS2\B with
+c1∩c2̸= ∅, and suppose˜c1 and ˜c2 bound a bigon. Let ˜B be an innermost bigon between˜c1 and
+˜c2, with sidesa⊂˜c1,b⊂˜c2 and cornersx,y. Then
+˜B∩ι(˜B) =∅.
+Consequently ˜B∩W= ∅, π|˜B is injective, andπ( ˜B)is an embedded bigon betweenc1 and c2
+whose interior and boundary are disjoint fromB.
+Proof.Being innermost meansint ˜B∩(˜c1∪˜c2) =∅. We first record:
+int(a)∩˜c2 =∅,int(b)∩˜c1 =∅.(3)
+Indeed, ifz∈int(a)∩˜c2 then ˜c2 crosses ˜c1 transversally atz and one of the two local branches
+entersint ˜B, contradicting innermostness. In particular∂˜B∩˜c1∩˜c2 ={x,y}.
+Step 1:ι( ˜B)̸= ˜B.If ι( ˜B) = ˜B thenι(∂˜B) =∂˜B, and sinceι(a)⊂˜c1 we getι(a)⊆˜c1∩∂˜B =a,
+soι(a) =a. Butιacts freely on˜c1, whereas every involution of an arc has a fixed point.
+Step 2: two distinct innermost bigons have disjoint interiors.Let˜B′be another innermost
+bigon. Since ∂˜B′⊂˜c1∪˜c2 is disjoint from int ˜B, the set ˜B′∩int˜B = int ˜B′∩int˜B is open
+and closed in the connected setint ˜B, hence empty or all of it; in the latter case the symmetric
+argument givesint ˜B = int ˜B′and ˜B = ˜B′. Applying this to ˜B′=ι( ˜B), which is an innermost
+bigon becauseιpreserves ˜c1 and ˜c2, and using Step 1, we getint ˜B∩ι( ˜B) = ∅ and, symmetrically,
+˜B∩ι(int˜B) =∅. Therefore
+˜B∩ι(˜B)⊆∂˜B∩ι(∂˜B).(4)
+Step 3:∂˜B∩ι(∂˜B) = ∅.Suppose z∈∂˜B and ι(z)∈∂˜B; notez̸=ι(z)since ∂˜B∩W= ∅.
+If z is a corner, thenz∈˜c1∩˜c2, henceι(z)∈˜c1∩˜c2∩∂˜B ={x,y}by (3), soιinterchangesx
+andy. Ifz∈int(a), thenι(z)∈˜c1∩∂˜B =a, andι(z)is not a corner (otherwisez =ι(ι(z))∈˜c2,
+contradicting (3)), soι(z)∈int(a); the casez∈int(b)is symmetric. So one of the following
+occurs.
+(a) int(a)∩ι(int(a))̸= ∅ (or the same forb). Let C be the component of ˜c1 containing
+a. As distinct components are disjoint, ι(C) = C, and ι|C is a free involution of a circle.
+IdentifyC with R/2Z so thatι(t) =t + 1, and writea = [s1,s2]with s2−s1 =L∈(0,2). Then
+int(a)∩ι(int(a))̸= ∅forcesL> 1, whences1 + 1∈int(a). Buts1 =x∈˜c2, sos1 + 1 =ι(x)∈˜c2,
+contradicting (3).
+(b) ι(x) = y.Let C⊆˜c1 and D⊆˜c2 be the components containinga and b; as x,ylie
+on both, ι(C) = C and ι(D) = D, andιacts freely on each. Nowι(a)is an arc of C from
+
+--- PAGE 14 ---
+14 THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE
+y to x, so it is eithera or the complementary arcC\int (a). It cannot be a: an involution
+of an arc interchanging its endpoints has an interior fixed point, whileιis free onC. Hence
+ι(a) =C\int (a), and by (3),int(ι(a))∩˜c2 =ι
+(
+int(a)∩˜c2
+)
+= ∅. ThereforeC∩˜c2 ={x,y}, and
+symmetrically D∩˜c1 ={x,y}. Sinceι(C) =C and ι(D) =D with ιfree, π(C)and π(D)are
+embedded circles inS2 and
+π(C)∩π(D) =π(C∩D) =π({x,y}) ={π(x)}
+is a single point, at which the two circles cross transversally,πbeing a local homeomorphism
+there. This is impossible: two transverse simple closed curves inS2 meet in an even number of
+points, becauseH 1(S2;Z/2) = 0makes their mod2intersection number vanish.
+Step 4: conclusion.By (4) and Step 3,˜B∩ι( ˜B) = ∅. A point of˜B∩Wwould lie in˜B∩ι( ˜B),
+so ˜B∩W= ∅ and πis a local homeomorphism on a neighbourhood of˜B; andπ(z) =π(z′)for
+z̸=z′in ˜B would meanz′=ι(z)∈˜B∩ι( ˜B). Henceπ|˜B is injective, soπ( ˜B)is an embedded
+closed disc bounded by the arcsπ(a)⊂c1 and π(b)⊂c2, which meet exactly at the two points
+π(x),π(y). Finally a point ofπ( ˜B)∩Bwould have its unique preimage in˜B∩W, which is
+empty. □
+Lemma 4.6(Descent).Let c1,c2 be multicurves inS2\B with no two components isotopic in
+Σwithin either one of them, and suppose that˜c1 and ˜c2 are isotopic inS2. Thenc1 and c2 are
+isotopic inΣ.
+Proof.We may assumec 1 andc 2 transverse, and induct on|c1∩c2|.
+Inductive step.Suppose c1∩c2̸= ∅. Then ˜c1∩˜c2̸= ∅. Isotopic multicurves have vanishing
+geometric intersection number, so ˜c1 and ˜c2 are not in minimal position, and by the bigon
+criterion for multicurves — the unnumbered statement in Farb–Margalit [2, §1.2.4], a variant of
+[2, Proposition 1.7] — two of their components bound a bigon. Among all bigons choose one,˜B,
+whose interior meets˜c1∪˜c2 in as few points as possible. If that number were positive, an arc of
+˜c1∪˜c2 would cross int ˜B; such an arc has both its endpoints on one side of∂˜B, since the two
+multicurves are embedded, and an innermost such arc cuts off a bigon whose interior meets the
+multicurves in strictly fewer points. So˜Bis innermost.
+By Lemma 4.5,π( ˜B)is an embedded bigon betweenc1 and c2 disjoint fromB. A closed
+neighbourhood of π( ˜B)disjoint from B exists by compactness, and the isotopy ofc1 across
+π( ˜B)supported in it is an isotopy ofS2 fixingB pointwise. It lowers|c1∩c2|by two and, by
+Lemma 4.1, replaces˜c1 by an isotopic multicurve. Induction applies.
+Base case.Suppose c1∩c2 = ∅. Then ˜c1 and ˜c2 are disjoint and isotopic, so they cobound a
+disjoint union of annuliA1,...,An in S2, each having one boundary circle in˜c1 and the other in
+˜c2. We claim eachπ(Am)is an annulus containing no point ofB.
+The involutionιpermutes theAm. Ifι(Am) =Am′̸=Am thenAm contains no fixed point ofι,
+so π|Am is injective andπ(Am)∼=Am is an annulus disjoint fromB. Suppose thenι(Am) =Am.
+Since one boundary circle lies in˜c1 and the other in˜c2, andιpreserves each˜ci, the involutionι
+cannot interchange the two boundary circles; being orientation preserving onAm it therefore
+preserves the orientation of each of them, and an orientation-preserving involution of a circle with
+a fixed point is the identity, which is impossible here. Soιacts freely on∂Am, each boundary
+circle has a circle as quotient, and the two quotients are distinct. Hence the base surface ofAm/ι
+is a connected compact surface with exactly two boundary circles, soχ≤0. On the other hand,
+ifιhaskfixed points inintA m, multiplicativity of the orbifold Euler characteristic gives
+χ(base)−k
+(
+1−1
+2
+)
+=χorb(Am/ι) =1
+2χ(Am) = 0,
+
+--- PAGE 15 ---
+THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE 15
+so χ(base) = k/2≥0. Therefore k = 0: the action is free andπ(Am) = Am/ιis an annulus
+containing no branch point.
+The imagesπ(Am)are annuli inS2\B cobounded by the components ofc1 andc2, so pushing
+c1 across them is an isotopy ofS2 fixingBpointwise carryingc 1 toc 2.□
+4.5.From circles back to arcs.
+Lemma 4.7.Let D be a closed disc andp̸=q two interior points. Any two embedded arcs inD
+with endpointsp,qand interiors contained inintD\{p,q}are carried onto one another by an
+ambient isotopy ofDwhich is the identity on∂Dand fixespandq.
+Proof. Work inintD∼= R2. By Moise [8, Theorem 10.4] any two embedded arcs inR2 with the
+same pair of endpoints are carried onto one another by a compactly supported ambient isotopy.
+Such an isotopy carries the endpoint set{p,q}to itself, and since it starts at the identity and
+{p,q}is discrete it fixesp and q throughout. Being compactly supported in intD, it is the
+identity near∂Dand extends by the identity.□
+Lemma 4.8.Let αbe an arc with distinct endpointsp,q, letN(α)be a closed regular neigh-
+bourhood ofαinS 2 chosen so thatN(α)∩B={p,q}, and putcα:=∂N(α), a2|4circle.
+(1)π−1(N(α))is an annulus with coreπ−1(α), andπ−1(cα)is the union of its two boundary
+circles, each isotopic inS2 toπ−1(α).
+(2) If cαand cβare isotopic inΣ, for arcsα,βwith distinct endpoints, thenαand βare
+isotopic inΣ.
+Proof.(i) N(α)is a disc containing exactly two branch points, soχ(π−1(N(α))) = 2·1−2 = 0;
+the preimage is connected because a meridian is not killed byθ; andcαencircles an even number
+of branch points, soθ([cα]) = 0and π−1(cα)has two components. A connected compact orientable
+surface withχ= 0and two boundary circles is an annulus. Its core isπ−1(α), which is a simple
+closed curve by Lemma 4.2(i), and each boundary circle of an annulus is isotopic to its core.
+(ii) Leth1 be a homeomorphism ofS2 isotopic to the identity through homeomorphisms fixing
+B pointwise, withh1(cα) =cβ. Thenh1(N(α))is one of the two closed discs bounded bycβand
+it contains exactly the two branch pointsh1(p) =p and h1(q) =q; the other disc contains four.
+Hence h1(N(α)) = N(β)and {p,q}={p′,q′}, the endpoints ofβ. Now h1(α)and βare two
+embedded arcs in the discN(β)with endpoints p,qand interiors in the interior, so Lemma 4.7
+produces an ambient isotopy ofN(β), identity on the boundary and fixingp,q, carryingh1(α)
+toβ. Extending by the identity and composing with{ht}givesα≃βinΣ.□
+4.6.The bijection.
+Theorem 4.9.The assignmentΨ([α]) := [π−1(α)]is a well-defined bijection
+Ψ:A ̸=⊔C −→ S,
+carryingA̸=onto the set of non-separating classes andC onto the set of separating classes. Its
+inverse sends a class[a]to[π(aι)], whereaιis anyι-invariant representative.
+Proof.Well defined.By Lemma 4.2,π−1of a representative is an essential simple closed curve,
+non-separating in the arc case and separating in the3|3case. If α≃α′inΣthen Lemma 4.1
+produces an ambient isotopy ofS2 carryingπ−1(α)toπ−1(α′).
+Surjective.Let[ a]∈S. GiveS2 the metricρof Proposition 3.4. By (G1) of Fact 3.5 the free
+homotopy class ofa contains a unique closed geodesicγ, which is simple; by (G3)γis isotopic to
+a. Sinceρcomes from a complex structure for whichιis the hyperelliptic involution, Fact 3.6
+
+--- PAGE 16 ---
+16 THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE
+givesι(γ) = γ. Lemma 4.4 then saysπ(γ)is an essential arc with distinct endpoints or a3|3
+circle, withπ−1(π(γ)) =γ. HenceΨ([π(γ)]) = [γ] = [a].
+Injective.SupposeΨ([ α]) = Ψ([α′]). If both classes lie inC, thenα,α′are3|3circles whose
+preimages are isotopic inS2, and Lemma 4.6 applied to the one-component multicurves gives
+α≃α′. If both lie inA̸=, pass to the2|4circles: by Lemma 4.8(i) the multicurvesπ−1(cα)
+and π−1(cα′)are the boundaries of annulus neighbourhoods ofπ−1(α)and π−1(α′); an ambient
+isotopy ofS2 carrying the first core to the second carries a regular neighbourhood of the first to
+a regular neighbourhood of the second, and regular neighbourhoods of a simple closed curve in
+a surface are unique up to ambient isotopy [8], soπ−1(cα)and π−1(cα′)are isotopic. The two
+components ofπ−1(cα)are not isotopic to each other inΣ— their imagescαhas one component
+— so Lemma 4.6 applies and givescα≃cα′, whenceα≃α′by Lemma 4.8(ii). Finally the two
+types cannot mix: an equalityΨ([α]) = Ψ([c])with α∈A̸=,c∈Cwould equate a non-separating
+with a separating class.
+The description of the inverse now follows: ifaιis anι-invariant representative of[a], then
+π−1(π(aι)) =a ιby Lemma 4.4, soΨ([π(aι)]) = [a].□
+Theorem 1.4 is exactly Theorem 4.9.
+5.The intersection number formula
+Throughout this sectiona̸=bare isotopy classes ofnon-loopessential arcs inΣ, and
+A:=
+[
+π−1(a)
+]
+, B:=
+[
+π−1(b)
+]
+are the corresponding classes of non-separating simple closed curves in S2 furnished by
+Lemma 4.2(i). We writei(A,B)for their geometric intersection number. The restriction to
+non-loop arcs is essential and not a convenience: by Lemma 4.2(iii) the preimage of a loop arc is
+a wedge of two circles, so neither side of the formula below is defined for it.
+5.1.The local count.
+Lemma 5.1(Local count).Let α∈a, β∈bbe transverse, and suppose that˜α:=π−1(α)and
+˜β:=π−1(β)are transverse as well. Then
+⏐⏐˜α∩˜β
+⏐⏐ = 2j(α,β) +e(a,b).
+Proof. The setα∩βis the disjoint union ofintα∩intβand the set of shared endpoints, and
+˜α∩˜β=π−1(α∩β)because ˜α=π−1(α)and ˜β=π−1(β)are full preimages. Over a point of
+intα∩intβ, which lies inS2\B, the mapπis a two-sheeted covering, so there are exactly two
+preimages; there arej(α,β)such points. A shared endpoint is a point ofB and has exactly one
+preimage, a Weierstrass point; there aree(a,b)such points, by Lemma 2.10. Summing gives the
+stated count. □
+Two remarks on the hypotheses. First, the identity is a count for the twogivenrepresentatives;
+it does not by itself assert that either side is minimal in its class. Second, the hypothesis that
+the preimages be transverse cannot be dropped, and the only place it can fail is over a shared
+endpoint:
+Lemma 5.2(The lift of an arc at a Weierstrass point).Letαbe an arc with an endpoint at
+b∈B, letw = π−1(b), and letu be a coordinate atb in whichπhas the local modelz↦→z2.
+Writeαnearbasu=u α(t),t∈[0,ε), withuα(0) = 0andu ′
+α(0)̸= 0, and setθα:= argu′
+α(0).
+(1) Nearw the setπ−1(α)is a smooth embedded arc throughw whose tangent line atw has
+directionθα/2 modπ.
+
+--- PAGE 17 ---
+THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE 17
+(2) If βis a second arc with an endpoint atb, thenπ−1(α)and π−1(β)are transverse atw
+if and only ifθα̸≡θβ(mod 2π).
+Proof.(i) Write uα(t) = tc (t)with c smooth and c(0) = u′
+α(0) ̸= 0; this is Hadamard’s
+factorisation of a smooth function vanishing at0. A lift must satisfy z(s)2 = uα(s2)for a
+parameter s, and the naive choicez =
+√
+uα(t) isnotdifferentiable at t = 0: it behaves like
+√
+t.
+Substituting t =s2 removes the branch point. Choose a smooth branch√c of the square root of
+cnear0, which exists becausec(0)̸= 0, and put
+z(s) :=s
+√
+c(s2), s∈(−ε1/2,ε1/2).
+Then z is smooth, z(s)2 = s2c(s2) = uα(s2), so z parametrises a lift;z(0) = 0and z′(0) =√
+c(0)̸= 0, so the lift is regular atw and its tangent direction isarg
+√
+c(0) =θα/2 modπ. Finally
+z(−s) =−z(s), so the two halvess> 0and s< 0are the two sheets ofπ−1overαand together
+form a single smooth arc throughw.
+(ii) By (i) the two tangent lines atw have directionsθα/2and θβ/2modulo π, and these agree
+if and only ifθα≡θβ(mod 2π).□
+The halving in Lemma 5.2 has a consequence worth recording, since it is the opposite of what
+the downstairs picture suggests: ifαand βleaveb inoppositedirections, θβ= θα+π, then
+upstairs the two tangent lines differ byπ/2, that is, the lifts meetorthogonally. The set of
+downstairs departure directions which are forbidden is therefore a single one,θβ=θα.
+5.2.Normalising the departure directions.
+Lemma 5.3(Normalisation).Let α∈a, β∈bbe transverse. Then there are transverseα1∈a,
+β1∈bsuch thatπ−1(α1)andπ−1(β1)are transverse and
+j(α1,β1) =j(α,β).
+Proof. OverS2\B the mapπis a local diffeomorphism, so at every point ofintα∩intβthe
+preimages inherit distinct tangent lines fromαand β; andπ−1(α)∩π−1(β)is finite because
+α∩βis. By Lemma 5.2(ii) the preimages can fail to be transverse only at a Weierstrass point
+over a shared endpoint, and only when the two departure directions there agree. There are at
+most two shared endpoints, so it suffices to correct one of them and to repeat.
+Let b be a shared endpoint withθα= θβ. Fix a coordinate u at b and choose r > 0so
+small that the closed discDr ={|u|≤r}contains no point ofB other thanb and no point of
+α∩βother thanb; this uses the finiteness clause of Convention 2.8 together with compactness.
+Shrinkingrfurther, we may assume thatαandβmeetDr in a single arc each and that onDr
+each of them is aradial graph: there are smooth functionsf,gon[0,r]with
+α∩Dr ={ϱeif(ϱ): 0≤ϱ≤r}, β∩Dr ={ϱeig(ϱ): 0≤ϱ≤r},
+which is possible because|uα(t)|=t|c(t)|is strictly increasing near0, so the radius is a legitimate
+parameter.
+Pick a smooth cut-offχ: [0,∞)→[0,1]with χ≡1on[0 ,r/3]and χ≡0on[2 r/3,∞), and
+forφ∈Rlet
+Φφ(u) :=e iφχ(|u|)u,
+extended by the identity outsideDr. EachΦ φis a diffeomorphism ofS2; the familyΦtφ,t∈[0,1],
+is an isotopy from the identity; it fixesb, and it fixes every other point ofB because those lie
+outside Dr. HenceΦ φis admissible for Convention 2.1, andα1 := Φφ(α)is isotopic toαwith
+θα1 =θα+φ.
+
+--- PAGE 18 ---
+18 THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE
+It remains to chooseφso that no new intersection is created. InsideDr the curveα1 is the
+radial graph off+φχ, so a point ofα1∩βinDr with radiusϱ>0satisfies
+h(ϱ) +φχ(ϱ)≡0 (mod 2π), h:=f−g.
+Since h(0) = 0and h is continuous,M := max[0,r]|h|tends to0as r→0; shrinkingr once more
+we may assumeM < π. Then for everyφwith0 <|φ|<2π−2M and φof the appropriate
+sign the left-hand side is bounded away from2πZon(0 ,r], soα1∩β∩Dr ={b}; outsideDr
+nothing has moved. Consequentlyα1∩β=α∩βas sets, whencej(α1,β) = j(α,β)and e is
+unchanged. Choosing in additionφ̸= 0we obtain θα1̸=θβ, and by Lemma 5.2(ii) the preimages
+are transverse overb.□
+Remark5.4.Lemma 5.3 is a statement about apairof arcs, and only pairs are needed below,
+because (1) is a statement about a pair. It should not be read as a normalisation for a family:
+rotating several arcs through a common endpoint by different angles cannot be achieved by one
+ambient isotopy, since the derivative at that point is a single linear map. Families are handled
+instead by Theorem 3.13, where no perturbation occurs at all: the geodesic representative
+of a class is a single well-defined curve, so a family of classes realises all its pairwise minima
+simultaneously by fiat.
+5.3.The formula.
+Theorem 5.5.For distinct isotopy classesa,bof non-loop essential arcs inΣ,
+i(A,B) = 2 ˆȷ(a,b) +e(a,b).(1)
+Moreover the projections toΣof the ρ-geodesic representatives ofA and B are representatives of
+aandbrealisingˆȷ(a,b).
+Proof.Writeˆȷ= ˆȷ(a,b)ande=e(a,b).
+Upper bound.Let( α0,β0)be a transverse pair realisingˆȷ, which exists by Definition 2.9. Apply
+Lemma 5.3 to obtain a transverse pair(α1,β1)with transverse preimages and j(α1,β1) = ˆȷ.
+Thenπ−1(α1)andπ−1(β1)are transverse representatives ofAandB, so
+i(A,B)≤
+⏐⏐π−1(α1)∩π−1(β1)
+⏐⏐ = 2ˆȷ+e
+by Lemma 5.1.
+Lower bound.Here the representatives are not chosen downstairs at all. By Proposition 3.4 the
+pullbackρ=π∗¯ρis a smooth hyperbolic metric on the closed surfaceS2, so by (G1) of Fact 3.5
+the classesA and B have unique geodesic representatives˜α∗and ˜β∗, and these are simple. By
+Fact 3.6 every simple closed geodesic of(S2,ρ)is ι-invariant, so Lemma 4.4 applies to each of
+them; asAandBare non-separating by Lemma 4.2(i), case (i) of that lemma holds, and
+α∗:=π(˜α∗), β∗:=π(˜β∗)
+are essential arcs joining two distinct points ofB, with π−1(α∗) = ˜α∗and π−1(β∗) = ˜β∗.
+ConsequentlyΨ[ α∗] = [˜α∗] =A = Ψ(a), so[α∗] =a by the injectivity ofΨin Theorem 4.9, and
+likewise[β∗] =b.
+Since A̸=B we have ˜α∗̸= ˜β∗, so these are two distinct simple closed geodesics: they meet in
+finitely many points, they are nowhere tangent, and by (G2) of Fact 3.5 they are in minimal
+position. Hence they are transverse; projecting,α∗and β∗are transverse as well, sinceπis a
+local diffeomorphism offW and|α∗∩β∗|≤|˜α∗∩˜β∗|is finite, no condition being imposed at a
+shared endpoint. Lemma 5.1 now applies to the pair(α∗,β∗), whose preimages are˜α∗,˜β∗, and
+minimal position gives
+i(A,B) =
+⏐⏐˜α∗∩˜β∗⏐⏐ = 2j(α∗,β∗) +e≥2ˆȷ+e,
+
+--- PAGE 19 ---
+THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE 19
+the last step becausej(α∗,β∗)≥ˆȷby the definition ofˆȷ.
+The two bounds give (1), and comparing them forcesj(α∗,β∗) = ˆȷ.□
+Remark5.6.The two halves of the proof are asymmetric, and the asymmetry is not an artefact.
+In the lower bound no normalisation is needed: distinct closed geodesics of a smooth metric are
+automatically transverse, because a geodesic is determined by a point and a direction. In the
+upper bound one quantifies over arbitrary representatives, where no such rigidity is available,
+and this is exactly the work done by Lemma 5.3.
+Corollary 5.7(Adjacency criterion).Witha,bas above,
+i(A,B)≤1⇐⇒ˆȷ(a,b) = 0ande(a,b)≤1.
+Proof. Both ˆȷand e are non-negative integers. Ifi(A,B)≤1then2 ˆȷ≤1by (1), so ˆȷ= 0and
+e=i(A,B)≤1. Converselyˆȷ= 0ande≤1givei(A,B) =e≤1.□
+6.FromC 1(S2)toX
+WriteK :=C1(S2)and let K′⊂Kbe the full subcomplex spanned by the non-separating
+vertices. This section identifiesK′withXand shows that K′is a strong deformation retract of
+K.
+6.1.The model.
+Proposition 6.1.K′andXare isomorphic as simplicial complexes.
+Proof. By Theorem 4.9 the mapΨis a bijection from the set of isotopy classes of non-loop arcs
+inΣonto the set of isotopy classes of non-separating essential simple closed curves inS2; that is,
+it is a bijection from the vertex set ofXonto the vertex set ofK′.
+Leta̸=bbe non-loop classes andA= Ψ(a),B= Ψ(b). By Corollary 5.7,
+i(A,B)≤1⇐⇒ˆȷ(a,b) = 0ande(a,b)≤1.
+The right-hand side is precisely adjacency inG: by Theorem 3.13 the conditionˆȷ(a,b) = 0says
+that a and b can be realised with disjoint interiors, and by Lemma 2.10 the conditione(a,b)≤1
+says ep(a)̸= ep(b), two distinct two-element subsets ofB meeting in at most one point. The
+left-hand side is adjacency inK′. SoΨis an isomorphism of graphs from G onto the1-skeleton
+ofK ′.
+Both complexes are flag:Xby definition, andK by definition, whence also its full subcomplex
+K′— if the vertices of a finite set lie inK′and are pairwise adjacent inK′, they are pairwise
+adjacent inK, so they span a simplex ofK, and that simplex lies in the full subcomplexK′. An
+isomorphism of the1-skeleta of two flag complexes is an isomorphism of the complexes.□
+Proposition 6.2. dim X= 11, and the facets ofXare exactly the isotopy classes of triangulations
+ofS 2 with vertex setBwhose underlying graph is simple.
+Proof. A simplex ofXis a finite set of non-loop classes which are pairwise adjacent inG. By
+Theorem 3.13 the geodesic representatives of the classes in such a set have pairwise disjoint
+interiors, so their union is an embedded graph inS2 with vertex set contained inB; adjacency in
+G forbids two members with the same endpoint pair, so the graph has no multiple edges, and
+non-loop forbids loops. Conversely the classes of the edges of an embedded simple graph with
+vertex set inB are pairwise adjacent inG. Simplices ofXtherefore correspond to isotopy classes
+of embedded simple graphs with vertex set contained inB, ak-simplex to a graph withk + 1
+edges.
+
+--- PAGE 20 ---
+20 THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE
+For a simple graph withV≥3vertices embedded in S2 one has E≤3V−6, so here
+E≤3·6−6 = 12and dim X≤11. The octahedral triangulation ofS2 with vertex setB realises
+E = 12, so dim X= 11. Equality E = 3V−6holds if and only if every complementary face is a
+triangle, that is, if and only if the graph is a triangulation.□
+Remark6.3.A simplex ofXis an isotopy class ofembeddedgraph, not an abstract graph:
+two embeddings of the same abstract graph which are not isotopic relB are different simplices.
+AccordinglyXhas infinitely many facets, although these fall into finitely manyMod(S2,B)-orbits,
+and the number of combinatorial types of six-vertex triangulations ofS2 is not the number of
+facets.
+6.2.Deleting the separating vertices.
+Lemma 6.4.Distinct separating vertices ofKare never adjacent.
+Proof. Let σ̸= σ′be separating. A separating curve is null-homologous, so the algebraic
+intersection numberˆı(σ,σ′)vanishes, and i(σ,σ′)≡ˆı(σ,σ′)≡0 ( mod 2). Adjacency would force
+i(σ,σ′)≤1, hencei(σ,σ′) = 0.
+So supposei(σ,σ′) = 0. Nowσsplits S2 into two one-holed toriT1,T2, andσ′, being disjoint
+from σ, lies in someTm. An essential simple closed curve in a one-holed torus is either isotopic
+to the boundary, in which caseσ′=σ, excluded; or non-separating inTm, in which case[σ′]̸= 0
+in H1(Tm; Z). The inclusion induced mapH1(Tm; Z)→H1(S2; Z)is the inclusion of a direct
+summand, hence injective, so[σ′]̸= 0inH1(S2;Z), contradicting thatσ′separates.□
+Corollary 6.5.Every simplex ofK contains at most one separating vertex. Consequently, for
+separating verticesσ̸=σ′,
+lkK(σ)⊆K′, St(σ)∩K′= lkK(σ), St(σ)∩St(σ′) = lkK(σ)∩lkK(σ′)⊆K′.
+In particular eachlkK(σ)lies inK′irrespective of which other separating vertices are deleted.
+Proof. If a simplex contained two separating vertices they would be adjacent, contradicting
+Lemma 6.4. Ifτ∈lkK(σ)then τ∪{σ}is a simplex, soτcontains no separating vertex and lies
+in the full subcomplexK′. The remaining two identities follow because a simplex ofSt(σ)either
+containsσor lies inlkK(σ).□
+Lemma 6.6.For every separating vertexσ, withT1,T2 the two one-holed tori cut off byσ,
+lkK(σ) =C1(T1)∗C1(T2),
+whereC 1(Tm)is the Farey complex. In particularlkK(σ)is contractible.
+Proof. For any essential simple closed curvec we havei(c,σ)≡ˆı(c,σ) = 0 ( mod 2), soi(c,σ)≤1
+forces i(c,σ) = 0: the vertices oflkK(σ)are the classes of essential curves disjoint fromσand
+not isotopic to it, that is, the essential non-boundary-parallel curves inT1 or inT2. Two such
+curves lying on opposite sides are disjoint, hence adjacent, which gives the join decomposition.
+In a one-holed torus the essential non-boundary-parallel isotopy classes correspond to slopes
+p/q∈Q∪{∞}with i(p/q,r/s) =|ps−qr|, so the conditioni≤1is |ps−qr|= 1and C1(Tm)
+is the Farey complex, which is contractible: it is the simplicial model forH2 obtained from the
+ideal triangulation by the Farey tessellation. A join with a contractible factor is contractible.□
+Proposition 6.7.Kis the pushout, in simplicial complexes and hence in spaces, of
+K′←−
+∐
+σ
+lkK(σ)↪→
+∐
+σ
+St(σ),
+the coproducts being over all separating vertices.
+
+--- PAGE 21 ---
+THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE 21
+Proof. Every simplex ofK either contains no separating vertex, and then lies inK′, or contains
+exactly one,σ, by Corollary 6.5, and then lies inSt(σ). By the same corollary the intersection of
+two distinct stars, and the intersection of a star withK′, are exactly the links, which are the
+objects being glued.□
+Theorem 6.8.K′is a strong deformation retract ofK. In particularC1(S2)≃X.
+Proof. Fix a separating vertexσ. By Lemma 6.6 the linklkK(σ)is contractible, and St(σ) =
+σ∗lkK(σ)is a cone, hence contractible; so the inclusion lkK(σ) ↪→St(σ)is a homotopy
+equivalence of CW complexes. A pair of CW complexes satisfies the homotopy extension property
+[3, Proposition 0.16], so by [3, Corollary 0.20] the subcomplexlkK(σ)is a deformation retract of
+St(σ), and in Hatcher’s terminology a deformation retraction is by definition a homotopy fixing
+the subspace pointwise. Choose such a homotopy
+Hσ: St(σ)×I→St(σ), Hσ
+0 = id, Hσ
+1
+(
+St(σ)
+)
+⊆lkK(σ), Hσ
+t|lkK(σ)= id.
+DefineH :K×I→Kby the identity onK′×Iand byHσon St(σ)×I. The pieces agree
+on overlaps: by Corollary 6.5 we haveSt(σ)∩K′= lkK(σ), on whichHσ
+t is the identity, and two
+distinct stars meet insidelkK(σ)∩lkK(σ′), where both are the identity. SoH is a well-defined
+map of sets.
+For continuity,K carries the weak topology determined by the family of subcomplexes
+{K′}∪{St(σ)}σ, which is a cover ofK by Proposition 6.7; no local finiteness is needed, closure-
+finiteness of a CW complex being enough. SinceI is locally compact,K×Icarries the weak
+topology determined by{K′×I}∪{St(σ)×I}σ, by [3, Theorem A.6]. A map out of a space
+with the weak topology is continuous as soon as its restriction to each member of the family
+is, and each restriction ofH is continuous. HenceH is continuous,H0 = id, H1(K)⊆K′, and
+Ht|K′ = idfor allt.
+The last assertion combines this with Proposition 6.1.□
+Remark6.9.There are infinitely many separating vertices, and the point of the pushout is that
+no ordering of the deletions has to be chosen: by Corollary 6.5 the links are pairwise related
+only throughK′, so all the homotopies are performed at once. Alternatively one can avoid the
+simultaneity: a map of a sphere intoK has compact image, hence meets only finitely many
+separating vertices, so finitely many single-vertex deletions suffice to compute anyπn or Hn, and
+Whitehead’s theorem then gives the same conclusion.
+7.Simple connectivity
+This section provesπ1(C1(Sg)) = 1for every closed orientableSg with g≥2. The argument
+is independent of the rest of the paper and uses one external input, the contractibility of the
+curve-and-arc complex of a marked surface.
+For a closed surfaceS and a non-empty finite setV⊂S, letS(S,V)be the set of isotopy
+classes of essential simple closed curves and essential arcs in(S,V), an arc being required to meet
+V exactly in its two endpoints, which may coincide, and letA(S,V)be the complex onS(S,V)
+in which a finite set spans a simplex when its members admit pairwise disjoint representatives,
+disjointness of arcs being understood in the interiors.
+Fact 7.1(Hatcher [5, Theorem (a)]).Let S be a compact surface andV⊂Sa non-empty
+finite set, whose points may lie in the interior. ThenA(S,V)is contractible, except whenS is a
+disc withV⊂∂Sor an annulus withV contained in one boundary component, in which cases
+A(S,V)is a sphere.
+
+--- PAGE 22 ---
+22 THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE
+The theorem carries no number in the revised version of [5], where it is stated as Theorem (a);
+we cite it accordingly.
+Lemma 7.2(Filling in an edge).Let g≥2and let a,bbe essential simple closed curves inSg
+with i(a,b) = 1. Letc :=∂N(a∪b), the boundary of a regular neighbourhood ofa∪b. Thenc is
+a single essential simple closed curve,i(a,c) =i(b,c) = 0, andc is distinct froma and fromb as
+an isotopy class. Consequently{a,b,c}spans a2-simplex of C1(Sg)and {a,c},{b,c}are edges
+ofC 0(Sg).
+Proof. Since a and b are simple and meet in one point transversally, a regular neighbourhood
+N = N(a∪b)is a compact surface with χ(N) = χ(a) +χ(b)−χ(pt) = 0 + 0 −1 = −1,
+containing the two curves whose classes generate a rank two subgroup ofH1; soN is a one-holed
+torus and∂N= c is one circle. It is disjoint froma and b, which lie in the interior ofN, so
+i(a,c) =i(b,c) = 0.
+The curvec is essential: one side ofc is N, a one-holed torus, and the other side is a compact
+surface of genusg−1≥1with one boundary circle, neither being a disc. Finallyc̸= a and
+c̸=b as isotopy classes, sincei(a,c) = 0while i(a,b) = 1: ifc were isotopic toa we would get
+i(b,c) =i(b,a) = 1̸= 0. Asi is an invariant of isotopy classes this separates the classes and not
+merely the representatives.
+Pairwise the three classes havei≤1, so they span a2-simplex of C1(Sg); the two edges
+involvingchavei= 0and so lie inC 0(Sg).□
+Lemma 7.3.Forg≥2the inclusionC 0(Sg)↪→C1(Sg)is surjective onπ1.
+Proof. Both complexes are connected and have the same vertices, so it suffices to show that every
+edge path inC1 is homotopic, with endpoints fixed, to an edge path inC0. An edge{a,b}of
+C1 has i(a,b)∈{0,1}. Ifi(a,b) = 0it is an edge ofC0. Ifi(a,b) = 1, takec as in Lemma 7.2:
+the2-simplex {a,b,c}of C1 provides a homotopy rel endpoints from the edge{a,b}to the path
+a→c→b, whose two edges lie inC0. Performing this replacement on each edge of a loop with
+i= 1gives a loop inC 0 homotopic to it inC1.□
+Theorem 7.4.For every g≥2the inclusion C0(Sg)↪→C1(Sg)is homotopic to a constant map,
+andπ1(C1(Sg)) = 1.
+Proof. Fix a hyperbolic metric onSg and identify the vertices ofC0(Sg)with the simple closed
+geodesics. There are countably many of these, so we may choose a point∗∈Sg lying on none of
+them; putV={∗}.
+The choice of∗gives an injectionS(Sg)→S(Sg,∗): a geodesic misses∗and so is a simple
+closed curve in(Sg,∗), essential there. If a finite subcollection ofS(Sg)spans a simplex ofC0(Sg),
+its members are pairwise disjoint, hence span a simplex ofA(Sg,∗). So the injection extends to
+a simplicial map
+u:C 0(Sg)−→A(Sg,∗).
+In the other direction definev0 :S(Sg,∗)→S(Sg)as follows. An element which is a closed
+curve in(Sg,∗)is, forgetting∗, an essential simple closed curve inSg. An element which is an arc
+has both endpoints at∗, so forgetting∗turns it into a simple closed curve inSg, again essential.
+The compositeS(S g)→S(Sg,∗)→S(Sg)is the identity.
+The mapv0 is not simplicial intoC0(Sg): two arcs in(Sg,∗)with disjoint interiors both pass
+through∗, so the two closed curves they determine meet at∗and need not be disjoint. But they
+meet only there:
+a simplex ofA(Sg,∗)↦−→classes with pairwisei≤1,
+
+--- PAGE 23 ---
+THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE 23
+because disjoint interiors leave at most the single common point∗. Hence v0 extends to a
+simplicial map
+v:A(S g,∗)−→C1(Sg),
+and by construction the compositev◦uis the inclusionC0(Sg)↪→C1(Sg).
+NowSg is closed of genusg≥2and V ={∗}is a single interior point, soA(Sg,∗)is neither of
+the two exceptions in Fact 7.1 and is therefore contractible. The inclusionC0↪→C1 thus factors
+through a contractible complex and is null-homotopic.
+Finally, the induced mapπ1(C0(Sg))→π1(C1(Sg))is trivial, being induced by a null-homotopic
+map, and surjective by Lemma 7.3. A group which is the image of a trivial homomorphism is
+trivial, soπ1(C1(Sg)) = 1.□
+8.The spectral sequence
+8.1.Three empty objects.Reduced homology of simplicial complexes forces one to distinguish
+three things which are all called “empty”. We fix notation once and use it without further
+comment.
+Convention 8.1(Empty objects).• ˆ0 denotes theempty simplex, the simplex with no
+vertices. It is a face of every simplex, and we regard it as an element of every non-void
+simplicial complex; in particularˆ0∈A.
+•E:={ˆ0}denotes theempty complex: the complex whose only simplex isˆ0. It has no
+vertices, and ˜H−1(E) =Zwhile ˜Hq(E) = 0forq̸=−1.
+•Odenotes thevoid complex, which contains no simplex at all, not evenˆ0. Its augmented
+chain complex is zero in every degree, so˜Hq(O) = 0for allq, includingq=−1.
+For a complexK we write ˜C∗(K)for the augmented chain complex: ˜Cn(K)is free on the
+n-simplices forn≥0, ˜C−1(K) = Z⟨ˆ0⟩if K̸= O and0if K = O, and∂0 is the augmentationε
+sending each vertex toˆ0.
+The distinction is not pedantry. Below, the bottom stage of the filtration isO and not E;
+reading it as E replaces the reduced homology ofXin the column p = 0by its unreduced
+homology, and the conclusion of the paper is then unobtainable. We return to this in Remark 8.8.
+8.2.Bad vertices and the filtration.
+Definition 8.2.Abad faceof a simplexσ∈Ais a face ofσof one of the following two kinds:
+(B1) a single vertex which is a loop class;
+(B2) a pair of distinct non-loop vertices with the same endpoint pair.
+The set ofbad verticesofσis
+bv(σ) :={v∈σ:vlies in some bad face ofσ}.
+Lemma 8.3.Ifτ⊆σthenbv(τ)⊆bv(σ). Moreoverbv(ˆ0) =∅.
+Proof. A bad face ofτis a face ofτ, hence a face ofσ, and it is bad forσby the same clause of
+Definition 8.2. The empty simplex has no faces of either kind.□
+Definition 8.4.Forp≥−1put
+Yp :={σ∈A:|bv(σ)|≤p},
+Sp :={S∈A:|S|=p,bv(S) =S}, LS :={τ∈lkA(S) : bv(S∪τ) =S}.
+By Lemma 8.3 eachYp is a subcomplex.
+
+--- PAGE 24 ---
+24 THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE
+Lemma 8.5.(1)Y −1=O, and ˆ0∈Y0.
+(2)S 0 ={ˆ0}andLˆ0 =X.
+(3)Y 0 =X.
+(4)dimA= 11,Y 12 =A, andS p =∅forp>12.
+Proof.(i) For everyσ∈Awe have|bv(σ)|≥0, and0 ≤−1is false; so no simplex satisfies
+the defining condition ofY−1, not even ˆ0, for which|bv(ˆ0)|= 0by Lemma 8.3. The same
+computation puts ˆ0inY 0.
+(ii)|S|= 0forces S = ˆ0, and bv(ˆ0) = ∅ = ˆ0, soS0 ={ˆ0}; this is consistent only because
+ˆ0∈A, as fixed in Convention 8.1. NextlkA(ˆ0) =A, and the conditionbv(ˆ0∪τ) = ˆ0 reads
+bv(τ) =∅, that is,τ∈Y0; soL ˆ0 =Y 0, which isXby (iii).
+(iii) A simplexσ∈Ahas bv(σ) = ∅ if and only if it contains no loop vertex and no two
+distinct vertices with the same endpoint pair, that is, if and only if its vertices are pairwise
+adjacent in the graphG of Definition 2.5. Conversely, letσbe a finite clique ofG. Its members
+are pairwise realisable with disjoint interiors, so by Theorem 3.13 their geodesic representatives
+have pairwise disjoint interiorssimultaneously; henceσis a simplex ofA. Thus the simplices of
+Y0 are exactly the cliques ofG, which are the simplices of the flag complexX.
+(iv) A simplex ofA is a collection of pairwise non-isotopic essential arcs with pairwise disjoint
+interiors, so its geodesic representatives form an embedded graph inS2 with vertex set contained
+in B, now allowing loops and multiple edges. Such a graph hasV≤6and, if all complementary
+faces are triangles,2E = 3F andV−E+F = 2, whenceE = 3V−6≤12. A maximal collection
+triangulates, so dimA = 11; an ideal triangulation of the six-times-marked sphere has12arcs
+and8triangles. Finally|bv(σ)|≤|σ|≤12givesY12 =A, and|S|=p>12is impossible.□
+8.3.The splitting.
+Lemma 8.6.Let p≥1and let σ∈Asatisfy|bv(σ)|=p. Thenσ=S⊔τwith S := bv(σ)∈Sp
+andτ∈LS, and this decomposition is unique. Moreover:
+(1)ifu∈τthenbv(σ\u) =S;
+(2)ifv∈Sthen|bv(σ\v)|≤p−1.
+Proof. PutS = bv(σ)and τ=σ\S. Then|S|=p, andbv(S) =S: eachv∈Slies in a bad face
+of σ, and that face is contained inS, because both (B1) and (B2) consist of vertices which are
+themselves bad. Alsobv(S∪τ) = bv(σ) =S, soτ∈LS. The decomposition is unique because
+Sis determined byσ.
+(i) By Lemma 8.3,bv(σ\u)⊆S. For the reverse inclusion letv∈S. Ifv is bad by (B1) the
+bad face is{v}, which survives the removal ofu̸=v. If v is bad by (B2) there isw̸=v with
+{v,w}a bad face; thenw too lies in a bad face, sow∈bv(σ) =S, whereasu∈τandS∩τ= ∅;
+henceu̸=wand the bad face{v,w}survives. In both casesv∈bv(σ\u).
+(ii) Again bv(σ\v)⊆S, andv /∈σ\v, so bv(σ\v)⊆S\{v}has at mostp−1elements. □
+Proposition 8.7.Forp≥1there is an isomorphism of chain complexes
+˜Cn(Yp,Yp−1) ∼=
+⨁
+S∈Sp
+˜Cn−p(LS),
+where on the right the differential is that of˜C∗(LS)multiplied by( −1)p. For p = 0one has
+˜C∗(Y0,Y−1) = ˜C∗(X).
+Proof. Let p≥1. The group ˜Cn(Yp,Yp−1)is free on the simplices σwith|bv(σ)|= p and
+dimσ= n. Decompose σ= S⊔τas in Lemma 8.6; thendimτ= n−p, with dim ˆ0 =−1
+
+--- PAGE 25 ---
+THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE 25
+corresponding toσ=S. Order the vertices ofσso that those ofS come first, in an order fixed
+once and for all for eachS∈Sp, followed by those ofτ; declare
+Φ
+(
+⟨s1,...,sp,t0,...,tn−p⟩
+)
+:=⟨t0,...,tn−p⟩∈˜Cn−p(LS).
+This is an isomorphism of graded groups, theS-blocks being spanned by theσwith bv(σ) =S.
+It intertwines the differentials up to the stated sign. In∂σ, the terms obtained by deleting
+a vertex ofS lie inYp−1by Lemma 8.6(ii) and so vanish in the relative complex; the terms
+obtained by deleting a vertextr of τhave bv =S by Lemma 8.6(i), so they stay in the same
+S-block. This is what makes the relative differential block diagonal, and it is the substance of
+the phrase “the relative complex splits according toS”. The surviving term fortr carries the sign
+(−1)p+r, becausetr occupies positionp +r in the chosen order, whereas the corresponding term
+of ∂LS⟨t0,...,tn−p⟩carries(−1)r. HenceΦ ◦∂= (−1)p∂LS◦Φon the S-block. The constant
+(−1)p depends only onp, so it does not affect kernels, images or homology; note that it cannot
+be absorbed by rescaling a single generator, and that the two sides must use thesameorder on
+the vertices ofτ, which is why the order was fixed in advance.
+Forp = 0we have Y−1= O by Lemma 8.5(i), so˜C∗(Y−1) = 0and the relative complex is
+˜C∗(Y0) = ˜C∗(X)— augmentation included, since ˆ0∈Y0 contributes Z in degree−1and nothing
+is quotiented away.□
+Remark8.8.Had we put Y−1= E, the class ofˆ0 would have been killed and˜C∗(Y0,Y−1)would
+be theunreducedcomplex C∗(X), givingE1
+0,0=H0(X) = ˜H0(X)⊕Z. Nothing in the filtration
+would be false, but the columnp = 0would compute the wrong functor, and the identification
+of the abutment in Theorem 8.9 would fail. WithY−1= O the casep = 0needs no separate
+convention: it is the caseS0 ={ˆ0},Lˆ0 =Xof the general formula.
+8.4.TheE 1 page.
+Theorem 8.9.The filtration O =Y−1⊆Y0⊆···⊆Y12 =A of the augmented chain complex of
+Agives a first quadrant spectral sequence with
+E1
+p,q=
+⨁
+S∈Sp
+˜Hq(LS;Z) =⇒˜Hp+q(A;Z) = 0, d r :E r
+p,q→Er
+p−r,q+r−1,
+valid for allp≥0and q≥−1; in particularE1
+0,q= ˜Hq(X; Z). The filtration is bounded, so the
+sequence converges strongly.
+Proof.Taking homology of the isomorphism of Proposition 8.7 gives
+E1
+p,q=H p+q
+(˜C∗(Yp,Yp−1)
+)∼=
+⨁
+S∈Sp
+˜Hq(LS),
+the sign(−1)p being irrelevant to homology; forp = 0this reads E1
+0,q= ˜Hq(X), in agreement
+withS0 ={ˆ0}and Lˆ0 =X. The filtration has finite length by Lemma 8.5(iv), so the associated
+spectral sequence converges strongly to the homology of˜C∗(A). FinallyA is contractible by
+Fact 7.1, applied toS =S2 and V =B: a sphere with six interior marked points is neither a
+disc withVin its boundary nor an annulus. Hence ˜H∗(A;Z) = 0.□
+Note thatq =−1is a genuine part of the range:˜H−1(LS)is Z when LS = E and0when
+LS has at least one vertex, so the vanishing of the columnp≥1will require each LS to be
+non-empty and not merely contractible. This is supplied by Corollary 10.9 below.
+
+--- PAGE 26 ---
+26 THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE
+9.Objects, gaps and the budget
+Throughout this sectionp≥1and S∈Sp is fixed. We realise the arcs ofS by their geodesic
+representatives for the cusped metric and write
+ΓS :=
+⋃
+S⊂S 2,
+which by Theorem 3.13 is an embedded graph with vertex set inB: the representatives have
+pairwise disjoint interiors simultaneously. The aim of the section is Lemma 9.15, which produces
+insideΓ S a complementary region of a very restricted shape.
+9.1.Objects.The condition bv(S) =S says that every vertex ofS is bad, that is, every arc of
+S is either a loop or has a partner inS with the same endpoint pair. This is what the following
+decomposition exploits.
+Definition 9.1.For an endpoint paire let Ce(S)be the set of arcs ofS whose endpoint pair is
+exactlye. TheobjectsofSare
+•each loop ofS, taken singly, and
+•each union⋃Ce(S)with|Ce(S)|≥2, taken as one object.
+Since bv(S) =S, every arc ofS lies in exactly one object, soΓS is the union of the objects
+and the objects are pairwise disjoint except possibly at points ofB.
+Remark9.2.The grouping matters. Had we instead grouped arcs into maximal families of
+pairwise parallel arcs without insisting on a common endpoint pair, two distinct objects could
+sharetwomarked points, and Corollary 9.3, on which the whole section rests, would fail.
+Corollary 9.3.Any two distinct objects meet in at most one point ofB. Each object is a
+connected finite embedded graph inS2.
+Proof. Two distinct objects of class type have distinct endpoint pairs, and two distinct two-
+element subsets ofB meet in at most one point. A loop meets any other object at most in
+its base point, and two distinct loops at most in a common base point. For connectedness: a
+loop is a circle; an object⋃Ce(S)with e ={a,b}is a union of arcs all joininga to b, hence
+connected. □
+9.2.Gaps.
+Definition 9.4.Let O be an object. Agapof O is a connected component ofS2\O; the number
+of gaps is denotedµ(O). A gapgofOisfreeif no object other thanOis contained in¯g.
+AfaceofΓ S is a connected component ofS2\ΓS. For a face or gap∆let X(∆) ⊂B
+be the set of marked points on∂∆and k(∆)the number of marked points in∆itself. Put
+F :={e:|Ce(S)|≥2}. Call∆cleanif every pair of distinct points of X(∆)belongs to F, and a
+good faceif it is a free gap, is clean, and hask(∆)∈{1,2}.
+Finally letV′be the number of points ofB met byΓS andn := 6−V′, so thatn =∑
+∆ k(∆),
+the sum over the faces ofΓS.
+Lemma 9.5.Every gap of every object is an open disc.
+Proof. An object is a connected finite graph embedded inS2 (Corollary 9.3), and an embedding
+of a connected graph inS2 is cellular: each complementary component is an open disc. We stress
+that this is not a consequence of the Euler relation, which holds for every connected plane graph,
+trees included; it is the statement that a connected compact subset ofS2 whose complement is a
+union of finitely many components has simply connected complementary components, valid for
+S2 and false on surfaces of positive genus.□
+
+--- PAGE 27 ---
+THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE 27
+Lemma 9.6.LetObe an object andga gap ofO.
+(1) If O is a loop thenµ(O) = 2, and∂gis the whole circleO; the base point occurs exactly
+once on∂g.
+(2) IfO =⋃Ce(S)consists of m≥2arcs joining a̸=b, thenµ(O) =m, each gap is bounded
+by exactly two of the arcs,∂gis a union of two arcs, anda and b each occur exactly once
+on∂g.
+In both cases∂ghas the cardinality of the continuum; in particular it is not finite.
+Proof.(i) is the Jordan curve theorem.
+(ii) The object is a plane graph withV = 2, E =m and no loop edges, soF = 2−V+E =m
+by Euler’s relation, which gives the number of gaps. The sum of the face degrees is2E = 2m.
+No edge is a loop edge, so every face has degree at least2; withm faces and degrees summing
+to2 m, every face has degree exactly2. Thus each gap is bounded by two of the arcs and its
+boundary walk isa→b→a, visiting each ofa,bonce.
+In case (i)∂gis a circle and in case (ii) a union of two arcs; both have cardinality2ℵ0.□
+Corollary 9.7.LetO̸=O′be objects,ga gap ofOandha gap ofO ′. Theng̸=h.
+Proof. Suppose g =h. A gap is a component of the complement of the object, so∂g⊆Oand
+∂h⊆O′: indeed ifx∈∂gand x /∈O, thenx lies in some componentg′′of the open setS2\O;
+asg′′is open and every neighbourhood ofx meetsg, we getg′′=g andx∈g, contradicting that
+g is open and disjoint from its boundary. Hence∂g=∂h⊆O∩O′, which has at most one point
+by Corollary 9.3, contradicting Lemma 9.6.□
+Lemma 9.8.Let O̸=O′be objects and letp0 be the point ofO∩O′if there is one. Then there
+is a unique gapgofOwith
+O′⊆g∪{p0}⊆¯g
+(andO′⊆gifO∩O′=∅).
+Proof. By Corollary 9.3,O∩O′⊆{p0}. The setO′\{p0}is connected: a loop with its base
+point removed is an open arc, and⋃Ce(S)with one endpoint removed is still joined at the other
+endpoint. Being a connected subset ofS2\O, it lies in a unique gapg. ThenO′⊆g∪{p0}, and
+p0 is a limit point ofO′\{p0}⊆g, sop0∈¯g.□
+Lemma 9.9.Let g be a gap of an objectO which is not free. Theng properly contains some
+gap; in particulargis not minimal with respect to inclusion among all gaps of all objects.
+Proof. Let O′̸=O be an object withO′⊆¯g. Applying Lemma 9.8 with the roles exchanged, let
+h′be the gap ofO′withO⊆¯h′, and, usingµ(O′)≥2, pick another gaph̸=h′ofO′.
+Step 1:h∩O=∅.Ash,h′are distinct components ofS2\O′they are disjoint, so
+h∩¯h′⊆h∩∂h′⊆h∩O′=∅,
+andO⊆¯h′givesh∩O=∅.
+Step 2:h⊆g.By Step 1 and connectedness,h lies in a single gap ofO. Also∂h⊆O′, while
+O′⊆¯g=g∪∂gwith∂g⊆Oandg∩O=∅; hence¯g\O=g, and withO∩O′⊆{p0},
+∂h\{p0} ⊆O′\O⊆¯g\O=g.
+By Lemma 9.6 the set∂his infinite, so∂h\{p0}̸= ∅; picky in it. Theny∈gand g is open,
+so a neighbourhoodU⊆gof y meets h, becausey∈∂h. Hence h∩g̸= ∅ and the gap ofO
+containinghisg.
+
+--- PAGE 28 ---
+28 THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE
+Step 3: properness.O′\{p0}⊆O′\O⊆gis non-empty and disjoint fromh, sinceh∩O′= ∅.
+Soh⊊g. □
+The contrapositive will be used repeatedly:a minimal gap is free.
+Lemma 9.10.Let g be a minimal gap of an objectO and leth be a gap of an objectO′̸=O.
+Theng⊆horg∩h=∅. Ifhis minimal as well, theng∩h=∅.
+Proof. By Lemma 9.9 the gapg is free, so no object lies in¯g; in particularO′̸⊆¯g. By Lemma 9.8
+there is a gapg′ofOwithO ′⊆¯g′, and necessarilyg′̸=g. Therefore
+O′∩g⊆¯g′∩g= (g′∪∂g′)∩g⊆(g′∩g)∪(O∩g) =∅,
+because distinct gaps of the same object are distinct components ofS2\O, and∂g′⊆Owhile
+g∩O= ∅. Thusg is a connected set disjoint fromO′, hence contained in a single gap ofO′;
+that gap is eitherh, givingg⊆h, or another one, givingg∩h=∅.
+Now leth be minimal too and supposeg⊆h. Ifg̸=h then g⊊h contradicts the minimality
+ofh; andg=his impossible by Corollary 9.7. Henceg∩h=∅.□
+Lemma 9.11.Shas at least two disjoint free gaps, and every free gap is a face ofΓS.
+Proof. Finiteness.There are finitely many objects and each has finitely many gaps, so the set of
+all gaps is finite.
+Every gap contains a minimal one.Ifg is not minimal it properly contains a gap; by finiteness
+a strictly descending chain terminates, and its last term is minimal.
+Two disjoint free gaps.Sincep≥1there is an objectO, andµ(O)≥2by Lemma 9.6. Pick
+two gapsg1̸= g2 of O; they are disjoint. Choose minimal gapsf1⊆g1 and f2⊆g2; then
+f1∩f2 =∅, sof 1̸=f2, and both are free by Lemma 9.9.
+Free gaps are faces.Let f be a free gap of an objectO′′. Every other objectO′′′satisfies
+O′′′⊆g∪{p0}for some gapg of O′′by Lemma 9.8; freeness forcesg̸= f, andp0∈O′′so
+p0 /∈f; henceO′′′∩f= ∅. Together withf∩O′′= ∅ this givesf∩ΓS = ∅. Nowf is open
+and connected with∂f⊆O′′⊆ΓS. LetW be the component ofS2\ΓS containingf; it is open,
+hence locally path connected, hence path connected. IfW⊋f there is a path inW from a point
+off to a point ofW\f ; lettingt∗be the supremum of the times up to which the path stays inf,
+the point at timet∗lies in ¯f\f =∂f⊆ΓS, contradictingW∩ΓS = ∅. Sof =W is a face. □
+Corollary 9.12.Let∆be a free gap, of the objectO ′′. Then∂∆⊆O′′and:
+•ifO′′is a loop,X(∆)is the single base point;
+•ifO′′=⋃Ce(S), thenX(∆) =eand∆is bounded by exactly two arcs ofC e(S).
+In both cases|X(∆)|≤2and each point ofX(∆)occurs exactly once on∂∆.
+Proof.Combine the last part of Lemma 9.11 with Lemma 9.6.□
+Corollary 9.13.Every free gap is clean.
+Proof. If O′′is a loop then|X(∆)|= 1and the condition on pairs is vacuous. IfO′′=⋃Ce(S)
+thenX(∆) =e, whose only pair iseitself, ande∈Fbecause|Ce(S)|≥2.□
+9.3.Every free gap uses a marked point.
+Lemma 9.14.Every free gapgsatisfiesk(g)≥1.
+
+--- PAGE 29 ---
+THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE 29
+Proof.Letgbe a free gap of the objectO ′′and supposek(g) = 0.
+If O′′is a loopℓ, then by Corollary 9.12 the closure¯gis a closed disc bounded byℓwhose
+interior contains no marked point, and∂¯g=ℓmeets B only at the base point. Soℓseparates S2
+into two pieces one of which is a disc meetingB only in the endpoints ofℓ; by Definition 2.3 the
+arcℓis not essential, a contradiction.
+If O′′=⋃Ce(S), then by Corollary 9.12 we have∂g=β∪β′with β̸=β′two arcs ofCe(S).
+Then g is an open disc bounded byβ∪β′and containing no marked point, soβand β′are
+isotopic rel endpoints, and a fortiori isotopic in the sense of Convention 2.1. Hence they are the
+same vertex ofA, contradictingβ̸=β′.□
+9.4.The budget.
+Lemma 9.15(Budget).Γ S has a good face.
+Proof. By Lemma 9.11 choose two disjoint free gapsg1̸=g2; by Corollary 9.13 they are clean,
+by Lemma 9.11 they are faces ofΓS, and by Lemma 9.14 each hask≥1. Being disjoint faces,
+the marked points they contain are distinct, so
+k(g1) +k(g 2)≤
+∑
+∆face
+k(∆) =n= 6−V ′.
+As S̸= ˆ0 we haveV′≥1, hencen≤5. If bothk(gm)≥3then the left side is at least6> 5. So
+someg m hask(g m)∈{1,2}, and thatgm is a good face.□
+Corollary 9.16.n≥2, that is,V′≤4: a stratum never meets five or six of the marked points.
+Proof. The minimal gaps are pairwise disjoint by Lemma 9.10, each is free by Lemma 9.9 and
+hence a face, and each contains a marked point of its own by Lemma 9.14. There are at least
+two of them, as in the proof of Lemma 9.11. Hencen≥2.□
+The boundV′≤4is sharp: take a1,a2 joining1to2, with the two sides of a1∪a2 containing
+6and {3,4,5}respectively, and inside the second sideb1,b2 joining3to4with sides containing5
+and{1,2,6}. All four arcs are essential, the two classesC12 and C34 are the objects, andV′= 4.
+10.The link complexes are cones
+We keepp≥1andS∈Sp fixed.
+10.1.L S is a full flag subcomplex.
+Lemma 10.1.Put
+V(LS) :=
+{
+v∈X:v∩ΓS⊆B,andep(v)̸= ep(β)for every non-loopβ∈S
+}
+.
+Then LS is the full subcomplex ofXon V (LS); in particularLS is a flag complex. Moreover the
+interior of eachv∈V(LS)lies in a single face ofΓS.
+Proof. Forτ∈lkA(S)the condition bv(S∪τ) = S says three things:τcontains no loop;τ
+contains no two vertices with a common endpoint pair; and no vertex ofτhas the endpoint
+pair of a non-loop vertex ofS. The second is automatic inX, where two arcs with the same
+endpoint pair are non-adjacent and so never lie in a common simplex. The first and the third,
+together withτ∈lkA(S), are conditions on each vertex separately. Hence membership inLS is
+determined by the vertex set, that is,LS is a full subcomplex ofX; a full subcomplex of a flag
+complex is flag.
+
+--- PAGE 30 ---
+30 THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE
+For the last statement, let v∈V(LS). Realise v and the arcs of S by their geodesic
+representatives. By Theorem 3.13 these realise all pairwise minima simultaneously, andv is
+realisable with interior disjoint from each arc ofS, so the geodesic representative ofv has interior
+disjoint fromΓS. Being connected, that interior lies in a single component ofS2\ΓS.□
+For a face∆ofΓ S letX F (∆)denote the full subcomplex of LS on the vertices whose interior
+lies in∆.
+10.2.Two uniqueness lemmas.
+Lemma 10.2.Let∆be a free gap with k(∆) = 1and interior marked point q. For each
+x∈X(∆)there is exactly one class, in the sense of Convention 2.1, of arc fromx to q contained
+in∆.
+Proof. The set∆ \{q}is an annulus, and the classes of arcs fromx to q in∆taken rel ∂∆
+form a Z-torsor, two consecutive classes differing by the Dehn twistTc about the corec of that
+annulus. Nowc bounds a disc inS2 containing exactly one point ofB, namelyq, and a Dehn
+twist about a curve bounding a disc with at most one marked point is trivial inMod(S2,B); see
+Farb–Margalit [2, §3.5], where this is stated for inessential curves in a marked surface. Hence all
+these classes coincide under Convention 2.1.
+Here it is used thatx occurs exactly once on∂∆, which holds by Corollary 9.12; otherwise
+two arcs from the two occurrences ofx to q would be non-isotopic and would have the same
+endpoint pair. □
+Remark10.3.The lemma is false if isotopies are taken rel∂∆, so Convention 2.1 is not a matter
+of taste here. If the rel∂∆classes were not collapsed, the arcs fromx to q would give infinitely
+many vertices ofXwith the same endpoint pair, hence pairwise non-adjacent by (B2), and no
+such arc could serve as an apex below.
+Lemma 10.4.Let∆be a free gap with k(∆) = 2and interior marked points q1,q2. Then all
+arcs in∆joining q1 toq2 are isotopic in the sense of Convention 2.1. We writer for the resulting
+class; note that the statement is unordered inq1,q2.
+Proof. ∆is an open disc, so int∆ ∼= R2, and the only marked points ofB inside it areq1,q2.
+By Moise [8, Theorem 10.4] any two embedded arcs inR2 joining two given points are carried
+onto each other by an ambient isotopy with compact support. Such an isotopy is supported in a
+compact subset ofint∆, hence fixes∂∆and every point of B other thanq1,q2, and it fixesq1,q2
+because they are the endpoints. It is therefore admissible for Convention 2.1.□
+10.3.The apex on a good face.Two facts about a good face∆are used, and both come from
+freeness. First, by Corollary 9.12, each point ofX(∆)occurs exactly once on∂∆. Second:
+Lemma 10.5.Let∆be a free gap. ThenX F (∆)contains no vertex both of whose endpoints lie
+on∂∆.
+Proof. By Corollary 9.12 the boundary of∆carries the marked points of a single object. If that
+object is a loop,X(∆)is a single point p0 and such an arc would be a loop atp0, hence not
+a vertex ofXby (B1). If the object is⋃Ce(S), thenX(∆) = e and such an arc would have
+endpoint pair exactlye, hence the endpoint pair of a member ofS; it is excluded fromV (LS)by
+Lemma 10.1. □
+This is the content of the cleanliness condition, and it is needed: an arc with both endpoints
+on∂∆can separateq 1 fromq 2 inside∆, and would then meetr.
+
+--- PAGE 31 ---
+THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE 31
+Lemma 10.6.Let∆be a good face. ThenX F (∆)is non-empty and has a vertexv0 adjacent in
+Xto every other vertex ofXF (∆); moreover v0 has at least one endpoint at an interior marked
+point of∆.
+Proof. By Lemma 10.5 every vertex ofXF (∆)has at least one endpoint among the interior
+marked points of∆.
+Case k(∆) = 1,with interior point q. Then every vertex ofXF (∆)joins some x∈X(∆)
+to q, and by Lemma 10.2 there is exactly one such vertex for eachx. These can be realised
+simultaneously as a star centred atq, so they have pairwise disjoint interiors; their endpoint pairs
+{x,q}are pairwise distinct because thex are. HenceX F (∆)is a simplex on |X(∆)|vertices,
+which is non-empty sinceX(∆)̸=∅, and any vertex may serve asv0.
+Case k(∆) = 2,with interior points q1,q2. The vertices ofXF (∆)are the classes x–qi together
+with the classr of Lemma 10.4. Takev0 :=r, whose two endpoints are both interior marked
+points. Letw be a vertex ofXF (∆)joining x∈X(∆)to qi; we construct a representative ofr
+meetingwonly atq i.
+Work inint ∆ ∼= R2. By Moise [8, Theorem 10.4] we may choose coordinates in whichw is a
+straight segment nearqi. Chooseε>0so small that the closed discN of radiusεabout qi lies in
+∆, meets w in a single radial segment, and contains neitherq3−inor any point ofB other than
+qi. Letϱ: [0,1]→Nbe the radial segment fromϱ(0) =qi to a pointP0∈∂Nin the direction
+oppositeto that ofw; thenϱ((0,1])∩w=∅, soϱ∩w={qi}.
+Next,∆ \w is connected:∆is an open disc and w∩∆is a closed arc with one endpointqi
+in∆and its other end approaching ∂∆, so∆ \w is an open disc slit along an arc reaching the
+boundary, which is connected. It is also open, hence path connected, and any two of its points
+are joined by an embedded arc in it. BothP0 and q3−ilie in∆ \w, so choose an embedded arc
+γ: [0,1]→∆\wwithγ(0) =q3−iandγ(1) =P0.
+Let
+t∗:= min
+{
+t∈[0,1] :γ(t)∈ϱ([0,1])
+}
+,
+which exists because the set is closed and containst = 1. Then γ([0,t∗))∩ϱ([0,1]) = ∅, and
+P:=γ(t∗) =ϱ(s∗)for a uniques∗. Put
+r′:=ϱ([0,s∗])∪γ([0,t∗]).
+The two pieces are embedded arcs meeting exactly in the single pointP, which is an endpoint of
+each, sor′is an embedded arc; its endpoints areqi andq 3−i, and its interior avoidsB. Finally
+r′∩w=
+(
+ϱ([0,s∗])∩w
+)
+∪
+(
+γ([0,t∗])∩w
+)
+={qi}∪∅={qi}.
+Thusr′and w have disjoint interiors. Their endpoint pairs differ, sinceep(r′) ={q1,q2}consists
+of interior marked points whilex∈X(∆)lies on ∂∆. So r′and w are adjacent inX, and by
+Lemma 10.4 the arcr′representsr. Henceris adjacent tow.□
+Remark10.7.The argument in the case k = 2uses neither a change of coordinates principle nor
+a cutting lemma: no auxiliary homeomorphism of∆is produced, and in particular nothing has
+to be said about whether such a homeomorphism fixes∂∆pointwise. It also does not use that a
+point ofX(∆)occurs only once on ∂∆; that hypothesis is needed only in the casek = 1, through
+Lemma 10.2.
+10.4.The cone lemma.
+Lemma 10.8(Cone lemma).IfΓ S has a good face∆, thenLS is a cone with apex the vertexv0
+of Lemma 10.6. In particularLS is non-empty and contractible, and˜Hq(LS; Z) = 0for every
+q≥−1.
+
+--- PAGE 32 ---
+32 THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE
+Proof. First,v0∈V(LS): its interior lies in∆, which is disjoint fromΓS, and one of its endpoints
+is an interior marked pointq of∆, which is not met byΓS; so the endpoint pair ofv0 is not the
+endpoint pair of any arc ofS.
+Letw∈V(LS)withw̸=v0. By Lemma 10.1 the interior ofwlies in a single face∆′ofΓ S.
+If∆ ′̸= ∆, then∆and∆ ′are disjoint open sets, sow and v0 have disjoint interiors and can
+share at most a marked point on∂∆ ∩∂∆′. Their endpoint pairs differ, because the interior
+marked pointq of∆is an endpoint of v0 but cannot be an endpoint ofw, lying in∆and not on
+its boundary. Sowandv 0 are adjacent.
+If∆ ′= ∆thenw∈XF (∆)andwis adjacent tov 0 by Lemma 10.6.
+Sov0 is adjacent to every other vertex ofLS. AsLS is flag by Lemma 10.1, a vertex adjacent to
+all others makes it a cone: any simplex together withv0 spans a simplex. A cone is contractible,
+and a non-empty complex has˜H−1= 0.□
+Corollary 10.9.LS̸= ∅ for everyS∈Sp and everyp; consequentlyE1
+p,−1= 0for every p≥1.
+Proof. Forp≥1combine Lemma 9.15 with Lemma 10.8. Forp = 0we have Lˆ0 =X, which has
+vertices. □
+11.Proof of the Main Theorem
+Theorem 11.1.E 1
+p,q= 0for everyp≥1and everyq≥−1.
+Proof. Fix S∈Sp with p≥1. By Lemma 9.15 the graphΓS has a good face, so by Lemma 10.8
+the complexLS is a non-empty cone and˜Hq(LS) = 0for all q≥−1; the caseq =−1is exactly
+the non-emptiness, recorded in Corollary 10.9. Summing overSp and using Theorem 8.9 gives
+E1
+p,q= 0. □
+Theorem 11.2. ˜H∗(X;Z) = 0and ˜H∗(C1(S2);Z) = 0.
+Proof. By Theorem 11.1 the pageE1 is concentrated in the single columnp = 0. Every differential
+dr with r≥1has source and target in different columns, since it lowersp byr≥1; hence all
+differentials vanish andE1 =E∞. The filtration being bounded, Theorem 8.9 gives thatE∞
+0,qis
+a subquotient of the associated graded of˜Hq(A;Z) = 0, soE ∞
+0,q= 0. Therefore
+˜Hq(X;Z) =E 1
+0,q=E∞
+0,q= 0for everyq.
+By Theorem 6.8 the complexesC1(S2)andXare homotopy equivalent, so the reduced homology
+ofC 1(S2)vanishes as well.□
+Proof of Theorem 1.1.The complexC1(S2)is a simplicial, hence CW, complex. It is simply
+connected by Theorem 7.4 applied withg = 2, and all its reduced integral homology vanishes by
+Theorem 11.2. A simply connected space with vanishing reduced integral homology has vanishing
+homotopy groups in all degrees, by the Hurewicz theorem applied inductively. A CW complex
+all of whose homotopy groups vanish is contractible, by Whitehead’s theorem applied to the map
+to a point. HenceC1(S2)is contractible.□
+Corollary 11.3.Hk(C1(S2); Z) = 0for every k≥1and H0(C1(S2); Z) = Z. The non-separating
+subcomplexC ns
+1 (S2)∼= Xis contractible as well.
+Proof. The first statement is Theorem 11.2. For the second,X≃C1(S2)by Theorem 6.8 and a
+complex homotopy equivalent to a contractible complex is contractible.□
+
+--- PAGE 33 ---
+THE1-CUR VE COMPLEX IN GENUS TWO IS CONTRACTIBLE 33
+11.1.Where the argument stops.It may be worth isolating the three points at which the
+genus enters, since each of them blocks a naive extension.
+First, the number6 = 2g + 2of branch points is the budget of Lemma 9.15: the inequality
+k(g1) +k(g2)≤6−V′≤5is what forces one of the two free gaps to carry one or two marked
+points. Forg = 3the same scheme gives eight branch points and a budget of7, and two free
+gaps withk= 3andk= 4are no longer excluded, so the good face need not exist.
+Second, and more decisively, a closed surface of genusg≥3has in general no hyperelliptic
+involution, so there is no quotient marked sphere and the dictionary of Section 4 has no analogue.
+The whole method is therefore confined tog= 2; Theorem 1.1 gives no information forg≥3.
+Third, passing to a punctured surface is not a weakening of the problem. The inclusion of the
+complex of a once-punctured surface into that of the closed surface is a simplicial retraction, so
+contractibility of the closed complex implies that of the punctured one and not conversely; an
+argument which assumes the closed case in order to derive the punctured case, and then recovers
+the closed case from it, is circular.
+Remark11.4.No step of this paper computes homology of a finite subcomplex. This is deliberate:
+for the complexes considered here there is in general no map, in either direction, between the
+homology of a finite pool of vertices, or of a finite quotient poset, and the homology of the
+ambient complex, so such a computation could not be evidence for Theorem 1.1. Every argument
+above is structural.
+References
+[1] D. Margalit and R. R. Winarski,The Birman–Hilden theory, arXiv:1703.03448.
+[2] B. Farb and D. Margalit,A Primer on Mapping Class Groups, Princeton Mathematical Series49, Princeton
+University Press, Princeton, NJ, 2012.
+[3] A. Hatcher,Algebraic Topology, Cambridge University Press, Cambridge, 2002.
+[4] A. Haas and P. Susskind,The geometry of the hyperelliptic involution in genus two, Proc. Amer. Math. Soc.
+105(1989), no. 1, 159–165.
+[5] A. Hatcher,On triangulations of surfaces, Topology Appl.40(1991), no. 2, 189–194. Cited from the revised
+version on the author’s home page, where the statement used here appears as Theorem (a) and carries no
+number.
+[6] J. Malestein, I. Rivin and L. Theran,Topological designs, Geom. Dedicata168(2014), 221–233.
+[7] J. Souto,A remark on the curve complex, preprint.
+[8] E. E. Moise,Geometric Topology in Dimensions 2 and 3, Graduate Texts in Mathematics47, Springer-Verlag,
+New York, 1977.

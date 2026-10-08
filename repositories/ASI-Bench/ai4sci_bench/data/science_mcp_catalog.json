@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "servers": {
+    "comsol": {
+      "category": "multiphysics",
+      "source": "https://github.com/Suzy-Sa/COMSOL-Multiphysics-MCP",
+      "server": {
+        "command": "/path/to/COMSOL-Multiphysics-MCP/.venv/bin/python",
+        "args": [
+          "-m",
+          "comsol_agent_mcp.server"
+        ],
+        "cwd": "/path/to/COMSOL-Multiphysics-MCP",
+        "env": {
+          "COMSOL_AGENT_DEFAULT_BACKEND": "mph",
+          "COMSOL_AGENT_CACHE_DIR": "/path/to/comsol-cache",
+          "COMSOL_AGENT_MODELS_DIR": "/path/to/comsol-models",
+          "COMSOL_GUI_SCREENSHOT_DIR": "/path/to/comsol-screenshots"
+        }
+      }
+    },
+    "openfoam": {
+      "category": "cfd",
+      "source": "https://github.com/webworn/openfoam-mcp-server",
+      "server": {
+        "command": "/path/to/openfoam-mcp-server/build/openfoam-mcp-server",
+        "args": [],
+        "cwd": "/path/to/openfoam-mcp-server",
+        "env": {
+          "LD_LIBRARY_PATH": "/path/to/openfoam12/platforms/linux64GccDPInt32Opt/lib/dummy:/path/to/openfoam12/platforms/linux64GccDPInt32Opt/lib",
+          "FOAM_INST_DIR": "/path/to/openfoam12",
+          "WM_PROJECT_DIR": "/path/to/openfoam12",
+          "FOAM_LIBBIN": "/path/to/openfoam12/platforms/linux64GccDPInt32Opt/lib",
+          "FOAM_APPBIN": "/path/to/openfoam12/platforms/linux64GccDPInt32Opt/bin",
+          "FOAM_ETC": "/path/to/openfoam12/etc",
+          "PATH": "/path/to/openfoam12/platforms/linux64GccDPInt32Opt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        }
+      }
+    },
+    "matlab": {
+      "category": "scientific-computing",
+      "source": "https://github.com/matlab/matlab-mcp-server",
+      "server": {
+        "command": "/path/to/matlab-mcp-server/matlab-mcp-server",
+        "args": [
+          "--matlab-root=/path/to/MATLAB",
+          "--initialize-matlab-on-startup=false",
+          "--matlab-session-mode=new",
+          "--disable-telemetry=true"
+        ]
+      }
+    },
+    "simulink": {
+      "category": "system-simulation",
+      "source": "https://github.com/sohumsuthar/simulink-mcp",
+      "server": {
+        "command": "/path/to/simulink-mcp/.venv/bin/python",
+        "args": [
+          "-m",
+          "simulink_mcp"
+        ],
+        "cwd": "/path/to/simulink-mcp",
+        "env": {
+          "SIMULINK_MCP_WORKDIR": "/path/to/models"
+        }
+      }
+    },
+    "mworks": {
+      "category": "system-engineering",
+      "source": "https://github.com/ACupOfHim/mworks-mcp-server",
+      "server": {
+        "command": "/path/to/mworks-mcp-server/.venv/bin/python",
+        "args": [
+          "-m",
+          "mworks_mcp_server",
+          "--transport",
+          "stdio"
+        ],
+        "cwd": "/path/to/mworks-mcp-server",
+        "env": {}
+      }
+    },
+    "pynite": {
+      "category": "structural-analysis",
+      "source": "https://github.com/admindev-buildwellai/MCP-Pynite",
+      "server": {
+        "command": "/path/to/MCP-Pynite/.venv/bin/python",
+        "args": [
+          "-m",
+          "pynite_mcp.main"
+        ],
+        "cwd": "/path/to/MCP-Pynite",
+        "env": {
+          "TRANSPORT": "stdio"
+        }
+      }
+    },
+    "energyplus": {
+      "category": "building-energy",
+      "source": "https://github.com/LBNL-ETA/EnergyPlus-MCP",
+      "server": {
+        "command": "/path/to/EnergyPlus-MCP/energyplus-mcp-server/.venv/bin/python",
+        "args": [
+          "-m",
+          "energyplus_mcp_server.server"
+        ],
+        "cwd": "/path/to/EnergyPlus-MCP/energyplus-mcp-server",
+        "env": {
+          "MCP_TRANSPORT": "stdio",
+          "EPLUS_IDD_PATH": "/path/to/EnergyPlus/Energy+.idd"
+        }
+      }
+    },
+    "text2sim": {
+      "category": "discrete-event-simulation",
+      "source": "https://github.com/IamCatoBot/text2sim-MCP-server",
+      "server": {
+        "command": "/path/to/text2sim-MCP-server/.venv/bin/python",
+        "args": [
+          "-m",
+          "mcp_server"
+        ],
+        "cwd": "/path/to/text2sim-MCP-server",
+        "env": {
+          "PYTHONUNBUFFERED": "1"
+        }
+      }
+    },
+    "netlogo": {
+      "category": "agent-based-modeling",
+      "source": "https://github.com/Razee4315/NetLogo-MCP",
+      "server": {
+        "command": "/path/to/NetLogo-MCP/.venv/bin/netlogo-mcp",
+        "args": [],
+        "cwd": "/path/to/NetLogo-MCP",
+        "env": {
+          "NETLOGO_HOME": "/path/to/NetLogo",
+          "NETLOGO_GUI": "false",
+          "NETLOGO_EAGER_START": "false"
+        }
+      }
+    },
+    "afsim": {
+      "category": "military-simulation",
+      "source": "https://github.com/Yookio-Z/AFSIM_MCP",
+      "server": {
+        "command": "/path/to/AFSIM_MCP/.venv/bin/afsim-mcp",
+        "args": [],
+        "cwd": "/path/to/afsim-test-project"
+      }
+    },
+    "blender": {
+      "category": "3d-modeling",
+      "source": "https://github.com/ahujasid/blender-mcp",
+      "server": {
+        "command": "/path/to/blender-mcp/.venv/bin/mcp-for-blender",
+        "args": [],
+        "cwd": "/path/to/blender-mcp",
+        "env": {
+          "BLENDER_MCP_DISABLE_TELEMETRY": "true",
+          "BLENDER_HOST": "127.0.0.1",
+          "BLENDER_PORT": "9876"
+        }
+      }
+    },
+    "freecad": {
+      "category": "cad",
+      "source": "https://github.com/bonninr/freecad_mcp",
+      "server": {
+        "command": "/path/to/freecad_mcp/.venv/bin/python",
+        "args": [
+          "/path/to/freecad_mcp/src/freecad_bridge.py"
+        ],
+        "cwd": "/path/to/freecad_mcp"
+      }
+    },
+    "autocad": {
+      "category": "cad",
+      "source": "https://github.com/U-C4N/Autocad-MCP",
+      "server": {
+        "command": "/path/to/Autocad-MCP/.venv/bin/autocad-mcp",
+        "args": [],
+        "cwd": "/path/to/Autocad-MCP",
+        "env": {
+          "AUTOCAD_MCP_BACKEND": "ezdxf",
+          "ALLOWED_PATHS": "/path/to/autocad-workspace",
+          "DISCOVERY_MODE": "search"
+        }
+      }
+    },
+    "fusion360": {
+      "category": "cad",
+      "source": "https://github.com/ArchimedesCrypto/fusion360-mcp-server",
+      "server": {"command": "/path/to/python", "args": ["/path/to/fusion360-mcp-server/src/main.py", "--mcp"]}
+    },
+    "sketchup": {
+      "category": "cad",
+      "source": "https://github.com/BearNetwork-BRNKC/SketchUp-MCP",
+      "server": {"command": "uvx", "args": ["--python", "3.12", "--with", "mcp==1.12.0", "sketchup-mcp==0.1.17"]}
+    },
+    "pubchem": {
+      "category": "chemistry-data",
+      "source": "https://github.com/cyanheads/pubchem-mcp-server",
+      "server": {
+        "command": "node",
+        "args": [
+          "/path/to/pubchem-mcp-server/dist/index.js"
+        ],
+        "cwd": "/path/to/pubchem-mcp-server",
+        "env": {
+          "MCP_TRANSPORT_TYPE": "stdio"
+        }
+      }
+    },
+    "gns3": {
+      "category": "network-simulation",
+      "source": "https://github.com/Wael-Rd/gns3-mcp-server",
+      "server": {
+        "command": "/path/to/gns3-mcp-server/.venv/bin/python",
+        "args": [
+          "-m",
+          "gns3_mcp.server"
+        ],
+        "cwd": "/path/to/gns3-mcp-server"
+      }
+    }
+  }
+}

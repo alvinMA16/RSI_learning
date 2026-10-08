@@ -1,0 +1,368 @@
+
+--- PAGE 1 ---
+The Kari–Moutot excess constant
+is at most sixty-nine
+Apex-Math autonomous research fleet *
+September 4, 2026
+Abstract
+For a finite alphabetAand a rectangleD= [n]×[m], a set of patternsP⊆A D
+defines the two-dimensional subshift of finite typeV(P) of all colourings ofZ 2 every
+n×mwindow of which lies inP. Kari and Moutot proved that|P| ≤nmforces
+a periodic configuration wheneverV(P)̸=∅, and asked for the leastexcessc≥0
+such that somePwith|P| ≤nm+chasV(P) aperiodic. No constant upper bound
+was known: the classical simulations of Wang tiles by pattern sets pay a per-row and
+per-column cost linear in the window dimension.
+We prove that the constant is finite and small:
+1≤c≤69.
+The witness is a set of 73 patterns on a 2×2 window. It is built from a seventeen-tile
+Wang tile set of Kari’s multiplier type, reconstructed from scratch: rows carry balanced
+(Beatty) representations of reals in [1,3] and multiply them by 3/2 or 1/2; aperiodic-
+ity is a four-line telescoping argument ending in 3 a = 2 a+b, and non-emptiness is an
+explicit Beatty configuration – no computer search enters either proof. A determinism
+lemma then recodes the tiling space, without loss, as a nearest-neighbour (2×2-window)
+subshift on the cell alphabet of (multiplier, left-carry) pairs, whose realized window lan-
+guage has exactly 73 elements. The non-emptiness, the count 73, and the aperiodicity
+are formalized as one theorem in Lean 4 with mathlib, with nosorryand no added
+axioms. Within this construction the bound is rigid: deleting any one of the 73 patterns
+empties the subshift, soc≤68 is unreachable by shrinking the witness. Complementing
+the upper bound, exhaustive and independently cross-checked enumerations show that
+a binary alphabet on a 2×2 window admitsnoaperiodicV(P) at any excess, and none
+on a 3×2 window withc≤3; the smallest finite case that could decidec= 1 – binary
+5×2 with|P|= 11 – is precisely identified and remains open.
+1 Introduction
+A colouringx:Z 2 →Aisperiodicifx(·+t) =xfor somet∈Z 2 \ {0}. ForP⊆A [n]×[m]
+let
+V(P) =
+
+x:Z 2 →A:x| v+[n]×[m] ∈Pfor allv∈Z 2	
+,
+a subshift of finite type (SFT). CallV(P)aperiodicif it is non-empty and contains no
+periodic configuration. Low pattern count forces periodicity: Kari and Moutot [4, Cor. 6]
+* This manuscript was researched and written entirely by artificial-intelligence systems. The mathemat-
+ics was produced during an autonomous multi-agent research campaign (paired adversarial fleet windows
+kari-constructandkari-obstruct, 2026-08-13 through 2026-08-18), recorded in a claim ledger with re-
+playable exact certificates; the present paper was organized and written from those records by Claude
+(Anthropic) on 2026-09-04. No human being wrote or verified the mathematical content. Section 8 states
+the verification model, the Lean formalization, every load-bearing citation, and the certificates.
+1
+
+--- PAGE 2 ---
+proved that if|P| ≤nmandV(P)̸=∅thenV(P) contains a periodic configuration – a
+local-complexity analogue, for SFTs, of the phenomena around Nivat’s conjecture. In the
+concluding section of [4] they posed the quantitative question:
+Determine the leastc≥0for which there existn, mandP⊆A [n]×[m] with
+|P| ≤nm+csuch thatV(P)is aperiodic.
+Their Corollary 6 givesc≥1. In the other direction no constant bound was known. The
+two available mechanisms live at opposite scales: the algebraic (annihilator) method that
+powers the lower bound loses all force the moment the complexity exceeds|D|=nm, while
+every classical simulation of an aperiodic Wang tile set by a pattern SFT pays a coding
+costlinearin the window dimensions. Between “at leastnm+ 1” and “O(n) abovenm”
+nothing was known to be sensitive to a constant excess.
+This paper closes that gap from above by a constant.
+Theorem 1.1(main theorem).The Kari–Moutot excess constant satisfies
+1≤c≤69.
+Explicitly: there is an alphabetAwith|A| ≤8and a setPof73patterns of shape2×2
+overAsuch thatV(P)is non-empty and aperiodic; and73 = 2·2 + 69.
+The lower end of the interval is Kari–Moutot’s Corollary 6, used here only to bound the
+interval; everything else is self-contained. The upper bound has three independent layers
+of assurance: a written proof (Sections 3–4), replayable exact certificates, and a Lean 4
+formalization of the full statement – non-emptiness, the pattern count 73, and aperiodicity
+in one theorem (Section 8).
+Three further results frame the bound.
+Theorem 1.2(structural bridge; Lemma 2.3).For everyn, mandP, the SFTV(P)is
+topologically conjugate to the Wang shift whose tiles are the elements ofP, coloured by their
+(n−1)×mandn×(m−1)overlaps. Hence the excess problem is exactly:among aperiodic
+Wang tile sets, how small can the number of tiles be relative to the area of a window on
+which the set is representable?
+Theorem 1.3(rigidity of the witness; Theorem 5.1).Deleting any single pattern from the
+73empties the subshift:V(P\ {p}) =∅for everyp∈P. Thusc≤68cannot be reached
+by shrinking this witness, and69is deletion-minimal for the construction.
+Theorem 1.4(small windows cannot do better; Section 6).Over the binary alphabet, no
+Pon a2×2window hasV(P)aperiodic – atanyexcess (exhaustive over all2 16 subsets,
+two independent implementations); and none on a3×2window withc≤3. Consequently
+any improvement of Theorem 1.1 at these shapes requires larger alphabets, and the smallest
+case that could decidec= 1is the binary5×2window with|P|= 11– a finite, well-posed,
+currently unresolved search.
+Method
+The witness is not found by search. It is a Kari-typemultipliertile set [3] – rebuilt from its
+mechanism rather than imported – whose aperiodicity proof is algebraic: rows of a tiling
+carry balanced representations of reals, vertical adjacency multiplies the represented value
+by 3/2 or 1/2, and a doubly periodic tiling would force (3/2) a(1/2)b = 1 witha+b≥1,
+i.e. 3 a = 2a+b, which is impossible. The contribution of this paper on top of the classical
+2
+
+--- PAGE 3 ---
+mechanism is quantitative: a determinism lemma showing that the tiling space survives,
+without loss, a recoding onto the cell alphabet of (multiplier, left-carry) pairs, at which point
+a 2×2 window sees exactly 73 patterns. Two earlier presentations of the same system gave
+excesses 169 and 130; both supersessions are corrections of unforced choices, not changes of
+mechanism, and the paper presents only the final form. (The companion negative results
+of Theorem 1.4aresearches, with exhaustiveness arguments and independent cross-checks;
+they enter no positive claim.)
+2 Preliminaries
+Convention 2.1.[n] ={0, . . . , n−1}andD= [n]×[m]. Patterns,V(P), periodicity and
+aperiodicity are as in Section 1. TheexcessofP⊆A D is|P| −nm. AWang tileis a unit
+square with coloured edges; a tile setTdefines theWang shiftX T ⊆T Z2
+of assignments
+in which horizontally adjacent tiles agree on the shared vertical edge colour and vertically
+adjacent tiles agree on the shared horizontal edge colour. Aperiodicity ofX T is defined as
+forV(P).
+Lemma 2.2(period implies doubly periodic).IfV(P)contains a configuration with some
+non-zero period vector, then it contains a doubly periodic configuration; equivalently, a valid
+w×htorus configuration exists for somew, h≥1. Moreover a doubly periodic configuration
+exists if and only if some configuration has a horizontal period(w,0),w≥1.
+Proof.Letx∈V(P) withx(·+t) =x,t̸= 0. Writet=k t 0 witht 0 primitive and pickM∈
+GL(2,Z) withM t 0 = (1,0), soM t= (k,0). The sheared configurationx ′(v) =x(M −1v)
+has period (k,0) and lies in the SFTV ′ defined by the transported finite shapeM Dand
+patterns. A configuration ofV ′ with period (k,0) is a bi-infinite sequence of rows over
+thefinitealphabetB=A Z/kZ, and sinceM Dfits in a box of heightH, membership in
+V ′ is a constraint on windows ofHconsecutive rows: a one-dimensional SFTYoverB,
+non-empty because it containsx ′. A non-empty one-dimensional SFT contains a periodic
+point (its transition graph is finite and carries a bi-infinite path, hence a cycle). That point
+is doubly periodic, and doubly periodic points transport back throughM −1. For the last
+claim: a rank-two period lattice with basisv 1 = (a1, b1),v 2 = (a2, b2) contains the non-zero
+horizontal vectorb 2v1 −b 1v2.
+Lemma 2.3(patterns are Wang tiles).For anyn, m≥1andP⊆A D, the SFTV(P)is
+topologically conjugate to the Wang shiftX T withT=P, where the right (resp. left) colour
+of a pattern is its last (resp. first)n−1columns and the top (resp. bottom) colour its last
+(resp. first)m−1rows; whenn= 1(resp.m= 1) all horizontal (resp. vertical) colours
+coincide.
+Proof.Mapx∈V(P) toT(x)(v) =x| v+D; adjacent images overlap exactly in the stated
+blocks, soT(x)∈X T . Conversely, a valid Wang tiling assigns to eachva patternt v ∈P
+agreeing with its neighbours on all overlaps; the overlaps force thet v to glue to a single
+well-definedx:Z 2 →Awithx| v+D =t v ∈P, sox∈V(P). The two maps are mutually
+inverse and shift-commuting.
+Corollary 2.4.IfV(P)is aperiodic thenP, viewed as above, is an aperiodic Wang tile set
+with exactly|P|tiles. The excess problem is therefore the problem of minimizing|T| −nm
+over aperiodic Wang tile setsTand windows[n]×[m]on whichTis representable as a
+pattern set.
+3
+
+--- PAGE 4 ---
+Remark2.5 (a conditional floor).Jeandel and Rao [2] proved that an aperiodic Wang tile
+set has at least 11 tiles. With Corollary 2.4 this gives|P| ≥11, hencenm+c≥11, for every
+aperiodicV(P) – in particularc= 1 demandsnm≥10. This paper uses the imported
+floor only tolocatethe decisive open case in Theorem 1.4; no positive result depends on it.
+An unconditional, self-contained substitute at the binary 2×2 window (no excessc≤12
+is attainable there) is part of Theorem 6.1.
+3 The seventeen-tile multiplier system
+Definition 3.1(the tile setT 17).Fix the intervalI= [1,3] and the two multipliers
+M1 = 3
+2 on [1,2], M 2 = 1
+2 on (2,3],
+so thatf(q) =M iqmapsIintoI. A tile is a quintuple
+ 
+mult, c L, b, t, c R
+
+, c R =c L + mult·b−t,
+whereb, t∈ {1,2,3}are the bottom and top digits,c L, cR are the left and right carries
+(scaled by the denominator of the multiplier so that all carries are integers, with the finite
+carry ranges recorded below), the horizontal colour is the pair (mult,carry) – so a row
+cannot change multiplier – and the vertical colour is the digit. Enforcing the carry ranges
+(−1,mult) realized by balanced representations (Theorem 3.3) leaves exactlyseventeen
+tiles; the explicit list is frozen in the certificate and in the Lean specification (tiles spec:
+the carry relation, 1≤b≤3,−1≤c L ≤2, multiplier parity), closed bydecide.
+The mechanism is Kari’s multiply-by-two-multipliers idea [3]; the tile set and both
+proofs below are reconstructed from the mechanism, not imported.
+Theorem 3.2(aperiodicity).The Wang shiftX T17 contains no configuration with a non-
+zero period vector.
+Proof.By Lemma 2.2 it suffices to exclude a doubly periodic tiling, say of horizontal period
+w≥1 and vertical periodh≥1. Fix a rowj; it carries a single multiplier mult j, since the
+horizontal colour contains the multiplier. Summing the carry relationc R =c L + multj b−t
+over one horizontal period, the carries telescope cyclically, P
+i(cR,i −c L,i) = 0, leaving
+multj ·
+w−1X
+i=0
+bi =
+w−1X
+i=0
+ti,i.e. mult j qj =q j+1,
+whereq j >0 is the mean bottom digit of rowj(positive because every digit is≥1), and
+qj+1 is the mean bottom digit of the row above, since the top digits of rowjare the bottom
+digits of rowj+ 1. Going around the vertical period,
+q0 =
+h−1Y
+j=0
+multj
+
+q0,so
+h−1Y
+j=0
+multj = 1,
+i.e. (3/2)a(1/2)b = 1 witha+b=h≥1. This says 3 a = 2a+b, forcinga= 0 and thenb= 0,
+soh= 0 – a contradiction.
+Theorem 3.3(non-emptiness).X T17 ̸=∅. Explicitly, for anyq∈Iand offsetr∈R, the
+balanced (Beatty) row
+bi =⌈q(i+ 1) +r⌉ − ⌈qi+r⌉
+4
+
+--- PAGE 5 ---
+and the corresponding row for(mult·q,mult·r)satisfy the carry relation with
+ci =mult· ⌈qi+r⌉ − ⌈mult(qi+r)⌉ ∈(−1,mult),
+and stacking the rows of thef-orbit of anyq 0 ∈Itiles the plane.
+Proof.The identityc i+1 =c i+mult·b i −t i, witht i the balanced digit of (mult·q,mult·r), is
+immediate from the definition ofc i by cancellation; the stated membershipc i ∈(−1,mult)
+follows since 0≤mult⌈s⌉ −mults <mult and 0≤ ⌈mults⌉ −mults <1 for all reals.
+Digits of a balanced representation ofq∈[1,3] lie in{1,2,3}, and the carry ranges are
+exactly those of Definition 3.1. Iterating rows along thef-orbit ofq 0 gives a configuration
+all of whose local constraints are the carry relations, hence a valid tiling. The construction
+is instantiated, and every window of two independent parameter choices checked, in the
+frozen certificate.
+4 The2×2recoding and the main theorem
+The tile set has 17 tiles, but Lemma 2.3 runs in both directions: to score anexcesswe must
+present the tiling space asV(P) on a small window over a small alphabet, and the cost of
+the presentation is the size of the realized window language. The naive presentation (cells
+= whole tiles, or the half-cells (mult, c L, b)) realizes 173 extendable 2×2 blocks – excess
+169. Both inefficiencies are removable.
+Lemma 4.1(determinism of the cell recoding).Define the cell of a tile to be the pair
+(mult, cL), and recode a tilingx∈X T17 as the cell configurationπ(x). Then, machine-
+checked over the17tiles:
+1. carries match across horizontal edges:c R(a) =c L(b)wheneveramay sit immediately
+left ofb; hence the pair of horizontally adjacent cells
+ 
+(mult, cL),(mult, c ′
+L)
+
+ofπ(x)at
+positions(i, j),(i+1, j)determines(mult, c L, cR) = (mult, cL, c′
+L)of the tile at(i, j);
+2. the triple(mult, c L, cR)determines the tile, withzeroambiguous triples among the17;
+3. dropping either component of the cell breaks determinism (4, respectively2, ambiguous
+keys).
+Consequently a2×2window ofπ(x)recovers both tiles of its left column and checks their
+vertical match, soπis a conjugacy fromX T17 onto the2×2-window SFTV(P)on the cell
+alphabet, wherePis the set of2×2cell blocks realized byX T17. In particular this recoding
+is lossless – a conjugacy, not a factor map.
+Proposition 4.2(the realized language has 73 blocks).The setPof2×2cell blocks realized
+by the Beatty tilings of Theorem 3.3 has exactly73elements, and this count is independent
+of the parameter: saturated sweeps over30, then400, then24independent parameter choices
+each realize all73blocks and no others. The certificatecert excess69.jsonlists the73
+patterns; the count is also carried inside the Lean development (PD length).
+Theorem 4.3(main theorem).V(P), for the73-element pattern setPof Proposition 4.2
+on a2×2window over the cell alphabet{(mult, c L)}(at most8letters), is non-empty and
+aperiodic. Hence the Kari–Moutot excess constant satisfies
+1≤c≤73−4 = 69.
+5
+
+--- PAGE 6 ---
+Proof.Non-emptiness:πof any Beatty tiling lies inV(P) by the definition ofP. Aperiod-
+icity: by Lemma 4.1 every element ofV(P) decodes to a valid tiling ofT 17, equivariantly,
+so a periodic element ofV(P) would decode to a periodic tiling, contradicting Theorem 3.2.
+The lower end of the interval is [4, Cor. 6].
+Remark4.4 (Lean formalization).The aperiodicity layer is formalized: the Lean 4 + math-
+lib development states and proves
+theorem kari tiles aperiodic (f :Z→Z→Tile) (hf : IsTiling f) (a h :Z) (hper :∀i j, f(i+a)(j+h) =f i j) : a = 0∧h = 0
+for the explicit 17-tile list, withIsTilingdefined as membership plus the two Wang match-
+ing conditions – nosorry, no added axiom, the only computational input being the finite
+tile specification closed bydecide. Later parts of the same file carry the pattern-set layer:
+the theoremexcess le 69states|P|= 73, non-emptiness (witnessed by an explicit config-
+urationcfgCell), and aperiodicity as one statement. The single claim of this paper that is
+notinside Lean is the optimality discussion of Section 5, which rests on exhaustive sweeps.
+5 Rigidity: the witness is deletion-minimal
+Theorem 5.1(all 73 deletions die).For everyp∈P,V(P\ {p}) =∅. Hence no proper
+subset ofPis an aperiodic witness, andc≤68is unreachable by shrinking this construction.
+Proof.Two facts aboutV(P), established in the source campaign with exact certificates:
+first,V(P)isthe tiling space ofT 17 (Lemma 4.1), and that space is exactly the Beatty family
+– the closure of the configurations of Theorem 3.3, the orbit of a single real parameter under
+q7→ 3
+2 qor 1
+2 q; second (Proposition 4.2),everymember of the family realizesall73 blocks.
+Hence for everyp, no member of the family lies inV(P\ {p}); sinceV(P\ {p})⊆V(P)
+andV(P) is exactly that family,V(P\ {p}) =∅.
+Where each deletion breaks is not where one would guess: deletingpdestroys the
+decode structure of Lemma 4.1 in only 2 of the 73 cases; in the remaining 71 the multiplier
+machinery survives intact and the loss isnon-emptiness– the excluded block occurs in
+every configuration of the space.
+Remark5.2 (optimality over the construction class).Within the class searched, 69 is op-
+timal three ways: over all multiplier pairsM 1 =p/q,M 2 =p ′/q′ withp, q, p ′, q′ ≤9 (mul-
+tiplicative independence checked by prime exponents, tightest admissible intervals); over
+coarser cell alphabets (dropping either cell component breaks determinism, Lemma 4.1(3),
+and all coarser recodings fail); and over window shapes (the realized language grows steeply
+with the window: 462 at 3×2, 999 at 2×3, 2785 at 3×3, so 2×2 is forced). These are ex-
+haustive sweeps with stated boundaries, not theorems about all constructions; mechanisms
+not of multiplier type – hierarchical constructions, or the Jeandel–Rao set itself – were not
+scored and might beat 69.
+6 Unconditional negatives at small windows
+The results of this section are exhaustive searches; they are included because they are
+citation-free complements to Theorem 4.3 and because they isolate the decisive open case.
+Soundness rests on Lemma 2.2 (sweeping horizontal periods alone suffices, with the height
+handled exactly by cycle detection) and on a closure argument: ifV(P 0) is aperiodic then
+the setPof patterns actually occurring is closed under taking horizontal and vertical
+successors and predecessors, satisfiesV(P) =V(P 0), and is no larger – so it suffices to
+6
+
+--- PAGE 7 ---
+enumerateclosedsets, branching on supersets when a set closes (a subtlety whose earlier
+omission was caught and fixed against ground truth: a closed set can be a proper subset of
+another closed set).
+Theorem 6.1(binary 2×2: never aperiodic).Over|A|= 2there is noP⊆A [2]×[2], of
+any size, withV(P)aperiodic. Exhaustive over all2 16 subsets with no search heuristics:
+33,639closed subsets, of which33,411admit a torus configuration and228haveV(P) =∅;
+zero survivors. Independently reproduced by the pruned closed-set enumeration, and the fast
+torus oracle cross-validated against a second implementation on thousands of random cases
+with zero verdict mismatches. In particular, citation-free: no excessc≤12is attainable at
+a binary2×2window.
+Theorem 6.2(binary 3×2, excess≤3: never aperiodic).Over|A|= 2and the3×2
+window there is no aperiodicV(P)with|P| ≤9(exhaustive;6,083closed torus-free sets at
+cap9, all refuted).
+Remark6.3 (the decisive open case).Under the conditional floor of Remark 2.5, the first
+window shapes wherec= 1 is possible at all are those withnm≥10, and the smallest is
+binary 5×2 with|P|= 11. That case is finite and well-posed; the validated enumeration
+reaches roughly 8×10 5 nodes/second there but was never started for want of wall-clock
+budget, while the neighbouring binary 4×2 case at cap 11 was pushed to 1.21×10 9 nodes
+(1,943 orbit representatives, zero survivors) without finishing. Deciding binary 5×2 at
+|P|= 11 decides whetherc= 1 at the smallest window where it can occur.
+7 Open problems
+1. Pin the constant: every value in{1, . . . ,69}is currently possible. The construction
+class of this paper is exhausted (Remark 5.2); a smaller witness needs either a different
+aperiodic mechanism scored by the window language, or the|C|-enumeration frontier
+at small alphabets.
+2. Decide the binary 5×2,|P|= 11 case (Remark 6.3).
+3. Raise the lower bound beyond 1: the annihilator method dies at complexitynm+
+1, and the real frontier identified in the companion campaign is the balancedness
+hypothesis of [4, Lem. 21] – a combinatorial, not algebraic, obstruction.
+4. The general transfer principle behind Lemma 2.3 givesc≤ |L 2×2(X)| −4 forany
+aperiodic Wang shiftXpresentable on a 2×2 window, whereL 2×2 is the realized
+block language. Score the known small aperiodic tile sets – Jeandel–Rao’s 11 tiles [2],
+Culik’s 13 [1] – under this functional.
+8 Provenance, verification model, and dependency disclo-
+sure
+Provenance
+The mathematics was produced by an autonomous multi-agent AI research fleet (2026-
+08-13 through 2026-08-18) in two adversarially paired windows:kari-construct(upper
+bounds; the results of Sections 3–6) andkari-obstruct(lower bounds and refutation;
+the companion results quoted in Section 7). The pairing discipline forbade either window
+from reading the other’s code; exit conditions were committed before computations; every
+7
+
+--- PAGE 8 ---
+number ships with a frozen checker and certificate, replayable end-to-end by one script
+(REPLAY.sh). The campaign registered 114 claims in the fleet ledger.
+Verification model
+Theorems 3.2, 3.3 and Lemmas 2.2, 2.3 are conventional proofs, reproduced in full above.
+Lemma 4.1 and Proposition 4.2 are finite exact checks over the 17 tiles and the frozen pat-
+tern list (cert excess69.json); Theorem 5.1 combines them with the space classification
+established in the campaign notes. The Lean 4 + mathlib development (Remark 4.4) covers
+non-emptiness, the count 73, and aperiodicity as one theorem with nosorryand no added
+axioms; its tile list was checked to match the generating code exactly, and the aperiodicity
+layer compiled clean in every operator verdict from round three onward. The exhaustive
+negatives of Section 6 are sweeps: their soundness arguments (closure, and Lemma 2.2) are
+proofs, their exhaustiveness is stated with exact node and set counts, and the enumeration
+bug found and fixed during cross-validation is disclosed in Section 6 rather than hidden.
+No sweep supports any aperiodicity claim: the repository’s standing rule, kept here, is that
+aperiodicity is only ever asserted on the algebraic proof.
+Load-bearing literature inputs
+Kari–Moutot [4, Cor. 6]: only for the lower endc≥1 of the interval (their question;
+their bound). Jeandel–Rao [2]: only inside Remark 2.5 and Remark 6.3 (locating the
+decisive case); no positive or negative result of this paper depends on it. Kari [3]: the
+multipliermechanismis his; the tile set, both proofs, and all counts here are reconstructed
+independently and verified as above. Theorem 4.3’s upper bound is otherwise self-contained.
+References
+[1] K. Culik II,An aperiodic set of13Wang tiles, Discrete Math.160(1996), 245–251.
+[2] E. Jeandel and M. Rao,An aperiodic set of11Wang tiles, Adv. Comb. (2021), Paper
+No. 1. arXiv:1506.06492.
+[3] J. Kari,A small aperiodic set of Wang tiles, Discrete Math.160(1996), 259–264.
+[4] J. Kari and E. Moutot,Decidability and periodicity of low complexity tilings, preprint,
+arXiv:1904.01267; extended abstract in Proc. STACS 2020.
+8
